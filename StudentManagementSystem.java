@@ -1,5 +1,10 @@
 package StudentManagement;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,6 +15,7 @@ public class StudentManagementSystem {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        loadStudentsFromFile();
         int choice;
         do {
             showMenu();
@@ -49,6 +55,56 @@ public class StudentManagementSystem {
         System.out.println("5. Thoát");
         System.out.print("Chọn chức năng: ");
     }
+
+    // Lấy danh sách sinh viên lên từ students.txt
+    private static void loadStudentsFromFile() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("students.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(",");
+                Student student = new Student.StudentBuilder()
+                        .setId(data[0])
+                        .setName(data[1])
+                        .setDob(data[2])
+                        .setGender(Boolean.parseBoolean(data[3]))
+                        .setDepartment(Department.valueOf(data[4]))
+                        .setSchoolYear(Integer.parseInt(data[5]))
+                        .setProgram(data[6])
+                        .setEmail(data[7])
+                        .setPhone(data[8])
+                        .setAddress(data[9])
+                        .setStatus(StudentStatus.valueOf(data[10]))
+                        .build();
+                studentList.add(student);
+            }
+        } catch (IOException e) {
+            System.out.println("Lỗi khi đọc tệp tin: " + e.getMessage());
+        }
+    }
+
+    // Lưu danh sách xuống file
+    private static void saveStudentsToFile() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("students.txt"))) {
+            for (Student student : studentList) {
+                writer.write(String.join(",",
+                        student.getId(),
+                        student.getName(),
+                        student.getDob(),
+                        String.valueOf(student.isGender()),
+                        student.getDepartment().name(),
+                        String.valueOf(student.getSchoolYear()),
+                        student.getProgram(),
+                        student.getEmail(),
+                        student.getPhone(),
+                        student.getAddress(),
+                        student.getStatus().name()));
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Lỗi khi ghi tệp tin: " + e.getMessage());
+        }
+    }
+
 
     // 1. Thêm sinh viên mới
     private static void addStudent() {
@@ -145,8 +201,9 @@ public class StudentManagementSystem {
                     .setStatus(status)
                     .build();
             studentList.add(student);
+            saveStudentsToFile(); // Lưu danh sách sinh viên xuống file
             System.out.println("Thêm sinh viên thành công!");
-        } catch (IllegalArgumentException e) {
+            } catch (IllegalArgumentException e) {
             System.out.println("Lỗi khi thêm sinh viên: " + e.getMessage());
         }
     }
@@ -157,6 +214,7 @@ public class StudentManagementSystem {
         String id = scanner.nextLine();
         boolean removed = studentList.removeIf(s -> s.getId().equals(id));
         if (removed) {
+            saveStudentsToFile();// Lưu danh sách sinh viên xuống file
             System.out.println("Xóa sinh viên thành công!");
         } else {
             System.out.println("Không tìm thấy sinh viên với mã số " + id);
@@ -284,6 +342,7 @@ public class StudentManagementSystem {
             default:
                 System.out.println("Lựa chọn không hợp lệ.");
         }
+        saveStudentsToFile(); // Lưu danh sách sau khi cập nhật
         System.out.println("Cập nhật thông tin sinh viên thành công!");
     }
 
