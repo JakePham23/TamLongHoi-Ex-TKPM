@@ -1,0 +1,11 @@
+22120268,Nguy?n D?nh Ph�,14/01/2004,true,BUSINESS_ENGLISH,2022,D?i tr�,phu0981838248@gmail.com,0981838248,Th? D?c,STUDYING
+22120269,Tran Van A,15/02/2003,true,LAW,2021,Dai tra,tranvana@gmail.com,0912345678,Ha Noi,STUDYING
+22120270,Nguyen Thi B,20/03/2002,false,JAPANESE,2020,CLC,nguyenthb@gmail.com,0923456789,Hai Phong,GRADUATED
+22120271,Le Van C,25/04/2001,true,FRENCH,2019,Tien tien,levanc@gmail.com,0934567890,Da Nang,DROPPED_OUT
+22120272,Pham Thi D,30/05/2000,false,BUSINESS_ENGLISH,2018,Cu nhan tai nang,phamthid@gmail.com,0945678901,Ho Chi Minh,TEMPORARY_STOP
+22120273,Hoang Van E,05/06/2004,true,LAW,2022,Dai tra,hoangvane@gmail.com,0956789012,Can Tho,STUDYING
+22120274,Do Thi F,10/07/2003,false,JAPANESE,2021,CLC,do_thif@gmail.com,0967890123,Nha Trang,STUDYING
+22120275,Ngo Van G,15/08/2002,true,FRENCH,2020,Tien tien,ngovang@gmail.com,0978901234,Vung Tau,GRADUATED
+22120276,Trinh Thi H,20/09/2001,false,BUSINESS_ENGLISH,2019,Cu nhan tai nang,trinhthih@gmail.com,0989012345,Hue,DROPPED_OUT
+22120277,Phan Van I,25/10/2000,true,LAW,2018,Dai tra,phanvani@gmail.com,0990123456,Quang Ninh,TEMPORARY_STOP
+22120278,Vu Thi J,30/11/2004,false,JAPANESE,2022,CLC,vuthij@gmail.com,0901234567,Binh Duong,STUDYING
