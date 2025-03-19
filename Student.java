@@ -10,7 +10,9 @@ public class Student {
     private String program;
     private String email;
     private String phone;
-    private String address;
+    private Address permanentAddress;
+    private Address temporaryAddress;
+    private Address mailingAddress;
     private StudentStatus status;
 
     private Student(StudentBuilder builder) {
@@ -23,7 +25,9 @@ public class Student {
         this.program = builder.program;
         this.email = builder.email;
         this.phone = builder.phone;
-        this.address = builder.address;
+        this.permanentAddress = builder.permanentAddress;
+        this.temporaryAddress = builder.temporaryAddress;
+        this.mailingAddress = builder.mailingAddress;
         this.status = builder.status;
     }
 
@@ -37,7 +41,9 @@ public class Student {
     public String getProgram() { return program; }
     public String getEmail() { return email; }
     public String getPhone() { return phone; }
-    public String getAddress() { return address; }
+    public Address getPermanentAddress() { return permanentAddress; }
+    public Address getTemporaryAddress() { return temporaryAddress; }
+    public Address getMailingAddress() { return mailingAddress; }
     public StudentStatus getStatus() { return status; }
     
     public void setName(String name) {
@@ -81,8 +87,16 @@ public class Student {
         this.phone = phone;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setPermanentAddress(Address PermanentAddress) {
+        this.permanentAddress = PermanentAddress;
+    }
+
+    public void setTemporaryAddress(Address TemporaryAddress) {
+        this.temporaryAddress = TemporaryAddress;
+    }
+
+    public void setMailingAddress(Address MailingAddress) {
+        this.mailingAddress = MailingAddress;
     }
 
     public void setStatus(StudentStatus status) {
@@ -119,7 +133,9 @@ public class Student {
         private String program;
         private String email;
         private String phone;
-        private String address;
+        private Address permanentAddress;
+        private Address temporaryAddress;
+        private Address mailingAddress;
         private StudentStatus status;
 
         public StudentBuilder setId(String id) {
@@ -167,8 +183,18 @@ public class Student {
             return this;
         }
 
-        public StudentBuilder setAddress(String address) {
-            this.address = address;
+        public StudentBuilder setPermanentAddress(Address permanentAddress) {
+            this.permanentAddress = permanentAddress;
+            return this;
+        }
+
+        public StudentBuilder setTemporaryAddress(Address temporaryAddress) {
+            this.temporaryAddress = temporaryAddress;
+            return this;
+        }
+
+        public StudentBuilder setMailingAddress(Address mailingAddress) {
+            this.mailingAddress = mailingAddress;
             return this;
         }
 
@@ -206,8 +232,12 @@ public class Student {
                 ", program='" + program + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", address='" + address + '\'' +
+                ", permanent address='" + permanentAddress + '\'' +
+                ", temporaryAddress='" + temporaryAddress + '\'' +
+                ", mailingAddress='" + mailingAddress + '\'' +
                 ", status=" + status.getDisplayName() +
                 '}';
     }
+
+    
 }

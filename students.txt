@@ -1,0 +1,3 @@
+22120268;Nguyen Dinh Phu;14/01/2004;true;LAW;2022;Dai tra;phune@gmail.com;0981838248;Gio mua thu,Anh ru em ngu,Gio mua ha,Anh ngu em ru,Het;hihi,haha,hoho,keke,kiki;kkk,hhh,hmmm,acc,aaa;STUDYING
+22120269;Nguyen Dinh Phu;14/01/2004;true;LAW;2022;Dai tra;phune@gmail.com;0981838248;Gio mua thu,Anh ru em ngu,Gio mua ha,Anh ngu em ru,Het;,,,,;kkk,hhh,hmmm,acc,aaa;STUDYING
+22120267;Nguyen Dinh Phu;14/01/2004;true;LAW;2022;Dai tra;phune@gmail.com;0981838248;Gio mua thu,Anh ru em ngu,Gio mua ha,Anh ngu em ru,Het;,,hello,,;kkk,hhh,hmmm,acc,aaa;STUDYING

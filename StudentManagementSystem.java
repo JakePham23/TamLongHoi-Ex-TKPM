@@ -61,7 +61,31 @@ public class StudentManagementSystem {
         try (BufferedReader reader = new BufferedReader(new FileReader("students.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                String[] data = line.split(",");
+                String[] data = line.split(";");
+                String[] permAddr = data[9].split(",");
+                String[] tempAddr = data[10].split(",");
+                String[] mailAddr = data[11].split(",");
+                Address permanentAddress = new Address(
+                    permAddr.length > 0 ? permAddr[0] : null,
+                    permAddr.length > 1 ? permAddr[1] : null,
+                    permAddr.length > 2 ? permAddr[2] : null,
+                    permAddr.length > 3 ? permAddr[3] : null,
+                    permAddr.length > 4 ? permAddr[4] : null
+                );
+                Address temporaryAddress = new Address(
+                    tempAddr.length > 0 ? tempAddr[0] : null,
+                    tempAddr.length > 1 ? tempAddr[1] : null,
+                    tempAddr.length > 2 ? tempAddr[2] : null,
+                    tempAddr.length > 3 ? tempAddr[3] : null,
+                    tempAddr.length > 4 ? tempAddr[4] : null
+                );
+                Address mailingAddress = new Address(
+                    mailAddr.length > 0 ? mailAddr[0] : null,
+                    mailAddr.length > 1 ? mailAddr[1] : null,
+                    mailAddr.length > 2 ? mailAddr[2] : null,
+                    mailAddr.length > 3 ? mailAddr[3] : null,
+                    mailAddr.length > 4 ? mailAddr[4] : null
+                );
                 Student student = new Student.StudentBuilder()
                         .setId(data[0])
                         .setName(data[1])
@@ -72,8 +96,10 @@ public class StudentManagementSystem {
                         .setProgram(data[6])
                         .setEmail(data[7])
                         .setPhone(data[8])
-                        .setAddress(data[9])
-                        .setStatus(StudentStatus.valueOf(data[10]))
+                        .setPermanentAddress(permanentAddress)
+                        .setTemporaryAddress(temporaryAddress)
+                        .setMailingAddress(mailingAddress)
+                        .setStatus(StudentStatus.valueOf(data[12]))
                         .build();
                 studentList.add(student);
             }
@@ -82,11 +108,23 @@ public class StudentManagementSystem {
         }
     }
 
+    // Định dạng địa chỉ thành chuỗi
+    private static String formatAddress(Address address) {
+        return String.join(",", 
+            address.getStreet(), 
+            address.getWard(), 
+            address.getDistrict(), 
+            address.getCity(), 
+            address.getCountry()
+        );
+    }
+    
+
     // Lưu danh sách xuống file
     private static void saveStudentsToFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("students.txt"))) {
             for (Student student : studentList) {
-                writer.write(String.join(",",
+                writer.write(String.join(";",
                         student.getId(),
                         student.getName(),
                         student.getDob(),
@@ -96,7 +134,9 @@ public class StudentManagementSystem {
                         student.getProgram(),
                         student.getEmail(),
                         student.getPhone(),
-                        student.getAddress(),
+                        formatAddress(student.getPermanentAddress()),
+                        formatAddress(student.getTemporaryAddress()),
+                        formatAddress(student.getMailingAddress()),
                         student.getStatus().name()));
                 writer.newLine();
             }
@@ -105,6 +145,20 @@ public class StudentManagementSystem {
         }
     }
 
+    // Nhập địa chỉ từ bàn phím
+    private static Address inputAddress() {
+        System.out.print("Nhập tên đường: ");
+        String street = scanner.nextLine();
+        System.out.print("Nhập phường/xã: ");
+        String ward = scanner.nextLine();
+        System.out.print("Nhập quận/huyện: ");
+        String district = scanner.nextLine();
+        System.out.print("Nhập thành phố: ");
+        String city = scanner.nextLine();
+        System.out.print("Nhập quốc gia: ");
+        String country = scanner.nextLine();
+        return new Address(street, ward, district, city, country);
+    }
 
     // 1. Thêm sinh viên mới
     private static void addStudent() {
@@ -146,6 +200,7 @@ public class StudentManagementSystem {
                 department = Department.LAW;
         }
 
+
         System.out.print("Năm học: ");
         int schoolYear = Integer.parseInt(scanner.nextLine());
 
@@ -158,8 +213,14 @@ public class StudentManagementSystem {
         System.out.print("Số điện thoại: ");
         String phone = scanner.nextLine();
 
-        System.out.print("Địa chỉ: ");
-        String address = scanner.nextLine();
+        System.out.print("Địa chỉ thường trú: ");
+        Address permanentAddress = inputAddress();
+
+        System.out.println("Địa chỉ tạm trú: ");
+        Address temporaryAddress = inputAddress();
+
+        System.out.println("Địa chỉ nhận thư: ");
+        Address mailingAddress = inputAddress();
 
         System.out.println("Chọn tình trạng sinh viên:");
         System.out.println("1. Đang học");
@@ -197,7 +258,9 @@ public class StudentManagementSystem {
                     .setProgram(program)
                     .setEmail(email)
                     .setPhone(phone)
-                    .setAddress(address)
+                    .setAddress(permanentAddress)
+                    .setTemporaryAddress(temporaryAddress)
+                    .setMailingAddress(mailingAddress)
                     .setStatus(status)
                     .build();
             studentList.add(student);
@@ -246,8 +309,10 @@ public class StudentManagementSystem {
         System.out.println("6. Chương trình đào tạo");
         System.out.println("7. Email");
         System.out.println("8. Số điện thoại");
-        System.out.println("9. Địa chỉ");
-        System.out.println("10. Tình trạng sinh viên");
+        System.out.println("9. Địa chỉ thường trú");
+        System.out.println("10. Địa chỉ tạm trú");
+        System.out.println("11. Địa chỉ nhận thư");
+        System.out.println("12. Tình trạng sinh viên");
         System.out.print("Chọn: ");
         int updateChoice = Integer.parseInt(scanner.nextLine());
         switch (updateChoice) {
@@ -313,9 +378,17 @@ public class StudentManagementSystem {
                 break;
             case 9:
                 System.out.print("Nhập địa chỉ mới: ");
-                student.setAddress(scanner.nextLine());
+                student.setAddress();
                 break;
             case 10:
+                System.out.print("Nhập địa chỉ tạm trú mới: ");
+                student.setTemporaryAddress(scanner.nextLine());
+                break;
+            case 11:
+                System.out.print("Nhập địa chỉ gửi thư mới: ");
+                student.setMailingAddress(scanner.nextLine());
+                break;
+            case 12:
                 System.out.println("Chọn tình trạng sinh viên:");
                 System.out.println("1. Đang học");
                 System.out.println("2. Đã tốt nghiệp");
