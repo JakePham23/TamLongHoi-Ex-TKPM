@@ -62,30 +62,47 @@ public class StudentManagementSystem {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(";");
+
+                // Tạo đối tượng Address cho địa chỉ thường trú, tạm trú, nhận thư
                 String[] permAddr = data[9].split(",");
                 String[] tempAddr = data[10].split(",");
                 String[] mailAddr = data[11].split(",");
                 Address permanentAddress = new Address(
-                    permAddr.length > 0 ? permAddr[0] : null,
-                    permAddr.length > 1 ? permAddr[1] : null,
-                    permAddr.length > 2 ? permAddr[2] : null,
-                    permAddr.length > 3 ? permAddr[3] : null,
-                    permAddr.length > 4 ? permAddr[4] : null
-                );
+                        permAddr.length > 0 ? permAddr[0] : null,
+                        permAddr.length > 1 ? permAddr[1] : null,
+                        permAddr.length > 2 ? permAddr[2] : null,
+                        permAddr.length > 3 ? permAddr[3] : null,
+                        permAddr.length > 4 ? permAddr[4] : null);
                 Address temporaryAddress = new Address(
-                    tempAddr.length > 0 ? tempAddr[0] : null,
-                    tempAddr.length > 1 ? tempAddr[1] : null,
-                    tempAddr.length > 2 ? tempAddr[2] : null,
-                    tempAddr.length > 3 ? tempAddr[3] : null,
-                    tempAddr.length > 4 ? tempAddr[4] : null
-                );
+                        tempAddr.length > 0 ? tempAddr[0] : null,
+                        tempAddr.length > 1 ? tempAddr[1] : null,
+                        tempAddr.length > 2 ? tempAddr[2] : null,
+                        tempAddr.length > 3 ? tempAddr[3] : null,
+                        tempAddr.length > 4 ? tempAddr[4] : null);
                 Address mailingAddress = new Address(
-                    mailAddr.length > 0 ? mailAddr[0] : null,
-                    mailAddr.length > 1 ? mailAddr[1] : null,
-                    mailAddr.length > 2 ? mailAddr[2] : null,
-                    mailAddr.length > 3 ? mailAddr[3] : null,
-                    mailAddr.length > 4 ? mailAddr[4] : null
-                );
+                        mailAddr.length > 0 ? mailAddr[0] : null,
+                        mailAddr.length > 1 ? mailAddr[1] : null,
+                        mailAddr.length > 2 ? mailAddr[2] : null,
+                        mailAddr.length > 3 ? mailAddr[3] : null,
+                        mailAddr.length > 4 ? mailAddr[4] : null);
+
+                String[] identityDoc = data[13].split(",");
+                if (identityDoc.length < 6) {
+                    System.out.println(
+                            "Dữ liệu IdentityDocument không hợp lệ, bỏ qua: " + String.join(",", identityDoc));
+                    return;
+                }
+
+                IdentityDocument identityDocument = new IdentityDocument(
+                        identityDoc[0], identityDoc[1], identityDoc[2], identityDoc[3], identityDoc[4], identityDoc[5]);
+
+                if (identityDoc[0].equals("CCCD") && identityDoc.length > 6) {
+                    identityDocument.setHasChip(Boolean.parseBoolean(identityDoc[6]));
+                } else if (identityDoc[0].equals("Passport") && identityDoc.length > 6) {
+                    identityDocument.setNotes(identityDoc[6]);
+                }
+
+                // Tạo đối tượng Student
                 Student student = new Student.StudentBuilder()
                         .setId(data[0])
                         .setName(data[1])
@@ -100,6 +117,8 @@ public class StudentManagementSystem {
                         .setTemporaryAddress(temporaryAddress)
                         .setMailingAddress(mailingAddress)
                         .setStatus(StudentStatus.valueOf(data[12]))
+                        .setIdentityDocument(identityDocument)
+                        .setNationality(data[14])
                         .build();
                 studentList.add(student);
             }
@@ -110,19 +129,17 @@ public class StudentManagementSystem {
 
     // Định dạng địa chỉ thành chuỗi
     private static String formatAddress(Address address) {
-        return String.join(",", 
-            address.getStreet(), 
-            address.getWard(), 
-            address.getDistrict(), 
-            address.getCity(), 
-            address.getCountry()
-        );
+        return String.join(",",
+                address.getStreet(),
+                address.getWard(),
+                address.getDistrict(),
+                address.getCity(),
+                address.getCountry());
     }
-    
 
     // Lưu danh sách xuống file
     private static void saveStudentsToFile() {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("students.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("students.txt", false))) {
             for (Student student : studentList) {
                 writer.write(String.join(";",
                         student.getId(),
@@ -137,7 +154,10 @@ public class StudentManagementSystem {
                         formatAddress(student.getPermanentAddress()),
                         formatAddress(student.getTemporaryAddress()),
                         formatAddress(student.getMailingAddress()),
-                        student.getStatus().name()));
+                        student.getStatus().name(),
+                        student.getIdentityDocument().toString(),
+                        student.getNationality()));
+
                 writer.newLine();
             }
         } catch (IOException e) {
@@ -158,6 +178,72 @@ public class StudentManagementSystem {
         System.out.print("Nhập quốc gia: ");
         String country = scanner.nextLine();
         return new Address(street, ward, district, city, country);
+    }
+
+    // Nhập giấy tờ tùy thân từ bàn phím
+    private static IdentityDocument inputIdentityDocument() {
+        System.out.println("Chọn loại giấy tờ:");
+        System.out.println("1. CMND");
+        System.out.println("2. CCCD");
+        System.out.println("3. Passport");
+        int docTypeChoice = Integer.parseInt(scanner.nextLine());
+        while (docTypeChoice < 1 || docTypeChoice > 3) {
+            System.out.println("Lựa chọn không hợp lệ, vui lòng chọn lại.");
+            docTypeChoice = Integer.parseInt(scanner.nextLine());
+        }
+        IdentityDocument identityDocument = null;
+        switch (docTypeChoice) {
+            case 1: {
+                System.out.print("Nhập số CMND: ");
+                String documentNumber = scanner.nextLine();
+                System.out.print("Ngày cấp (dd/MM/yyyy): ");
+                String issueDate = scanner.nextLine();
+                System.out.print("Ngày hết hạn (dd/MM/yyyy): ");
+                String expiryDate = scanner.nextLine();
+                System.out.print("Nơi cấp: ");
+                String issuePlace = scanner.nextLine();
+                System.out.print("Quốc gia cấp: ");
+                String issueCountry = scanner.nextLine();
+                identityDocument = new IdentityDocument("CMND", documentNumber, issueDate, expiryDate, issuePlace, issueCountry);
+                break;
+            }
+            case 2: {
+                System.out.print("Nhập số CCCD: ");
+                String documentNumber = scanner.nextLine();
+                System.out.print("Ngày cấp (dd/MM/yyyy): ");
+                String issueDate = scanner.nextLine();
+                System.out.print("Ngày hết hạn (dd/MM/yyyy): ");
+                String expiryDate = scanner.nextLine();
+                System.out.print("Nơi cấp: ");
+                String issuePlace = scanner.nextLine();
+                System.out.print("Quốc gia cấp: ");
+                String issueCountry = scanner.nextLine();
+                System.out.print("Có gắn chip (true: có, false: không): ");
+                boolean hasChip = Boolean.parseBoolean(scanner.nextLine());
+                identityDocument = new IdentityDocument("CCCD", documentNumber, issueDate, expiryDate, issuePlace, issueCountry);
+                identityDocument.setHasChip(hasChip);
+                break;
+            }
+            case 3: {
+                System.out.print("Nhập số Passport: ");
+                String documentNumber = scanner.nextLine();
+                System.out.print("Ngày cấp (dd/MM/yyyy): ");
+                String issueDate = scanner.nextLine();
+                System.out.print("Ngày hết hạn (dd/MM/yyyy): ");
+                String expiryDate = scanner.nextLine();
+                System.out.print("Nơi cấp: ");
+                String issuePlace = scanner.nextLine();
+                System.out.print("Quốc gia cấp: ");
+                String issueCountry = scanner.nextLine();
+                System.out.print("Ghi chú: ");
+                String notes = scanner.nextLine();
+                identityDocument = new IdentityDocument("Passport", documentNumber, issueDate, expiryDate, issuePlace, issueCountry);
+                identityDocument.setNotes(notes);
+                break;
+            }
+            default:
+        }
+        return identityDocument;
     }
 
     // 1. Thêm sinh viên mới
@@ -199,7 +285,6 @@ public class StudentManagementSystem {
                 System.out.println("Lựa chọn không hợp lệ, đặt mặc định Khoa Luật.");
                 department = Department.LAW;
         }
-
 
         System.out.print("Năm học: ");
         int schoolYear = Integer.parseInt(scanner.nextLine());
@@ -247,6 +332,11 @@ public class StudentManagementSystem {
                 status = StudentStatus.STUDYING;
         }
 
+        IdentityDocument identityDocument = inputIdentityDocument();
+
+        System.out.println("Quốc tịch: ");
+        String nationality = scanner.nextLine();
+
         try {
             Student student = new Student.StudentBuilder()
                     .setId(id)
@@ -258,15 +348,17 @@ public class StudentManagementSystem {
                     .setProgram(program)
                     .setEmail(email)
                     .setPhone(phone)
-                    .setAddress(permanentAddress)
+                    .setPermanentAddress(permanentAddress)
                     .setTemporaryAddress(temporaryAddress)
                     .setMailingAddress(mailingAddress)
                     .setStatus(status)
+                    .setIdentityDocument(identityDocument)
+                    .setNationality(nationality)
                     .build();
             studentList.add(student);
             saveStudentsToFile(); // Lưu danh sách sinh viên xuống file
             System.out.println("Thêm sinh viên thành công!");
-            } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println("Lỗi khi thêm sinh viên: " + e.getMessage());
         }
     }
@@ -313,6 +405,8 @@ public class StudentManagementSystem {
         System.out.println("10. Địa chỉ tạm trú");
         System.out.println("11. Địa chỉ nhận thư");
         System.out.println("12. Tình trạng sinh viên");
+        System.out.println("13. Giấy tờ tùy thân");
+        System.out.println("14. Quốc tịch");
         System.out.print("Chọn: ");
         int updateChoice = Integer.parseInt(scanner.nextLine());
         switch (updateChoice) {
@@ -377,16 +471,19 @@ public class StudentManagementSystem {
                 }
                 break;
             case 9:
-                System.out.print("Nhập địa chỉ mới: ");
-                student.setAddress();
+                System.out.print("Nhập địa chỉ thường trú mới: ");
+                Address permanentAddress = inputAddress();
+                student.setPermanentAddress(permanentAddress);
                 break;
             case 10:
                 System.out.print("Nhập địa chỉ tạm trú mới: ");
-                student.setTemporaryAddress(scanner.nextLine());
+                Address temporaryAddress = inputAddress();
+                student.setTemporaryAddress(temporaryAddress);
                 break;
             case 11:
                 System.out.print("Nhập địa chỉ gửi thư mới: ");
-                student.setMailingAddress(scanner.nextLine());
+                Address mailingAddress = inputAddress();
+                student.setMailingAddress(mailingAddress);
                 break;
             case 12:
                 System.out.println("Chọn tình trạng sinh viên:");
@@ -411,6 +508,14 @@ public class StudentManagementSystem {
                     default:
                         System.out.println("Lựa chọn không hợp lệ.");
                 }
+                break;
+            case 13:
+                IdentityDocument identityDocument = inputIdentityDocument();
+                student.setIdentityDocument(identityDocument);
+                break;
+            case 14:
+                System.out.print("Nhập quốc tịch mới: ");
+                student.setNationality(scanner.nextLine());
                 break;
             default:
                 System.out.println("Lựa chọn không hợp lệ.");

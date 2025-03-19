@@ -14,8 +14,10 @@ public class Student {
     private Address temporaryAddress;
     private Address mailingAddress;
     private StudentStatus status;
+    private IdentityDocument identityDocument;
+    private String nationality;
 
-    private Student(StudentBuilder builder) {
+    public Student(StudentBuilder builder) {
         this.id = builder.id;
         this.name = builder.name;
         this.dob = builder.dob;
@@ -29,6 +31,8 @@ public class Student {
         this.temporaryAddress = builder.temporaryAddress;
         this.mailingAddress = builder.mailingAddress;
         this.status = builder.status;
+        this.identityDocument = builder.identityDocument;
+        this.nationality = builder.nationality;
     }
 
     // Getters
@@ -45,6 +49,8 @@ public class Student {
     public Address getTemporaryAddress() { return temporaryAddress; }
     public Address getMailingAddress() { return mailingAddress; }
     public StudentStatus getStatus() { return status; }
+    public IdentityDocument getIdentityDocument() { return identityDocument; }
+    public String getNationality() { return nationality; }
     
     public void setName(String name) {
         this.name = name;
@@ -105,6 +111,14 @@ public class Student {
         }
         this.status = status;
     }
+
+    public void setIdentityDocument(IdentityDocument identityDocument) {
+        this.identityDocument = identityDocument;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
     
     private static boolean isEmailAddress(String email) {
         return email != null && email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
@@ -137,6 +151,8 @@ public class Student {
         private Address temporaryAddress;
         private Address mailingAddress;
         private StudentStatus status;
+        private IdentityDocument identityDocument;
+        private String nationality;
 
         public StudentBuilder setId(String id) {
             this.id = id;
@@ -203,6 +219,16 @@ public class Student {
             return this;
         }
 
+        public StudentBuilder setIdentityDocument(IdentityDocument identityDocument) {
+            this.identityDocument = identityDocument;
+            return this;
+        }
+
+        public StudentBuilder setNationality(String nationality){
+            this.nationality = nationality;
+            return this;
+        }
+
         public Student build() {
             if (!Student.isEmailAddress(this.email)) {
                 throw new IllegalArgumentException("Định dạng email không hợp lệ");
@@ -236,6 +262,8 @@ public class Student {
                 ", temporaryAddress='" + temporaryAddress + '\'' +
                 ", mailingAddress='" + mailingAddress + '\'' +
                 ", status=" + status.getDisplayName() +
+                ", identityDocument=" + identityDocument +
+                ", nationality=" + nationality +
                 '}';
     }
 

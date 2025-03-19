@@ -1,6 +1,5 @@
 package StudentManagement;
 
-
 public enum StudentStatus {
     STUDYING("Đang học"),
     GRADUATED("Đã tốt nghiệp"),
