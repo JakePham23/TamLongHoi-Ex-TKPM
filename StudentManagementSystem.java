@@ -38,6 +38,12 @@ public class StudentManagementSystem {
                     searchStudent();
                     break;
                 case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
                     System.out.println("Thoát chương trình.");
                     break;
                 default:
@@ -51,8 +57,11 @@ public class StudentManagementSystem {
         System.out.println("1. Thêm sinh viên mới");
         System.out.println("2. Xóa sinh viên");
         System.out.println("3. Cập nhật thông tin sinh viên");
-        System.out.println("4. Tìm kiếm sinh viên");
-        System.out.println("5. Thoát");
+        System.out.println("4. Tìm kiếm sinh viên theo MSSV hoặc Họ tên");
+        System.out.println("5. Chỉnh sửa khoa");
+        System.out.println("6. Chỉnh sửa tình trạng sinh viên");
+        System.out.println("7. Chỉnh sửa chương trình");
+        System.out.println("8. Thoát");
         System.out.print("Chọn chức năng: ");
     }
 
@@ -529,22 +538,104 @@ public class StudentManagementSystem {
         System.out.println("\nTìm kiếm sinh viên theo:");
         System.out.println("1. Mã số sinh viên");
         System.out.println("2. Họ tên");
+        System.out.println("3. Khoa");
+        System.out.println("4. Khoa + Họ tên");
         System.out.print("Chọn: ");
         int searchChoice = Integer.parseInt(scanner.nextLine());
-        System.out.print("Nhập từ khóa: ");
-        String keyword = scanner.nextLine().toLowerCase();
+        
         List<Student> results = new ArrayList<>();
-        for (Student s : studentList) {
-            if (searchChoice == 1) {
-                if (s.getId().toLowerCase().contains(keyword)) {
-                    results.add(s);
+        
+        switch (searchChoice) { // tìm theo mssv
+            case 1:
+                System.out.print("Nhập mã số sinh viên: ");
+                String id = scanner.nextLine().toLowerCase();
+                for (Student s : studentList) {
+                    if (s.getId().toLowerCase().contains(id)) {
+                        results.add(s);
+                    }
                 }
-            } else if (searchChoice == 2) {
-                if (s.getName().toLowerCase().contains(keyword)) {
-                    results.add(s);
+                break;
+                
+            case 2: //tìm theo tên
+                System.out.print("Nhập họ tên: ");
+                String name = scanner.nextLine().toLowerCase();
+                for (Student s : studentList) {
+                    if (s.getName().toLowerCase().contains(name)) {
+                        results.add(s);
+                    }
                 }
-            }
+                break;
+                
+            case 3: //Timf theo khoa
+                System.out.println("Chọn khoa:");
+                System.out.println("1. Khoa Luật");
+                System.out.println("2. Khoa Tiếng Anh thương mại");
+                System.out.println("3. Khoa Tiếng Nhật");
+                System.out.println("4. Khoa Tiếng Pháp");
+                int deptChoice = Integer.parseInt(scanner.nextLine());
+                Department department;
+                switch (deptChoice) {
+                    case 1:
+                        department = Department.LAW;
+                        break;
+                    case 2:
+                        department = Department.BUSINESS_ENGLISH;
+                        break;
+                    case 3:
+                        department = Department.JAPANESE;
+                        break;
+                    case 4:
+                        department = Department.FRENCH;
+                        break;
+                    default:
+                        System.out.println("Lựa chọn không hợp lệ.");
+                        return;
+                }
+                for (Student s : studentList) {
+                    if (s.getDepartment() == department) {
+                        results.add(s);
+                    }
+                }
+                break;
+                
+            case 4: // tìm theo khoa + tên
+                System.out.println("Chọn khoa:");
+                System.out.println("1. Khoa Luật");
+                System.out.println("2. Khoa Tiếng Anh thương mại");
+                System.out.println("3. Khoa Tiếng Nhật");
+                System.out.println("4. Khoa Tiếng Pháp");
+                deptChoice = Integer.parseInt(scanner.nextLine());
+                switch (deptChoice) {
+                    case 1:
+                        department = Department.LAW;
+                        break;
+                    case 2:
+                        department = Department.BUSINESS_ENGLISH;
+                        break;
+                    case 3:
+                        department = Department.JAPANESE;
+                        break;
+                    case 4:
+                        department = Department.FRENCH;
+                        break;
+                    default:
+                        System.out.println("Lựa chọn không hợp lệ.");
+                        return;
+                }
+                System.out.print("Nhập họ tên: ");
+                name = scanner.nextLine().toLowerCase();
+                for (Student s : studentList) {
+                    if (s.getDepartment() == department && s.getName().toLowerCase().contains(name)) {
+                        results.add(s);
+                    }
+                }
+                break;
+                
+            default:
+                System.out.println("Lựa chọn không hợp lệ.");
+                return;
         }
+        
         if (results.isEmpty()) {
             System.out.println("Không tìm thấy sinh viên nào.");
         } else {
@@ -554,4 +645,5 @@ public class StudentManagementSystem {
             }
         }
     }
+    
 }

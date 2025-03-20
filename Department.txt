@@ -1,0 +1,4 @@
+LAW, Khoa Luật
+BUSINESS_ENGLISH, Khoa Tiếng Anh thương mại
+JAPANESE, Khoa Tiếng Nhật
+FRENCH, Khoa Tiếng Pháp
