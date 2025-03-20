@@ -40,8 +40,10 @@ public class StudentManagementSystem {
                 case 5:
                     break;
                 case 6:
+                    editStudentStatus();
                     break;
                 case 7:
+                    editProgram();
                     break;
                 case 8:
                     System.out.println("Thoát chương trình.");
@@ -49,7 +51,7 @@ public class StudentManagementSystem {
                 default:
                     System.out.println("Chọn không hợp lệ. Vui lòng thử lại.");
             }
-        } while (choice != 5);
+        } while (choice != 8);
     }
 
     private static void showMenu() {
@@ -57,7 +59,7 @@ public class StudentManagementSystem {
         System.out.println("1. Thêm sinh viên mới");
         System.out.println("2. Xóa sinh viên");
         System.out.println("3. Cập nhật thông tin sinh viên");
-        System.out.println("4. Tìm kiếm sinh viên theo MSSV hoặc Họ tên");
+        System.out.println("4. Tìm kiếm sinh viên");
         System.out.println("5. Chỉnh sửa khoa");
         System.out.println("6. Chỉnh sửa tình trạng sinh viên");
         System.out.println("7. Chỉnh sửa chương trình");
@@ -533,7 +535,7 @@ public class StudentManagementSystem {
         System.out.println("Cập nhật thông tin sinh viên thành công!");
     }
 
-    // 4. Tìm kiếm sinh viên theo MSSV hoặc Họ tên
+    // 4. Tìm kiếm sinh viên
     private static void searchStudent() {
         System.out.println("\nTìm kiếm sinh viên theo:");
         System.out.println("1. Mã số sinh viên");
@@ -646,4 +648,63 @@ public class StudentManagementSystem {
         }
     }
     
+    private static void editProgram() {
+        System.out.println("Nhập mã số sinh viên cần chỉnh sửa chương trình: ");
+        String id = scanner.nextLine();
+        Student student = null;
+        for (Student s : studentList) {
+            if (s.getId().equals(id)) {
+                student = s;
+                break;
+            }
+        }
+        if (student == null) {
+            System.out.println("Không tìm thấy sinh viên với mã số " + id);
+            return;
+        }
+        System.out.println("Nhập chương trình mới: ");
+        student.setProgram(scanner.nextLine());
+        saveStudentsToFile();
+        System.out.println("Chỉnh sửa chương trình học của sinh viên thành công!");
+    }
+    
+    private static void editStudentStatus(){
+        System.out.println("Nhập mã số sinh viên cần chỉnh sửa tình trạng: ");
+        String id = scanner.nextLine();
+        Student student = null;
+        for (Student s : studentList) {
+            if (s.getId().equals(id)) {
+                student = s;
+                break;
+            }
+        }
+        if (student == null) {
+            System.out.println("Không tìm thấy sinh viên với mã số " + id);
+            return;
+        }
+        System.out.println("Chọn tình trạng sinh viên:");
+        System.out.println("1. Đang học");
+        System.out.println("2. Đã tốt nghiệp");
+        System.out.println("3. Đã thôi học");
+        System.out.println("4. Tạm dừng học");
+        int statusChoice = Integer.parseInt(scanner.nextLine());
+        switch (statusChoice) {
+            case 1:
+                student.setStatus(StudentStatus.STUDYING);
+                break;
+            case 2:
+                student.setStatus(StudentStatus.GRADUATED);
+                break;
+            case 3:
+                student.setStatus(StudentStatus.DROPPED_OUT);
+                break;
+            case 4:
+                student.setStatus(StudentStatus.TEMPORARY_STOP);
+                break;
+            default:
+                System.out.println("Lựa chọn không hợp lệ.");
+        }
+        saveStudentsToFile();
+        System.out.println("Chỉnh sửa tình trạng sinh viên thành công!");
+    }
 }
