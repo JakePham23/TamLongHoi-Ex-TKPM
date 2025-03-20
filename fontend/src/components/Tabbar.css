@@ -1,0 +1,60 @@
+.tabbar {
+  width: 100px; /* Giảm chiều rộng để nhỏ hơn */
+  height: 100vh;
+  background-color: #1e293b;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 10px; /* Giảm padding */
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+.tabbar.collapsed {
+  width: 60px; /* Thu gọn hơn */
+}
+
+/* Căn logo vào giữa */
+.tabbar-logo {
+  width: 90px; /* Giảm kích thước logo */
+  height: auto;
+  display: block;
+  margin: 10px auto; /* Căn giữa theo chiều dọc */
+}
+
+/* Căn menu sát lại */
+.menu {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 8px; /* Giảm padding để menu gọn hơn */
+  gap: 8px; /* Giảm khoảng cách giữa icon và chữ */
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Thu gọn tabbar, chỉ hiển thị icon */
+.tabbar.collapsed .tabbar-logo {
+  display: block; /* Giữ logo hiển thị */
+  width: 40px; /* Giảm kích thước logo khi thu gọn */
+}
+
+.tabbar.collapsed .menu-item span {
+  display: none;
+}
+
+.tabbar.collapsed .menu-item {
+  justify-content: center;
+}

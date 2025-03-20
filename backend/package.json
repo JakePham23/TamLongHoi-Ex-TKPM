@@ -1,0 +1,35 @@
+{
+  "name": "tamlonghoi-ex-tkpm",
+  "version": "1.0.0",
+  "description": "Student Management",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JakePham23/TamLongHoi-Ex-TKPM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JakePham23/TamLongHoi-Ex-TKPM/issues"
+  },
+  "homepage": "https://github.com/JakePham23/TamLongHoi-Ex-TKPM#readme",
+  "dependencies": {
+    "bcrypto": "^5.5.2",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
