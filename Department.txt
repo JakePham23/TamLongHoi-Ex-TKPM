@@ -1,4 +1,6 @@
-LAW, Khoa Luật
-BUSINESS_ENGLISH, Khoa Tiếng Anh thương mại
-JAPANESE, Khoa Tiếng Nhật
-FRENCH, Khoa Tiếng Pháp
+LAW,Khoa Luật
+BUSINESS_ENGLISH,Khoa Tiếng Anh thương mại
+JAPANESE,Khoa Tiếng Nhật
+FRENCH,Khoa Tiếng Pháp
+CHINESE,Khoa Tiếng Trung
+SPANISH,Khoa Tieng Tay Ban Nha

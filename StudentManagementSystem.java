@@ -12,9 +12,46 @@ import java.util.Scanner;
 public class StudentManagementSystem {
     // Danh sách lưu trữ sinh viên
     private static List<Student> studentList = new ArrayList<>();
+
+    //Danh sách lưu trữ khoa
+    private static List<Department> departmentList = new ArrayList<>();
+
+    // Lấy danh sách khoa lên từ Department.txt
+    private static void loadDepartmentsFromFile() {
+        departmentList.clear();
+        try (BufferedReader reader = new BufferedReader(new FileReader("Department.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(",");
+                if (data.length == 2) {
+                    Department department = new Department(data[0].trim(), data[1].trim());
+                    departmentList.add(department);
+                }
+            }
+            
+            // Nếu file trống hoặc không tồn tại, tạo danh sách mặc định
+            if (departmentList.isEmpty()) {
+                departmentList.add(new Department("LAW", "Khoa Luật"));
+                departmentList.add(new Department("BUSINESS_ENGLISH", "Khoa Tiếng Anh thương mại"));
+                departmentList.add(new Department("JAPANESE", "Khoa Tiếng Nhật"));
+                departmentList.add(new Department("FRENCH", "Khoa Tiếng Pháp"));
+                saveDepartmentsToFile();
+            }
+        } catch (IOException e) {
+            System.out.println("Lỗi khi đọc tệp tin Department.txt: " + e.getMessage());
+            // Tạo danh sách mặc định nếu có lỗi
+            departmentList.add(new Department("LAW", "Khoa Luật"));
+            departmentList.add(new Department("BUSINESS_ENGLISH", "Khoa Tiếng Anh thương mại"));
+            departmentList.add(new Department("JAPANESE", "Khoa Tiếng Nhật"));
+            departmentList.add(new Department("FRENCH", "Khoa Tiếng Pháp"));
+            saveDepartmentsToFile();
+        }
+    }
+
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        loadDepartmentsFromFile();
         loadStudentsFromFile();
         int choice;
         do {
@@ -38,6 +75,7 @@ public class StudentManagementSystem {
                     searchStudent();
                     break;
                 case 5:
+                    editDepartment();
                     break;
                 case 6:
                     editStudentStatus();
@@ -119,7 +157,7 @@ public class StudentManagementSystem {
                         .setName(data[1])
                         .setDob(data[2])
                         .setGender(Boolean.parseBoolean(data[3]))
-                        .setDepartment(Department.valueOf(data[4]))
+                        .setDepartment(findDepartmentByCode(data[4]))
                         .setSchoolYear(Integer.parseInt(data[5]))
                         .setProgram(data[6])
                         .setEmail(data[7])
@@ -157,7 +195,7 @@ public class StudentManagementSystem {
                         student.getName(),
                         student.getDob(),
                         String.valueOf(student.isGender()),
-                        student.getDepartment().name(),
+                        student.getDepartment().getCode(),
                         String.valueOf(student.getSchoolYear()),
                         student.getProgram(),
                         student.getEmail(),
@@ -272,30 +310,7 @@ public class StudentManagementSystem {
         System.out.print("Giới tính (true: nam, false: nữ): ");
         boolean gender = Boolean.parseBoolean(scanner.nextLine());
 
-        System.out.println("Chọn khoa:");
-        System.out.println("1. Khoa Luật");
-        System.out.println("2. Khoa Tiếng Anh thương mại");
-        System.out.println("3. Khoa Tiếng Nhật");
-        System.out.println("4. Khoa Tiếng Pháp");
-        int deptChoice = Integer.parseInt(scanner.nextLine());
-        Department department;
-        switch (deptChoice) {
-            case 1:
-                department = Department.LAW;
-                break;
-            case 2:
-                department = Department.BUSINESS_ENGLISH;
-                break;
-            case 3:
-                department = Department.JAPANESE;
-                break;
-            case 4:
-                department = Department.FRENCH;
-                break;
-            default:
-                System.out.println("Lựa chọn không hợp lệ, đặt mặc định Khoa Luật.");
-                department = Department.LAW;
-        }
+        Department department = selectDepartment();
 
         System.out.print("Năm học: ");
         int schoolYear = Integer.parseInt(scanner.nextLine());
@@ -434,28 +449,7 @@ public class StudentManagementSystem {
                 student.setGender(Boolean.parseBoolean(scanner.nextLine()));
                 break;
             case 4:
-                System.out.println("Chọn khoa:");
-                System.out.println("1. Khoa Luật");
-                System.out.println("2. Khoa Tiếng Anh thương mại");
-                System.out.println("3. Khoa Tiếng Nhật");
-                System.out.println("4. Khoa Tiếng Pháp");
-                int deptChoice = Integer.parseInt(scanner.nextLine());
-                switch (deptChoice) {
-                    case 1:
-                        student.setDepartment(Department.LAW);
-                        break;
-                    case 2:
-                        student.setDepartment(Department.BUSINESS_ENGLISH);
-                        break;
-                    case 3:
-                        student.setDepartment(Department.JAPANESE);
-                        break;
-                    case 4:
-                        student.setDepartment(Department.FRENCH);
-                        break;
-                    default:
-                        System.out.println("Lựa chọn không hợp lệ.");
-                }
+                student.setDepartment(selectDepartment());
                 break;
             case 5:
                 System.out.print("Nhập năm học mới: ");
@@ -568,31 +562,8 @@ public class StudentManagementSystem {
                 }
                 break;
                 
-            case 3: //Timf theo khoa
-                System.out.println("Chọn khoa:");
-                System.out.println("1. Khoa Luật");
-                System.out.println("2. Khoa Tiếng Anh thương mại");
-                System.out.println("3. Khoa Tiếng Nhật");
-                System.out.println("4. Khoa Tiếng Pháp");
-                int deptChoice = Integer.parseInt(scanner.nextLine());
-                Department department;
-                switch (deptChoice) {
-                    case 1:
-                        department = Department.LAW;
-                        break;
-                    case 2:
-                        department = Department.BUSINESS_ENGLISH;
-                        break;
-                    case 3:
-                        department = Department.JAPANESE;
-                        break;
-                    case 4:
-                        department = Department.FRENCH;
-                        break;
-                    default:
-                        System.out.println("Lựa chọn không hợp lệ.");
-                        return;
-                }
+            case 3: //Tìm theo khoa
+                Department department = selectDepartment();
                 for (Student s : studentList) {
                     if (s.getDepartment() == department) {
                         results.add(s);
@@ -601,29 +572,7 @@ public class StudentManagementSystem {
                 break;
                 
             case 4: // tìm theo khoa + tên
-                System.out.println("Chọn khoa:");
-                System.out.println("1. Khoa Luật");
-                System.out.println("2. Khoa Tiếng Anh thương mại");
-                System.out.println("3. Khoa Tiếng Nhật");
-                System.out.println("4. Khoa Tiếng Pháp");
-                deptChoice = Integer.parseInt(scanner.nextLine());
-                switch (deptChoice) {
-                    case 1:
-                        department = Department.LAW;
-                        break;
-                    case 2:
-                        department = Department.BUSINESS_ENGLISH;
-                        break;
-                    case 3:
-                        department = Department.JAPANESE;
-                        break;
-                    case 4:
-                        department = Department.FRENCH;
-                        break;
-                    default:
-                        System.out.println("Lựa chọn không hợp lệ.");
-                        return;
-                }
+                department = selectDepartment();
                 System.out.print("Nhập họ tên: ");
                 name = scanner.nextLine().toLowerCase();
                 for (Student s : studentList) {
@@ -706,5 +655,112 @@ public class StudentManagementSystem {
         }
         saveStudentsToFile();
         System.out.println("Chỉnh sửa tình trạng sinh viên thành công!");
+    }
+
+    private static void editDepartment(){
+        System.out.println("\nChỉnh sửa thông tin khoa:");
+        System.out.println("1. Thêm khoa mới");
+        System.out.println("2. Đổi tên khoa");
+        System.out.print("Chọn chức năng: ");
+        
+        int choice;
+        try {
+            choice = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Lựa chọn không hợp lệ.");
+            return;
+        }
+
+        switch (choice) {
+            case 1:
+                addNewDepartment();
+                break;
+            case 2:
+                renameDepartment();
+                break;
+            default:
+                System.out.println("Lựa chọn không hợp lệ.");
+        }
+    }
+
+    // Lưu danh sách khoa xuống file
+    private static void saveDepartmentsToFile() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Department.txt", false))) {
+            for (Department dept : departmentList) {
+                writer.write(dept.toString());
+                writer.newLine();
+            }
+            System.out.println("Lưu thông tin khoa thành công!");
+        } catch (IOException e) {
+            System.out.println("Lỗi khi ghi file Department.txt: " + e.getMessage());
+        }
+    }
+
+    // Thêm khoa mới
+    private static void addNewDepartment() {
+        System.out.print("Nhập mã khoa (viết liền, không dấu): ");
+        String deptCode = scanner.nextLine().toUpperCase();
+        
+        for (Department dept : departmentList) {
+            if (dept.getCode().equals(deptCode)) {
+                System.out.println("Mã khoa đã tồn tại!");
+                return;
+            }
+        }
+
+        System.out.print("Nhập tên khoa: ");
+        String deptName = scanner.nextLine();
+
+        Department newDept = new Department(deptCode, deptName);
+        departmentList.add(newDept);
+        saveDepartmentsToFile();
+        System.out.println("Thêm khoa mới thành công!");
+    }
+
+    // Đổi tên khoa
+    private static void renameDepartment() {
+        System.out.println("Chọn khoa cần đổi tên:");
+        Department dept = selectDepartment();
+        if (dept != null) {
+            System.out.print("Nhập tên mới cho khoa: ");
+            String newName = scanner.nextLine();
+            dept.setDisplayName(newName);
+            saveDepartmentsToFile();
+            System.out.println("Đổi tên khoa thành công!");
+        }
+    }
+
+    // Chọn khoa từ danh sách
+    private static Department selectDepartment() {
+        System.out.println("Chọn khoa:");
+        int index = 1;
+        for (Department dept : departmentList) {
+            System.out.println(index + ". " + dept.getDisplayName());
+            index++;
+        }
+        
+        int choice;
+        try {
+            choice = Integer.parseInt(scanner.nextLine());
+            if (choice >= 1 && choice <= departmentList.size()) {
+                return departmentList.get(choice - 1);
+            } else {
+                System.out.println("Lựa chọn không hợp lệ, đặt mặc định là khoa đầu tiên.");
+                return departmentList.isEmpty() ? new Department("LAW", "Khoa Luật") : departmentList.get(0);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Lựa chọn không hợp lệ, đặt mặc định là khoa đầu tiên.");
+            return departmentList.isEmpty() ? new Department("LAW", "Khoa Luật") : departmentList.get(0);
+        }
+    }
+
+    // Tìm khoa theo mã
+    private static Department findDepartmentByCode(String code) {
+        for (Department dept : departmentList) {
+            if (dept.getCode().equals(code)) {
+                return dept;
+            }
+        }
+        return departmentList.isEmpty() ? new Department("LAW", "Khoa Luật") : departmentList.get(0);
     }
 }
