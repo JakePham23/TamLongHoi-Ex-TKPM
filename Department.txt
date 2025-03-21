@@ -4,3 +4,4 @@ JAPANESE,Khoa Tiếng Nhật
 FRENCH,Khoa Tiếng Pháp
 CHINESE,Khoa Tiếng Trung
 SPANISH,Khoa Tieng Tay Ban Nha
+ITALY,Khoa Tieng Italy

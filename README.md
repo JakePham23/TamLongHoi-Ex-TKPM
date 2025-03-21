@@ -24,3 +24,9 @@ javac ./*.java #Đảm bảo terminal đang cùng cấp với với các file  j
 Chạy chương trình  
 Chạy bằng Java thuần:  
 java StudentManagementSystem.java #Đảm bảo terminal đang cùng cấp với với các file java
+
+Hướng dẫn version 2.0:
+
+Sau khi chạy debug, nội dung thực hành của deadline lần này sẽ là các chức năng 4, 5, 6, 7, 8 trong showMenu(), lựa chọn chức năng thích hợp và điền thông tin để hoàn thành chức năng cần thiết. So sánh dữ liệu trước và sau khi thao tác bằng cách nhìn vào sự thay đổi trong các file students.txt. Department.txt, students_import.csv,...
+
+Hình ảnh minh chứng nằm trong file proof.pdf
