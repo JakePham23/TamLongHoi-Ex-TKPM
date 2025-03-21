@@ -1,0 +1,94 @@
+{
+  "students": [
+    {
+      "id": "22120268",
+      "name": "phu",
+      "dob": "01/01/2004",
+      "gender": true,
+      "department": {
+        "code": "BUSINESS_ENGLISH",
+        "displayName": "Khoa Tiếng Anh thương mại"
+      },
+      "schoolYear": 2022,
+      "program": "clc",
+      "email": "phune@gmail.com",
+      "phone": "0982838357",
+      "permanentAddress": {
+        "street": "nha",
+        "ward": "toi",
+        "district": "o",
+        "city": "cuoi",
+        "country": "ban do"
+      },
+      "temporaryAddress": {
+        "street": "nha",
+        "ward": "toi",
+        "district": "o",
+        "city": "cuoi",
+        "country": "ban do"
+      },
+      "mailingAddress": {
+        "street": "nha",
+        "ward": "toi",
+        "district": "o",
+        "city": "cuoi",
+        "country": "ban do"
+      },
+      "status": "STUDYING",
+      "identityDocument": {
+        "type": "CCCD",
+        "number": "098823234",
+        "issueDate": "23/12/2021",
+        "expiryDate": "22/12/2029",
+        "issuePlace": "vietnam",
+        "issueCountry": "vietnam"
+      },
+      "nationality": "vietnam"
+    },
+    {
+      "id": "22120269",
+      "name": "an",
+      "dob": "02/02/2003",
+      "gender": true,
+      "department": {
+        "code": "LAW",
+        "displayName": "Khoa Luật"
+      },
+      "schoolYear": 2021,
+      "program": "clc",
+      "email": "anle@gmail.com",
+      "phone": "0912345678",
+      "permanentAddress": {
+        "street": "so",
+        "ward": "5",
+        "district": "duong",
+        "city": "abc",
+        "country": "vietnam"
+      },
+      "temporaryAddress": {
+        "street": "so",
+        "ward": "5",
+        "district": "duong",
+        "city": "abc",
+        "country": "vietnam"
+      },
+      "mailingAddress": {
+        "street": "so",
+        "ward": "5",
+        "district": "duong",
+        "city": "abc",
+        "country": "vietnam"
+      },
+      "status": "TEMPORARY_STOP",
+      "identityDocument": {
+        "type": "CCCD",
+        "number": "0911223344",
+        "issueDate": "15/06/2020",
+        "expiryDate": "14/06/2028",
+        "issuePlace": "vietnam",
+        "issueCountry": "vietnam"
+      },
+      "nationality": "vietnam"
+    }
+  ]
+} 

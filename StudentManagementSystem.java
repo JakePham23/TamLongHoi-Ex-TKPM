@@ -8,6 +8,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.lang.reflect.Type;
+import java.io.OutputStreamWriter;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+import java.io.FileInputStream;
 
 public class StudentManagementSystem {
     // Danh sách lưu trữ sinh viên
@@ -84,12 +89,15 @@ public class StudentManagementSystem {
                     editProgram();
                     break;
                 case 8:
+                    handleImportExport();
+                    break;
+                case 9:
                     System.out.println("Thoát chương trình.");
                     break;
                 default:
                     System.out.println("Chọn không hợp lệ. Vui lòng thử lại.");
             }
-        } while (choice != 8);
+        } while (choice != 9);
     }
 
     private static void showMenu() {
@@ -101,7 +109,8 @@ public class StudentManagementSystem {
         System.out.println("5. Chỉnh sửa khoa");
         System.out.println("6. Chỉnh sửa tình trạng sinh viên");
         System.out.println("7. Chỉnh sửa chương trình");
-        System.out.println("8. Thoát");
+        System.out.println("8. Import/Export dữ liệu");
+        System.out.println("9. Thoát");
         System.out.print("Chọn chức năng: ");
     }
 
@@ -762,5 +771,218 @@ public class StudentManagementSystem {
             }
         }
         return departmentList.isEmpty() ? new Department("LAW", "Khoa Luật") : departmentList.get(0);
+    }
+
+    private static void handleImportExport() {
+        System.out.println("\n------ Import/Export dữ liệu --------");
+        System.out.println("1. Export sang CSV");
+        System.out.println("2. Import từ CSV");
+        System.out.println("3. Export sang JSON");
+        System.out.println("4. Import từ JSON");
+        System.out.println("5. Quay lại");
+        System.out.print("Chọn chức năng: ");
+
+        int choice;
+        try {
+            choice = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Lựa chọn không hợp lệ.");
+            return;
+        }
+
+        switch (choice) {
+            case 1:
+                exportToCSV();
+                break;
+            case 2:
+                importFromCSV();
+                break;
+            case 3:
+                exportToJSON();
+                break;
+            case 4:
+                importFromJSON();
+                break;
+            case 5:
+                return;
+            default:
+                System.out.println("Lựa chọn không hợp lệ.");
+        }
+    }
+
+    private static void exportToCSV() {
+        try (BufferedWriter writer = new BufferedWriter(
+                new OutputStreamWriter(new FileOutputStream("students_export.csv"), "UTF-8"))) {
+            // Ghi header
+            writer.write("MSSV,Họ tên,Ngày sinh,Giới tính,Khoa,Năm học,Chương trình,Email,Số điện thoại," +
+                    "Địa chỉ thường trú,Địa chỉ tạm trú,Địa chỉ nhận thư,Tình trạng,Giấy tờ tùy thân,Quốc tịch");
+            writer.newLine();
+
+            // Ghi dữ liệu
+            for (Student student : studentList) {
+                writer.write(String.join(",",
+                        student.getId(),
+                        student.getName(),
+                        student.getDob(),
+                        String.valueOf(student.isGender()),
+                        student.getDepartment().getCode(),
+                        String.valueOf(student.getSchoolYear()),
+                        student.getProgram(),
+                        student.getEmail(),
+                        student.getPhone(),
+                        formatAddress(student.getPermanentAddress()).replace(",", ";"),
+                        formatAddress(student.getTemporaryAddress()).replace(",", ";"),
+                        formatAddress(student.getMailingAddress()).replace(",", ";"),
+                        student.getStatus().name(),
+                        student.getIdentityDocument().toString().replace(",", ";"),
+                        student.getNationality()));
+                writer.newLine();
+            }
+            System.out.println("Xuất dữ liệu CSV thành công vào file students_export.csv!");
+        } catch (IOException e) {
+            System.out.println("Lỗi khi xuất file CSV: " + e.getMessage());
+        }
+    }
+
+    private static void importFromCSV() {
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(new FileInputStream("students_import.csv"), "UTF-8"))) {
+            String line = reader.readLine(); // Bỏ qua header
+            if (line == null) {
+                System.out.println("File CSV trống!");
+                return;
+            }
+
+            List<Student> tempList = new ArrayList<>(); // Danh sách tạm để lưu sinh viên
+            int lineNumber = 1; // Đếm số dòng để báo lỗi chính xác
+            
+            while ((line = reader.readLine()) != null) {
+                lineNumber++;
+                try {
+                    String[] data = line.split(",");
+                    if (data.length < 15) {
+                        System.out.println("Lỗi ở dòng " + lineNumber + ": Thiếu thông tin (cần 15 trường dữ liệu)");
+                        continue;
+                    }
+
+                    // Kiểm tra và xử lý dữ liệu trống
+                    for (int i = 0; i < data.length; i++) {
+                        data[i] = data[i].trim();
+                        if (data[i].isEmpty()) {
+                            System.out.println("Lỗi ở dòng " + lineNumber + ": Trường dữ liệu thứ " + (i + 1) + " trống");
+                            continue;
+                        }
+                    }
+
+                    // Xử lý địa chỉ
+                    String[] permAddr = data[9].split(";");
+                    String[] tempAddr = data[10].split(";");
+                    String[] mailAddr = data[11].split(";");
+                    
+                    Address permanentAddress = new Address(
+                            permAddr.length > 0 ? permAddr[0] : "",
+                            permAddr.length > 1 ? permAddr[1] : "",
+                            permAddr.length > 2 ? permAddr[2] : "",
+                            permAddr.length > 3 ? permAddr[3] : "",
+                            permAddr.length > 4 ? permAddr[4] : "");
+                    
+                    Address temporaryAddress = new Address(
+                            tempAddr.length > 0 ? tempAddr[0] : "",
+                            tempAddr.length > 1 ? tempAddr[1] : "",
+                            tempAddr.length > 2 ? tempAddr[2] : "",
+                            tempAddr.length > 3 ? tempAddr[3] : "",
+                            tempAddr.length > 4 ? tempAddr[4] : "");
+                    
+                    Address mailingAddress = new Address(
+                            mailAddr.length > 0 ? mailAddr[0] : "",
+                            mailAddr.length > 1 ? mailAddr[1] : "",
+                            mailAddr.length > 2 ? mailAddr[2] : "",
+                            mailAddr.length > 3 ? mailAddr[3] : "",
+                            mailAddr.length > 4 ? mailAddr[4] : "");
+
+                    // Xử lý giấy tờ tùy thân
+                    String[] identityDoc = data[13].split(";");
+                    if (identityDoc.length < 6) {
+                        System.out.println("Lỗi ở dòng " + lineNumber + ": Thiếu thông tin giấy tờ tùy thân");
+                        continue;
+                    }
+
+                    IdentityDocument identityDocument = new IdentityDocument(
+                            identityDoc[0],
+                            identityDoc[1],
+                            identityDoc[2],
+                            identityDoc[3],
+                            identityDoc[4],
+                            identityDoc[5]);
+
+                    // Kiểm tra khoa có tồn tại
+                    Department department = findDepartmentByCode(data[4]);
+                    if (department == null) {
+                        System.out.println("Lỗi ở dòng " + lineNumber + ": Không tìm thấy khoa với mã " + data[4]);
+                        continue;
+                    }
+
+                    // Kiểm tra năm học
+                    int schoolYear;
+                    try {
+                        schoolYear = Integer.parseInt(data[5]);
+                        if (schoolYear <= 0) {
+                            System.out.println("Lỗi ở dòng " + lineNumber + ": Năm học không hợp lệ");
+                            continue;
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.println("Lỗi ở dòng " + lineNumber + ": Năm học phải là số");
+                        continue;
+                    }
+
+                    try {
+                        Student student = new Student.StudentBuilder()
+                                .setId(data[0])
+                                .setName(data[1])
+                                .setDob(data[2])
+                                .setGender(Boolean.parseBoolean(data[3]))
+                                .setDepartment(department)
+                                .setSchoolYear(schoolYear)
+                                .setProgram(data[6])
+                                .setEmail(data[7])
+                                .setPhone(data[8])
+                                .setPermanentAddress(permanentAddress)
+                                .setTemporaryAddress(temporaryAddress)
+                                .setMailingAddress(mailingAddress)
+                                .setStatus(StudentStatus.valueOf(data[12]))
+                                .setIdentityDocument(identityDocument)
+                                .setNationality(data[14])
+                                .build();
+                        
+                        tempList.add(student);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Lỗi ở dòng " + lineNumber + ": " + e.getMessage());
+                    }
+                } catch (Exception e) {
+                    System.out.println("Lỗi ở dòng " + lineNumber + ": " + e.getMessage());
+                }
+            }
+
+            if (!tempList.isEmpty()) {
+                studentList.clear();
+                studentList.addAll(tempList);
+                saveStudentsToFile();
+                System.out.println("Đã nhập thành công " + tempList.size() + " sinh viên từ file CSV!");
+            } else {
+                System.out.println("Không có dữ liệu hợp lệ để import!");
+            }
+        } catch (IOException e) {
+            System.out.println("Lỗi khi đọc file CSV: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Lỗi không xác định: " + e.getMessage());
+        }
+    }
+
+    private static void exportToJSON() {
+        
+    }
+
+    private static void importFromJSON() {
+
     }
 }
