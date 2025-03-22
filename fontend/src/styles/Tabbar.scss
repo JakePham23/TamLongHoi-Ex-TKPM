@@ -1,0 +1,37 @@
+@import './constant';
+
+// screen tabbar
+.Tabbar{
+    width: $Tabbar_Width;
+    height: $Tabbar_Height;
+    display: flex;
+    flex-direction: column;
+    background-color: $Tabbar_Color;
+    margin: 0;
+}
+
+
+// logo
+.Logo{
+    display: flex;
+    flex-direction: row;
+}
+
+.Logo img{
+    width: $Logo_Size;
+    height: $Logo_Size;
+    padding: 10px;
+}
+
+.Logo h2{
+    padding-top: 1rem;
+}
+// content
+.ListContent{
+    text-decoration: none;
+    list-style: none;
+}
+
+.ListContent li{
+    padding: 0.5rem;
+}
