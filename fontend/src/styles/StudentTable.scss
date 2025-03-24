@@ -1,0 +1,56 @@
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  
+    th, td {
+      border: 1px solid #ddd;
+      padding: 5px 10px;
+      text-align: left;
+    }
+  
+    th {
+      background-color: #f4f4f4;
+      font-weight: bold;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  
+    /* Giới hạn chiều rộng của cột "Thao tác" */
+    th:last-child,
+    td:last-child {
+      width: 150px; 
+      text-align: center;
+    }
+  
+    .buttonBox {
+      display: flex;
+      gap: 5px; 
+      justify-content: center;
+      align-items: center;
+    }
+  
+    button {
+      border: none;
+      cursor: pointer;
+      padding: 5px 8px;
+      font-size: 14px; 
+    }
+  
+    .view-btn {
+      background-color: #007bff;
+      color: white;
+    }
+  
+    .delete-btn {
+      background-color: #dc3545;
+      color: white;
+    }
+  }
+  

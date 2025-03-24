@@ -9,11 +9,11 @@ class StudentManagementController {
     async addStudent(req, res, next) {
         try {
             const { 
-                studentId, fullname, dob, gender, schoolYear, program, 
-                department, email, phone, studentStatus, address, 
+                studentId, fullname, dob, gender, schoolYear, program
+                , email, phone, studentStatus, address, 
                 addressTemp, addressMail, identityDocument, nationality 
             } = req.body;
-
+            const department = "67d8eaa77e02c451d88fa5e0"
             // Kiểm tra Student ID, Email, Phone có trùng không
             const existingStudent = await studentModel.findOne({ 
                 $or: [{ studentId }, { email }, { phone }] 
@@ -67,7 +67,12 @@ class StudentManagementController {
         try {
             const { studentId } = req.params;
             const updateData = req.body;
-
+            const existingStudent = await updateData.findOne({ 
+                $or: [{ studentId }, { email }, { phone }] 
+            });
+            if (existingStudent && existingStudent.studentId!== studentId) {
+                throw new BadRequest('Student ID, Email hoặc Phone đã tồn tại');
+            }
             const updatedStudent = await studentModel.findOneAndUpdate(
                 { studentId },
                 updateData,

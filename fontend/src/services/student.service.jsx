@@ -38,6 +38,25 @@ class StudentService {
             console.error(error);
         }
     }
+
+    async addStudent(studentData) {
+        try {
+            const response = await fetch(`${API_BASE_URL}/addStudent`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(studentData),
+            });
+    
+            if (!response.ok) throw new Error("Lỗi khi thêm sinh viên");
+    
+            return await response.json();
+        } catch (error) {
+            console.error(error);
+        }
+    }
+    
 }
 
 export default new StudentService();
