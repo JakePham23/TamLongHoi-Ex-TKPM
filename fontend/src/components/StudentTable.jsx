@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import Button from "./Button";
 import { FaEye, FaTrash, FaSort, FaSortUp, FaSortDown } from "react-icons/fa";
 import "../styles/StudentTable.scss";
 
 const StudentTable = ({ students, onView, onDelete }) => {
   const [sortField, setSortField] = useState(null);
-  const [sortOrder, setSortOrder] = useState("asc"); // "asc" hoặc "desc"
+  const [sortOrder, setSortOrder] = useState("asc");
 
   const handleSort = (field) => {
     const newOrder = sortField === field && sortOrder === "asc" ? "desc" : "asc";
@@ -13,19 +13,49 @@ const StudentTable = ({ students, onView, onDelete }) => {
     setSortOrder(newOrder);
   };
 
-  // Sắp xếp danh sách sinh viên theo trường được chọn
+  // Hàm hỗ trợ sắp xếp nested field
+  const getNestedValue = (obj, path) => {
+    return path.split(".").reduce((value, key) => value?.[key] || "", obj);
+  };
+
   const sortedStudents = [...students].sort((a, b) => {
     if (!sortField) return 0;
-    const valueA = a[sortField] || "";
-    const valueB = b[sortField] || "";
+    const valueA = getNestedValue(a, sortField);
+    const valueB = getNestedValue(b, sortField);
+  
+    if (sortField === "schoolYear") {
+      return sortOrder === "asc" ? Number(valueA) - Number(valueB) : Number(valueB) - Number(valueA);
+    }
+  
     return sortOrder === "asc" ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
   });
+  
 
-  // Chọn icon sắp xếp phù hợp
   const getSortIcon = (field) => {
     if (sortField !== field) return <FaSort />;
     return sortOrder === "asc" ? <FaSortUp /> : <FaSortDown />;
   };
+
+  // Cuộn vô hạn
+  const [visibleCount, setVisibleCount] = useState(10);
+  const observer = useRef(null);
+
+  const loadMoreStudents = () => {
+    setVisibleCount((prev) => prev + 10);
+  };
+
+  const lastStudentRef = useCallback(
+    (node) => {
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          loadMoreStudents();
+        }
+      });
+      if (node) observer.current.observe(node);
+    },
+    [loadMoreStudents]
+  );
 
   return (
     <table className="student-table">
@@ -39,8 +69,8 @@ const StudentTable = ({ students, onView, onDelete }) => {
         </tr>
       </thead>
       <tbody>
-        {sortedStudents.map((student) => (
-          <tr key={student.studentId}>
+        {sortedStudents.slice(0, visibleCount).map((student, index) => (
+          <tr key={student.studentId} ref={index === visibleCount - 1 ? lastStudentRef : null}>
             <td>{student.studentId}</td>
             <td>{student.fullname}</td>
             <td>{student.department?.departmentName}</td>

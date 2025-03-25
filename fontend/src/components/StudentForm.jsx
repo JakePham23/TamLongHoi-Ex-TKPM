@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../styles/StudentForm.scss"
+import Papa from "papaparse"; // Dùng để parse CSV
 
-const ALLOWED_EMAIL_DOMAIN = "@student.university.edu.vn";
+const ALLOWED_EMAIL_DOMAIN = "@student.hcmus.edu.vn";
 const PHONE_REGEX = /^(?:\+84|0)(3|5|7|8|9)[0-9]{8}$/;
 
 const STATUS_RULES = {
@@ -11,6 +12,115 @@ const STATUS_RULES = {
   dropout: [],
 };
 const StudentForm = ({ departments, onSubmit, onClose }) => {
+  const [students, setStudents] = useState([]);
+
+   // Xử lý khi tải file CSV hoặc JSON
+   const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const content = e.target.result;
+
+      if (file.name.endsWith(".json")) {
+        try {
+          let data = JSON.parse(content);
+          if (!Array.isArray(data)) {
+            data = [data]; // Nếu file chỉ chứa 1 sinh viên, chuyển thành mảng
+          }
+          const formattedData = data.map((student) => ({
+            studentId: student.studentId || "",
+            fullname: student.fullname || "",
+            dob: student.dob || "",
+            gender: student.gender === true, // Đảm bảo giá trị boolean
+            schoolYear: String(student.schoolYear) || "",
+            program: student.program || "",
+            department: student.department || "",
+            email: student.email || "",
+            phone: student.phone || "",
+            studentStatus: student.studentStatus || "",
+            address: student.address || { houseNumber: "", street: "", ward: "", district: "", city: "", country: "" },
+            addressTemp: student.addressTemp || { houseNumber: "", street: "", ward: "", district: "", city: "", country: "" },
+            identityDocument: student.identityDocument || { type: "", idNumber: "", issuedPlace: "", issuedDate: "", expirationDate: "" },
+            nationality: student.nationality || "",
+          }));
+
+          setStudents(formattedData);
+        } catch (error) {
+          console.error("Lỗi đọc JSON:", error);
+        }
+      
+      } else if (file.name.endsWith(".csv")) {
+        Papa.parse(content, {
+          header: true,
+          skipEmptyLines: true,
+          complete: (results) => {
+            const formattedData = results.data.map((row) => ({
+              studentId: row.studentId || "",
+              fullname: row.fullname || "",
+              dob: row.dob || "",
+              gender: row.gender === "true", // Convert thành boolean
+              schoolYear: String(row.schoolYear) || "",
+              program: row.program || "",
+              department: row.department || "",
+              email: row.email || "",
+              phone: row.phone || "",
+              studentStatus: row.studentStatus || "",
+              address: {
+                houseNumber: row.houseNumber || "",
+                street: row.street || "",
+                ward: row.ward || "",
+                district: row.district || "",
+                city: row.city || "",
+                country: row.country || "",
+              },
+              addressTemp: {
+                houseNumber: row.houseNumberTemp || "",
+                street: row.streetTemp || "",
+                ward: row.wardTemp || "",
+                district: row.districtTemp || "",
+                city: row.cityTemp || "",
+                country: row.countryTemp || "",
+              },
+              identityDocument: {
+                type: row.identityType || "",
+                idNumber: row.identityIdNumber || "",
+                issuedPlace: row.identityIssuedPlace || "",
+                issuedDate: row.identityIssuedDate || "",
+                expirationDate: row.identityExpirationDate || "",
+              },
+              nationality: row.nationality || "Việt Nam",
+            }));
+        
+            setStudents(formattedData);
+          },
+          error: (error) => {
+            console.error("Lỗi đọc CSV:", error);
+          },
+        });
+        
+      }
+    };
+
+    reader.readAsText(file);
+   };
+
+  
+
+   const handleImport = async () => {
+    if (students.length > 0) {
+      for (const student of students) {
+        try {
+          await onSubmit(student);
+        } catch (error) {
+          console.error(`Lỗi khi thêm sinh viên ${student.fullname}:`, error);
+        }
+      }
+      onClose();
+    }
+  };
+  
   const [newStudent, setNewStudent] = useState({
     studentId: "",
     fullname: "",
@@ -91,6 +201,22 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
     <div className="student-detail-overlay-adding" onClick={onClose}>
       <div className="student-detail-adding" onClick={(e) => e.stopPropagation()}>
         <h2>Thêm sinh viên</h2>
+
+        <label>Tải file CSV hoặc JSON:</label>
+        <input type="file" accept=".csv,.json" onChange={handleFileUpload} />
+
+        {students.length > 0 && (
+          <div>
+            <h3>Danh sách sinh viên đã nhập:</h3>
+            <ul>
+              {students.map((student, index) => (
+                <li key={index}>{student.fullname} - {student.studentId}</li>
+              ))}
+            </ul>
+            <button onClick={handleImport}>Nhập dữ liệu</button>
+          </div>
+        )}
+
         <input type="text" name="fullname" placeholder="Họ và tên" value={newStudent.fullname} onChange={handleChange} />
         <input type="text" name="studentId" placeholder="MSSV" value={newStudent.studentId} onChange={handleChange} />
         

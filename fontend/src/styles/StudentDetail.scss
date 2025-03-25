@@ -61,8 +61,32 @@
       padding: 0rem 2rem;
       text-align: flex-start;
     }
-  
+    .button-group{
+      display: flex;
+      flex-direction: wrap;
+      justify-content: space-between;
+    }
     .edit-button {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background-color: #a83232;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .export-button {
+      position: absolute;
+      background-color: #32a85d;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .save-button{
       position: absolute;
       bottom: 15px;
       right: 15px;

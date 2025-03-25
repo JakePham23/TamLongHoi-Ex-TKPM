@@ -30,19 +30,22 @@ class Department{
         }
     }
 
-    async updateStudent(departmentId, updatedData) {
+    async updateDepartment(departmentId, updatedData) {
         try {
             const response = await fetch(`${API_BASE_URL}/updateDepartment/${departmentId}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(updatedData),
+                body: JSON.stringify(updatedData), 
             });
+    
             if (!response.ok) throw new Error("Lỗi khi cập nhật khoa");
-            return await response.json();
+    
+            return await response.json();  
         } catch (error) {
             console.error(error);
         }
     }
+    
 
     async deleteDepartment(departmentId) {
         try {
