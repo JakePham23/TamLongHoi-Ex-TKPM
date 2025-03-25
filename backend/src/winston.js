@@ -12,11 +12,11 @@ const logger = winston.createLogger({
     new winston.transports.Console(), // Log ra console
     new winston.transports.File({ filename: "logs/app.log", level: "info" }), // Log vào file
     new winston.transports.MongoDB({
-      db: "mongodb://localhost:27017/logsDB", // Kết nối MongoDB
+      db: "mongodb://localhost:27017/StudentManagementSystem", // Chỉ để database
       collection: "logs", // Collection lưu log
       options: { useUnifiedTopology: true },
-      level: "info", // Chỉ lưu log từ "info" trở lên
-    }),
+      level: "info",
+    })    
   ],
 });
 
@@ -32,6 +32,7 @@ const requestLogger = (req, res, next) => {
   });
   next();
 };
+
 
 // Bắt lỗi không xử lý được
 process.on("uncaughtException", (err) => {

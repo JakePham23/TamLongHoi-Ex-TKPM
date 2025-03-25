@@ -74,8 +74,6 @@
    </p>
 
 
-   **`Student Tuition Management`** 
-   >Create tuition for all students in 1 class, easily track tuition status, support payment by QR code.
    <p align="center">
    <br></br>
   
