@@ -59,9 +59,9 @@
    **`STUDENT MANAGEMENT`**
    >Easily manage student information, including personal details, contact information, change infomation and export file.
    <p align="center">
-      <!-- <img src="https://github.com/EdogawaCoTrung/StudentManagement-frontend-Reactjs-TailwindCSS/assets/112166397/09031b5f-1a07-4dd4-b027-9b73f70eadf9" width="500">
-      <img src="https://github.com/EdogawaCoTrung/StudentManagement-frontend-Reactjs-TailwindCSS/assets/112166397/6560c726-9519-46fa-a50a-0795287d7c5d" width="500">
-      <img src="https://github.com/EdogawaCoTrung/StudentManagement-frontend-Reactjs-TailwindCSS/assets/112166397/a3ac67ed-8146-410c-8962-12d49cd6876d" width="500"> -->
+      <img src="https://github.com/JakePham23/TamLongHoi-Ex-TKPM/blob/web/ex01/fontend/src/assets/images/local/StudentFeatures1.png" width="500">
+      <img src="https://github.com/JakePham23/TamLongHoi-Ex-TKPM/blob/web/ex01/fontend/src/assets/images/local/StudentFeatures2.png" width="500">      
+      <img src="https://github.com/JakePham23/TamLongHoi-Ex-TKPM/blob/web/ex01/fontend/src/assets/images/local/StudentFeatures3.png" width="500">
    </p>
    
    <br></br>
@@ -69,9 +69,8 @@
    **`DEPARTMENT MANAGEMENT`**
    >Easily manage department information,
    <p align="center">
-      <!-- <img src="https://github.com/EdogawaCoTrung/StudentManagement-frontend-Reactjs-TailwindCSS/assets/112166397/671a8bb5-4b40-48e7-9e8a-0578205136fb" width="500">
-      <img src="https://github.com/EdogawaCoTrung/StudentManagement-frontend-Reactjs-TailwindCSS/assets/112166397/42d622e0-d45d-4c9e-a362-2759be76a26e" width="500">
-      <img src="https://github.com/EdogawaCoTrung/StudentManagement-frontend-Reactjs-TailwindCSS/assets/112166397/6fa13be5-3c31-4a72-8ec6-7dd613e9c8b1" width="500"> -->
+      <img src="https://github.com/JakePham23/TamLongHoi-Ex-TKPM/blob/web/ex01/fontend/src/assets/images/local/DepartmentFeatures1.png" width="500">
+      <img src="https://github.com/JakePham23/TamLongHoi-Ex-TKPM/blob/web/ex01/fontend/src/assets/images/local/DepartmentFeatures2.png" width="500">
    </p>
 
 
