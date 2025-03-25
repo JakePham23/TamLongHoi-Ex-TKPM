@@ -1,21 +1,33 @@
-import React, { useState } from "react";
-import "../styles/StudentForm.scss"
+import React, { useState, useCallback } from "react";
+import "../../styles/StudentForm.scss";
 import Papa from "papaparse"; // Dùng để parse CSV
 
-const ALLOWED_EMAIL_DOMAIN = "@student.hcmus.edu.vn";
-const PHONE_REGEX = /^(?:\+84|0)(3|5|7|8|9)[0-9]{8}$/;
+import { validateEmail, validatePhone, validateStatusChange } from "../../utils/businessRule.util"; // Import từ utils.js
+import { ALLOWED_EMAIL_DOMAIN, PHONE_REGEX, STATUS_RULES } from "../../utils/constants"; // Import từ constants.js
 
-const STATUS_RULES = {
-  active: ["suspended", "graduated", "dropout"],
-  suspended: ["active"],
-  graduated: [],
-  dropout: [],
-};
+
 const StudentForm = ({ departments, onSubmit, onClose }) => {
   const [students, setStudents] = useState([]);
+  const [newStudent, setNewStudent] = useState({
+    studentId: "",
+    fullname: "",
+    dob: "",
+    gender: true,
+    schoolYear: "",
+    program: "CQ",
+    department: "67d8eaa27e02c451d88fa5de",
+    email: "",
+    phone: "",
+    studentStatus: "active",
+    address: { houseNumber: "", street: "", ward: "", district: "", city: "", country: "Việt Nam" },
+    addressTemp: { houseNumber: "", street: "", ward: "", district: "", city: "", country: "Việt Nam" },
+    identityDocument: { type: "CMND", idNumber: "", issuedPlace: "", issuedDate: "", expirationDate: "" },
+    nationality: "Việt Nam",
+  });
+  const [errors, setErrors] = useState({});
 
-   // Xử lý khi tải file CSV hoặc JSON
-   const handleFileUpload = (event) => {
+  // Xử lý khi tải file CSV hoặc JSON
+  const handleFileUpload = useCallback((event) => {
     const file = event.target.files[0];
     if (!file) return;
 
@@ -29,23 +41,7 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
           if (!Array.isArray(data)) {
             data = [data]; // Nếu file chỉ chứa 1 sinh viên, chuyển thành mảng
           }
-          const formattedData = data.map((student) => ({
-            studentId: student.studentId || "",
-            fullname: student.fullname || "",
-            dob: student.dob || "",
-            gender: student.gender === true, // Đảm bảo giá trị boolean
-            schoolYear: String(student.schoolYear) || "",
-            program: student.program || "",
-            department: student.department || "",
-            email: student.email || "",
-            phone: student.phone || "",
-            studentStatus: student.studentStatus || "",
-            address: student.address || { houseNumber: "", street: "", ward: "", district: "", city: "", country: "" },
-            addressTemp: student.addressTemp || { houseNumber: "", street: "", ward: "", district: "", city: "", country: "" },
-            identityDocument: student.identityDocument || { type: "", idNumber: "", issuedPlace: "", issuedDate: "", expirationDate: "" },
-            nationality: student.nationality || "",
-          }));
-
+          const formattedData = data.map((student) => formatStudentData(student));
           setStudents(formattedData);
         } catch (error) {
           console.error("Lỗi đọc JSON:", error);
@@ -56,59 +52,55 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
           header: true,
           skipEmptyLines: true,
           complete: (results) => {
-            const formattedData = results.data.map((row) => ({
-              studentId: row.studentId || "",
-              fullname: row.fullname || "",
-              dob: row.dob || "",
-              gender: row.gender === "true", // Convert thành boolean
-              schoolYear: String(row.schoolYear) || "",
-              program: row.program || "",
-              department: row.department || "",
-              email: row.email || "",
-              phone: row.phone || "",
-              studentStatus: row.studentStatus || "",
-              address: {
-                houseNumber: row.houseNumber || "",
-                street: row.street || "",
-                ward: row.ward || "",
-                district: row.district || "",
-                city: row.city || "",
-                country: row.country || "",
-              },
-              addressTemp: {
-                houseNumber: row.houseNumberTemp || "",
-                street: row.streetTemp || "",
-                ward: row.wardTemp || "",
-                district: row.districtTemp || "",
-                city: row.cityTemp || "",
-                country: row.countryTemp || "",
-              },
-              identityDocument: {
-                type: row.identityType || "",
-                idNumber: row.identityIdNumber || "",
-                issuedPlace: row.identityIssuedPlace || "",
-                issuedDate: row.identityIssuedDate || "",
-                expirationDate: row.identityExpirationDate || "",
-              },
-              nationality: row.nationality || "Việt Nam",
-            }));
-        
+            const formattedData = results.data.map((row) => formatStudentData(row));
             setStudents(formattedData);
           },
           error: (error) => {
             console.error("Lỗi đọc CSV:", error);
           },
         });
-        
       }
     };
 
     reader.readAsText(file);
-   };
+  }, []);
 
-  
+  // Format student data for consistency
+  const formatStudentData = (student) => ({
+    studentId: student.studentId || "",
+    fullname: student.fullname || "",
+    dob: student.dob || "",
+    gender: student.gender === "true" || student.gender === true,
+    schoolYear: String(student.schoolYear) || "",
+    program: student.program || "",
+    department: student.department || "",
+    email: student.email || "",
+    phone: student.phone || "",
+    studentStatus: student.studentStatus || "",
+    address: formatAddress(student.address),
+    addressTemp: formatAddress(student.addressTemp),
+    identityDocument: formatIdentityDocument(student.identityDocument),
+    nationality: student.nationality || "Việt Nam",
+  });
 
-   const handleImport = async () => {
+  const formatAddress = (address) => ({
+    houseNumber: address.houseNumber || "",
+    street: address.street || "",
+    ward: address.ward || "",
+    district: address.district || "",
+    city: address.city || "",
+    country: address.country || "Việt Nam",
+  });
+
+  const formatIdentityDocument = (identityDocument) => ({
+    type: identityDocument.type || "CMND",
+    idNumber: identityDocument.idNumber || "",
+    issuedPlace: identityDocument.issuedPlace || "",
+    issuedDate: identityDocument.issuedDate || "",
+    expirationDate: identityDocument.expirationDate || "",
+  });
+
+  const handleImport = async () => {
     if (students.length > 0) {
       for (const student of students) {
         try {
@@ -120,43 +112,6 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
       onClose();
     }
   };
-  
-  const [newStudent, setNewStudent] = useState({
-    studentId: "",
-    fullname: "",
-    dob: "",
-    gender: true,
-    schoolYear: "",
-    program: "",
-    department: "",
-    email: "",
-    phone: "",
-    studentStatus: "",
-    address: {
-      houseNumber: "",
-      street: "",
-      ward: "",
-      district: "",
-      city: "",
-      country: "Việt Nam",
-    },
-    addressTemp: {
-      houseNumber: "",
-      street: "",
-      ward: "",
-      district: "",
-      city: "",
-      country: "Việt Nam",
-    },
-    identityDocument: {
-      type: "CMND",
-      idNumber: "",
-      issuedPlace: "",
-      issuedDate: "",
-      expirationDate: "",
-    },
-    nationality: "Việt Nam",
-  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -179,20 +134,28 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
       onClose();
     }
   };
-  const [errors, setErrors] = useState({});
-
 
   const validate = () => {
     let newErrors = {};
-
-    if (!newStudent.email.endsWith(ALLOWED_EMAIL_DOMAIN)) {
-      newErrors.email = `Email phải có đuôi ${ALLOWED_EMAIL_DOMAIN}`;
+  
+    // Kiểm tra email
+    const emailError = validateEmail(newStudent.email, ALLOWED_EMAIL_DOMAIN);
+    if (emailError) {
+      newErrors.email = emailError;
+    }
+  
+    // Kiểm tra số điện thoại
+    const phoneError = validatePhone(newStudent.phone, PHONE_REGEX);
+    if (phoneError) {
+      newErrors.phone = phoneError;
     }
 
-    if (!PHONE_REGEX.test(newStudent.phone)) {
-      newErrors.phone = "Số điện thoại không hợp lệ theo định dạng Việt Nam!";
+    // Kiểm tra tình trạng
+    const statusError = validateStatusChange(newStudent.studentStatus, newStudent.studentStatus, STATUS_RULES);
+    if (statusError) {
+      newErrors.studentStatus = statusError;
     }
-
+  
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -244,11 +207,11 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
 
         <label>Email:</label>
         <input type="email" name="email" placeholder="Email" value={newStudent.email} onChange={handleChange} />
-        {errors.email && <span className="error">{errors.email}</span>}
+        <p>        {errors.email && <span className="error">{errors.email}</span>} </p>
 
         <label>Số điện thoại:</label>
         <input type="text" name="phone" placeholder="SĐT" value={newStudent.phone} onChange={handleChange} />
-        {errors.phone && <span className="error">{errors.phone}</span>}
+        <p>{errors.phone && <span className="error">{errors.phone}</span>}</p>
 
         <label>Chương trình:</label>
         <select name="program" value={newStudent.program} onChange={handleChange}>
@@ -286,24 +249,6 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
         <h3>Địa chỉ tạm trú</h3>
         <input type="text" placeholder="Số nhà" value={newStudent.addressTemp.houseNumber} onChange={(e) => handleNestedChange("addressTemp", "houseNumber", e.target.value)} />
         <input type="text" placeholder="Phố" value={newStudent.addressTemp.street} onChange={(e) => handleNestedChange("addressTemp", "street", e.target.value)} />
-        
-        {/* Thông tin giấy tờ tùy thân */}
-        <h3>Giấy tờ tùy thân</h3>
-        <select value={newStudent.identityDocument.type} onChange={(e) => handleNestedChange("identityDocument", "type", e.target.value)}>
-          <option value="CMND">CMND</option>
-          <option value="CCCD">CCCD</option>
-          <option value="Passport">Hộ chiếu</option>
-        </select>
-        <input type="text" placeholder="Số giấy tờ" value={newStudent.identityDocument.idNumber} onChange={(e) => handleNestedChange("identityDocument", "idNumber", e.target.value)} />
-        
-        <label>Ngày cấp:</label>
-        <input type="date" value={newStudent.identityDocument.issuedDate} onChange={(e) => handleNestedChange("identityDocument", "issuedDate", e.target.value)} />
-
-        <label>Nơi cấp:</label>
-        <input type="text" placeholder="Nơi cấp" value={newStudent.identityDocument.issuedPlace} onChange={(e) => handleNestedChange("identityDocument", "issuedPlace", e.target.value)} />
-
-        <label>Ngày hết hạn (nếu có):</label>
-        <input type="date" value={newStudent.identityDocument.expirationDate} onChange={(e) => handleNestedChange("identityDocument", "expirationDate", e.target.value)} />
 
         <button onClick={handleSubmit}>Lưu</button>
       </div>

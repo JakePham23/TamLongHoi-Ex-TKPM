@@ -1,10 +1,11 @@
-import '../styles/index.scss';
+import '../styles/base/index.scss';
 import { useState } from "react";
 import Dashboard from './Dashboard.jsx';
 import StudentScreen from './StudentScreen.jsx';
 import DepartmentScreen from './DepartmentScreen.jsx'; // Thêm dòng này
-import Tabbar from '../components/Tabbar.jsx';
+import Tabbar from '../components/Tabbar/Tabbar.jsx';
 
+// layout
 const App = () => {
     const [view, setView] = useState("dashboard"); // Trạng thái ban đầu
 

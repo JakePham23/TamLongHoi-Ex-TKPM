@@ -1,6 +1,6 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-import "../styles/SearchInput.scss"; // File CSS riêng cho search input
+import "../styles/components/SearchInput.scss"; // File CSS riêng cho search input
 
 const SearchInput = ({ placeholder, onChange }) => {
   return (

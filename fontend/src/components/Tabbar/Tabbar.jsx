@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaTachometerAlt, FaUniversity, FaUserGraduate, FaBook } from "react-icons/fa";
-import "../styles/Tabbar.scss";
-import logo from "../assets/images/local/logo-khtn.png";
+import "../../styles/Tabbar.scss";
+import logo from "../../assets/images/local/logo-khtn.png";
 import TabButton from "./TabButton.jsx";
 
 const Tabbar = ({ setView }) => {

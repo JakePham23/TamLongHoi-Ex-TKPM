@@ -5,14 +5,14 @@ class DepartmentController {
     try {
       const { departmentName } = req.body;
       if (!departmentName) {
-        return res.status(400).json({ message: "Department name is required" });
+        return res.status(400).json({ message: "Departments name is required" });
       }
 
       const newDepartment = new departmentModel({ departmentName });
       await newDepartment.save();
 
       res.status(201).json({
-        message: "Department added successfully",
+        message: "Departments added successfully",
         data: newDepartment,
       });
     } catch (error) {
@@ -37,9 +37,9 @@ class DepartmentController {
       const { departmentId } = req.params;
       const department = await departmentModel.findByIdAndDelete(departmentId);
       if (!department) {
-        return res.status(404).json({ message: "Department not found" });
+        return res.status(404).json({ message: "Departments not found" });
       }
-      res.status(200).json({ message: "Department deleted successfully" });
+      res.status(200).json({ message: "Departments deleted successfully" });
     } catch (error) {
       next(error);
     }
@@ -61,11 +61,11 @@ class DepartmentController {
         );
 
         if (!updatedDepartment) {
-            return res.status(404).json({ message: "Department not found" });
+            return res.status(404).json({ message: "Departments not found" });
         }
 
         res.status(200).json({ 
-            message: "Department updated successfully",
+            message: "Departments updated successfully",
             data: updatedDepartment 
         });
     } catch (error) {

@@ -5,7 +5,7 @@ const COLLECTION_NAME = 'Students';
 const studentSchema = new Schema(
   {
     studentId: {
-      type: String,
+      type: Number,
       unique: true,
       required: true,
     },

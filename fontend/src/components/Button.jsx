@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Button.scss"; // File CSS riêng cho button
+import "../styles/components/Button.scss"; // File CSS riêng cho button
 
 const Button = ({ icon, label, onClick, variant = "default" }) => {
   return (

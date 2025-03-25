@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/TabButton.scss"; // Tạo file CSS riêng cho nút
+import "../../styles/TabButton.scss"; // Tạo file CSS riêng cho nút
 
 const TabButton = ({ icon, label, isActive, onClick }) => {
   return (
