@@ -20,9 +20,14 @@ class StudentService {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(updatedData),
             });
-            const data = await response.json();
-            if (!response.ok) throw new Error(data.message || "Lỗi khi cập nhật sinh viên");
-            return data.metadata;
+            if (response.status === 204) {
+                console.log("Cập nhật thành công, không có nội dung trả về.");
+                return; // Không cần parse JSON vì response không có nội dung
+              }
+              
+              const data = await response.json(); // Chỉ gọi khi có dữ liệu
+              console.log(data);
+              
         } catch (error) {
             console.error(error);
             throw error;

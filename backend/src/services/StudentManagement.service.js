@@ -29,7 +29,7 @@
                     { new: true }
                 );
         
-                return updatedStudent;
+                return JSON.stringify(updatedStudent);
             } catch (error) {
                 throw error;
             }

@@ -33,7 +33,21 @@ class StudentManagementController {
         }
     }
     
+    async updateStudent(req, res, next) {
+        try {
+            const { studentId } = req.params;
+            const updateData = req.body;
 
+            const updatedData = await studentManagementService.updateStudent(studentId, updateData)
+            
+            console.log("updated data: " + updatedData)
+            logger.info(`Cập nhật thành công: Student ID ${studentId}`);
+            return new UpdateResponse({message: "Cập nhật thành công!"}).send(res);
+        } catch (error) {
+            logger.error("Lỗi trong updateStudent", { error: error.message });
+            next(error);
+        }
+    }
     async deleteStudent(req, res, next) {
         try {
             const { studentId } = req.params;
@@ -52,20 +66,7 @@ class StudentManagementController {
         }
     }
 
-    async updateStudent(req, res, next) {
-        try {
-            const { studentId } = req.params;
-            const updateData = req.body;
 
-            const updatedData = await studentManagementService.updateStudent(studentId, updateData)
-            
-            logger.info(`Cập nhật thành công: Student ID ${studentId}`);
-            return new UpdateResponse({message: "Cập nhật thành công!",metadata: updatedData}).send(res);
-        } catch (error) {
-            logger.error("Lỗi trong updateStudent", { error: error.message });
-            next(error);
-        }
-    }
 
     async getStudent(req, res, next) {
         try {

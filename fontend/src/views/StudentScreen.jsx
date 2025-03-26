@@ -52,14 +52,22 @@ const StudentScreen = () => {
     setIsAdding(false);
   };
 
-  const handleSave = async () => {
-      await studentService.updateStudent(editedStudent.studentId, editedStudent);
-      setStudents((prev) =>
-        prev.map((s) => (s.studentId === editedStudent.studentId ? editedStudent : s))
-      );
+  const handleSave = async (updatedStudent) => {
+    try {
+      await studentService.updateStudent(updatedStudent.studentId, updatedStudent);
       
+      // Cập nhật danh sách sinh viên ngay lập tức
+      setStudents((prev) =>
+        prev.map((s) => (s.studentId === updatedStudent.studentId ? updatedStudent : s))
+      );
+  
+      setSelectedStudent(updatedStudent); // Cập nhật lại selectedStudent để phản ánh ngay lập tức
       setIsEditing(false);
+    } catch (error) {
+      console.error("Lỗi khi cập nhật sinh viên:", error);
+    }
   };
+  
 
   const exportAllStudents = () => {
     if (filteredStudents.length === 0) {
