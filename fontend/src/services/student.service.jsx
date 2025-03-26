@@ -4,12 +4,12 @@ class StudentService {
     async getStudents() {
         try {
             const response = await fetch(`${API_BASE_URL}/students`);
-            if (!response.ok) throw new Error("Lỗi khi lấy danh sách sinh viên");
             const data = await response.json();
-            return data.data; // Đúng với API của bạn
+            if (!response.status) throw new Error(data.message || "Lỗi khi lấy danh sách sinh viên");
+            return data.metadata; 
         } catch (error) {
             console.error(error);
-            return [];
+            throw error; // Ném lỗi để frontend có thể hiển thị
         }
     }
 
@@ -20,10 +20,12 @@ class StudentService {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(updatedData),
             });
-            if (!response.ok) throw new Error("Lỗi khi cập nhật sinh viên");
-            return await response.json();
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.message || "Lỗi khi cập nhật sinh viên");
+            return data.metadata;
         } catch (error) {
             console.error(error);
+            throw error;
         }
     }
 
@@ -32,10 +34,12 @@ class StudentService {
             const response = await fetch(`${API_BASE_URL}/deleteStudent/${studentId}`, {
                 method: "DELETE",
             });
-            if (!response.ok) throw new Error("Lỗi khi xoá sinh viên");
-            return await response.json();
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.message || "Lỗi khi xoá sinh viên");
+            return data.metadata;
         } catch (error) {
             console.error(error);
+            throw error;
         }
     }
 
@@ -43,19 +47,23 @@ class StudentService {
         try {
             const response = await fetch(`${API_BASE_URL}/addStudent`, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(studentData),
             });
     
-            if (!response.ok) throw new Error("Lỗi khi thêm sinh viên");
+            let data = await response.json();
+            if (!response.ok) {
+                throw new Error(data.message || "Lỗi khi thêm sinh viên")          
+            }
     
-            return await response.json();
+            return data.metadata;
         } catch (error) {
-            console.error(error);
+            console.log(`❌ Lỗi khi gửi yêu cầu thêm sinh viên ${studentData.fullname}:`, error);
+            throw error
         }
     }
+    
+    
     
 }
 

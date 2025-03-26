@@ -1,78 +1,93 @@
+import { logger } from "../utils/winston.js";
 import departmentModel from "../models/department.model.js";
+import { 
+    NotFoundRequest,
+    BadRequest,
+    InternalServerError 
+} from "../responses/error.response.js";
+import {
+    OkResponse,
+    CreatedResponse,
+    DeleteResponse,
+    UpdateResponse
+} from "../responses/success.response.js";
 
 class DepartmentController {
-  async addDepartment(req, res, next) {
-    try {
-      const { departmentName } = req.body;
-      if (!departmentName) {
-        return res.status(400).json({ message: "Departments name is required" });
-      }
+    async addDepartment(req, res, next) {
+        try {
+            const { departmentName } = req.body;
+            if (!departmentName) {
+                logger.warn("Add department failed: Missing departmentName");
+                return new BadRequest({message: "Department name is required"}).send(res);
+            }
 
-      const newDepartment = new departmentModel({ departmentName });
-      await newDepartment.save();
+            const newDepartment = new departmentModel({ departmentName });
+            await newDepartment.save();
 
-      res.status(201).json({
-        message: "Departments added successfully",
-        data: newDepartment,
-      });
-    } catch (error) {
-      next(error);
-    }
-  }
-
-  async getAllDepartments(req, res, next) {
-    try {
-      const departments = await departmentModel.find();
-      res.status(200).json({
-        message: "Departments retrieved successfully",
-        data: departments,
-      });
-    } catch (error) {
-      next(error);
-    }
-  }
-
-  async deleteDepartment(req, res, next) {
-    try {
-      const { departmentId } = req.params;
-      const department = await departmentModel.findByIdAndDelete(departmentId);
-      if (!department) {
-        return res.status(404).json({ message: "Departments not found" });
-      }
-      res.status(200).json({ message: "Departments deleted successfully" });
-    } catch (error) {
-      next(error);
-    }
-  }
-
-  async updateDepartment(req, res, next) {
-    try {
-        const { departmentId } = req.params;
-        const { departmentName } = req.body;
-
-        if (!departmentName || typeof departmentName !== "string") {
-            return res.status(400).json({ message: "Invalid department name" });
+            logger.info(`New department added: ${departmentName}`);
+            return new CreatedResponse({message: "Department added successfully", metadata: newDepartment}).send(res);
+        } catch (error) {
+            logger.error("Error in addDepartment", { error: error.message });
+            return new InternalServerError(error.message).send(res);
         }
-
-        const updatedDepartment = await departmentModel.findByIdAndUpdate(
-            departmentId,
-            { departmentName },
-            { new: true }
-        );
-
-        if (!updatedDepartment) {
-            return res.status(404).json({ message: "Departments not found" });
-        }
-
-        res.status(200).json({ 
-            message: "Departments updated successfully",
-            data: updatedDepartment 
-        });
-    } catch (error) {
-        next(error);
     }
-}
 
+    async getAllDepartments(req, res, next) {
+        try {
+            const departments = await departmentModel.find();
+            logger.info("Fetched all departments");
+            return new OkResponse({message: "Departments retrieved successfully", metadata: departments}).send(res);
+        } catch (error) {
+            logger.error("Error in getAllDepartments", { error: error.message });
+            return new InternalServerError(error.message).send(res);
+        }
+    }
+
+    async deleteDepartment(req, res, next) {
+        try {
+            const { departmentId } = req.params;
+            const department = await departmentModel.findByIdAndDelete(departmentId);
+            if (!department) {
+                logger.warn(`Delete department failed: ID ${departmentId} not found`);
+                return new NotFoundRequest({message: "Department not found"}).send(res);
+            }
+
+            logger.info(`Department deleted: ID ${departmentId}`);
+            return new DeleteResponse({message: "Department deleted successfully"}).send(res);
+        } catch (error) {
+            logger.error("Error in deleteDepartment", { error: error.message });
+            return new InternalServerError(error.message).send(res);
+        }
+    }
+
+    async updateDepartment(req, res, next) {
+        try {
+            const { departmentId } = req.params;
+            const { departmentName } = req.body;
+
+            if (!departmentName || typeof departmentName !== "string") {
+                logger.warn("Update department failed: Invalid department name");
+                return new BadRequest({message: "Invalid department name"}).send(res);
+            }
+
+            const updatedDepartment = await departmentModel.findByIdAndUpdate(
+                departmentId,
+                { departmentName },
+                { new: true }
+            );
+
+            if (!updatedDepartment) {
+                logger.warn(`Update department failed: ID ${departmentId} not found`);
+                return new NotFoundRequest({message: "Department not found"}).send(res);
+            }
+
+            logger.info(`Department updated: ID ${departmentId}, New Name: ${departmentName}`);
+            return new UpdateResponse({message: "Department updated successfully", metadat: updatedDepartment}).send(res);
+        } catch (error) {
+            logger.error("Error in updateDepartment", { error: error.message });
+            return new InternalServerError(error.message).send(res);
+        }
+    }
 }
 
 export default new DepartmentController();

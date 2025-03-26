@@ -1,7 +1,7 @@
 import "../../styles/StudentDetail.scss";
 import React, { useState } from "react";
 import { exportCSV, exportJSON } from "../../utils/export.util"; // Ensure correct import
-import { validateEmail, validatePhone, validateStatusChange } from "../../utils/businessRule.util"; // Import validation utils
+import { validateEmail, validatePhone, validateStatusChange, validateIdentityDocument } from "../../utils/businessRule.util"; 
 import { ALLOWED_EMAIL_DOMAIN, PHONE_REGEX, STATUS_RULES } from "../../utils/constants"; // Ensure constants are correct
 
 const StudentDetail = ({ departments, student, isEditing, editedStudent, setEditedStudent, onSave, onEdit, onClose }) => {
@@ -10,51 +10,47 @@ const StudentDetail = ({ departments, student, isEditing, editedStudent, setEdit
 
   if (!student) return null;
   // Hàm kiểm tra các lỗi
-  const validate = () => {
-    let newErrors = {};
+// Hàm kiểm tra lỗi
+const validate = () => {
+  let newErrors = {};
 
-    // Kiểm tra email
-    const emailError = validateEmail(editedStudent.email, ALLOWED_EMAIL_DOMAIN);
-    if (emailError) {
-      newErrors.email = emailError;
+  // Kiểm tra email
+  const emailError = validateEmail(editedStudent.email, ALLOWED_EMAIL_DOMAIN);
+  if (emailError) newErrors.email = emailError;
+
+  // Kiểm tra số điện thoại
+  const phoneError = validatePhone(editedStudent.phone, PHONE_REGEX);
+  if (phoneError) newErrors.phone = phoneError;
+
+  // Kiểm tra tình trạng sinh viên
+  const statusError = validateStatusChange(student.studentStatus, editedStudent.studentStatus, STATUS_RULES);
+  if (statusError) newErrors.studentStatus = statusError;
+
+  // Kiểm tra số giấy tờ tùy thân
+  const idNumberError = validateIdentityDocument(editedStudent.identityDocument?.idNumber);
+  if (idNumberError) newErrors.idNumber = idNumberError;
+
+  setErrors(newErrors);
+  return Object.keys(newErrors).length === 0;
+};
+const handleChange = (e) => {
+  const { name, value } = e.target;
+  const keys = name.split(".");
+
+  setEditedStudent((prev) => {
+    if (keys.length === 1) {
+      return { ...prev, [name]: value };
+    } else {
+      return {
+        ...prev,
+        [keys[0]]: {
+          ...prev[keys[0]],
+          [keys[1]]: value,
+        },
+      };
     }
-
-    // Kiểm tra số điện thoại
-    const phoneError = validatePhone(editedStudent.phone, PHONE_REGEX);
-    if (phoneError) {
-      newErrors.phone = phoneError;
-    }
-
-    // Kiểm tra tình trạng
-    const statusError = validateStatusChange(editedStudent.studentStatus, editedStudent.studentStatus, STATUS_RULES);
-    if (statusError) {
-      newErrors.studentStatus = statusError;
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-  
-    setEditedStudent((prev) => {
-      const keys = name.split(".");
-      if (keys.length === 1) {
-        // Đảm bảo cập nhật đúng trường ở cấp cao
-        return { ...prev, [name]: value };
-      } else {
-        // Cập nhật trường con trong nested object
-        return {
-          ...prev,
-          [keys[0]]: {
-            ...prev[keys[0]],
-            [keys[1]]: value,
-          },
-        };
-      }
-    });
-  };
-  
+  });
+};
 
   
 
@@ -77,22 +73,32 @@ const StudentDetail = ({ departments, student, isEditing, editedStudent, setEdit
   };
 
   // Hàm lưu dữ liệu khi người dùng nhấn lưu
-  const handleSave = () => {
-    if (validate()) {
-      onSave();
+  const handleSave = async () => {
+    if (!validate()) return; // Kiểm tra lỗi trước khi gửi
+  
+    try {
+      await onSave(); // Gọi API để lưu dữ liệu
+    } catch (error) {
+      console.error("❌ Lỗi :", error.message);
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        general: error.message || "Lỗi không xác định.",
+      }));
     }
   };
+  
+  
+  
 // Reset the editedStudent when closing the modal
 const handleClose = () => {
-  setEditedStudent({
-    ...student,
-    identityDocument: { ...student.identityDocument },
-    department: student.department ? { ...student.department } : null,
-  });
-  onClose();
+  setEditedStudent({ ...student }); // Reset dữ liệu về ban đầu
+  setErrors({}); // Xóa hết lỗi
+  onClose(); // Đóng modal
 };
 
+
   return (
+    
     <div className="student-detail-overlay" onClick={(e) => e.target.classList.contains("student-detail-overlay") && onClose()&& handleClose()}>
       <div className="student-detail">
         <div className="top-container">
@@ -152,13 +158,13 @@ const handleClose = () => {
             <p><strong>Email:</strong> {isEditing ? (
               <>
                 <input type="email" name="email" value={editedStudent.email} onChange={handleChange} />
-                <p>                {errors.email && <span className="error">{errors.email}</span>}      </p>
+                <span>                {errors.email && <span className="error">{errors.email}</span>}      </span>
               </>
             ) : student.email}</p>
             <p><strong>SĐT:</strong> {isEditing ? (
               <>
                 <input type="text" name="phone" value={editedStudent.phone} onChange={handleChange} />
-                <p>                {errors.phone && <span className="error">{errors.phone}</span>}                </p>
+                <span>                {errors.phone && <span className="error">{errors.phone}</span>}                </span>
               </>
             ) : student.phone}</p>
             <p><strong>Chương trình:</strong> {student.program}</p>
@@ -175,7 +181,7 @@ const handleClose = () => {
                   <option value="dropout">Dropout</option>
                   <option value="suspended">Suspended</option>
                 </select>
-                {errors.studentStatus && <span className="error">{errors.studentStatus}</span>}
+                <span>                {errors.studentStatus && <span className="error">{errors.studentStatus}</span>}              </span>
               </>
             ) : student.studentStatus}</p>
           </div>
@@ -183,18 +189,24 @@ const handleClose = () => {
 
         {/* CONTAINER DƯỚI */}
         <div className="bottom-container">
-          <p><strong>Địa chỉ thường trú:</strong> {isEditing ? (
+          {/* <p><strong>Địa chỉ thường trú:</strong> {isEditing ? (
             <input type="text" name="permanentAddress" value={editedStudent.permanentAddress} onChange={handleChange} />
           ) : student.permanentAddress}</p>
           <p><strong>Địa chỉ tạm trú:</strong> {isEditing ? (
             <input type="text" name="temporaryAddress" value={editedStudent.temporaryAddress} onChange={handleChange} />
           ) : student.temporaryAddress}</p>
+                     */}
+          <p>{errors.general && <span className="error">{errors.general}</span>}   </p>           
+
         </div>
 
         {/* BUTTON */}
         <div className="button-group">
           {isEditing ? (
-            <button className="save-button" onClick={handleSave}>Lưu</button>
+              <div className="save-box">
+                  <button className="save-button" onClick={handleSave}>Lưu</button>
+              </div>
+
           ) : (
             <>
               <button className="edit-button" onClick={handleEdit} >Sửa</button>

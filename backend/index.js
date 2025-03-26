@@ -1,6 +1,6 @@
 import app from './src/app.js'
 import dotenv from 'dotenv'
-import {logger, requestLogger} from './src/winston.js'
+import {logger, requestLogger} from './src/utils/winston.js'
 
 dotenv.config()
 app.use(requestLogger); // Middleware log request

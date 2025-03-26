@@ -101,17 +101,36 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
   });
 
   const handleImport = async () => {
-    if (students.length > 0) {
-      for (const student of students) {
-        try {
-          await onSubmit(student);
-        } catch (error) {
-          console.error(`Lỗi khi thêm sinh viên ${student.fullname}:`, error);
-        }
-      }
-      onClose();
+    console.log("🛠 Đang nhập dữ liệu, students:", students);
+    if (students.length === 0) {
+        console.warn("⚠️ Không có sinh viên nào để nhập!");
+        return;
     }
-  };
+
+    let newErrors = {};
+    let successCount = 0;
+
+    for (const student of students) {
+        try {
+            await onSubmit(student);
+            console.log("✅ Thành công:", student.fullname);
+            successCount++;
+        } catch (error) {
+            console.log(`❌ Lỗi khi thêm sinh viên ${student.fullname}:`, error.message);
+            newErrors[student.studentId] = error.message || "Lỗi không xác định.";
+        }
+    }
+
+    setErrors(newErrors);
+
+    if (successCount > 0) alert(`✅ Nhập thành công ${successCount} sinh viên!`);
+    if (Object.keys(newErrors).length > 0) alert(`⚠️ Một số sinh viên bị lỗi, vui lòng kiểm tra danh sách.`);
+};
+
+
+
+  
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -128,12 +147,21 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
     }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (validate()) {
-      onSubmit(newStudent);
-      onClose();
+      try {
+        await onSubmit(newStudent);
+        onClose();
+      } catch (error) {
+        console.error("❌ Lỗi :", error);
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          general: error.message || "Lỗi không xác định.",
+        }));
+      }
     }
   };
+  
 
   const validate = () => {
     let newErrors = {};
@@ -167,13 +195,15 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
 
         <label>Tải file CSV hoặc JSON:</label>
         <input type="file" accept=".csv,.json" onChange={handleFileUpload} />
-
         {students.length > 0 && (
           <div>
-            <h3>Danh sách sinh viên đã nhập:</h3>
+            <h3>Danh sách sinh viên nhập:</h3>
             <ul>
               {students.map((student, index) => (
-                <li key={index}>{student.fullname} - {student.studentId}</li>
+                <li key={index}>
+                  {student.fullname} - {student.studentId}{" "}
+                  <p>                  {errors[student.studentId] && <span className="error">({errors[student.studentId]})</span>}                  </p>
+                </li>
               ))}
             </ul>
             <button onClick={handleImport}>Nhập dữ liệu</button>
@@ -250,6 +280,24 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
         <input type="text" placeholder="Số nhà" value={newStudent.addressTemp.houseNumber} onChange={(e) => handleNestedChange("addressTemp", "houseNumber", e.target.value)} />
         <input type="text" placeholder="Phố" value={newStudent.addressTemp.street} onChange={(e) => handleNestedChange("addressTemp", "street", e.target.value)} />
 
+           {/* Thông tin giấy tờ tùy thân */}
+        <h3>Giấy tờ tùy thân</h3>
+        <select value={newStudent.identityDocument.type} onChange={(e) => handleNestedChange("identityDocument", "type", e.target.value)}>
+          <option value="CMND">CMND</option>
+          <option value="CCCD">CCCD</option>
+          <option value="Passport">Hộ chiếu</option>
+        </select>
+        <input type="text" placeholder="Số giấy tờ" value={newStudent.identityDocument.idNumber} onChange={(e) => handleNestedChange("identityDocument", "idNumber", e.target.value)} />
+        
+        <label>Ngày cấp:</label>
+        <input type="date" value={newStudent.identityDocument.issuedDate} onChange={(e) => handleNestedChange("identityDocument", "issuedDate", e.target.value)} />
+
+        <label>Nơi cấp:</label>
+        <input type="text" placeholder="Nơi cấp" value={newStudent.identityDocument.issuedPlace} onChange={(e) => handleNestedChange("identityDocument", "issuedPlace", e.target.value)} />
+
+        <label>Ngày hết hạn (nếu có):</label>
+        <input type="date" value={newStudent.identityDocument.expirationDate} onChange={(e) => handleNestedChange("identityDocument", "expirationDate", e.target.value)} />
+        <p>{errors.general && <span className="error">{errors.general}</span>}        </p>
         <button onClick={handleSubmit}>Lưu</button>
       </div>
     </div>

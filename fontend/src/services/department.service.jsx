@@ -6,7 +6,7 @@ class Department{
             const response = await fetch(`${API_BASE_URL}/departments`);
             if (!response.ok) throw new Error("Lỗi khi lấy danh sách department");
             const data = await response.json();
-            return data.data; // Đúng với API của bạn
+            return data.metadata;
         } catch (error) {
             console.error(error);
             return [];
@@ -21,12 +21,13 @@ class Department{
                 },
                 body: JSON.stringify(departmentData),
             });
-    
+            
             if (!response.ok) throw new Error("Lỗi khi thêm khoa");
     
             return await response.json();
         } catch (error) {
             console.error(error);
+            throw error;
         }
     }
 
@@ -43,6 +44,7 @@ class Department{
             return await response.json();  
         } catch (error) {
             console.error(error);
+            throw error;
         }
     }
     
@@ -56,6 +58,7 @@ class Department{
             return await response.json();
         } catch (error) {
             console.error(error);
+            throw error;
         }
     }
 }

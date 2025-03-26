@@ -1,48 +1,34 @@
 'use strict';
 import studentModel from '../models/student.model.js';
-import departmentModel from '../models/department.model.js';
 
-import { BadRequest } from '../responses/error.response.js';
-import { CreatedResponse } from '../responses/success.response.js';
-
+import { logger } from '../utils/winston.js'; // Import logger
+import { BadRequest, ConflictRequest } from '../responses/error.response.js';
+import { CreatedResponse, OkResponse, DeleteResponse, UpdateResponse } from '../responses/success.response.js';
+import studentManagementService from '../services/StudentManagement.service.js'
 class StudentManagementController {
     async addStudent(req, res, next) {
         try {
-            let students = req.body; // Dữ liệu có thể là một hoặc nhiều sinh viên
+            let students = req.body;
     
-            // Nếu chỉ có 1 sinh viên, chuyển thành mảng để xử lý chung
+            // Nếu chỉ là một sinh viên, biến thành mảng để xử lý chung
             if (!Array.isArray(students)) {
                 students = [students];
             }
     
-            // Kiểm tra trùng lặp Student ID, Email, Phone
-            const existingStudents = await studentModel.find({
-                $or: students.flatMap(({ studentId, email, phone }) => [
-                    { studentId }, { email }, { phone }
-                ])
-            });
-    
-            if (existingStudents.length > 0) {
-                throw new BadRequest("Một số Student ID, Email hoặc Phone đã tồn tại");
+            const addedStudents = [];
+            for (const student of students) {
+                const newStudent = await studentManagementService.addStudent(student);
+                addedStudents.push(newStudent);
             }
     
-            // Kiểm tra khoa có hợp lệ không
-            const departmentIds = [...new Set(students.map(s => s.department))];
-            const foundDepartments = await departmentModel.find({ _id: { $in: departmentIds } });
+            logger.info(`Thêm ${addedStudents.length} sinh viên thành công!`);
     
-            if (foundDepartments.length !== departmentIds.length) {
-                throw new BadRequest("Một số khoa không hợp lệ");
-            }
-    
-            // Lưu danh sách sinh viên
-            const newStudents = await studentModel.insertMany(students);
-    
-            return res.status(201).json(new CreatedResponse({
-                message: 'Students added successfully',
-                options: { count: newStudents.length }
+            return res.send(new CreatedResponse({
+                message: `${addedStudents.length} students added successfully`,
             }));
-    
         } catch (error) {
+            logger.error("Lỗi trong addStudent", { error: error.message });
+
             next(error);
         }
     }
@@ -54,11 +40,14 @@ class StudentManagementController {
             const deletedStudent = await studentModel.findOneAndDelete({ studentId });
 
             if (!deletedStudent) {
-                throw new BadRequest('Student ID không tồn tại');
+                logger.warn(`Xóa sinh viên thất bại: Student ID ${studentId} không tồn tại`);
+                return new BadRequest({message: 'Student ID không tồn tại'}).send(res);
             }
 
-            return res.status(200).json({ message: 'Student deleted successfully' });
+            logger.info(`Xóa sinh viên thành công: Student ID ${studentId}`);
+            return new DeleteResponse({message: 'Student deleted successfully'}).send(res);
         } catch (error) {
+            logger.error("Lỗi trong deleteStudent", { error: error.message });
             next(error);
         }
     }
@@ -67,48 +56,31 @@ class StudentManagementController {
         try {
             const { studentId } = req.params;
             const updateData = req.body;
-    
-            // Tìm sinh viên có email hoặc phone trùng, nhưng KHÔNG phải sinh viên đang cập nhật
-            const existingStudent = await studentModel.findOne({ 
-                $or: [
-                    { email: updateData.email },
-                    { phone: updateData.phone }
-                ],
-                studentId: { $ne: studentId } // Tránh trùng với chính nó
-            });
-    
-            if (existingStudent) {
-                throw new BadRequest("Email hoặc Phone đã tồn tại.");
-            }
-    
-            // Cập nhật sinh viên
-            const updatedStudent = await studentModel.findOneAndUpdate(
-                { studentId },
-                updateData,
-                { new: true }
-            );
-    
-            if (!updatedStudent) {
-                throw new BadRequest("Student ID không tồn tại.");
-            }
-    
-            return res.status(200).json({ message: "Cập nhật thành công!", data: updatedStudent });
+
+            const updatedData = await studentManagementService.updateStudent(studentId, updateData)
+            
+            logger.info(`Cập nhật thành công: Student ID ${studentId}`);
+            return new UpdateResponse({message: "Cập nhật thành công!",metadata: updatedData}).send(res);
         } catch (error) {
+            logger.error("Lỗi trong updateStudent", { error: error.message });
             next(error);
         }
     }
-    
+
     async getStudent(req, res, next) {
         try {
             const { studentId } = req.params;
             const student = await studentModel.findOne({ studentId }).populate('department', "departmentName");
 
             if (!student) {
-                throw new BadRequest('Student ID không tồn tại');
+                logger.warn(`Lấy thông tin thất bại: Student ID ${studentId} không tồn tại`);
+                return new BadRequest('Student ID không tồn tại').send(res);
             }
 
-            return res.status(200).json({ message: 'Student retrieved successfully', data: student });
+            logger.info(`Lấy thông tin thành công: Student ID ${studentId}`);
+            return res.send(new OkResponse({message: 'Student retrieved successfully', metadata: student}))
         } catch (error) {
+            logger.error("Lỗi trong getStudent", { error: error.message });
             next(error);
         }
     }
@@ -116,12 +88,16 @@ class StudentManagementController {
     async getAllStudent(req, res, next) {
         try {
             const students = await studentModel.find().populate('department', 'departmentName');
-            return res.status(200).json({ message: 'Students retrieved successfully', data: students });
+            logger.info(`Lấy danh sách sinh viên thành công (${students.length} sinh viên)`);
+            return (new OkResponse({
+                message:'Students retrieved successfully',
+                metadata: students})).send(res)
+
         } catch (error) {
+            logger.error("Lỗi trong getAllStudent", { error: error.message });
             next(error);
         }
     }
-    
 }
 
 export default new StudentManagementController();

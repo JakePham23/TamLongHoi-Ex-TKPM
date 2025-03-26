@@ -53,16 +53,12 @@ const StudentScreen = () => {
   };
 
   const handleSave = async () => {
-    try {
       await studentService.updateStudent(editedStudent.studentId, editedStudent);
       setStudents((prev) =>
         prev.map((s) => (s.studentId === editedStudent.studentId ? editedStudent : s))
       );
       
       setIsEditing(false);
-    } catch (error) {
-      console.error("Lỗi khi cập nhật:", error);
-    }
   };
 
   const exportAllStudents = () => {
