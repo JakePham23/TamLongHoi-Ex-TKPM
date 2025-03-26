@@ -6,7 +6,7 @@ import { exportCSV, exportJSON } from "../../utils/export.util";
 import { validateEmail, validatePhone, validateStatusChange, validateIdentityDocument } from "../../utils/businessRule.util";
 import { ALLOWED_EMAIL_DOMAIN, PHONE_REGEX, STATUS_RULES } from "../../utils/constants";
 import { formatStudentData } from "../../utils/format.util";
-const StudentDetail = ({ student, onSave, onClose, setEditedStudent, editedStudent }) => {
+const StudentDetail = ({departments, student, onSave, onClose, setEditedStudent, editedStudent }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [exportType, setExportType] = useState("csv");
   const [errors, setErrors] = useState({});
@@ -40,8 +40,13 @@ const StudentDetail = ({ student, onSave, onClose, setEditedStudent, editedStude
 
   const handleSave = async () => {
     if (!validate()) return;
+    
+    // Cập nhật department trước khi lưu
+    const selectedDepartment = departments.find(dept => dept._id === editedStudent.departmentId);
+    const finalStudent = { ...editedStudent, department: selectedDepartment || {} };
+  
     try {
-      await onSave(editedStudent);
+      await onSave(finalStudent);
       setIsEditing(false);
       setEditedStudent(null);
     } catch (error) {
@@ -49,6 +54,7 @@ const StudentDetail = ({ student, onSave, onClose, setEditedStudent, editedStude
       setErrors((prevErrors) => ({ ...prevErrors, general: error.message || "Lỗi không xác định." }));
     }
   };
+  
 
   const handleClose = () => {
     setIsEditing(false);
@@ -59,12 +65,27 @@ const StudentDetail = ({ student, onSave, onClose, setEditedStudent, editedStude
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setEditedStudent((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
+  
+    setEditedStudent((prev) => {
+      let updatedStudent = {
+        ...prev,
+        [name]: type === "checkbox" ? checked : value,
+      };
+  
+      if (name === "gender") {
+        updatedStudent.gender = value === "true"; // Chuyển thành boolean
+      }
+  
+      // Không cập nhật ngay lập tức department
+      return updatedStudent;
+    });
   };
-
+  
+  
+  const departmentOptions = departments.map((dept) => ({
+    value: dept._id,
+    label: dept.departmentName
+  }));
   return (
     <>
       {!isEditing ? (
@@ -102,12 +123,26 @@ const StudentDetail = ({ student, onSave, onClose, setEditedStudent, editedStude
             { name: "fullname", label: "Họ và Tên", type: "text" },
             { name: "dob", label: "Ngày sinh", type: "date" },
             { name: "gender", label: "Giới tính", type: "select", 
-              value: editedStudent.gender, // 🔥 Set giá trị hiện tại
-              options: [
-                { value: true, label: "Nam" },
-                { value: false, label: "Nữ" }
-              ],
+              value: editedStudent.gender.toString(), // Chuyển thành string để React xử lý
+                options: [
+                  { value: "true", label: "Nam" },
+                  { value: "false", label: "Nữ" }
+                ],
+              onChange: handleChange, // Đảm bảo gọi handleChange khi thay đổi
             },
+            {
+              name: "departmentId",
+              label: "Khoa",
+              type: "select",
+              value: editedStudent.department?._id || "",
+              options: [
+                { value: editedStudent.department?._id || "", label: editedStudent.department?.departmentName || "Chọn khoa" }, // Giá trị hiện tại của sinh viên
+                ...departmentOptions // Danh sách khoa từ biến departmentOptions
+              ],              
+              onChange: handleChange
+            },
+            
+            
             { name: "schoolYear", label: "Niên khóa", type: "number" },
             { name: "program", label: "Chương trình", type: "select", options: [
               { value: "CQ", label: "CQ" },

@@ -41,7 +41,7 @@ class Department{
     
             if (!response.ok) throw new Error("Lỗi khi cập nhật khoa");
     
-            return await response.json();  
+            return 
         } catch (error) {
             console.error(error);
             throw error;

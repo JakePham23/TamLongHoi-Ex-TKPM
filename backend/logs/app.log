@@ -2242,3 +2242,160 @@
 {"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T12:22:13.127Z"}
 {"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T12:22:23.658Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
 {"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T12:22:23.666Z"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-03-26T13:17:27.938Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:17:35.593Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:17:35.600Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:17:35.606Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:17:35.619Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T13:17:35.622Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:17:35.627Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:17:35.630Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T13:17:35.642Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:17:42.181Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:17:42.198Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:17:47.850Z","url":"/updateStudent/11111112","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 11111112","timestamp":"2025-03-26T13:17:47.858Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:18:21.782Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:18:21.791Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:18:21.795Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:18:21.806Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:18:26.318Z","url":"/updateDepartment/67e2b06bddf1ba5cc9994222","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Department updated: ID 67e2b06bddf1ba5cc9994222, New Name: An toàn","timestamp":"2025-03-26T13:18:26.323Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:18:47.256Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:18:47.259Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:26:43.858Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:26:43.872Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:26:43.877Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:26:43.882Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:26:50.860Z","url":"/updateDepartment/67e2b06bddf1ba5cc9994222","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Department updated: ID 67e2b06bddf1ba5cc9994222, New Name: An toàn thông tin","timestamp":"2025-03-26T13:26:50.873Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:26:50.877Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:26:50.879Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:26:59.326Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:26:59.328Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:26:59.335Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:26:59.337Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T13:26:59.347Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:26:59.351Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:26:59.358Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T13:26:59.378Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:27:06.972Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:27:06.982Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:27:18.011Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:27:18.018Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:28:01.631Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:28:01.653Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:28:07.477Z","url":"/updateStudent/12345611","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 12345611","timestamp":"2025-03-26T13:28:07.486Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:28:12.931Z","url":"/updateStudent/12345611","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 12345611","timestamp":"2025-03-26T13:28:12.944Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:28:17.394Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:28:17.396Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:28:17.402Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T13:28:17.404Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:28:17.407Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:28:17.412Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:28:17.415Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T13:28:17.424Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:28:22.427Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:28:22.437Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:28:27.290Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:28:27.303Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:28:32.928Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:28:32.945Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:30:16.861Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:30:16.865Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:30:16.881Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T13:30:16.883Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:30:16.885Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:30:16.892Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:30:16.895Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T13:30:16.901Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:30:31.994Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:30:31.996Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:30:32.002Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T13:30:32.003Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:30:32.006Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:30:32.009Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:30:32.011Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T13:30:32.017Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:30:38.775Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:30:38.786Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:33:11.012Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:33:11.023Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:33:18.608Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:33:18.616Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:33:23.240Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:33:23.251Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:35:48.628Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:35:48.636Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:35:48.643Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T13:35:48.645Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:35:48.647Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:35:48.648Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:35:48.650Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T13:35:48.660Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:35:55.187Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:35:55.193Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:36:28.028Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:36:28.038Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:36:40.625Z","url":"/updateStudent/1234567","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 1234567","timestamp":"2025-03-26T13:36:40.637Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:37:38.129Z","url":"/updateStudent/22120233","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120233","timestamp":"2025-03-26T13:37:38.138Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:37:49.358Z","url":"/updateStudent/11111111","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 11111111","timestamp":"2025-03-26T13:37:49.364Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:45:38.932Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:45:38.938Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T13:45:38.944Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:45:38.948Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:45:38.951Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T13:45:38.952Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T13:45:38.954Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T13:45:38.959Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:45:45.279Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:45:45.288Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:47:08.579Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:47:08.587Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:47:14.375Z","url":"/updateStudent/1234567","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 1234567","timestamp":"2025-03-26T13:47:14.385Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:50:30.847Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:50:30.855Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T13:50:54.713Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T13:50:54.722Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T14:12:23.761Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T14:12:23.787Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T14:12:44.358Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T14:12:44.361Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T14:12:44.366Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T14:12:44.368Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T14:12:44.369Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T14:12:44.371Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T14:12:44.373Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T14:12:44.376Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T14:13:40.823Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T14:13:40.833Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T14:14:08.871Z","url":"/updateStudent/12345678","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 12345678","timestamp":"2025-03-26T14:14:08.878Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T14:14:15.352Z","url":"/updateStudent/22120231","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"error":"Số giấy tờ \"0123456789\" đã tồn tại.","level":"error","message":"Lỗi trong updateStudent","timestamp":"2025-03-26T14:14:15.357Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T14:15:33.077Z","url":"/updateStudent/12345611","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 12345611","timestamp":"2025-03-26T14:15:33.100Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T14:32:55.102Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T14:32:55.117Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T14:32:55.122Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T14:32:55.126Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T14:32:55.128Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T14:32:55.134Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T14:32:55.137Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T14:32:55.153Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T14:36:04.367Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T14:36:04.380Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T14:36:04.386Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T14:36:04.388Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T14:36:04.394Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-26T14:36:04.402Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-26T14:36:04.403Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T14:36:04.410Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T14:36:11.042Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T14:36:11.049Z"}
