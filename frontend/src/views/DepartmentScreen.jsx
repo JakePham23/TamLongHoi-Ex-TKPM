@@ -1,0 +1,73 @@
+import React, { useState } from "react";
+import { FaPlus } from "react-icons/fa";
+import SearchInput from "../components/SearchInput.jsx";
+import Button from "../components/Button.jsx";
+import DepartmentForm from "../components/Departments/DepartmentForm.jsx";
+import DepartmentTable from "../components/Departments/DepartmentTable.jsx";
+import useDepartments from "../hooks/useDepartments";
+import "../styles/pages/DepartmentScreen.scss";
+import departmentService from "../services/department.service";
+
+const DepartmentScreen = () => {
+  const { departments, fetchDepartments } = useDepartments();
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isAdding, setIsAdding] = useState(false);
+  // const [selectedDepartment, setSelectedDepartment] = useState(null); // Manage selected department state
+
+  const handleSaveDepartment = async (newDepartment) => {
+    try {
+      await departmentService.addDepartment(newDepartment);
+      fetchDepartments();
+      setIsAdding(false);
+    } catch (error) {
+      console.error("Lỗi khi thêm khoa:", error);
+    }
+  };
+
+  const handleDeleteDepartment = async (departmentId) => {
+    if (!window.confirm("Bạn có chắc muốn xoá khoa này?")) return;
+    try {
+      await departmentService.deleteDepartment(departmentId);
+      fetchDepartments();
+    } catch (error) {
+      console.error("Lỗi khi xoá khoa:", error);
+    }
+  };
+
+  const handleEditDepartment = async (departmentId, departmentName) => {
+    try {
+      await departmentService.updateDepartment(departmentId, departmentName);
+      fetchDepartments();
+    } catch (error) {
+      console.error("Lỗi khi cập nhật khoa:", error);
+    }
+  };
+
+  return (
+    <div className="DepartmentScreen">
+      <h1>Danh sách các khoa</h1>
+      <div className="top-bar">
+        <SearchInput
+          placeholder="Tìm kiếm khoa"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <Button icon={<FaPlus />} label="Thêm khoa" variant="gray" onClick={() => setIsAdding(true)} />
+      </div>
+
+      {isAdding && <DepartmentForm onSave={handleSaveDepartment} onClose={() => setIsAdding(false)} />}
+
+  
+
+      {/* Display selected department details */}
+      <DepartmentTable
+        departments={departments}
+        searchTerm={searchTerm}
+        onDelete={handleDeleteDepartment}
+        onEdit={handleEditDepartment}
+      />
+    </div>
+  );
+};
+
+export default DepartmentScreen;
