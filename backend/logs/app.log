@@ -2399,3 +2399,4 @@
 {"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-26T14:36:04.410Z"}
 {"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T14:36:11.042Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
 {"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T14:36:11.049Z"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-03-28T06:55:12.708Z"}

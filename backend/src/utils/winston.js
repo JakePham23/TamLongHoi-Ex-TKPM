@@ -16,7 +16,7 @@ const logger = winston.createLogger({
       collection: "logs", // Collection lưu log
       options: { useUnifiedTopology: true },
       level: "info",
-    })    
+    })
   ],
 });
 
