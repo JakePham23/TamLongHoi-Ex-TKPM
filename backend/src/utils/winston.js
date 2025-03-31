@@ -1,6 +1,8 @@
 import winston from "winston";
 import "winston-mongodb";
 
+const connectString =  process.env.MONGO_URI || 'mongodb://localhost:27017/StudentManagementSystem'
+
 // Cấu hình Winston
 const logger = winston.createLogger({
   level: "info", // Mức độ log: error, warn, info, debug
@@ -12,7 +14,7 @@ const logger = winston.createLogger({
     new winston.transports.Console(), // Log ra console
     new winston.transports.File({ filename: "logs/app.log", level: "info" }), // Log vào file
     new winston.transports.MongoDB({
-      db: "mongodb://localhost:27017/StudentManagementSystem", // Chỉ để database
+      db: connectString, // Chỉ để database
       collection: "logs", // Collection lưu log
       options: { useUnifiedTopology: true },
       level: "info",

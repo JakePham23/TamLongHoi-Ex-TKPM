@@ -2400,3 +2400,46 @@
 {"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-03-26T14:36:11.042Z","url":"/updateStudent/22120232","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
 {"level":"info","message":"Cập nhật thành công: Student ID 22120232","timestamp":"2025-03-26T14:36:11.049Z"}
 {"level":"info","message":"Server running on port 4000","timestamp":"2025-03-28T06:55:12.708Z"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-03-31T11:38:17.934Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-03-31T11:41:19.138Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:41:22.893Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:41:22.932Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-31T11:41:22.966Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-31T11:41:22.976Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:41:22.983Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:41:22.985Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-31T11:41:23.000Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-31T11:41:23.005Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:41:23.493Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-31T11:41:23.513Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:41:23.521Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-31T11:41:23.543Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:41:24.125Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:41:24.130Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-31T11:41:24.137Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-31T11:41:24.140Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:41:24.156Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:41:24.162Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-31T11:41:24.169Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-31T11:41:24.200Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:41:24.927Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-31T11:41:24.933Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:41:24.939Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-31T11:41:24.945Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-03-31T11:43:32.221Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:43:47.739Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-31T11:43:47.750Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:43:47.755Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-31T11:43:47.757Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:43:48.277Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-31T11:43:48.281Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:43:48.282Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:43:48.286Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-31T11:43:48.299Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-31T11:43:48.304Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:43:48.309Z","url":"/students","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-03-31T11:43:48.319Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:43:48.817Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-31T11:43:48.823Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-03-31T11:43:48.825Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-03-31T11:43:48.831Z"}

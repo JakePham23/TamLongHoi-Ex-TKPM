@@ -1,0 +1,30 @@
+services:
+  frontend:
+      build: ./frontend
+      ports:
+        - "8080:80"
+      restart: always
+
+  backend:
+      build: ./backend
+      ports:
+        - "3000:3000"
+      environment:
+        - MONGO_URI=mongodb://mongodb:27017/StudentManagementSystem
+      depends_on:
+        - mongodb
+
+  
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db 
+      - ./mongo-seed:/mongo-seed
+    restart: unless-stopped
+    entrypoint: ["/bin/bash", "-c", "mongod --bind_ip_all --logpath /dev/null --fork && /mongo-seed/import.sh && tail -f /dev/null"]
+
+volumes:
+  mongo_data:

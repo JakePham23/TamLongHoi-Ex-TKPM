@@ -1,5 +1,5 @@
 import express from 'express'
-import StudentManagementRoutes from './StudentManagement.route.js'
+import StudentManagementRoutes from './student.route.js'
 import departmentRoutes from './department.route.js'
 const router = express.Router()
 import { requestLogger } from "../utils/winston.js"; // Import middleware logger

@@ -1,0 +1,156 @@
+[{
+  "_id": {
+    "$oid": "67d8ea7d7e02c451d88fa5da"
+  },
+  "departmentName": "Luật",
+  "createdAt": {
+    "$date": "2025-03-18T03:37:33.595Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-25T09:33:43.979Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d8ea987e02c451d88fa5dc"
+  },
+  "departmentName": "Tiếng Anh thương mại",
+  "createdAt": {
+    "$date": "2025-03-18T03:38:00.814Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-18T03:38:00.814Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d8eaa27e02c451d88fa5de"
+  },
+  "departmentName": "Tiếng Nga",
+  "createdAt": {
+    "$date": "2025-03-18T03:38:10.483Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-25T07:41:46.109Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d8eaa77e02c451d88fa5e0"
+  },
+  "departmentName": "Tiếng Pháp",
+  "createdAt": {
+    "$date": "2025-03-18T03:38:15.672Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-18T03:38:15.672Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67e0e2e95966e68b4e9a4b2c"
+  },
+  "departmentName": "Công nghệ thông tin",
+  "createdAt": {
+    "$date": "2025-03-24T04:43:21.089Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-24T04:43:21.089Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67e0e3225966e68b4e9a4b30"
+  },
+  "departmentName": "Sinh học",
+  "createdAt": {
+    "$date": "2025-03-24T04:44:18.942Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-24T04:44:18.942Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67e0e35e5966e68b4e9a4b34"
+  },
+  "departmentName": "Hoá học",
+  "createdAt": {
+    "$date": "2025-03-24T04:45:18.142Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-24T04:45:18.142Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67e268622ac402b833e930ba"
+  },
+  "departmentName": "Tiếng Trung",
+  "createdAt": {
+    "$date": "2025-03-25T08:25:06.879Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-25T08:25:06.879Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67e268892ac402b833e930c6"
+  },
+  "departmentName": "Trí tuệ nhân tạo",
+  "createdAt": {
+    "$date": "2025-03-25T08:25:45.310Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-25T08:25:45.310Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67e2697f2ac402b833e930ca"
+  },
+  "departmentName": "Khoa học máy tính",
+  "createdAt": {
+    "$date": "2025-03-25T08:29:51.180Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-25T08:29:51.180Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67e269b32ac402b833e930ce"
+  },
+  "departmentName": "Tâm lí học",
+  "createdAt": {
+    "$date": "2025-03-25T08:30:43.397Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-25T08:30:43.397Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67e2b06bddf1ba5cc9994222"
+  },
+  "departmentName": "An toàn thông tin",
+  "createdAt": {
+    "$date": "2025-03-25T13:32:27.420Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-26T13:26:50.867Z"
+  },
+  "__v": 0
+}]

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 
-const connectString = 'mongodb://localhost:27017/StudentManagementSystem'
+const connectString =  process.env.MONGO_URI || 'mongodb://localhost:27017/StudentManagementSystem'
 
 
 // singleton

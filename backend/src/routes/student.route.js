@@ -1,5 +1,5 @@
 import express from 'express';
-import studentManagementController from '../controllers/student.controller';
+import studentController from '../controllers/student.controller.js';
 
 const router = express.Router();
 
@@ -32,7 +32,7 @@ router.get('/students', studentController.getAllStudent);
  *       404:
  *         description: Không tìm thấy sinh viên
  */
-router.get('/students/:studentId', studentManagementController.getStudent);
+router.get('/students/:studentId', studentController.getStudent);
 
 /**
  * @swagger
@@ -67,7 +67,7 @@ router.get('/students/:studentId', studentManagementController.getStudent);
  *       400:
  *         description: Lỗi dữ liệu đầu vào
  */
-router.post('/addStudent', studentManagementController.addStudent);
+router.post('/addStudent', studentController.addStudent);
 
 /**
  * @swagger
@@ -102,7 +102,7 @@ router.post('/addStudent', studentManagementController.addStudent);
  *       400:
  *         description: Lỗi dữ liệu đầu vào
  */
-router.put('/updateStudent/:studentId', studentManagementController.updateStudent);
+router.put('/updateStudent/:studentId', studentController.updateStudent);
 
 /**
  * @swagger
@@ -122,6 +122,6 @@ router.put('/updateStudent/:studentId', studentManagementController.updateStuden
  *       400:
  *         description: Student ID không tồn tại
  */
-router.delete('/deleteStudent/:studentId', studentManagementController.deleteStudent);
+router.delete('/deleteStudent/:studentId', studentController.deleteStudent);
 
 export default router;

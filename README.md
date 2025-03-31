@@ -46,11 +46,32 @@
       
            git clone https://github.com/JakePham23/TamLongHoi-Ex-TKPM.git
       
-   2. Student view:
+   2. Run the project with docker 
+
+      `Terminal`
+         
+            chmod +x mongo-seed/import.sh                       
+            docker compose up -d
+   3. Run code 
+
+      `Start backend`
+
+         cd backend
+         npm i
+         npm start
+
+      `Start frontend`
+      
+         cd ..
+         cd frontend
+         npm i
+         npm run build
+
+   4. Student view:
    
        ![image](https://github.com/JakePham23/TamLongHoi-Ex-TKPM/blob/web/ex01/fontend/src/assets/images/local/StudentView.png)
 
-   3. Department view:
+   5. Department view:
    
        ![image](https://github.com/JakePham23/TamLongHoi-Ex-TKPM/blob/web/ex01/fontend/src/assets/images/local/DepartmetView.png)
 
