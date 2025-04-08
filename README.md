@@ -48,7 +48,7 @@
       
    2. Run the project with docker 
 
-      `Terminal`
+      `Terminal` (macos)
          
             chmod +x mongo-seed/import.sh                       
             docker compose up -d
@@ -56,16 +56,16 @@
 
       `Start backend`
 
-         cd backend
-         npm i
-         npm start
+            cd backend
+            npm i
+            npm start
 
       `Start frontend`
       
-         cd ..
-         cd frontend
-         npm i
-         npm run build
+            cd ..
+            cd frontend
+            npm i
+            npm run build
 
    4. Student view:
    
@@ -104,6 +104,6 @@
       <img src="https://contrib.rocks/image?repo=EdogawaCoTrung/StudentManagement-frontend-Reactjs-TailwindCSS" />
   </a> -->
    
-   ## License
+   ## 1. License
    This project is licensed under the MIT License.
 </div>
