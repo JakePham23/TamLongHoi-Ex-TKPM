@@ -16,7 +16,7 @@ const courseSchema = new mongoose.Schema({
     min: [2, 'Credit must be at least 2']
   },
   department: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Departments',
     required: true,
   },
@@ -24,15 +24,15 @@ const courseSchema = new mongoose.Schema({
     type: String
   },
   prerequisite: {
-    type: String, // courseCode of the prerequisite
+    type: String, // courseId of the prerequisite
     validate: {
       validator: async function (value) {
         if (!value) return true; // Allow empty prerequisite
         const Course = mongoose.model('Course');
-        const exists = await Course.exists({ courseCode: value });
+        const exists = await Course.exists({ courseId: value });
         return !!exists;
       },
-      message: props => `Prerequisite course "${props.value}" does not exist.`
+      message: props => `Prerequisite course with ID "${props.value}" does not exist.`
     }
   }
 },
@@ -41,4 +41,5 @@ const courseSchema = new mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('Course', courseSchema);
+const Course = mongoose.model('Course', courseSchema);
+export default Course;

@@ -1,7 +1,7 @@
 import winston from "winston";
 import "winston-mongodb";
 
-const connectString =  process.env.MONGO_URI || 'mongodb://localhost:27017/StudentManagementSystem'
+const connectString =  process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/StudentManagementSystem'
 
 // Cấu hình Winston
 const logger = winston.createLogger({

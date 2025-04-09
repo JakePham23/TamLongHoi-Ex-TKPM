@@ -1,5 +1,5 @@
 const PORT = process.env.PORT || 5000
-const HOST = `http://localhost:${PORT}`
+const HOST = `http://127.0.0.1:${PORT}`
 const API_VERSION = 'v1'
 const API_URL = `${HOST}/api/${API_VERSION}`
 
