@@ -2,7 +2,8 @@ import '../styles/base/index.scss';
 import { useState } from "react";
 import Dashboard from './Dashboard.jsx';
 import StudentScreen from './StudentScreen.jsx';
-import DepartmentScreen from './DepartmentScreen.jsx'; // Thêm dòng này
+import DepartmentScreen from './DepartmentScreen.jsx';
+import CourseScreen from './CourseScreen.jsx';
 import Tabbar from '../components/Tabbar/Tabbar.jsx';
 
 // layout
@@ -16,10 +17,10 @@ const App = () => {
                 {view === "dashboard" && <Dashboard />}
                 {view === "student" && <StudentScreen />}
                 {view === "department" && <DepartmentScreen />}
+                {view === "course" && <CourseScreen />}
             </div>
         </div>
     );
 };
-
 
 export default App;

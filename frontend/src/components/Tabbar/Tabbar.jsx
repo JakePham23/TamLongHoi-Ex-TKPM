@@ -20,10 +20,10 @@ const Tabbar = ({ setView }) => {
         <h2>Student Management</h2>
       </div>
       <div className="ListContent">
-      <TabButton icon={<FaTachometerAlt />} label="Dashboard" isActive={activeTab == "dashboard"} onClick={() => handleTabClick("dashboard")} />
-      <TabButton icon={<FaUniversity />} label="Department" isActive={activeTab == "department"} onClick={() => handleTabClick("department")} />
-      <TabButton icon={<FaUserGraduate />} label="Student" isActive={activeTab == "student"} onClick={() => handleTabClick("student")} />
-
+        <TabButton icon={<FaTachometerAlt />} label="Dashboard" isActive={activeTab == "dashboard"} onClick={() => handleTabClick("dashboard")} />
+        <TabButton icon={<FaUniversity />} label="Department" isActive={activeTab == "department"} onClick={() => handleTabClick("department")} />
+        <TabButton icon={<FaUserGraduate />} label="Student" isActive={activeTab == "student"} onClick={() => handleTabClick("student")} />
+        <TabButton icon={<FaBook />} label="Course" isActive={activeTab == "course"} onClick={() => handleTabClick("course")} />
       </div>
     </div>
   );
