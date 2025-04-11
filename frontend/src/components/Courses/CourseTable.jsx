@@ -30,13 +30,17 @@ const CourseTable = ({ courses = [],departments=[], searchTerm = "", onDelete, o
     return sortOrder === "asc" ? valA.localeCompare(valB) : valB.localeCompare(valA);
   });
 
-  const finalData = sortedCourses.map((course, index) => ({
-    ...course,
-    stt: index + 1,
-    departmentName: course.department?.departmentName || "Chưa xác định",
-    prerequisite: course.prerequisite || "Không có",
-    description: course.description || "Chưa có mô tả"
-  }));
+  const finalData = sortedCourses.map((course, index) => {
+    const dept = departments.find(d => d._id === (course.department?._id || course.department));
+    return {
+      ...course,
+      stt: index + 1,
+      departmentName: dept?.departmentName || "Chưa xác định",
+      prerequisite: course.prerequisite || "Không có",
+      description: course.description || "Chưa có mô tả"
+    };
+  });
+  
 
   const handleEditClick = (course) => {
     setEditedCourse({

@@ -6868,3 +6868,198 @@
 {"level":"info","message":"Department updated: ID 67f8eb1e73fcc4c682c54381, New Name: Tiếng Bồ Đào Nha","timestamp":"2025-04-11T10:35:32.710Z"}
 {"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T10:35:32.715Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
 {"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T10:35:32.717Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-11T11:32:17.443Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:32:33.783Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:32:33.796Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:32:33.866Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:32:33.876Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:32:33.894Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:32:33.897Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:32:33.902Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:32:33.905Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:32:33.912Z"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:32:33.985Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:32:33.989Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:32:34.006Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:32:34.011Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:32:34.023Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:32:34.026Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:32:34.034Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-11T11:33:25.657Z","url":"/courses/67f8ec3b73fcc4c682c543c2","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"warn","message":"Delete course failed: Course ID 67f8ec3b73fcc4c682c543c2 not found","timestamp":"2025-04-11T11:33:25.805Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-11T11:33:25.806Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-11T11:33:25.808Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-11T11:33:29.439Z","url":"/courses/67f8ec3b73fcc4c682c543c2","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"warn","message":"Delete course failed: Course ID 67f8ec3b73fcc4c682c543c2 not found","timestamp":"2025-04-11T11:33:29.444Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-11T11:33:29.444Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-11T11:33:29.446Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-11T11:33:32.418Z","url":"/courses/67f8ec3b73fcc4c682c543c2","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"warn","message":"Delete course failed: Course ID 67f8ec3b73fcc4c682c543c2 not found","timestamp":"2025-04-11T11:33:32.424Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-11T11:33:32.425Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-11T11:33:32.426Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:37.916Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:37.922Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:37.935Z"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:44:37.941Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:37.944Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:37.948Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:37.952Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:37.960Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:44:37.964Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:37.968Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:37.977Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:37.983Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:37.996Z"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:44:38.000Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:38.007Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:44:38.019Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:41.354Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:41.357Z","url":"/students","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:41.362Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:41.382Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-04-11T11:44:41.386Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:41.393Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:41.397Z","url":"/students","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-04-11T11:44:41.411Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:41.683Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:41.688Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:41.691Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:41.697Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:42.422Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:42.425Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:42.428Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:42.433Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:42.780Z","url":"/students","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:42.784Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:42.794Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-04-11T11:44:42.798Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:42.801Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:42.806Z","url":"/students","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:42.810Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-04-11T11:44:42.825Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:43.601Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:43.605Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:43.615Z"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:44:43.620Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:43.623Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:43.628Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:43.632Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:43.640Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:44:43.645Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:43.648Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:43.654Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:43.660Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:43.669Z"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:44:43.674Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:43.679Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:44:43.688Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:45.943Z","url":"/students","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:45.948Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:45.959Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-04-11T11:44:45.963Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:45.967Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:45.972Z","url":"/students","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:45.976Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-04-11T11:44:45.988Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:46.323Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:46.329Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:46.331Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:46.336Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:49.144Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:49.148Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:49.155Z"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:44:49.158Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:49.161Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:49.164Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:49.167Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:49.176Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:44:49.180Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:49.186Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:49.191Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:49.197Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:44:49.206Z"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:44:49.210Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:44:49.214Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:44:49.223Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-11T11:44:56.399Z","url":"/courses/67f8ec3b73fcc4c682c543c2","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"warn","message":"Delete course failed: Course ID 67f8ec3b73fcc4c682c543c2 not found","timestamp":"2025-04-11T11:44:56.404Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-11T11:44:56.405Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-11T11:44:56.408Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-04-11T11:45:44.099Z","url":"/courses/67f8ea8f73fcc4c682c5433b","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"warn","message":"Update course failed: Course ID 67f8ea8f73fcc4c682c5433b not found","timestamp":"2025-04-11T11:45:44.120Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in updateCourse","timestamp":"2025-04-11T11:45:44.121Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-11T11:45:44.122Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-04-11T11:45:50.472Z","url":"/courses/67f8ec3b73fcc4c682c543c2","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"warn","message":"Update course failed: Course ID 67f8ec3b73fcc4c682c543c2 not found","timestamp":"2025-04-11T11:45:50.480Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in updateCourse","timestamp":"2025-04-11T11:45:50.481Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-11T11:45:50.482Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:52:17.298Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:52:17.302Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:52:17.309Z"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:52:17.313Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:52:17.316Z","url":"/departments","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T11:52:17.320Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T11:52:17.323Z"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T11:52:17.333Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-11T11:52:28.994Z","url":"/courses/67f8ec3b73fcc4c682c543c2","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"warn","message":"Delete course failed: Course ID 67f8ec3b73fcc4c682c543c2 not found","timestamp":"2025-04-11T11:52:29.000Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-11T11:52:29.001Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-11T11:52:29.003Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-11T11:52:32.396Z","url":"/courses/67f8ec3b73fcc4c682c543c2","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"warn","message":"Delete course failed: Course ID 67f8ec3b73fcc4c682c543c2 not found","timestamp":"2025-04-11T11:52:32.400Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-11T11:52:32.400Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-11T11:52:32.402Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-11T11:57:44.339Z","url":"/courses/67f8ec3b73fcc4c682c543c2","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"}
+{"level":"warn","message":"Delete course failed: Course ID 67f8ec3b73fcc4c682c543c2 not found","timestamp":"2025-04-11T11:57:44.386Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-11T11:57:44.387Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-11T11:57:44.389Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T12:03:25.842Z","url":"/courses","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T12:03:25.851Z","url":"/departments","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T12:03:25.866Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T12:03:25.872Z","url":"/departments","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T12:03:25.877Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T12:03:25.880Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T12:03:25.884Z","url":"/courses","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T12:03:25.890Z","url":"/departments","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T12:03:25.903Z"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T12:03:25.908Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T12:03:25.911Z","url":"/departments","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T12:03:25.918Z","url":"/courses","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-11T12:03:25.926Z"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T12:03:25.939Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T12:03:25.943Z","url":"/courses","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-11T12:03:25.958Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-11T12:03:32.218Z","url":"/courses/undefined","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"}
+{"level":"warn","message":"Delete course failed: Course ID undefined not found","timestamp":"2025-04-11T12:03:32.225Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-11T12:03:32.226Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-11T12:03:32.227Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-11T12:03:48.938Z","url":"/courses/undefined","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"}
+{"level":"warn","message":"Delete course failed: Course ID undefined not found","timestamp":"2025-04-11T12:03:48.946Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-11T12:03:48.947Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-11T12:03:48.948Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-11T12:07:12.949Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-11T12:07:13.232Z","url":"/courses/undefined","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-11T12:07:13.244Z","url":"/courses/undefined","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"}
+{"level":"warn","message":"Delete course failed: Course ID undefined not found","timestamp":"2025-04-11T12:07:13.250Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-11T12:07:13.250Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-11T12:07:13.251Z"}
+{"level":"warn","message":"Delete course failed: Course ID undefined not found","timestamp":"2025-04-11T12:07:13.253Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-11T12:07:13.253Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-11T12:07:13.254Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-11T12:07:29.822Z","url":"/courses/CSC0001","userAgent":"PostmanRuntime/7.43.3"}
+{"level":"warn","message":"Delete course failed: Course ID undefined not found","timestamp":"2025-04-11T12:07:29.829Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-11T12:07:29.830Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-11T12:07:29.833Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-11T12:07:49.334Z","url":"/courses/67f8ec3b73fcc4c682c543c2","userAgent":"PostmanRuntime/7.43.3"}
+{"level":"warn","message":"Delete course failed: Course ID undefined not found","timestamp":"2025-04-11T12:07:49.339Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-11T12:07:49.339Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-11T12:07:49.340Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-11T12:08:27.732Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-11T12:08:29.590Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-11T12:14:37.140Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-11T12:14:41.322Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-11T12:15:06.752Z","url":"/courses/67f8ec3b73fcc4c682c543c2","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"}
+{"level":"info","message":"Course deleted: 67f8ec3b73fcc4c682c543c2","timestamp":"2025-04-11T12:15:06.782Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-11T12:15:06.811Z","url":"/courses","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"}
+{"level":"info","message":"Retrieved 7 courses successfully","timestamp":"2025-04-11T12:15:06.862Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-11T12:16:16.513Z"}

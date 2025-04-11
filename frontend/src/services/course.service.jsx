@@ -52,6 +52,7 @@ class CourseService {
 
     async deleteCourse(courseId) {
         try {
+            console.log("🗑️ Deleting course with ID:", courseId); // 👈 HIỂN THỊ RA CONSOLE
             const response = await fetch(`${API_BASE_URL}/courses/${courseId}`, {
                 method: 'DELETE'
             });

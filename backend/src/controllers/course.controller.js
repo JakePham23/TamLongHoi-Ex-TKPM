@@ -56,7 +56,7 @@ class CourseController {
         try {
             const { courseId } = req.params;
             
-            const deletedCourse = await courseModel.findOneAndDelete({ courseId });
+            const deletedCourse = await courseModel.findByIdAndDelete( courseId );
             
             if (!deletedCourse) {
                 logger.warn(`Delete course failed: Course ID ${courseId} not found`);
@@ -87,8 +87,8 @@ class CourseController {
                 }
             }
 
-            const updatedCourse = await courseModel.findOneAndUpdate(
-                { courseId },
+            const updatedCourse = await courseModel.findByIdAndUpdate(
+                courseId,
                 updateData,
                 { new: true, runValidators: true }
             );
