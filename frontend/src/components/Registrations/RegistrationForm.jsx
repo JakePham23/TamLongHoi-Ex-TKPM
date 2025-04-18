@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "../Button";
-import "../../styles/pages/Registration.scss";
+import "../../styles/pages/RegistrationScreen.scss";
 
 const RegistrationForm = ({ onSave, registration, courses, departments, teachers, onClose }) => {
   const [formData, setFormData] = useState({

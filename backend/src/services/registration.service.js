@@ -24,6 +24,7 @@ class RegistrationService {
     }
 
     async updateRegistration(id, updateData) {
+        console.log(updateData);
         const updatedRegistration = await registrationModel.findByIdAndUpdate(id, updateData, { new: true, runValidators: true });
         if (!updatedRegistration) throw new Error("Registration not found");
         logger.info(`Registration updated: ${id}`);

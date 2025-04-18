@@ -1,15 +1,16 @@
 import React, { useState, useRef, useCallback } from "react";
 import Button from "./Button";
-import { FaEye, FaEdit, FaTrash, FaSort, FaSortUp, FaSortDown } from "react-icons/fa";
+import { FaEye, FaEdit, FaTrash, FaSort, FaSortUp, FaSortDown, FaPlus } from "react-icons/fa";
 import "../styles/Table.scss";
 
-const DataTable = ({ 
-  columns, 
-  data, 
-  onEdit, 
-  onView, 
-  onDelete, 
-  initialSortField 
+const DataTable = ({
+  columns,
+  data,
+  onEdit,
+  onView,
+  onDelete,
+  onAdd,
+  initialSortField
 }) => {
   const [sortField, setSortField] = useState(initialSortField || null);
   const [sortOrder, setSortOrder] = useState("asc");
@@ -41,20 +42,20 @@ const DataTable = ({
 
   const sortedData = [...data].sort((a, b) => {
     if (!sortField) return 0;
-  
+
     const valueA = getNestedValue(a, sortField);
     const valueB = getNestedValue(b, sortField);
-  
+
     if (typeof valueA === "number" && typeof valueB === "number") {
       return sortOrder === "asc" ? valueA - valueB : valueB - valueA; // Sắp xếp số
     }
-  
+
     const strA = String(valueA);
     const strB = String(valueB);
-    
+
     return sortOrder === "asc" ? strA.localeCompare(strB) : strB.localeCompare(strA); // Sắp xếp chuỗi
   });
-  
+
 
   const getSortIcon = (field) => {
     if (sortField !== field) return <FaSort />;
@@ -88,6 +89,7 @@ const DataTable = ({
                 {onView && <Button icon={<FaEye />} label="Xem" variant="gray" onClick={() => onView(row)} />}
                 {onEdit && <Button icon={<FaEdit />} label="Sửa" variant="gray" onClick={() => onEdit(row)} />}
                 {onDelete && <Button icon={<FaTrash />} label="Xoá" variant="danger" onClick={() => onDelete(row._id || row.studentId)} />}
+                {onAdd && <Button icon={<FaPlus />} label="Thêm" variant="success" onClick={() => onAdd(row)} />}
               </td>
             </tr>
           ))

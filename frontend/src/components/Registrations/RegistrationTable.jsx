@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import DataTable from "../DataTable";
 import EntityEdit from "../EnityEdit"; // Fixed typo from EnityEdit
-import EntityAdd from "../EntityAdd";
 import "../../styles/Modal.scss";
-import StudentRegistrationForm from "./StudentRegistrationForm"; // Đường dẫn tới component mới
+import StudentRegistrationForm from "./StudentRegistrationForm";
 
-const RegistrationTable = ({ students = [], registrations = [], courses = [], searchTerm, teachers = [], onDelete, onEdit }) => {
+
+const RegistrationTable = ({ students = [], registrations = [], courses = [], searchTerm, teachers = [], onDelete, onEdit, onAdd }) => {
   const [sortOrder, setSortOrder] = useState("asc");
   const [isEditing, setIsEditing] = useState(false);
   const [editedRegistration, setEditedRegistration] = useState(null);
   const [errors, setErrors] = useState({});
-
+  const [isAdding, setIsAdding] = useState(false);
+  const [addedRegistration, setAddedRegistration] = useState(null);
 
   const columns = [
     { label: "STT", field: "stt", sortable: false },
@@ -55,6 +56,17 @@ const RegistrationTable = ({ students = [], registrations = [], courses = [], se
 
   const handleSaveEdit = () => {
     const newErrors = {};
+    const {
+      _id,
+      year,
+      semester,
+      courseId,
+      teacherId,
+      maxStudent,
+      description,
+      students
+    } = editedRegistration;
+
     if (!editedRegistration.year) newErrors.year = "Năm không được để trống!";
     if (!editedRegistration.semester) newErrors.semester = "Học kỳ không được để trống!";
     if (!editedRegistration.courseId) newErrors.courseId = "Vui lòng chọn môn học!";
@@ -66,14 +78,17 @@ const RegistrationTable = ({ students = [], registrations = [], courses = [], se
       return;
     }
 
-    onEdit(editedRegistration._id, {
-      year: editedRegistration.year,
-      semester: editedRegistration.semester,
-      courseId: editedRegistration.courseId,
-      teacherId: editedRegistration.teacherId,
-      maxStudent: editedRegistration.maxStudent,
-      description: editedRegistration.description
-    });
+    const updatedData = {
+      year: year || '',
+      semester: semester || '',
+      courseId: courseId || '',
+      teacherId: teacherId || '',
+      maxStudent: maxStudent || 0,
+      description: description || '',
+      registrationStudent: students || [] // nếu có danh sách sinh viên được chỉnh sửa
+    };
+
+    onEdit(_id, updatedData);
 
     setIsEditing(false);
     setEditedRegistration(null);
@@ -88,6 +103,41 @@ const RegistrationTable = ({ students = [], registrations = [], courses = [], se
     }));
   };
 
+  const handleAddClick = (registration) => {
+    setAddedRegistration({
+      _id: registration._id,
+      year: registration.year,
+      semester: registration.semester,
+      courseId: registration.courseId?._id || registration.courseId,
+      teacherId: registration.teacherId?._id || registration.teacherId,
+      registrationStudent: registration.registrationStudent,
+      maxStudent: registration.maxStudent,
+      description: registration.description
+    });
+    setIsAdding(true);
+  };
+
+  const handleConfirmRegistration = (initialData, selectedStudentIds) => {
+    const registrationData = {
+      ...initialData,
+      Id: initialData._id,
+      registrationStudent: selectedStudentIds.map(id => ({
+        studentId: id,
+        score: null, // hoặc 0, hoặc undefined nếu bạn chưa có điểm
+        status: "registered",
+      })),
+    };
+
+    onEdit(registrationData.Id, registrationData);
+
+
+    // Reset trạng thái
+    setIsAdding(false);
+    setAddedRegistration(null);
+    setErrors({});
+  };
+
+
   return (
     <>
       <DataTable
@@ -98,6 +148,7 @@ const RegistrationTable = ({ students = [], registrations = [], courses = [], se
         onSortChange={setSortOrder}
         onEdit={handleEditClick}
         onDelete={onDelete}
+        onAdd={handleAddClick}
       />
 
       {isEditing && (
@@ -134,6 +185,27 @@ const RegistrationTable = ({ students = [], registrations = [], courses = [], se
           onClose={() => setIsEditing(false)}
         />
       )}
+      {isAdding && (
+        <StudentRegistrationForm
+          initialData={addedRegistration}
+          course={courses.find(c => c._id === addedRegistration?.courseId)}
+          teacher={teachers.find(c => c._id === addedRegistration?.teacherId)}
+          students={students}
+          onSubmit={(data) => {
+            onAdd(data);
+            setIsAdding(false);
+            setAddedRegistration(null);
+            setErrors({});
+          }}
+          onClose={() => {
+            setIsAdding(false);
+            setAddedRegistration(null);
+            setErrors({});
+          }}
+          onConfirm={handleConfirmRegistration}
+        />
+      )}
+
     </>
   );
 };

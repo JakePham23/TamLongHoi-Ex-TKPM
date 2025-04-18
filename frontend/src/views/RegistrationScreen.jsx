@@ -9,7 +9,7 @@ import useCourses from "../hooks/useCourse.jsx";
 import useTeachers from "../hooks/useTeachers.jsx";
 import useStudents from "../hooks/useStudents.jsx";
 import useDepartments from "../hooks/useDepartments.jsx";
-import "../styles/pages/Registration.scss";
+import "../styles/pages/RegistrationScreen.scss";
 import registrationService from "../services/registration.service.jsx";
 
 const RegistrationScreen = () => {
@@ -129,6 +129,7 @@ const RegistrationScreen = () => {
       {isAdding && (
         <RegistrationForm
           onSave={handleSaveRegistration}
+          onEdit={handleEditRegistration}
           courses={courses}
           teachers={teachers}
           departments={departments}
