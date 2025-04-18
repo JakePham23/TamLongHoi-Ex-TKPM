@@ -10,12 +10,14 @@ class CourseService {
             const data = await response.json();
             return data.metadata;
         } catch (error) {
+            console.error(error);
             throw error;
         }
     }
 
     async addCourse(courseData) {
         try {
+            console.log("📥 Adding course:", courseData); // 👈 HIỂN THỊ RA CONSOLE
             const response = await fetch(`${API_BASE_URL}/courses/add`, {
                 method: 'POST',
                 headers: {
@@ -28,13 +30,15 @@ class CourseService {
             }
             return await response.json();
         } catch (error) {
+            console.error(error);
             throw error;
         }
     }
 
     async updateCourse(courseId, courseData) {
         try {
-            const response = await fetch(`${API_BASE_URL}/courses/${courseId}`, {
+            console.log("✏️ Updating course with ID:", courseId, "Data:", courseData); // 👈 HIỂN THỊ RA CONSOLE
+            const response = await fetch(`${API_BASE_URL}/courses/update/${courseId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -46,6 +50,7 @@ class CourseService {
             }
             return await response.json();
         } catch (error) {
+            console.error(error);
             throw error;
         }
     }
@@ -53,7 +58,7 @@ class CourseService {
     async deleteCourse(courseId) {
         try {
             console.log("🗑️ Deleting course with ID:", courseId); // 👈 HIỂN THỊ RA CONSOLE
-            const response = await fetch(`${API_BASE_URL}/courses/${courseId}`, {
+            const response = await fetch(`${API_BASE_URL}/courses/delete/${courseId}`, {
                 method: 'DELETE'
             });
             if (!response.ok) {

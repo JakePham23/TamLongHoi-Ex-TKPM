@@ -63,9 +63,11 @@ const CourseTable = ({ courses = [],departments=[], searchTerm = "", onDelete, o
       return;
     }
 
-    onEdit(editedCourse._id, {
+    onEdit(editedCourse.courseId, {
       courseName: editedCourse.courseName,
       credit: editedCourse.credit,
+      theoreticalSession: editedCourse.theoreticalSession,
+      practicalSession: editedCourse.practicalSession,
       departmentId: editedCourse.departmentId,
       prerequisite: editedCourse.prerequisite,
       description: editedCourse.description
@@ -103,6 +105,8 @@ const CourseTable = ({ courses = [],departments=[], searchTerm = "", onDelete, o
             { name: "courseId", label: "Mã môn học", type: "text", disabled: true },
             { name: "courseName", label: "Tên môn học", type: "text" },
             { name: "credit", label: "Số tín chỉ", type: "number" },
+            { name: "theoreticalSession", label: "Số tiết lý thuyết", type: "number" },
+            { name: "practicalSession", label: "Số tiết thực hành", type: "number" },
             {
               name: "departmentId",
               label: "Khoa",

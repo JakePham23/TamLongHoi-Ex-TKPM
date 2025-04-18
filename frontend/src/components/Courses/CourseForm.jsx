@@ -7,6 +7,8 @@ const CourseForm = ({ onSave, course, departments, onClose }) => {
     courseId: "",
     courseName: "",
     credit: "",
+    practicalSession: "",
+    theoreticalSession: "",
     departmentId: "",
     description: "",
     prerequisite: ""
@@ -18,6 +20,8 @@ const CourseForm = ({ onSave, course, departments, onClose }) => {
         courseId: course.courseId || "",
         courseName: course.courseName || "",
         credit: course.credit || "",
+        practicalSession: course.practicalSession || "",
+        theoreticalSession: course.theoreticalSession || "",
         departmentId: course.department?._id || "",
         description: course.description || "",
         prerequisite: course.prerequisite || ""
@@ -27,6 +31,8 @@ const CourseForm = ({ onSave, course, departments, onClose }) => {
         courseId: "",
         courseName: "",
         credit: "",
+        practicalSession: "",
+        theoreticalSession: "",
         departmentId: "",
         description: "",
         prerequisite: ""
@@ -58,6 +64,14 @@ const CourseForm = ({ onSave, course, departments, onClose }) => {
       alert("Số tín chỉ phải lớn hơn 1!");
       return;
     }
+    if (!formData.practicalSession || formData.practicalSession < 0) {
+      alert("Số buổi thực hành phải lớn hơn hoặc bằng 0!");
+      return;
+    }
+    if (!formData.theoreticalSession || formData.theoreticalSession < 0) {
+      alert("Số buổi lý thuyết phải lớn hơn hoặc bằng 0!");
+      return;
+    }
     if (!formData.departmentId) {
       alert("Vui lòng chọn khoa!");
       return;
@@ -68,6 +82,8 @@ const CourseForm = ({ onSave, course, departments, onClose }) => {
       courseId: formData.courseId,
       courseName: formData.courseName,
       credit: formData.credit,
+      practicalSession: formData.practicalSession,
+      theoreticalSession: formData.theoreticalSession,
       department: {
         _id: formData.departmentId
       },
@@ -113,6 +129,31 @@ const CourseForm = ({ onSave, course, departments, onClose }) => {
             value={formData.credit}
             onChange={handleChange}
             min="2"
+          />
+        </div>
+
+
+        <div className="form-group">
+          <label>Số tiết lí thuyết</label>
+          <input
+            type="number"
+            name="theoreticalSession"
+            placeholder="Nhập số tiết lý thuyết"
+            value={formData.theoreticalSession}
+            onChange={handleChange}
+            min="0"
+          />
+        </div>
+        
+        <div className="form-group">
+          <label>Số tiết thực hành</label>
+          <input
+            type="number"
+            name="practicalSession"
+            placeholder="Nhập số tiết thực hành"
+            value={formData.practicalSession}
+            onChange={handleChange}
+            min="0"
           />
         </div>
 

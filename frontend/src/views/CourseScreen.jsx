@@ -49,6 +49,7 @@ const CourseScreen = () => {
   };
 
   const handleEditCourse = async (courseId, courseData) => {
+    console.log("Editing course with ID:", courseId, "Data:", courseData); // Debug data editing
     try {
       await courseService.updateCourse(courseId, courseData);
       await fetchCourses();

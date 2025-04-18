@@ -29,6 +29,7 @@ const StudentDetail = ({departments, student, onSave, onClose, setEditedStudent,
       ...student, 
       gender: student.gender === true, 
       dob: student.dob ? student.dob.split("T")[0] : "", // Format YYYY-MM-DD
+      departmentId: student.department?._id || student.departmentId,
       identityDocument: {
         ...student.identityDocument, // Giữ lại các giá trị khác
         issuedDate: student.identityDocument?.issuedDate ? student.identityDocument.issuedDate.split("T")[0] : "",
@@ -82,10 +83,6 @@ const StudentDetail = ({departments, student, onSave, onClose, setEditedStudent,
   };
   
   
-  const departmentOptions = departments.map((dept) => ({
-    value: dept._id,
-    label: dept.departmentName
-  }));
   return (
     <>
       {!isEditing ? (
@@ -134,14 +131,11 @@ const StudentDetail = ({departments, student, onSave, onClose, setEditedStudent,
               name: "departmentId",
               label: "Khoa",
               type: "select",
-              value: editedStudent.department?._id || "",
-              options: [
-                { value: editedStudent.department?._id || "", label: editedStudent.department?.departmentName || "Chọn khoa" }, // Giá trị hiện tại của sinh viên
-                ...departmentOptions // Danh sách khoa từ biến departmentOptions
-              ],              
-              onChange: handleChange
+              options: departments.map((d) => ({
+                value: d._id,
+                label: d.departmentName
+              }))
             },
-            
             
             { name: "schoolYear", label: "Niên khóa", type: "number" },
             { name: "program", label: "Chương trình", type: "select", options: [

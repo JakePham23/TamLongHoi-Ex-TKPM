@@ -14,7 +14,7 @@ import { exportCSV, exportJSON } from "../utils/export.util"; // Import export f
 
 const StudentScreen = () => {
   //hooks
-  const { students, setStudents } = useStudents();
+  const { students, setStudents, fetchStudents } = useStudents();
   const { departments = [] } = useDepartments(); // Giữ mặc định là mảng rỗng khi không có dữ liệu
 
   
@@ -56,12 +56,16 @@ const StudentScreen = () => {
     try {
       await studentService.updateStudent(updatedStudent.studentId, updatedStudent);
       
-      // Cập nhật danh sách sinh viên ngay lập tức
-      setStudents((prev) =>
-        prev.map((s) => (s.studentId === updatedStudent.studentId ? updatedStudent : s))
-      );
+      // // Cập nhật danh sách sinh viên ngay lập tức
+      // setStudents((prev) =>
+      //   prev.map((s) => (s.studentId === updatedStudent.studentId ? updatedStudent : s))
+      // );
   
+      // setSelectedStudent(updatedStudent); // Cập nhật lại selectedStudent để phản ánh ngay lập tức
+      await fetchStudents(); // Lấy lại danh sách sinh viên từ server
+      setStudents((prev) => prev.map((s) => (s.studentId === updatedStudent.studentId ? updatedStudent : s)));
       setSelectedStudent(updatedStudent); // Cập nhật lại selectedStudent để phản ánh ngay lập tức
+      setEditedStudent(null); // Đặt lại editedStudent
       setIsEditing(false);
     } catch (error) {
       console.error("Lỗi khi cập nhật sinh viên:", error);

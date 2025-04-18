@@ -1,9 +1,9 @@
-const API_BASE_URL ='http://localhost:3000/api/v1'
+const API_BASE_URL ='http://localhost:3000/api/v1/students'
 // const API_BASE_URL =import.meta.env.VITE_API_BASE_URL
 class StudentService {
     async getStudents() {
         try {
-            const response = await fetch(`${API_BASE_URL}/students`);
+            const response = await fetch(`${API_BASE_URL}/`);
             const data = await response.json();
             if (!response.status) throw new Error(data.message || "Lỗi khi lấy danh sách sinh viên");
             return data.metadata; 
@@ -15,7 +15,8 @@ class StudentService {
 
     async updateStudent(studentId, updatedData) {
         try {
-            const response = await fetch(`${API_BASE_URL}/updateStudent/${studentId}`, {
+            console.log("Cập nhật sinh viên với ID:", studentId, "Dữ liệu:", updatedData); // Debug thông tin cập nhật
+            const response = await fetch(`${API_BASE_URL}/update/${studentId}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(updatedData),
@@ -36,7 +37,7 @@ class StudentService {
 
     async deleteStudent(studentId) {
         try {
-            const response = await fetch(`${API_BASE_URL}/deleteStudent/${studentId}`, {
+            const response = await fetch(`${API_BASE_URL}/delete/${studentId}`, {
                 method: "DELETE",
             });
             const data = await response.json();
@@ -50,7 +51,7 @@ class StudentService {
 
     async addStudent(studentData) {
         try {
-            const response = await fetch(`${API_BASE_URL}/addStudent`, {
+            const response = await fetch(`${API_BASE_URL}/add`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(studentData),
