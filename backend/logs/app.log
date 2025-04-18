@@ -9526,3 +9526,20 @@
 {"level":"info","message":"Course updated: MTH00050","timestamp":"2025-04-18T04:57:10.851Z"}
 {"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:57:10.861Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
 {"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T04:57:10.865Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T05:02:41.265Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:02:49.714Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:02:49.719Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:02:49.733Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:02:49.742Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:02:49.744Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:02:49.746Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:02:49.748Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:02:49.758Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:02:49.760Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:02:49.762Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:02:49.764Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:02:49.768Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:02:49.776Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:02:49.777Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:02:49.780Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:02:49.785Z"}

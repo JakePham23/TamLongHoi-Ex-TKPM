@@ -18,7 +18,7 @@ const CourseTable = ({ courses = [],departments=[], searchTerm = "", onDelete, o
     { label: "Số tiết thực hành", field: "practicalSession", sortable: true },
     { label: "Khoa", field: "departmentName", sortable: true },
     { label: "Môn học tiên quyết", field: "prerequisite", sortable: true },
-    { label: "Mô tả", field: "description", sortable: true }
+    // { label: "Mô tả", field: "description", sortable: true }
   ];
 
   const filteredCourses = courses.filter((c) =>
@@ -39,7 +39,7 @@ const CourseTable = ({ courses = [],departments=[], searchTerm = "", onDelete, o
       stt: index + 1,
       departmentName: dept?.departmentName || "Chưa xác định",
       prerequisite: course.prerequisite || "Không có",
-      description: course.description || "Chưa có mô tả"
+      // description: course.description || "Chưa có mô tả"
     };
   });
   
@@ -128,7 +128,7 @@ const CourseTable = ({ courses = [],departments=[], searchTerm = "", onDelete, o
                 }))
               ]
             },
-            { name: "description", label: "Mô tả", type: "text" }
+            // { name: "description", label: "Mô tả", type: "text" }
           ]}
           data={editedCourse}
           errors={errors}
