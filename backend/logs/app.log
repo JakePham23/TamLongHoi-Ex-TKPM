@@ -9231,3 +9231,94 @@
 {"level":"info","message":"Course updated: BIO00082","timestamp":"2025-04-18T04:39:43.104Z"}
 {"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:39:43.117Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
 {"level":"info","message":"Retrieved 14 courses successfully","timestamp":"2025-04-18T04:39:43.120Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-04-18T04:40:51.653Z","url":"/courses/update/BIO00081","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Course updated: BIO00081","timestamp":"2025-04-18T04:40:51.658Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:40:51.670Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 14 courses successfully","timestamp":"2025-04-18T04:40:51.673Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:40:55.446Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:40:55.450Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:40:55.452Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:40:55.454Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:41:04.519Z","url":"/addDepartment","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:41:04.519Z","url":"/api/v1/addDepartment","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:41:51.495Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:41:56.671Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:01.457Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:02.146Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:02.809Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:03.584Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:03.941Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:04.359Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:04.781Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:06.079Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:06.619Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:07.747Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:10.911Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:20.754Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:21.104Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:23.387Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:23.695Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:28.597Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:30.029Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:30.463Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:34.574Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:35.718Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:36.226Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:37.757Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:38.226Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:45.111Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:45.565Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:47.683Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:42:49.365Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:05.974Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:43:05.985Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:06.105Z","url":"/d/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:06.117Z","url":"/api/v1/d/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:06.244Z","url":"/de/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:06.244Z","url":"/api/v1/de/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:06.369Z","url":"/dep/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:06.369Z","url":"/api/v1/dep/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:06.499Z","url":"/depa/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:06.500Z","url":"/api/v1/depa/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:06.624Z","url":"/depar/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:06.625Z","url":"/api/v1/depar/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:06.801Z","url":"/depart/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:06.801Z","url":"/api/v1/depart/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:06.965Z","url":"/departm/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:06.965Z","url":"/api/v1/departm/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:07.063Z","url":"/departme/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:07.063Z","url":"/api/v1/departme/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:07.192Z","url":"/department/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:07.193Z","url":"/api/v1/department/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:07.319Z","url":"/departments/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:07.319Z","url":"/api/v1/departments/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:08.469Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:43:08.473Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:11.289Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:43:11.292Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:11.377Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:43:11.379Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:11.481Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:43:11.483Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:14.003Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:43:14.005Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:14.462Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:43:14.464Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:14.578Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:43:14.581Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:17.100Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:43:17.103Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:17.201Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:43:17.203Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:17.296Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:43:17.298Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:17.425Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:43:17.427Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:17.585Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:43:17.587Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:17.675Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:43:17.676Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:43:28.579Z","url":"/departments/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"New department added: Vật Lý","timestamp":"2025-04-18T04:43:28.585Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:43:28.587Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:43:28.589Z"}

@@ -1,9 +1,9 @@
-const API_BASE_URL = 'http://localhost:3000/api/v1'
+const API_BASE_URL = 'http://localhost:3000/api/v1/departments'
 
 class Department{
     async getDepartments(){
         try {
-            const response = await fetch(`${API_BASE_URL}/departments`);
+            const response = await fetch(`${API_BASE_URL}/`);
             if (!response.ok) throw new Error("Lỗi khi lấy danh sách department");
             const data = await response.json();
             return data.metadata;
@@ -14,7 +14,7 @@ class Department{
     }
     async addDepartment(departmentData){
         try {
-            const response = await fetch(`${API_BASE_URL}/addDepartment`, {
+            const response = await fetch(`${API_BASE_URL}/add`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -33,7 +33,7 @@ class Department{
 
     async updateDepartment(departmentId, updatedData) {
         try {
-            const response = await fetch(`${API_BASE_URL}/updateDepartment/${departmentId}`, {
+            const response = await fetch(`${API_BASE_URL}/update/${departmentId}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(updatedData), 
@@ -51,7 +51,7 @@ class Department{
 
     async deleteDepartment(departmentId) {
         try {
-            const response = await fetch(`${API_BASE_URL}/deleteDepartment/${departmentId}`, {
+            const response = await fetch(`${API_BASE_URL}/delete/${departmentId}`, {
                 method: "DELETE",
             });
             if (!response.ok) throw new Error("Lỗi khi xoá khoa");

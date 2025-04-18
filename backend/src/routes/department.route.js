@@ -19,11 +19,11 @@ const router = express.Router();
  *       200:
  *         description: Trả về danh sách khoa
  */
-router.get("/departments", departmentController.getAllDepartments);
+router.get("/", departmentController.getAllDepartments);
 
 /**
  * @swagger
- *  /api/v1/departments:
+ *  /api/v1/departments/add:
  *   post:
  *     summary: Thêm khoa mới
  *     tags: [Departments]
@@ -40,11 +40,11 @@ router.get("/departments", departmentController.getAllDepartments);
  *       201:
  *         description: Thêm khoa thành công
  */
-router.post("/departments", departmentController.addDepartment);
+router.post("/add", departmentController.addDepartment);
 
 /**
  * @swagger
- *  /api/v1/departments/{departmentId}:
+ *  /api/v1/departments/update/{departmentId}:
  *   put:
  *     summary: Cập nhật thông tin khoa
  *     tags: [Departments]
@@ -72,7 +72,7 @@ router.post("/departments", departmentController.addDepartment);
  *       500:
  *         description: Lỗi máy chủ nội bộ
  */
-router.put("/departments/{departmentId}", departmentController.updateDepartment);
+router.put("/update/:departmentId", departmentController.updateDepartment);
 
 /**
  * @swagger
@@ -95,6 +95,6 @@ router.put("/departments/{departmentId}", departmentController.updateDepartment)
  *       500:
  *         description: Lỗi máy chủ nội bộ
  */
-router.delete("/departments/{departmentId}", departmentController.deleteDepartment);
+router.delete("/delete/:departmentId", departmentController.deleteDepartment);
 
 export default router;
