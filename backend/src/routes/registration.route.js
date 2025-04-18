@@ -4,8 +4,8 @@ import RegistrationController from '../controllers/registration.controller.js';
 const router = express.Router();
 
 router.post('/add', RegistrationController.addRegistration);
-router.delete('/:RegistrationId', RegistrationController.deleteRegistration);
-router.put('/:RegistrationId', RegistrationController.updateRegistration);
+router.delete('/:registrationId', RegistrationController.deleteRegistration);
+router.put('/:registrationId', RegistrationController.updateRegistration);
 router.get('/', RegistrationController.getAllRegistrations);
 
 export default router; 

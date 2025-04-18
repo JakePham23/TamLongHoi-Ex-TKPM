@@ -3,7 +3,7 @@ import DataTable from "../DataTable";
 import EnityEdit from "../EnityEdit";
 import "../../styles/Modal.scss";
 
-const CourseTable = ({ courses = [],departments=[], searchTerm = "", onDelete, onEdit }) => {
+const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete, onEdit }) => {
   const [sortOrder, setSortOrder] = useState("asc");
   const [isEditing, setIsEditing] = useState(false);
   const [editedCourse, setEditedCourse] = useState(null);
@@ -40,7 +40,7 @@ const CourseTable = ({ courses = [],departments=[], searchTerm = "", onDelete, o
       description: course.description || "Chưa có mô tả"
     };
   });
-  
+
 
   const handleEditClick = (course) => {
     setEditedCourse({

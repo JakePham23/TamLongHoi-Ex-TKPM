@@ -1,0 +1,140 @@
+[{
+  "_id": {
+    "$oid": "67f6a6b676e47a6c1a327d60"
+  },
+  "courseId": "CSC0001",
+  "courseName": "Cơ Sở Lập Trình",
+  "credit": 4,
+  "department": {
+    "$oid": "67e2697f2ac402b833e930ca"
+  },
+  "description": "C/C++, some algorithms",
+  "prerequisite": "",
+  "createdAt": {
+    "$date": "2025-04-09T16:56:22.299Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-09T16:56:22.299Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f6a773faf999f2ae51c11b"
+  },
+  "courseId": "CSC0002",
+  "courseName": "Phương Pháp Lập Trình Hướng Đối Tượng",
+  "credit": 4,
+  "department": {
+    "$oid": "67e2697f2ac402b833e930ca"
+  },
+  "description": "OOP: dong goi, ke thua, da hinh, truu tuong",
+  "prerequisite": "CSC0001",
+  "createdAt": {
+    "$date": "2025-04-09T16:59:31.373Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-09T17:13:20.541Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f6a83bfaf999f2ae51c121"
+  },
+  "courseId": "CSC0003",
+  "courseName": "Xử lý ngôn ngữ tự nhiên",
+  "credit": 4,
+  "department": {
+    "$oid": "67e268892ac402b833e930c6"
+  },
+  "description": "python lib, algorithms, math",
+  "prerequisite": "",
+  "createdAt": {
+    "$date": "2025-04-09T17:02:51.675Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-09T17:02:51.675Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f6a874faf999f2ae51c126"
+  },
+  "courseId": "CSC0004",
+  "courseName": "Hệ Điều Hành",
+  "credit": 4,
+  "department": {
+    "$oid": "67e268892ac402b833e930c6"
+  },
+  "description": "xv6, linux operation, VM Ware",
+  "prerequisite": "CSC0001",
+  "createdAt": {
+    "$date": "2025-04-09T17:03:48.979Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T09:28:24.878Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f8dcb573fcc4c682c53f2d"
+  },
+  "courseId": "HOH0001",
+  "courseName": "Hóa Đại Cương 1",
+  "credit": 4,
+  "department": {
+    "$oid": "67e0e35e5966e68b4e9a4b34"
+  },
+  "description": "atomic, compounds, obitals...",
+  "prerequisite": "",
+  "createdAt": {
+    "$date": "2025-04-11T09:11:17.041Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T09:11:17.041Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f8e2f473fcc4c682c53fe6"
+  },
+  "courseId": "HOH0002",
+  "courseName": "Hóa Đại Cương 2",
+  "credit": 4,
+  "department": {
+    "$oid": "67e0e35e5966e68b4e9a4b34"
+  },
+  "description": "",
+  "prerequisite": "HOH0001",
+  "createdAt": {
+    "$date": "2025-04-11T09:37:56.715Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T09:37:56.715Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f8ea8f73fcc4c682c5433b"
+  },
+  "courseId": "HOH0003",
+  "courseName": "Hóa Đại Cương 3",
+  "credit": 4,
+  "department": {
+    "$oid": "67e0e35e5966e68b4e9a4b34"
+  },
+  "description": "organic, carbon",
+  "prerequisite": "HOH0002",
+  "createdAt": {
+    "$date": "2025-04-11T10:10:23.607Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-11T12:17:01.490Z"
+  },
+  "__v": 0
+}]

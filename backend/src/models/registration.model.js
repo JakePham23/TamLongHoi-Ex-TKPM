@@ -14,7 +14,7 @@ const registrationSchema = new mongoose.Schema({
         ref: 'Course',
         required: true,
     },
-    teachers: {
+    teacherId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Teachers',
         required: true,
@@ -27,9 +27,8 @@ const registrationSchema = new mongoose.Schema({
         studentId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Students',
-            required: true,
         },
-        scoure: {
+        score: {
             type: Number,
         },
         status: {
@@ -39,7 +38,7 @@ const registrationSchema = new mongoose.Schema({
     }],
     schedule: {
         dayOfWeek: {
-            type: Number,
+            type: String,
         },
         time: {
             type: String,
@@ -48,6 +47,14 @@ const registrationSchema = new mongoose.Schema({
     roomId: {
         type: Number,
     },
+    registrationDate: {
+        type: Date,
+        default: Date.now, // Automatically set to the current date
+    },
+    status: {
+        type: String,
+        enum: ['open', 'closed'],
+    },
 },
     {
         collection: "Registrations",
@@ -55,4 +62,4 @@ const registrationSchema = new mongoose.Schema({
     });
 
 const Registrations = mongoose.model("Registrations", registrationSchema);
-export default Registrations
+export default Registrations;

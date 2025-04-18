@@ -16,9 +16,9 @@ import RegistrationService from '../services/registration.service.js'; // Import
 class RegistrationController {
     async addRegistration(req, res, next) {
         try {
-            const { year, semester, courseId, teachers, maxStudent, registrationStudent, schedule, roomId } = req.body;
-
-            if (!year || !semester || !courseId || !teachers || !maxStudent) {
+            const { year, semester, courseId, teacherId, maxStudent, schedule, roomId } = req.body;
+            console.log(year, semester, courseId, teacherId, maxStudent, schedule, roomId);
+            if (!year || !semester || !courseId || !teacherId || !maxStudent) {
                 logger.warn("Add registration failed: Missing required fields");
                 return new BadRequest({ message: "Year, semester, course ID, teacher ID, and max student are required" }).send(res);
             }
@@ -27,9 +27,8 @@ class RegistrationController {
                 year,
                 semester,
                 courseId,
-                teachers,
+                teacherId,
                 maxStudent,
-                registrationStudent,
                 schedule,
                 roomId
             });

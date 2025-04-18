@@ -4,6 +4,7 @@ import Dashboard from './Dashboard.jsx';
 import StudentScreen from './StudentScreen.jsx';
 import DepartmentScreen from './DepartmentScreen.jsx';
 import CourseScreen from './CourseScreen.jsx';
+import RegistrationScreen from './RegistrationScreen.jsx';
 import Tabbar from '../components/Tabbar/Tabbar.jsx';
 
 // layout
@@ -18,6 +19,7 @@ const App = () => {
                 {view === "student" && <StudentScreen />}
                 {view === "department" && <DepartmentScreen />}
                 {view === "course" && <CourseScreen />}
+                {view === "registration" && <RegistrationScreen />}
             </div>
         </div>
     );
