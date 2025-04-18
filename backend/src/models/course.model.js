@@ -15,6 +15,16 @@ const courseSchema = new mongoose.Schema({
     required: true,
     min: [2, 'Credit must be at least 2']
   },
+  practicalSession:{
+    type: Number,
+    required: true,
+    min: [0, 'Practical session must be at least 0']
+  },
+  theoreticalSession:{
+    type: Number,
+    required: true,
+    min: [0, 'Theoretical session must be at least 0']
+  },
   department: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Departments',
