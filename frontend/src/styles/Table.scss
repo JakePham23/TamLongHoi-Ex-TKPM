@@ -30,13 +30,11 @@
   }
 
   /* Giới hạn chiều rộng của cột "Thao tác" */
-  th:last-child,
-  td:last-child {
-    width: 160px;
+  th:last-child{
     text-align: center;
   }
 
-  .buttonBox {
+  td:last-child > div.buttonBox {
     display: flex;
     gap: 6px;
     justify-content: center;
@@ -46,7 +44,6 @@
   button {
     border: none;
     cursor: pointer;
-    padding: 6px 10px;
     font-size: 14px;
     border-radius: 4px;
     transition: background 0.2s ease-in-out;
