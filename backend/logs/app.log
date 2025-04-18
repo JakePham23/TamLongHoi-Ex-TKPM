@@ -9543,3 +9543,107 @@
 {"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:02:49.777Z"}
 {"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:02:49.780Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
 {"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:02:49.785Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:30.497Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:30.500Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:30.508Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:30.510Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-04-18T05:06:30.512Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:30.515Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:30.517Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-04-18T05:06:30.524Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:33.094Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:33.098Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:33.099Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:33.101Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:34.347Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:34.351Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:34.359Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-04-18T05:06:34.360Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:34.362Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:34.364Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:34.366Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-04-18T05:06:34.371Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:34.790Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:34.794Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:34.796Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:34.799Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:06:34.800Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:34.801Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:34.802Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:34.803Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:34.808Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:06:34.810Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:34.811Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:34.812Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:34.815Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:06:34.820Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:34.821Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:06:34.824Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:36.624Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:36.626Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:36.628Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:36.630Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:43.209Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:43.212Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:43.215Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:43.217Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:06:43.218Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:43.220Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:43.221Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:43.223Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:43.226Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:06:43.227Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:43.228Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:43.230Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:06:43.231Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:06:43.236Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:06:43.249Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:06:43.253Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:10:18.944Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:10:18.945Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:10:18.948Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:10:18.949Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:10:18.950Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:10:18.952Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:10:18.953Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:10:18.957Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:11:15.708Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:11:15.709Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:11:15.711Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:11:15.712Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:11:15.713Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:11:15.715Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:11:15.716Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:11:15.719Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:11:44.222Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:11:44.223Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:11:44.226Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:11:44.227Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:11:44.228Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:11:44.231Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:11:44.232Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:11:44.238Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:12:10.809Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:12:10.810Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:12:10.813Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:12:10.814Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:12:10.815Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:12:10.817Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:12:10.818Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:12:10.824Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:13:09.593Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:13:09.595Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:13:09.596Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:13:09.597Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:13:09.600Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:13:09.601Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:13:09.603Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:13:09.603Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:13:09.606Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:13:09.609Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:13:09.610Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T05:13:09.611Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:13:09.612Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:13:09.618Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:13:09.619Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:13:09.625Z"}

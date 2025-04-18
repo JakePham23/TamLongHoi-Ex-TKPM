@@ -21,7 +21,7 @@ const CourseScreen = () => {
   const { departments = [], fetchDepartments } = useDepartments();
   const [searchTerm, setSearchTerm] = useState("");
   const [isAdding, setIsAdding] = useState(false);
-
+  
   useEffect(() => {
     console.log("Fetching data..."); // Debug data fetching
     fetchCourses();

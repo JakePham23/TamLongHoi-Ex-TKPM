@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DataTable from "../DataTable";
 import EnityEdit from "../EnityEdit";
 import "../../styles/Modal.scss";
+import removeVietnameseTones from "../../utils/string.util";
 
 const CourseTable = ({ courses = [],departments=[], searchTerm = "", onDelete, onEdit }) => {
   const [sortOrder, setSortOrder] = useState("asc");
@@ -21,10 +22,14 @@ const CourseTable = ({ courses = [],departments=[], searchTerm = "", onDelete, o
     // { label: "Mô tả", field: "description", sortable: true }
   ];
 
+  const cleanSearch = removeVietnameseTones(searchTerm.toLowerCase());
+
   const filteredCourses = courses.filter((c) =>
-    c.courseName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    c.department?.departmentName?.toLowerCase().includes(searchTerm.toLowerCase())
+    removeVietnameseTones(c.courseId)?.toLowerCase().includes(cleanSearch) ||
+    removeVietnameseTones(c.courseName)?.toLowerCase().includes(cleanSearch) ||
+    removeVietnameseTones(c.department?.departmentName)?.toLowerCase().includes(cleanSearch)
   );
+  
 
   const sortedCourses = [...filteredCourses].sort((a, b) => {
     const valA = a.courseName?.toLowerCase() || "";
