@@ -9124,3 +9124,110 @@
 {"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:28:50.614Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
 {"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:28:50.616Z"}
 {"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-04-18T04:28:50.641Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T04:29:59.273Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:30:08.513Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:30:08.519Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:30:08.526Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:30:08.548Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 7 courses successfully","timestamp":"2025-04-18T04:30:08.550Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:30:08.555Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:30:08.559Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:30:08.562Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:30:08.575Z"}
+{"level":"info","message":"Retrieved 7 courses successfully","timestamp":"2025-04-18T04:30:08.585Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:30:08.595Z","url":"/departments","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:30:08.599Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T04:30:08.602Z"}
+{"level":"info","message":"Retrieved 7 courses successfully","timestamp":"2025-04-18T04:30:08.627Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:30:08.630Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 7 courses successfully","timestamp":"2025-04-18T04:30:08.644Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:30:18.124Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"error":"Course validation failed: prerequisite: Prerequisite course with ID \"CS10001\" does not exist.","level":"error","message":"Error in addCourse","timestamp":"2025-04-18T04:30:18.132Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-18T04:30:18.132Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:30:36.557Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"error":"Course validation failed: prerequisite: Prerequisite course with ID \"CS10001\" does not exist.","level":"error","message":"Error in addCourse","timestamp":"2025-04-18T04:30:36.563Z"}
+{"level":"error","message":"Unhandled Rejection","promise":{},"reason":{},"timestamp":"2025-04-18T04:30:36.563Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:30:52.261Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"New course added: Kỹ thuật lập trình (CSC10002)","timestamp":"2025-04-18T04:30:52.272Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:30:52.275Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-18T04:30:52.279Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T04:31:04.324Z","url":"/courses/delete/67f6a773faf999f2ae51c11b","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Course deleted: 67f6a773faf999f2ae51c11b","timestamp":"2025-04-18T04:31:04.330Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:31:04.333Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 7 courses successfully","timestamp":"2025-04-18T04:31:04.336Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T04:31:07.226Z","url":"/courses/delete/67f6a83bfaf999f2ae51c121","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Course deleted: 67f6a83bfaf999f2ae51c121","timestamp":"2025-04-18T04:31:07.229Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:31:07.233Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 6 courses successfully","timestamp":"2025-04-18T04:31:07.238Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T04:31:09.497Z","url":"/courses/delete/67f8ea8f73fcc4c682c5433b","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Course deleted: 67f8ea8f73fcc4c682c5433b","timestamp":"2025-04-18T04:31:09.500Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:31:09.502Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 5 courses successfully","timestamp":"2025-04-18T04:31:09.506Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T04:31:12.253Z","url":"/courses/delete/67f8e2f473fcc4c682c53fe6","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Course deleted: 67f8e2f473fcc4c682c53fe6","timestamp":"2025-04-18T04:31:12.254Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:31:12.257Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 4 courses successfully","timestamp":"2025-04-18T04:31:12.261Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T04:31:14.661Z","url":"/courses/delete/67f8dcb573fcc4c682c53f2d","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Course deleted: 67f8dcb573fcc4c682c53f2d","timestamp":"2025-04-18T04:31:14.664Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:31:14.667Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 3 courses successfully","timestamp":"2025-04-18T04:31:14.671Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T04:31:17.016Z","url":"/courses/delete/67f6a874faf999f2ae51c126","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Course deleted: 67f6a874faf999f2ae51c126","timestamp":"2025-04-18T04:31:17.018Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:31:17.021Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 2 courses successfully","timestamp":"2025-04-18T04:31:17.027Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:32:21.891Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"New course added: Phương pháp lập trình hướng đối tượng (CSC10003)","timestamp":"2025-04-18T04:32:21.898Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:32:21.900Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 3 courses successfully","timestamp":"2025-04-18T04:32:21.903Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:33:11.488Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"New course added: Cấu trúc dữ liệu và giải thuật (CSC10004)","timestamp":"2025-04-18T04:33:11.492Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:33:11.495Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 4 courses successfully","timestamp":"2025-04-18T04:33:11.498Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:34:11.290Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"New course added: Cơ sở dữ liệu (CSC10006)","timestamp":"2025-04-18T04:34:11.295Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:34:11.297Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 5 courses successfully","timestamp":"2025-04-18T04:34:11.300Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:34:46.563Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"New course added: Hệ điều hành (CSC10007)","timestamp":"2025-04-18T04:34:46.571Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:34:46.573Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 6 courses successfully","timestamp":"2025-04-18T04:34:46.577Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:35:15.452Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"New course added: Mạng máy tính (CSC10008)","timestamp":"2025-04-18T04:35:15.459Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:35:15.461Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 7 courses successfully","timestamp":"2025-04-18T04:35:15.466Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-04-18T04:35:49.556Z","url":"/courses/update/CSC10007","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Course updated: CSC10007","timestamp":"2025-04-18T04:35:49.567Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:35:49.577Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 7 courses successfully","timestamp":"2025-04-18T04:35:49.580Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:36:42.303Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"New course added: Hệ thống máy tính (CSC10009)","timestamp":"2025-04-18T04:36:42.309Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:36:42.312Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 8 courses successfully","timestamp":"2025-04-18T04:36:42.315Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:37:17.836Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"New course added: Nhập môn công nghệ phần mềm (CSC13002)","timestamp":"2025-04-18T04:37:17.841Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:37:17.844Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 9 courses successfully","timestamp":"2025-04-18T04:37:17.847Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:37:46.034Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"New course added: Cơ sở trí tuệ nhân tạo (CSC14003)","timestamp":"2025-04-18T04:37:46.039Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:37:46.041Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 10 courses successfully","timestamp":"2025-04-18T04:37:46.050Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:38:17.953Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"New course added: Sinh đại cương 1 (BIO00001)","timestamp":"2025-04-18T04:38:17.958Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:38:17.961Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 11 courses successfully","timestamp":"2025-04-18T04:38:17.964Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:38:31.671Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"New course added: Sinh đại cương 2 (BIO00002)","timestamp":"2025-04-18T04:38:31.674Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:38:31.676Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 12 courses successfully","timestamp":"2025-04-18T04:38:31.679Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:38:47.531Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"New course added: Thực hành Sinh đại cương 2 (BIO00082)","timestamp":"2025-04-18T04:38:47.537Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:38:47.540Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 13 courses successfully","timestamp":"2025-04-18T04:38:47.544Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T04:38:56.187Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"New course added: Thực hành Sinh đại cương 1 (BIO00081)","timestamp":"2025-04-18T04:38:56.191Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:38:56.194Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 14 courses successfully","timestamp":"2025-04-18T04:38:56.197Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-04-18T04:39:43.092Z","url":"/courses/update/BIO00082","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Course updated: BIO00082","timestamp":"2025-04-18T04:39:43.104Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T04:39:43.117Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
+{"level":"info","message":"Retrieved 14 courses successfully","timestamp":"2025-04-18T04:39:43.120Z"}
