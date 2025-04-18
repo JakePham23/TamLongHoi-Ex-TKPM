@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaTachometerAlt, FaUniversity, FaUserGraduate, FaBook } from "react-icons/fa";
+import { MdAppRegistration } from "react-icons/md";
 import "../../styles/Tabbar.scss";
 import logo from "../../assets/images/local/logo-khtn.png";
 import TabButton from "./TabButton.jsx";
@@ -24,6 +25,7 @@ const Tabbar = ({ setView }) => {
         <TabButton icon={<FaUniversity />} label="Department" isActive={activeTab == "department"} onClick={() => handleTabClick("department")} />
         <TabButton icon={<FaUserGraduate />} label="Student" isActive={activeTab == "student"} onClick={() => handleTabClick("student")} />
         <TabButton icon={<FaBook />} label="Course" isActive={activeTab == "course"} onClick={() => handleTabClick("course")} />
+        <TabButton icon={<MdAppRegistration />} label="Registration" isActive={activeTab == "registration"} onClick={() => handleTabClick("registration")} />
       </div>
     </div>
   );

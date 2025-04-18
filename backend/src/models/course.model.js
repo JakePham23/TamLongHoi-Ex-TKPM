@@ -1,4 +1,4 @@
-import mongoose from'mongoose'
+import mongoose from 'mongoose'
 
 const courseSchema = new mongoose.Schema({
   courseId: {
@@ -46,10 +46,10 @@ const courseSchema = new mongoose.Schema({
   }
   
 },
-{
+  {
     collection: 'Courses',
     timestamps: true
-});
+  });
 
 const Course = mongoose.model('Course', courseSchema);
 export default Course;
