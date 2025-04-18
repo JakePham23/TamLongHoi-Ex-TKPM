@@ -14,6 +14,8 @@ const CourseTable = ({ courses = [],departments=[], searchTerm = "", onDelete, o
     { label: "Mã môn học", field: "courseId", sortable: true },
     { label: "Tên môn học", field: "courseName", sortable: true },
     { label: "Số tín chỉ", field: "credit", sortable: true },
+    { label: "Số tiết thực hành", field: "practicalSession", sortable: true },
+    { label: "Số tiết lý thuyết", field: "theoreticalSession", sortable: true },
     { label: "Khoa", field: "departmentName", sortable: true },
     { label: "Môn học tiên quyết", field: "prerequisite", sortable: true },
     { label: "Mô tả", field: "description", sortable: true }

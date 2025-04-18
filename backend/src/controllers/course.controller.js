@@ -15,10 +15,10 @@ import {
 class CourseController {
     async addCourse(req, res, next) {
         try {
-            const { courseId, courseName, credit, department, description, prerequisite } = req.body;
+            const { courseId, courseName, credit, practicalSession, theoreticalSession, department, description, prerequisite } = req.body;
 
             // Validate required fields
-            if (!courseId || !courseName || !credit || !department) {
+            if (!courseId || !courseName || !credit || !department || !practicalSession || !theoreticalSession) {
                 logger.warn("Add course failed: Missing required fields");
                 return new BadRequest({message: "Course ID, name, credit and department are required"}).send(res);
             }
@@ -34,6 +34,8 @@ class CourseController {
                 courseId,
                 courseName,
                 credit,
+                practicalSession,
+                theoreticalSession,
                 department,
                 description,
                 prerequisite
