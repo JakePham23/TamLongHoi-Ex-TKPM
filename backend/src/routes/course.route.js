@@ -69,7 +69,7 @@ router.post('/add', CourseController.addCourse);
  *       500:
  *         description: Internal server error
  */
-router.delete('/:courseId', CourseController.deleteCourse);
+router.delete('/delete/:courseId', CourseController.deleteCourse);
 
 /**
  * @swagger
@@ -113,7 +113,7 @@ router.delete('/:courseId', CourseController.deleteCourse);
  *       500:
  *         description: Internal server error
  */
-router.put('/:courseId', CourseController.updateCourse);
+router.put('/update/:courseId', CourseController.updateCourse);
 
 /**
  * @swagger

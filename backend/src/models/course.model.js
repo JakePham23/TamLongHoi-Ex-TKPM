@@ -34,17 +34,17 @@ const courseSchema = new mongoose.Schema({
     type: String
   },
   prerequisite: {
-    type: String, // courseId of the prerequisite
+    type: String,
     validate: {
       validator: async function (value) {
-        if (!value) return true; // Allow empty prerequisite
-        const Course = mongoose.model('Course');
-        const exists = await Course.exists({ courseId: value });
-        return !!exists;
+        if (!value || value.trim() === "" || value === "Không có") return true;
+        const course = await mongoose.model("Course").findOne({ courseId: value });
+        return !!course;
       },
       message: props => `Prerequisite course with ID "${props.value}" does not exist.`
     }
   }
+  
 },
 {
     collection: 'Courses',

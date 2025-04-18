@@ -79,37 +79,50 @@ class CourseController {
         try {
             const { courseId } = req.params;
             const updateData = req.body;
-
-            // Kiểm tra nếu có thay đổi courseId
-            if (updateData.courseId && updateData.courseId !== courseId) {
-                const existingCourse = await courseModel.findOne({ courseId: updateData.courseId });
-                if (existingCourse) {
-                    logger.warn(`Update course failed: New Course ID ${updateData.courseId} already exists`);
-                    return new BadRequest({message: "New Course ID already exists"}).send(res);
-                }
+            updateData.department = updateData.departmentId;
+            console.log(courseId, "Update course data:", updateData);
+    
+            // Lấy thông tin khóa học hiện tại
+            const currentCourse = await courseModel.findOne({ courseId: courseId });
+            if (!currentCourse) {
+                logger.warn(`Update course failed: Course ID ${courseId} not found`);
+                return new NotFoundRequest({ message: "Course not found" }).send(res);
             }
-
-            const updatedCourse = await courseModel.findByIdAndUpdate(
-                courseId,
+    
+            // Kiểm tra xem dữ liệu có thực sự thay đổi không
+            const isChanged = Object.keys(updateData).some(key => {
+                // Nếu là object (như nested), cần custom xử lý sâu hơn
+                return updateData[key] != currentCourse[key];
+            });
+    
+            if (!isChanged) {
+                logger.info(`Course update skipped: No changes for course ${courseId}`);
+                return res.status(200).json({
+                    status: "success",
+                    message: "Không có thay đổi"
+                });
+            }
+    
+            // Tiến hành update nếu có thay đổi
+            const updatedCourse = await courseModel.findOneAndUpdate(
+                { courseId: courseId },
                 updateData,
                 { new: true, runValidators: true }
             );
-
-            if (!updatedCourse) {
-                logger.warn(`Update course failed: Course ID ${courseId} not found`);
-                return new NotFoundRequest({message: "Course not found"}).send(res);
-            }
-
+            
+    
             logger.info(`Course updated: ${courseId}`);
             return res.status(200).json({
                 status: "success",
                 message: "Course updated successfully"
             });
+    
         } catch (error) {
             logger.error("Error in updateCourse", { error: error.message });
             return new InternalServerError(error.message).send(res);
         }
     }
+    
 
     async getAllCourses(req, res, next) {
         try {

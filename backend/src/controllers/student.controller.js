@@ -37,6 +37,7 @@ class StudentController {
         try {
             const { studentId } = req.params;
             const updateData = req.body;
+            console.log(studentId, "updateData: ", updateData)
 
             const updatedData = await StudentService.updateStudent(studentId, updateData)
 

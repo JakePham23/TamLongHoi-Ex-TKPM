@@ -24,4 +24,4 @@ const swaggerOptions = {
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-app.listen(3000, () => console.log("Server running at http://localhost:3000/api-docs"));
+app.listen(4000, () => console.log("Server running at http://localhost:4000/api-docs"));

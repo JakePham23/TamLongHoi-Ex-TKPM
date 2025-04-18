@@ -6,7 +6,7 @@ const router = express.Router()
 import { requestLogger } from "../utils/winston.js"; // Import middleware logger
 
 router.use(requestLogger);
-router.use(StudentManagementRoutes)
+router.use('/students', StudentManagementRoutes)
 router.use(departmentRoutes)
 router.use('/courses', courseRoutes)
 

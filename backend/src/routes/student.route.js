@@ -12,7 +12,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /students:
+ * /api/v1/students:
  *   get:
  *     summary: Lấy danh sách tất cả sinh viên
  *     tags: [Students]
@@ -20,11 +20,11 @@ const router = express.Router();
  *       200:
  *         description: Trả về danh sách sinh viên
  */
-router.get('/students', studentController.getAllStudent);
+router.get('', studentController.getAllStudent);
 
 /**
  * @swagger
- * /students/{studentId}:
+ * /api/v1/students/{studentId}:
  *   get:
  *     summary: Lấy thông tin chi tiết của sinh viên theo ID
  *     tags: [Students]
@@ -41,11 +41,11 @@ router.get('/students', studentController.getAllStudent);
  *       404:
  *         description: Không tìm thấy sinh viên
  */
-router.get('/students/:studentId', studentController.getStudent);
+router.get('/:studentId', studentController.getStudent);
 
 /**
  * @swagger
- * /students:
+ * /api/v1/students/add:
  *   post:
  *     summary: Thêm sinh viên mới
  *     tags: [Students]
@@ -77,11 +77,11 @@ router.get('/students/:studentId', studentController.getStudent);
  *       400:
  *         description: Lỗi dữ liệu đầu vào
  */
-router.post('/students', studentController.addStudent);
+router.post('/add', studentController.addStudent);
 
 /**
  * @swagger
- * /students/{studentId}:
+ * /api/v1/students/update/{studentId}:
  *   put:
  *     summary: Cập nhật thông tin sinh viên
  *     tags: [Students]
@@ -113,11 +113,11 @@ router.post('/students', studentController.addStudent);
  *       400:
  *         description: Lỗi dữ liệu đầu vào
  */
-router.put('/students/:studentId', studentController.updateStudent);
+router.put('/update/:studentId', studentController.updateStudent);
 
 /**
  * @swagger
- * /students/{studentId}:
+ * /api/v1/students//delete/{studentId}:
  *   delete:
  *     summary: Xóa sinh viên theo ID
  *     tags: [Students]
@@ -134,6 +134,6 @@ router.put('/students/:studentId', studentController.updateStudent);
  *       400:
  *         description: Student ID không tồn tại
  */
-router.delete('/students/:studentId', studentController.deleteStudent);
+router.delete('/delete/:studentId', studentController.deleteStudent);
 
 export default router;
