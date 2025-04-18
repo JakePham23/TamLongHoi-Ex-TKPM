@@ -60,10 +60,6 @@ const CourseScreen = () => {
   if (loading) {
     return <div className="loading">Đang tải...</div>;
   }
-  if (courses.length === 0) {
-    return <div className="no-data">Không có dữ liệu môn học nào.</div>;
-  }
-
   if (error) {
     return <div className="error">{error}</div>;
   }
