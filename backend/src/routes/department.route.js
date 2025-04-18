@@ -1,13 +1,20 @@
 import express from "express";
 import departmentController from "../controllers/department.controller.js";
 
+/**
+ * @swagger
+ * tags:
+ *   name: Departments
+ *   description: Department management API
+ */
 const router = express.Router();
 
 /**
  * @swagger
- * /departments:
+ *  /api/v1/departments:
  *   get:
  *     summary: Lấy danh sách các khoa
+ *     tags: [Departments]
  *     responses:
  *       200:
  *         description: Trả về danh sách khoa
@@ -16,9 +23,10 @@ router.get("/departments", departmentController.getAllDepartments);
 
 /**
  * @swagger
- * /addDepartment:
+ *  /api/v1/departments:
  *   post:
  *     summary: Thêm khoa mới
+ *     tags: [Departments]
  *     requestBody:
  *       required: true
  *       content:
@@ -32,13 +40,14 @@ router.get("/departments", departmentController.getAllDepartments);
  *       201:
  *         description: Thêm khoa thành công
  */
-router.post("/addDepartment", departmentController.addDepartment);
+router.post("/departments", departmentController.addDepartment);
 
 /**
  * @swagger
- * /departments/{departmentId}:
+ *  /api/v1/departments/{departmentId}:
  *   put:
  *     summary: Cập nhật thông tin khoa
+ *     tags: [Departments]
  *     parameters:
  *       - name: departmentId
  *         in: path
@@ -58,8 +67,19 @@ router.post("/addDepartment", departmentController.addDepartment);
  *     responses:
  *       200:
  *         description: Cập nhật thành công
+ *       404:
+ *         description: Khoa không tồn tại
+ *       500:
+ *         description: Lỗi máy chủ nội bộ
+ */
+router.put("/departments/{departmentId}", departmentController.updateDepartment);
+
+/**
+ * @swagger
+ *  /api/v1/departments/{departmentId}:
  *   delete:
  *     summary: Xóa khoa
+ *     tags: [Departments]
  *     parameters:
  *       - name: departmentId
  *         in: path
@@ -69,9 +89,12 @@ router.post("/addDepartment", departmentController.addDepartment);
  *           type: string
  *     responses:
  *       200:
- *         description: Xóa khoa thành công
+ *         description: Xóa thành công
+ *       404:
+ *         description: Khoa không tồn tại
+ *       500:
+ *         description: Lỗi máy chủ nội bộ
  */
-router.put("/updateDepartment/:departmentId", departmentController.updateDepartment);
-router.delete("/deleteDepartment/:departmentId", departmentController.deleteDepartment);
+router.delete("/departments/{departmentId}", departmentController.deleteDepartment);
 
 export default router;
