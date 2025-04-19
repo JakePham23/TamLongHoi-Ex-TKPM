@@ -6,6 +6,10 @@ DATA_DIR=/mongo-seed  # Đường dẫn trong container
 declare -A COLLECTIONS=(
   ["Departments"]="StudentManagementSystem.Departments.json"
   ["Students"]="StudentManagementSystem.Students.json"
+  ["Courses"]="StudentManagementSystem.Courses.json"
+  ["Teachers"]="StudentManagementSystem.Teachers.json"
+  ["Registrations"]="StudentManagementSystem.Registrations.json"
+  
 )
 
 echo "$(date +"%Y-%m-%d %H:%M:%S") ⏳ Importing data into MongoDB..."
