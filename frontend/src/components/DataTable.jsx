@@ -85,11 +85,13 @@ const DataTable = ({
               {columns.map(({ field }) => (
                 <td key={field}>{getNestedValue(row, field)}</td>
               ))}
-              <td className="buttonBox">
+              <td>
+              <div className="buttonBox">
                 {onView && <Button icon={<FaEye />} label="Xem" variant="gray" onClick={() => onView(row)} />}
                 {onEdit && <Button icon={<FaEdit />} label="Sửa" variant="gray" onClick={() => onEdit(row)} />}
                 {onDelete && <Button icon={<FaTrash />} label="Xoá" variant="danger" onClick={() => onDelete(row._id || row.studentId)} />}
                 {onAdd && <Button icon={<FaPlus />} label="Thêm" variant="success" onClick={() => onAdd(row)} />}
+              </div>
               </td>
             </tr>
           ))
