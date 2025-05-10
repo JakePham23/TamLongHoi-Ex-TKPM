@@ -9647,3 +9647,414 @@
 {"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:13:09.618Z"}
 {"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T05:13:09.619Z","url":"/courses","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"}
 {"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T05:13:09.625Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T11:21:56.520Z","url":"/courses"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:21:56.577Z","url":"/courses"}
+{"error":"_courseModel.default.find(...).populate is not a function","level":"error","message":"Error in getAllCourses","timestamp":"2025-04-18T11:21:56.579Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-04-18T11:22:01.597Z","url":"/courses/67f6a6b676e47a6c1a327d60"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:22:01.606Z","url":"/courses/67f6a6b676e47a6c1a327d60"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:22:01.615Z","url":"/courses/nonexistent_id"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T11:22:20.851Z","url":"/courses"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:22:20.887Z","url":"/courses"}
+{"error":"_courseModel.default.find(...).populate is not a function","level":"error","message":"Error in getAllCourses","timestamp":"2025-04-18T11:22:20.890Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-04-18T11:22:25.891Z","url":"/courses/67f6a6b676e47a6c1a327d60"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:22:25.898Z","url":"/courses/67f6a6b676e47a6c1a327d60"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:22:25.913Z","url":"/courses/nonexistent_id"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T11:30:15.802Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Cơ Sở Lập Trình (CSC0001)","timestamp":"2025-04-18T11:30:15.807Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:30:15.824Z","url":"/courses"}
+{"error":"_courseModel.default.find(...).populate is not a function","level":"error","message":"Error in getAllCourses","timestamp":"2025-04-18T11:30:15.825Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-04-18T11:30:20.850Z","url":"/courses/67f6a6b676e47a6c1a327d60"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:30:20.859Z","url":"/courses/67f6a6b676e47a6c1a327d60"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:30:20.868Z","url":"/courses/nonexistent_id"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T11:34:03.270Z","url":"/courses/add"}
+{"level":"warn","message":"Add course failed: Missing required fields","timestamp":"2025-04-18T11:34:03.274Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in addCourse","timestamp":"2025-04-18T11:34:03.275Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:34:08.217Z","url":"/courses"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Error in getAllCourses","timestamp":"2025-04-18T11:34:08.219Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-04-18T11:34:13.234Z","url":"/courses/update/CSC0001"}
+{"level":"warn","message":"Update course failed: Course ID CSC0001 not found","timestamp":"2025-04-18T11:34:13.249Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in updateCourse","timestamp":"2025-04-18T11:34:13.250Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:34:18.239Z","url":"/courses/delete/CSC0002"}
+{"level":"warn","message":"Delete course failed: Course ID CSC0002 not found","timestamp":"2025-04-18T11:34:18.240Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-18T11:34:18.241Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:34:23.243Z","url":"/courses/delete/nonexistent_id"}
+{"level":"warn","message":"Delete course failed: Course ID nonexistent_id not found","timestamp":"2025-04-18T11:34:23.244Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-18T11:34:23.244Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T11:42:43.345Z","url":"/courses/add"}
+{"level":"warn","message":"Add course failed: Missing required fields","timestamp":"2025-04-18T11:42:43.349Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in addCourse","timestamp":"2025-04-18T11:42:43.350Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:42:48.295Z","url":"/courses"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Error in getAllCourses","timestamp":"2025-04-18T11:42:48.297Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-04-18T11:42:53.312Z","url":"/courses/update/CSC0001"}
+{"level":"warn","message":"Update course failed: Course ID CSC0001 not found","timestamp":"2025-04-18T11:42:53.320Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in updateCourse","timestamp":"2025-04-18T11:42:53.321Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:42:58.328Z","url":"/courses/delete/CSC0002"}
+{"level":"warn","message":"Delete course failed: Course ID CSC0002 not found","timestamp":"2025-04-18T11:42:58.329Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-18T11:42:58.330Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:43:03.339Z","url":"/courses/delete/nonexistent_id"}
+{"level":"warn","message":"Delete course failed: Course ID nonexistent_id not found","timestamp":"2025-04-18T11:43:03.340Z"}
+{"error":"(intermediate value).send is not a function","level":"error","message":"Error in deleteCourse","timestamp":"2025-04-18T11:43:03.340Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T11:46:45.172Z","url":"/courses/add"}
+{"level":"warn","message":"Add course failed: Missing required fields","timestamp":"2025-04-18T11:46:45.179Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:46:45.210Z","url":"/courses"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Error in getAllCourses","timestamp":"2025-04-18T11:46:45.212Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-04-18T11:46:45.237Z","url":"/courses/update/CSC0001"}
+{"level":"warn","message":"Update course failed: Course ID CSC0001 not found","timestamp":"2025-04-18T11:46:45.247Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:46:45.261Z","url":"/courses/delete/CSC0002"}
+{"level":"warn","message":"Delete course failed: Course ID CSC0002 not found","timestamp":"2025-04-18T11:46:45.263Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:46:45.276Z","url":"/courses/delete/nonexistent_id"}
+{"level":"warn","message":"Delete course failed: Course ID nonexistent_id not found","timestamp":"2025-04-18T11:46:45.277Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T11:51:27.060Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-04-18T11:51:27.069Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:51:27.097Z","url":"/courses"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Error in getAllCourses","timestamp":"2025-04-18T11:51:27.098Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-04-18T11:51:27.116Z","url":"/courses/update/CSC0001"}
+{"level":"warn","message":"Update course failed: Course ID CSC0001 not found","timestamp":"2025-04-18T11:51:27.124Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:51:27.135Z","url":"/courses/delete/CSC0002"}
+{"level":"warn","message":"Delete course failed: Course ID CSC0002 not found","timestamp":"2025-04-18T11:51:27.136Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:51:27.146Z","url":"/courses/delete/nonexistent_id"}
+{"level":"warn","message":"Delete course failed: Course ID nonexistent_id not found","timestamp":"2025-04-18T11:51:27.147Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T11:55:01.118Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-04-18T11:55:01.123Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:55:01.151Z","url":"/courses"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Error in getAllCourses","timestamp":"2025-04-18T11:55:01.153Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-04-18T11:55:01.171Z","url":"/courses/update/CSC0001"}
+{"level":"warn","message":"Update course failed: Course ID CSC0001 not found","timestamp":"2025-04-18T11:55:01.180Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:55:01.191Z","url":"/courses/delete/CSC0002"}
+{"level":"warn","message":"Delete course failed: Course ID CSC0002 not found","timestamp":"2025-04-18T11:55:01.192Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:55:01.204Z","url":"/courses/delete/nonexistent_id"}
+{"level":"warn","message":"Delete course failed: Course ID nonexistent_id not found","timestamp":"2025-04-18T11:55:01.205Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T11:57:22.287Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:26.591Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:26.600Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T11:57:26.626Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T11:57:26.652Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:26.680Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:26.685Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T11:57:26.705Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:26.719Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T11:57:26.726Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T11:57:26.731Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:26.738Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:26.745Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T11:57:26.770Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T11:57:26.782Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:26.790Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T11:57:26.805Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:27.002Z","url":"/students/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:27.007Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T11:57:27.019Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-04-18T11:57:27.024Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:27.027Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:27.031Z","url":"/students/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T11:57:27.035Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-04-18T11:57:27.048Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:27.512Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T11:57:27.515Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:27.517Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T11:57:27.522Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:27.881Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:27.884Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T11:57:27.891Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T11:57:27.894Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:27.897Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:27.903Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T11:57:27.908Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:27.919Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T11:57:27.928Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T11:57:27.932Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:27.937Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:27.942Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-04-18T11:57:27.952Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T11:57:27.955Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:27.960Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-04-18T11:57:27.969Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T11:57:49.324Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-04-18T11:57:49.328Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-04-18T11:57:49.356Z","url":"/courses"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Error in getAllCourses","timestamp":"2025-04-18T11:57:49.357Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-04-18T11:57:49.377Z","url":"/courses/update/CSC0001"}
+{"level":"warn","message":"Update course failed: Course ID CSC0001 not found","timestamp":"2025-04-18T11:57:49.385Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:57:49.397Z","url":"/courses/delete/CSC0002"}
+{"level":"warn","message":"Delete course failed: Course ID CSC0002 not found","timestamp":"2025-04-18T11:57:49.399Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-04-18T11:57:49.407Z","url":"/courses/delete/nonexistent_id"}
+{"level":"warn","message":"Delete course failed: Course ID nonexistent_id not found","timestamp":"2025-04-18T11:57:49.408Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T12:00:24.638Z","url":"/courses/add","userAgent":"PostmanRuntime/7.43.3"}
+{"level":"info","message":"New course added: Test Course (CSC000125)","timestamp":"2025-04-18T12:00:24.656Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T12:04:34.184Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T12:04:35.409Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T12:04:37.621Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T12:04:39.922Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T12:04:41.786Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T12:04:43.514Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T12:04:45.680Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-18T12:05:12.778Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T12:05:32.964Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-04-18T12:05:32.968Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-04-18T12:08:01.816Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-04-18T12:08:01.821Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T15:11:59.355Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-09T15:12:18.144Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-09T15:12:18.149Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-09T15:23:39.880Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-09T15:23:39.885Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-09T15:29:55.783Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-09T15:29:55.788Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-09T15:32:57.295Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-09T15:32:57.300Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T15:38:14.895Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:17.943Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:17.957Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:17.968Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:17.977Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:20.020Z","url":"/students/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:20.024Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:20.039Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:20.043Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:20.047Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-09T15:38:20.056Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:20.062Z","url":"/students/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-09T15:38:20.077Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:20.534Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:20.538Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:20.548Z"}
+{"level":"info","message":"Retrieved 29 courses successfully","timestamp":"2025-05-09T15:38:20.554Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:20.561Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:20.569Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:20.574Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:20.579Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:20.597Z"}
+{"level":"info","message":"Retrieved 29 courses successfully","timestamp":"2025-05-09T15:38:20.604Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:20.608Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:20.617Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:20.624Z"}
+{"level":"info","message":"Retrieved 29 courses successfully","timestamp":"2025-05-09T15:38:20.644Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:20.650Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 29 courses successfully","timestamp":"2025-05-09T15:38:20.661Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:27.776Z","url":"/students/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:27.780Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:27.795Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-09T15:38:27.800Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:27.804Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:27.808Z","url":"/students/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:27.811Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-09T15:38:27.832Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:28.311Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:28.314Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:28.318Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:28.322Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:39.881Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:39.886Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:39.901Z"}
+{"level":"info","message":"Retrieved 29 courses successfully","timestamp":"2025-05-09T15:38:39.905Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:39.908Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:39.912Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:39.919Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:39.930Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 29 courses successfully","timestamp":"2025-05-09T15:38:39.937Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:39.942Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:39.946Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:39.951Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:38:39.961Z"}
+{"level":"info","message":"Retrieved 29 courses successfully","timestamp":"2025-05-09T15:38:39.966Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:38:39.971Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 29 courses successfully","timestamp":"2025-05-09T15:38:39.983Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-09T15:39:28.699Z","url":"/courses/add","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"New course added: Hóa Đại Cương 10 (CSC000123)","timestamp":"2025-05-09T15:39:28.728Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:39:28.739Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 30 courses successfully","timestamp":"2025-05-09T15:39:28.757Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:43:57.338Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:43:57.349Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:43:57.362Z"}
+{"level":"info","message":"Retrieved 30 courses successfully","timestamp":"2025-05-09T15:43:57.366Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:43:57.370Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:43:57.373Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:43:57.378Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:43:57.385Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 30 courses successfully","timestamp":"2025-05-09T15:43:57.388Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:43:57.391Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:43:57.394Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:43:57.397Z","url":"/departments/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-09T15:43:57.408Z"}
+{"level":"info","message":"Retrieved 30 courses successfully","timestamp":"2025-05-09T15:43:57.410Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T15:43:57.416Z","url":"/courses","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"}
+{"level":"info","message":"Retrieved 30 courses successfully","timestamp":"2025-05-09T15:43:57.430Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T15:49:13.641Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-09T15:49:27.042Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-09T15:49:27.048Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T15:51:02.689Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T15:51:03.983Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-09T15:51:17.130Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-09T15:51:17.135Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T15:52:18.632Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T15:52:23.201Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T15:59:11.240Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T15:59:45.757Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T16:00:48.703Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:21:50.320Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:26:24.908Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:26:31.916Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:26:47.420Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:27:13.347Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-09T17:27:44.982Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-09T17:27:44.987Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T17:27:45.029Z","url":"/courses"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Error in getAllCourses","timestamp":"2025-05-09T17:27:45.030Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T17:28:25.267Z","url":"/courses","userAgent":"PostmanRuntime/7.43.3"}
+{"level":"info","message":"Retrieved 30 courses successfully","timestamp":"2025-05-09T17:28:25.339Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:34:49.967Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-09T17:35:48.191Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-09T17:35:48.195Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-09T17:35:48.232Z","url":"/courses"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Error in getAllCourses","timestamp":"2025-05-09T17:35:48.233Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:49:31.831Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:49:33.855Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:49:39.267Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:51:56.264Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:52:00.925Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:52:59.801Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:53:21.171Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-09T17:53:53.157Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-09T17:53:53.162Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-09T17:53:53.194Z","url":"/courses/update/CSC10001"}
+{"level":"warn","message":"Update course failed: Course ID CSC10001 not found","timestamp":"2025-05-09T17:53:53.206Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:56:12.383Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:56:17.715Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:56:21.348Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:56:23.987Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:56:26.590Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T17:56:31.097Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T18:04:22.002Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T18:04:32.013Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T18:04:53.992Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T18:05:05.596Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T18:05:06.964Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T18:05:14.604Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T18:05:16.012Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T18:10:45.383Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T18:12:28.988Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T18:12:36.821Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-09T18:12:48.127Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-09T18:12:48.132Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-09T18:12:48.170Z","url":"/courses/update/CSC10001"}
+{"level":"warn","message":"Update course failed: Course ID CSC10001 not found","timestamp":"2025-05-09T18:12:48.182Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-09T18:28:51.929Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T17:00:15.860Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-10T17:00:15.865Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-10T17:00:15.895Z","url":"/courses"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Error in getAllCourses","timestamp":"2025-05-10T17:00:15.897Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T17:07:35.918Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-10T17:07:35.925Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-10T17:07:35.963Z","url":"/courses"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Error in getAllCourses","timestamp":"2025-05-10T17:07:35.964Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T17:08:16.118Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-10T17:08:16.123Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-10T17:08:16.153Z","url":"/courses"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Error in getAllCourses","timestamp":"2025-05-10T17:08:16.154Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T17:08:45.026Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-10T17:08:45.031Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-10T17:08:45.061Z","url":"/courses"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Error in getAllCourses","timestamp":"2025-05-10T17:08:45.062Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T17:10:15.159Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-10T17:10:15.163Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-10T17:10:15.196Z","url":"/courses"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Error in getAllCourses","timestamp":"2025-05-10T17:10:15.197Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T17:14:30.202Z","url":"/students/add"}
+{"error":"Department ID is not valid","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-10T17:14:30.258Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-10T17:14:30.280Z","url":"/students"}
+{"error":"_studentModel.default.find(...).populate is not a function","level":"error","message":"Lỗi trong getAllStudent","timestamp":"2025-05-10T17:14:30.281Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-10T17:14:30.298Z","url":"/students/update/STU0001"}
+{"error":"Cannot read properties of undefined (reading '_id')","level":"error","message":"Lỗi trong updateStudent","timestamp":"2025-05-10T17:14:30.303Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:14:30.313Z","url":"/students/delete/STU0001"}
+{"level":"warn","message":"Xóa sinh viên thất bại: Student ID STU0001 không tồn tại","timestamp":"2025-05-10T17:14:30.314Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:14:30.323Z","url":"/students/delete/nonexistent_id"}
+{"level":"warn","message":"Xóa sinh viên thất bại: Student ID nonexistent_id không tồn tại","timestamp":"2025-05-10T17:14:30.324Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T17:15:12.929Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-10T17:15:12.933Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-10T17:15:12.970Z","url":"/courses"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Error in getAllCourses","timestamp":"2025-05-10T17:15:12.971Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T17:18:11.726Z","url":"/courses/add"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-10T17:18:11.781Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-10T17:18:11.809Z","url":"/courses"}
+{"level":"info","message":"Retrieved 31 courses successfully","timestamp":"2025-05-10T17:18:11.839Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T17:19:42.458Z","url":"/courses/add"}
+{"level":"warn","message":"Add course failed: Course ID CSC0005 already exists","timestamp":"2025-05-10T17:19:42.506Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-10T17:19:42.521Z","url":"/courses"}
+{"level":"info","message":"Retrieved 31 courses successfully","timestamp":"2025-05-10T17:19:42.545Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-10T17:20:48.936Z","url":"/courses"}
+{"level":"info","message":"Retrieved 31 courses successfully","timestamp":"2025-05-10T17:20:48.994Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-10T17:21:58.393Z","url":"/courses"}
+{"level":"info","message":"Retrieved 31 courses successfully","timestamp":"2025-05-10T17:21:58.450Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-10T17:21:58.475Z","url":"/courses/update/CSC0005"}
+{"level":"info","message":"Course updated: CSC0005","timestamp":"2025-05-10T17:21:58.505Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:25:22.273Z","url":"/courses/delete/CSC0005"}
+{"error":"Cast to ObjectId failed for value \"CSC0005\" (type string) at path \"_id\" for model \"Course\"","level":"error","message":"Error in deleteCourse","timestamp":"2025-05-10T17:25:22.282Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T17:30:44.321Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-10T17:30:48.582Z","url":"/courses","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"Retrieved 31 courses successfully","timestamp":"2025-05-10T17:30:48.637Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:30:54.016Z","url":"/courses/delete/:CSC0005","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Cast to ObjectId failed for value \":CSC0005\" (type string) at path \"_id\" for model \"Course\"","level":"error","message":"Error in deleteCourse","timestamp":"2025-05-10T17:30:54.019Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:31:06.193Z","url":"/courses/delete/CSC0005","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Cast to ObjectId failed for value \"CSC0005\" (type string) at path \"_id\" for model \"Course\"","level":"error","message":"Error in deleteCourse","timestamp":"2025-05-10T17:31:06.194Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:31:20.532Z","url":"/courses/delete/681f8a53657fd59a7dd6ea87","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"Course deleted: 681f8a53657fd59a7dd6ea87","timestamp":"2025-05-10T17:31:20.551Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T17:31:44.920Z","url":"/courses/add","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"New course added: Test Course (CSC0005)","timestamp":"2025-05-10T17:31:44.941Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-10T17:32:45.177Z","url":"/courses/CSC0004","userAgent":"PostmanRuntime/7.43.4"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-10T17:32:45.178Z","url":"/api/v1//courses/CSC0004","userAgent":"PostmanRuntime/7.43.4"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-10T17:33:04.645Z","url":"/courses/CSC0005","userAgent":"PostmanRuntime/7.43.4"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-10T17:33:04.647Z","url":"/api/v1//courses/CSC0005","userAgent":"PostmanRuntime/7.43.4"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-10T17:33:11.624Z","url":"/courses/681f8a53657fd59a7dd6ea87","userAgent":"PostmanRuntime/7.43.4"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-10T17:33:11.625Z","url":"/api/v1//courses/681f8a53657fd59a7dd6ea87","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T17:38:13.010Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:38:29.798Z","url":"/courses/delete/681f8d804e0b31a5466cf7c4"}
+{"level":"info","message":"Course deleted: 681f8d804e0b31a5466cf7c4","timestamp":"2025-05-10T17:38:29.842Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T17:39:07.059Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T17:39:18.437Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T17:39:22.625Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:39:38.801Z","url":"/courses/delete/nonexistent_id"}
+{"error":"Cast to ObjectId failed for value \"nonexistent_id\" (type string) at path \"_id\" for model \"Course\"","level":"error","message":"Error in deleteCourse","timestamp":"2025-05-10T17:39:38.811Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:40:31.589Z","url":"/courses/delete/681f8a53657fd59a7dd6","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Cast to ObjectId failed for value \"681f8a53657fd59a7dd6\" (type string) at path \"_id\" for model \"Course\"","level":"error","message":"Error in deleteCourse","timestamp":"2025-05-10T17:40:31.602Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:46:33.917Z","url":"/courses/delete/681f8a53657fd59a7dd6","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Cast to ObjectId failed for value \"681f8a53657fd59a7dd6\" (type string) at path \"_id\" for model \"Course\"","level":"error","message":"Error in deleteCourse","timestamp":"2025-05-10T17:46:33.927Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T17:51:34.764Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T17:51:36.691Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T17:51:37.894Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T17:51:41.827Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:51:44.728Z","url":"/courses/delete/681f8a53657fd59a7dd6","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"mongoose is not defined","level":"error","message":"Error in deleteCourse","timestamp":"2025-05-10T17:51:44.729Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:52:10.978Z","url":"/courses/delete/681f8a53657fd59a7dd6","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"mongoose is not defined","level":"error","message":"Error in deleteCourse","timestamp":"2025-05-10T17:52:10.979Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T17:52:25.183Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T17:52:26.910Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T17:52:28.540Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:52:31.384Z","url":"/courses/delete/681f8a53657fd59a7dd6","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"mongoose is not defined","level":"error","message":"Error in deleteCourse","timestamp":"2025-05-10T17:52:31.385Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T17:54:08.127Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:54:10.676Z","url":"/courses/delete/681f8a53657fd59a7dd6","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"warn","message":"Delete course failed: Invalid Course ID 681f8a53657fd59a7dd6","timestamp":"2025-05-10T17:54:10.678Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:54:32.206Z","url":"/courses/delete/nonexistent_id"}
+{"level":"warn","message":"Delete course failed: Invalid Course ID nonexistent_id","timestamp":"2025-05-10T17:54:32.209Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T17:55:02.616Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:55:09.968Z","url":"/courses/delete/nonexistent_id"}
+{"level":"warn","message":"Delete course failed: Invalid Course ID nonexistent_id","timestamp":"2025-05-10T17:55:09.972Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:56:16.487Z","url":"/courses/delete/681f8a53657fd59a7dd6","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"warn","message":"Delete course failed: Invalid Course ID 681f8a53657fd59a7dd6","timestamp":"2025-05-10T17:56:16.488Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T17:57:21.613Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T17:57:30.466Z","url":"/courses/delete/nonexistent_id"}
+{"level":"warn","message":"Delete course failed: Invalid Course ID nonexistent_id","timestamp":"2025-05-10T17:57:30.470Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:00:54.387Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:00:57.482Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:00:58.986Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:01:01.383Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:01:03.866Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:01:08.377Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:01:09.826Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:01:12.871Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T18:01:19.752Z","url":"/courses/delete/681f8a53657fd59a7dd6","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"warn","message":"Delete course failed: Invalid Course ID 681f8a53657fd59a7dd6","timestamp":"2025-05-10T18:01:19.753Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-10T18:01:29.579Z","url":"/courses/delete/nonexistent_id"}
+{"level":"warn","message":"Delete course failed: Invalid Course ID nonexistent_id","timestamp":"2025-05-10T18:01:29.584Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:01:57.113Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:02:42.407Z"}
