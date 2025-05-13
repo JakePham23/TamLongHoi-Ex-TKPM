@@ -6,28 +6,32 @@ import { exportCSV, exportJSON } from "../../utils/export.util";
 import { validateEmail, validatePhone, validateStatusChange, validateIdentityDocument } from "../../utils/businessRule.util";
 import { ALLOWED_EMAIL_DOMAIN, PHONE_REGEX, STATUS_RULES } from "../../utils/constants";
 import { formatStudentData } from "../../utils/format.util";
-const StudentDetail = ({departments, student, onSave, onClose, setEditedStudent, editedStudent }) => {
+import { useTranslation } from "react-i18next"
+
+const StudentDetail = ({ departments, student, onSave, onClose, setEditedStudent, editedStudent }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [exportType, setExportType] = useState("csv");
   const [errors, setErrors] = useState({});
+
+  const { t } = useTranslation(['student', 'department']);
 
   if (!student) return null;
 
   const validate = () => {
     let newErrors = {};
-    if (validateEmail(editedStudent.email, ALLOWED_EMAIL_DOMAIN)) newErrors.email = "Email không hợp lệ";
-    if (validatePhone(editedStudent.phone, PHONE_REGEX)) newErrors.phone = "Số điện thoại không hợp lệ";
-    if (validateStatusChange(student.studentStatus, editedStudent.studentStatus, STATUS_RULES)) newErrors.studentStatus = "Không thể chuyển đổi trạng thái này";
-    if (validateIdentityDocument(editedStudent.identityDocument?.idNumber)) newErrors.idNumber = "Số giấy tờ không hợp lệ";
+    if (validateEmail(editedStudent.email, ALLOWED_EMAIL_DOMAIN)) newErrors.email = t('validate.validateemail');
+    if (validatePhone(editedStudent.phone, PHONE_REGEX)) newErrors.phone = t('validate.validatephone');
+    if (validateStatusChange(student.studentStatus, editedStudent.studentStatus, STATUS_RULES)) newErrors.studentStatus = t('validate.validatestatuschange');
+    if (validateIdentityDocument(editedStudent.identityDocument?.idNumber)) newErrors.idNumber = t('validate.validateidentification');
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleEdit = () => {
-    setEditedStudent({ 
-      ...student, 
-      gender: student.gender === true, 
+    setEditedStudent({
+      ...student,
+      gender: student.gender === true,
       dob: student.dob ? student.dob.split("T")[0] : "", // Format YYYY-MM-DD
       departmentId: student.department?._id || student.departmentId,
       identityDocument: {
@@ -41,21 +45,21 @@ const StudentDetail = ({departments, student, onSave, onClose, setEditedStudent,
 
   const handleSave = async () => {
     if (!validate()) return;
-    
+
     // Cập nhật department trước khi lưu
     const selectedDepartment = departments.find(dept => dept._id === editedStudent.departmentId);
     const finalStudent = { ...editedStudent, department: selectedDepartment || {} };
-  
+
     try {
       await onSave(finalStudent);
       setIsEditing(false);
       setEditedStudent(null);
     } catch (error) {
-      console.error("Lỗi khi lưu sinh viên:", error);
-      setErrors((prevErrors) => ({ ...prevErrors, general: error.message || "Lỗi không xác định." }));
+      console.error(t('error.save student'), error);
+      setErrors((prevErrors) => ({ ...prevErrors, general: error.message || t('error.unknown') }));
     }
   };
-  
+
 
   const handleClose = () => {
     setIsEditing(false);
@@ -66,41 +70,41 @@ const StudentDetail = ({departments, student, onSave, onClose, setEditedStudent,
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-  
+
     setEditedStudent((prev) => {
       let updatedStudent = {
         ...prev,
         [name]: type === "checkbox" ? checked : value,
       };
-  
+
       if (name === "gender") {
         updatedStudent.gender = value === "true"; // Chuyển thành boolean
       }
-  
+
       // Không cập nhật ngay lập tức department
       return updatedStudent;
     });
   };
-  
-  
+
+
   return (
     <>
       {!isEditing ? (
         <EntityView
-          title="Thông Tin Sinh Viên"
+          title={t('student information')}
           entityData={formatStudentData(student)} // Dữ liệu đã format từ `StudentScreen`
           fields={[
-            { label: "MSSV", key: "studentId" },
-            { label: "Họ và Tên", key: "fullname" },
-            { label: "Email", key: "email" },
-            { label: "Giới tính", key: "gender" },
-            { label: "Số điện thoại", key: "phone" },
-            { label: "Ngày sinh", key: "dob" },
-            { label: "Khoa", key: "departmentName" },
-            { label: "Chương trình", key: "program" },
-            { label: "Tình trạng", key: "studentStatus" },
-            { label: "Địa chỉ thường trú", key: "fullAddress" },
-            { label: "Giấy tờ tùy thân", key: "identityInfo" },
+            { label: t('id'), key: "studentId" },
+            { label: t('full name'), key: "fullname" },
+            { label: 'email', key: "email" },
+            { label: t('gender'), key: "gender" },
+            { label: t('phone number'), key: "phone" },
+            { label: t('birthdate'), key: "dob" },
+            { label: t('department'), key: "departmentName" },
+            { label: t('program'), key: "program" },
+            { label: t('status'), key: "studentStatus" },
+            { label: t('address'), key: "fullAddress" },
+            { label: t('identification.identification'), key: "identityInfo" },
           ]}
           onClose={onClose}
           onEdit={handleEdit}
@@ -114,49 +118,54 @@ const StudentDetail = ({departments, student, onSave, onClose, setEditedStudent,
         />
       ) : (
         <EnityEdit
-          title="Chỉnh Sửa Sinh Viên"
+          title={t('edit student')}
           fields={[
-            { name: "studentId", label: "MSSV", type: "text", disabled: true },
-            { name: "fullname", label: "Họ và Tên", type: "text" },
-            { name: "dob", label: "Ngày sinh", type: "date" },
-            { name: "gender", label: "Giới tính", type: "select", 
+            { name: "studentId", label: t('id'), type: "text", disabled: true },
+            { name: "fullname", label: t('full name'), type: "text" },
+            { name: "dob", label: t('birthdate'), type: "date" },
+            {
+              name: "gender", label: t('gender'), type: "select",
               value: editedStudent.gender.toString(), // Chuyển thành string để React xử lý
-                options: [
-                  { value: "true", label: "Nam" },
-                  { value: "false", label: "Nữ" }
-                ],
+              options: [
+                { value: "true", label: t('male') },
+                { value: "false", label: t('female') }
+              ],
               onChange: handleChange, // Đảm bảo gọi handleChange khi thay đổi
             },
             {
               name: "departmentId",
-              label: "Khoa",
+              label: t('department'),
               type: "select",
               options: departments.map((d) => ({
                 value: d._id,
                 label: d.departmentName
               }))
             },
-            
-            { name: "schoolYear", label: "Niên khóa", type: "number" },
-            { name: "program", label: "Chương trình", type: "select", options: [
-              { value: "CQ", label: "CQ" },
-              { value: "CLC", label: "CLC" },
-              { value: "DTTX", label: "DTTX" },
-              { value: "APCS", label: "APCS" },
-            ]},
+
+            { name: "schoolYear", label: t('school year'), type: "number" },
+            {
+              name: "program", label: t('program'), type: "select", options: [
+                { value: "CQ", label: "CQ" },
+                { value: "CLC", label: "CLC" },
+                { value: "DTTX", label: "DTTX" },
+                { value: "APCS", label: "APCS" },
+              ]
+            },
             { name: "email", label: "Email", type: "email" },
-            { name: "phone", label: "Số điện thoại", type: "text" },
-            { name: "studentStatus", label: "Tình trạng", type: "select", options: [
-              { value: "active", label: "Đang học" },
-              { value: "graduated", label: "Đã tốt nghiệp" },
-              { value: "dropout", label: "Bị đuổi học" },
-              { value: "suspended", label: "Bị đình chỉ" },
-            ]},
-            { name: "nationality", label: "Quốc tịch", type: "text" },
-            { name: "identityDocument.idNumber", label: "Số giấy tờ", type: "text" },
-            { name: "identityDocument.issuedDate", label: "Ngày cấp", type: "date" },
-            { name: "identityDocument.issuedPlace", label: "Nơi cấp", type: "text" },
-            { name: "identityDocument.expirationDate", label: "Ngày hết hạn", type: "date" },
+            { name: "phone", label: t('phone number'), type: "text" },
+            {
+              name: "studentStatus", label: t('status'), type: "select", options: [
+                { value: "active", label: t('studying') },
+                { value: "graduated", label: t('graduated') },
+                { value: "dropout", label: t('expelled') },
+                { value: "suspended", label: t('suspended') },
+              ]
+            },
+            { name: "nationality", label: t('nationality'), type: "text" },
+            { name: "identityDocument.idNumber", label: t('identification.number'), type: "text" },
+            { name: "identityDocument.issuedDate", label: t('identification.date of issue'), type: "date" },
+            { name: "identityDocument.issuedPlace", label: t('identification.place of issue'), type: "text" },
+            { name: "identityDocument.expirationDate", label: t('identification.date of expiry'), type: "date" },
             // { name: "identityDocument.hasChip", label: "Có chip (CCCD)", type: "checkbox" },
           ]}
           data={editedStudent}

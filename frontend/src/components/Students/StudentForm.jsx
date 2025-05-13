@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import "../../styles/StudentForm.scss";
 import Papa from "papaparse"; // Dùng để parse CSV
+import { useTranslation } from "react-i18next"
 
 import { validateEmail, validatePhone, validateStatusChange } from "../../utils/businessRule.util"; // Import từ utils.js
 import { ALLOWED_EMAIL_DOMAIN, PHONE_REGEX, STATUS_RULES } from "../../utils/constants"; // Import từ constants.js
@@ -25,6 +26,7 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
     nationality: "Việt Nam",
   });
   const [errors, setErrors] = useState({});
+  const { t } = useTranslation(['student', 'department']);
 
   // Xử lý khi tải file CSV hoặc JSON
   const handleFileUpload = useCallback((event) => {
@@ -44,9 +46,9 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
           const formattedData = data.map((student) => formatStudentData(student));
           setStudents(formattedData);
         } catch (error) {
-          console.error("Lỗi đọc JSON:", error);
+          console.error(t('error.readJSON') + ":", error);
         }
-      
+
       } else if (file.name.endsWith(".csv")) {
         Papa.parse(content, {
           header: true,
@@ -56,7 +58,7 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
             setStudents(formattedData);
           },
           error: (error) => {
-            console.error("Lỗi đọc CSV:", error);
+            console.error(t('error.readCSV') + ":", error);
           },
         });
       }
@@ -101,36 +103,36 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
   });
 
   const handleImport = async () => {
-    console.log("🛠 Đang nhập dữ liệu, students:", students);
+    console.log(t('import.importing') + ":", students);
     if (students.length === 0) {
-        console.warn("⚠️ Không có sinh viên nào để nhập!");
-        return;
+      console.warn(t('import.nostudents'));
+      return;
     }
 
     let newErrors = {};
     let successCount = 0;
 
     for (const student of students) {
-        try {
-            await onSubmit(student);
-            console.log("✅ Thành công:", student.fullname);
-            successCount++;
-        } catch (error) {
-            console.log(`❌ Lỗi khi thêm sinh viên ${student.fullname}:`, error.message);
-            newErrors[student.studentId] = error.message || "Lỗi không xác định.";
-        }
+      try {
+        await onSubmit(student);
+        console.log(t('success') + ":", student.fullname);
+        successCount++;
+      } catch (error) {
+        console.log(t('error.add student') + ' ${student.fullname}:', error.message);
+        newErrors[student.studentId] = error.message || t('error.unknown');
+      }
     }
 
     setErrors(newErrors);
 
-    if (successCount > 0) alert(`✅ Nhập thành công ${successCount} sinh viên!`);
-    if (Object.keys(newErrors).length > 0) alert(`⚠️ Một số sinh viên bị lỗi, vui lòng kiểm tra danh sách.`);
-};
+    if (successCount > 0) alert(t('import.success') + '${successCount}' + t('students') + "!");
+    if (Object.keys(newErrors).length > 0) alert(t('error.import some student'));
+  };
 
 
 
-  
-  
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -153,25 +155,25 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
         await onSubmit(newStudent);
         onClose();
       } catch (error) {
-        console.error("❌ Lỗi :", error);
+        console.error(t('error.error') + ":", error);
         setErrors((prevErrors) => ({
           ...prevErrors,
-          general: error.message || "Lỗi không xác định.",
+          general: error.message || t('error.unknown'),
         }));
       }
     }
   };
-  
+
 
   const validate = () => {
     let newErrors = {};
-  
+
     // Kiểm tra email
     const emailError = validateEmail(newStudent.email, ALLOWED_EMAIL_DOMAIN);
     if (emailError) {
       newErrors.email = emailError;
     }
-  
+
     // Kiểm tra số điện thoại
     const phoneError = validatePhone(newStudent.phone, PHONE_REGEX);
     if (phoneError) {
@@ -183,7 +185,7 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
     if (statusError) {
       newErrors.studentStatus = statusError;
     }
-  
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -191,13 +193,13 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
   return (
     <div className="student-detail-overlay-adding" onClick={onClose}>
       <div className="student-detail-adding" onClick={(e) => e.stopPropagation()}>
-        <h2>Thêm sinh viên</h2>
+        <h2>{t('add student')}</h2>
 
-        <label>Tải file CSV hoặc JSON:</label>
+        <label>{t('downloadfilecsvorjson')}:</label>
         <input type="file" accept=".csv,.json" onChange={handleFileUpload} />
         {students.length > 0 && (
           <div>
-            <h3>Danh sách sinh viên nhập:</h3>
+            <h3>{t('list of students')}:</h3>
             <ul>
               {students.map((student, index) => (
                 <li key={index}>
@@ -210,15 +212,15 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
           </div>
         )}
 
-        <input type="text" name="fullname" placeholder="Họ và tên" value={newStudent.fullname} onChange={handleChange} />
-        <input type="text" name="studentId" placeholder="MSSV" value={newStudent.studentId} onChange={handleChange} />
-        
-        <label>Ngày sinh:</label>
+        <input type="text" name="fullname" placeholder={t('fullname')} value={newStudent.fullname} onChange={handleChange} />
+        <input type="text" name="studentId" placeholder={t('id')} value={newStudent.studentId} onChange={handleChange} />
+
+        <label>{t('birthdate')}:</label>
         <input type="date" name="dob" value={newStudent.dob} onChange={handleChange} />
 
-        <label>Khoa:</label>
+        <label>{t('department')}:</label>
         <select name="department" value={newStudent.department} onChange={handleChange}>
-          <option value="">Chọn khoa</option>
+          <option value="">{t('choose department')}</option>
           {departments.map((dept) => (
             <option key={dept._id} value={dept._id}>
               {dept.departmentName}
@@ -226,32 +228,32 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
           ))}
         </select>
 
-        <label>Khóa:</label>
-        <input type="text" name="schoolYear" placeholder="Khóa" value={newStudent.schoolYear} onChange={handleChange} />
+        <label>{t('school year')}:</label>
+        <input type="text" name="schoolYear" placeholder={t('school year')} value={newStudent.schoolYear} onChange={handleChange} />
 
-        <label>Giới tính:</label>
+        <label>{t('gender')}:</label>
         <select name="gender" value={newStudent.gender} onChange={(e) => handleChange({ target: { name: "gender", value: e.target.value === "true" } })}>
-          <option value="true">Nam</option>
-          <option value="false">Nữ</option>
+          <option value="true">{t('male')}</option>
+          <option value="false">{t('female')}</option>
         </select>
 
         <label>Email:</label>
         <input type="email" name="email" placeholder="Email" value={newStudent.email} onChange={handleChange} />
         <p>        {errors.email && <span className="error">{errors.email}</span>} </p>
 
-        <label>Số điện thoại:</label>
-        <input type="text" name="phone" placeholder="SĐT" value={newStudent.phone} onChange={handleChange} />
+        <label>{t('phone number')}:</label>
+        <input type="text" name="phone" placeholder={t('phone number')} value={newStudent.phone} onChange={handleChange} />
         <p>{errors.phone && <span className="error">{errors.phone}</span>}</p>
 
-        <label>Chương trình:</label>
+        <label>{t('program')}:</label>
         <select name="program" value={newStudent.program} onChange={handleChange}>
-          <option value="CQ">Chính quy</option>
-          <option value="CLC">Chất lượng cao</option>
-          <option value="DTTX">Đào tạo từ xa</option>
+          <option value="CQ">{t('regular')}</option>
+          <option value="CLC">{t('high quality')}</option>
+          <option value="DTTX">{t('distance education')}</option>
           <option value="APCS">APCS</option>
         </select>
 
-        <label>Tình trạng:</label>
+        <label>{t('status')}:</label>
         <select
           name="studentStatus"
           value={newStudent.studentStatus}
@@ -261,41 +263,41 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
             }
           }}
         >
-          <option value="active">Đang học</option>
-          <option value="suspended">Bị đình chỉ</option>
-          <option value="graduated">Tốt nghiệp</option>
-          <option value="dropout">Bỏ học</option>
+          <option value="active">{t('studying')}</option>
+          <option value="suspended">{t('suspended')}</option>
+          <option value="graduated">{t('graduated')}</option>
+          <option value="dropout">{t('expelled')}</option>
         </select>
 
-        <label>Quốc tịch:</label>
-        <input type="text" name="nationality" placeholder="Quốc tịch" value={newStudent.nationality} onChange={handleChange} />
+        <label>{t('nationality')}:</label>
+        <input type="text" name="nationality" placeholder={t('nationality')} value={newStudent.nationality} onChange={handleChange} />
 
         {/* Địa chỉ */}
-        <h3>Địa chỉ thường trú</h3>
-        <input type="text" placeholder="Số nhà" value={newStudent.address.houseNumber} onChange={(e) => handleNestedChange("address", "houseNumber", e.target.value)} />
-        <input type="text" placeholder="Phố" value={newStudent.address.street} onChange={(e) => handleNestedChange("address", "street", e.target.value)} />
-        <input type="text" placeholder="Quận" value={newStudent.address.district} onChange={(e) => handleNestedChange("address", "district", e.target.value)} />
-        
-        <h3>Địa chỉ tạm trú</h3>
-        <input type="text" placeholder="Số nhà" value={newStudent.addressTemp.houseNumber} onChange={(e) => handleNestedChange("addressTemp", "houseNumber", e.target.value)} />
-        <input type="text" placeholder="Phố" value={newStudent.addressTemp.street} onChange={(e) => handleNestedChange("addressTemp", "street", e.target.value)} />
+        <h3>{t('permanent address')}</h3>
+        <input type="text" placeholder={t('address detail.house number')} value={newStudent.address.houseNumber} onChange={(e) => handleNestedChange("address", "houseNumber", e.target.value)} />
+        <input type="text" placeholder={t('address detail.street')} value={newStudent.address.street} onChange={(e) => handleNestedChange("address", "street", e.target.value)} />
+        <input type="text" placeholder={t('address detail.district')} value={newStudent.address.district} onChange={(e) => handleNestedChange("address", "district", e.target.value)} />
 
-           {/* Thông tin giấy tờ tùy thân */}
-        <h3>Giấy tờ tùy thân</h3>
+        <h3>{t('petemporaryrmanent address')}</h3>
+        <input type="text" placeholder={t('address detail.house number')} value={newStudent.addressTemp.houseNumber} onChange={(e) => handleNestedChange("addressTemp", "houseNumber", e.target.value)} />
+        <input type="text" placeholder={t('address detail.street')} value={newStudent.addressTemp.street} onChange={(e) => handleNestedChange("addressTemp", "street", e.target.value)} />
+
+        {/* Thông tin giấy tờ tùy thân */}
+        <h3>{t('identification.identification')}</h3>
         <select value={newStudent.identityDocument.type} onChange={(e) => handleNestedChange("identityDocument", "type", e.target.value)}>
-          <option value="CMND">CMND</option>
-          <option value="CCCD">CCCD</option>
-          <option value="Passport">Hộ chiếu</option>
+          <option value="CMND">{t('identification.identity card')}</option>
+          <option value="CCCD">{t('identification.citizen identity card')}</option>
+          <option value="Passport">{t('identification.passport')}</option>
         </select>
-        <input type="text" placeholder="Số giấy tờ" value={newStudent.identityDocument.idNumber} onChange={(e) => handleNestedChange("identityDocument", "idNumber", e.target.value)} />
-        
-        <label>Ngày cấp:</label>
+        <input type="text" placeholder={t('identification.number')} value={newStudent.identityDocument.idNumber} onChange={(e) => handleNestedChange("identityDocument", "idNumber", e.target.value)} />
+
+        <label>{t('identification.date of issue')}:</label>
         <input type="date" value={newStudent.identityDocument.issuedDate} onChange={(e) => handleNestedChange("identityDocument", "issuedDate", e.target.value)} />
 
-        <label>Nơi cấp:</label>
-        <input type="text" placeholder="Nơi cấp" value={newStudent.identityDocument.issuedPlace} onChange={(e) => handleNestedChange("identityDocument", "issuedPlace", e.target.value)} />
+        <label>{t('identification.place of issue')}:</label>
+        <input type="text" placeholder={t('identification.place of issue')} value={newStudent.identityDocument.issuedPlace} onChange={(e) => handleNestedChange("identityDocument", "issuedPlace", e.target.value)} />
 
-        <label>Ngày hết hạn (nếu có):</label>
+        <label>{t('identification.date of expiry')} {t('if have')}:</label>
         <input type="date" value={newStudent.identityDocument.expirationDate} onChange={(e) => handleNestedChange("identityDocument", "expirationDate", e.target.value)} />
         <p>{errors.general && <span className="error">{errors.general}</span>}        </p>
         <button onClick={handleSubmit}>Lưu</button>

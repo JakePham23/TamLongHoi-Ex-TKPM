@@ -7,6 +7,7 @@ import DepartmentTable from "../components/Departments/DepartmentTable.jsx";
 import useDepartments from "../hooks/useDepartments";
 import "../styles/pages/DepartmentScreen.scss";
 import departmentService from "../services/department.service";
+import { useTranslation } from "react-i18next"
 
 const DepartmentScreen = () => {
   const { departments, fetchDepartments } = useDepartments();
@@ -14,23 +15,25 @@ const DepartmentScreen = () => {
   const [isAdding, setIsAdding] = useState(false);
   // const [selectedDepartment, setSelectedDepartment] = useState(null); // Manage selected department state
 
+  const { t } = useTranslation('department');
+
   const handleSaveDepartment = async (newDepartment) => {
     try {
       await departmentService.addDepartment(newDepartment);
       fetchDepartments();
       setIsAdding(false);
     } catch (error) {
-      console.error("Lỗi khi thêm khoa:", error);
+      console.error(t('error.add department'), error);
     }
   };
 
   const handleDeleteDepartment = async (departmentId) => {
-    if (!window.confirm("Bạn có chắc muốn xoá khoa này?")) return;
+    if (!window.confirm(t('form.confirm delete department'))) return;
     try {
       await departmentService.deleteDepartment(departmentId);
       fetchDepartments();
     } catch (error) {
-      console.error("Lỗi khi xoá khoa:", error);
+      console.error(t('error.delete department'), error);
     }
   };
 
@@ -39,25 +42,25 @@ const DepartmentScreen = () => {
       await departmentService.updateDepartment(departmentId, departmentName);
       fetchDepartments();
     } catch (error) {
-      console.error("Lỗi khi cập nhật khoa:", error);
+      console.error(t('error.update department'), error);
     }
   };
 
   return (
     <div className="DepartmentScreen">
-      <h1>Danh sách các khoa</h1>
+      <h1>{t('list of faculties')}</h1>
       <div className="top-bar">
         <SearchInput
-          placeholder="Tìm kiếm khoa"
+          placeholder={t('search department')}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <Button icon={<FaPlus />} label="Thêm khoa" variant="gray" onClick={() => setIsAdding(true)} />
+        <Button icon={<FaPlus />} label={t('add department')} variant="gray" onClick={() => setIsAdding(true)} />
       </div>
 
       {isAdding && <DepartmentForm onSave={handleSaveDepartment} onClose={() => setIsAdding(false)} />}
 
-  
+
 
       {/* Display selected department details */}
       <DepartmentTable

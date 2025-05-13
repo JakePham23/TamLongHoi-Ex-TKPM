@@ -1,7 +1,7 @@
 @import './abstracts/variables';
 
 // screen tabbar
-.Tabbar{
+.Tabbar {
     width: $Tabbar_Width;
     height: $Tabbar_Height;
     display: flex;
@@ -12,26 +12,27 @@
 
 
 // logo
-.Logo{
+.Logo {
     display: flex;
     flex-direction: row;
 }
 
-.Logo img{
+.Logo img {
     width: $Logo_Size;
     height: $Logo_Size;
     padding: 10px;
 }
 
-.Logo h2{
+.Logo h2 {
     padding-top: 1rem;
 }
+
 // content
-.ListContent{
+.ListContent {
     text-decoration: none;
     list-style: none;
 }
 
-.ListContent li{
+.ListContent li {
     padding: 0.5rem;
 }

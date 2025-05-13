@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Button from "../Button";
 import "../../styles/pages/DepartmentScreen.scss";
+import { useTranslation } from 'react-i18next'
 
 const DepartmentForm = ({ onSave, department, onClose }) => {
     const [name, setName] = useState("");
+
+    const { t } = useTranslation('department');
 
     useEffect(() => {
         setName(department ? department.departmentName : "");
@@ -11,7 +14,7 @@ const DepartmentForm = ({ onSave, department, onClose }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!name.trim()) return alert("Tên khoa không được để trống!");
+        if (!name.trim()) return alert(t('error.blank department name'));
 
         onSave({ ...department, departmentName: name });
         setName("");
@@ -21,17 +24,17 @@ const DepartmentForm = ({ onSave, department, onClose }) => {
     return (
         <form onSubmit={handleSubmit} className="modal-overlay">
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <h2>Thêm khoa</h2>
+                <h2>{t('add department')}</h2>
                 <input
                     type="text"
-                    placeholder="Nhập tên khoa"
+                    placeholder={t('form.enter department name')}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
                 <div className="modal-buttons">
-                    <Button label="Hủy" variant="gray" onClick={onClose} />
-                    <Button label="Lưu" variant="primary" type="submit" />
-                </div>           
+                    <Button label={t('button.cancel')} variant="gray" onClick={onClose} />
+                    <Button label={t('button.save')} variant="primary" type="submit" />
+                </div>
             </div>
         </form>
     );
