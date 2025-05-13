@@ -1,0 +1,23 @@
+{
+    "list of faculties": "List of Faculties",
+    "department": "Department",
+    "choose department": "Choose Department",
+    "search department": "Search department",
+    "no.": "No.",
+    "add department": "Add department",
+    "edit department": "Edit department",
+    "error": {
+        "add department": "Error while adding department",
+        "delete department": "Error while deleting department",
+        "update department": "Error while updating department",
+        "blank department name": "Department name cannot be left blank!"
+    },
+    "form": {
+        "enter department name": "Enter department name",
+        "confirm delete department": "Are you sure you want to delete this department"
+    },
+    "button": {
+        "cancel": "Cancel",
+        "save": "Save"
+    }
+}

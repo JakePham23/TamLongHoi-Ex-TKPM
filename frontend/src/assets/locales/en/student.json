@@ -1,0 +1,66 @@
+{
+    "list of students": "List of students",
+    "id": "ID",
+    "students": "students",
+    "student information": "Student information",
+    "edit student": "Edit student",
+    "add student": "Add student",
+    "full name": "Full name",
+    "gender": "Gender",
+    "phone number": "Phone number",
+    "birthdate": "Birthdate",
+    "program": "Program",
+    "status": "Status",
+    "address": "Address",
+    "permanent address": "Permanent address",
+    "temporary address": "Temporary address",
+    "address detail": {
+        "house number": "House number",
+        "street": "Street",
+        "district": "District"
+    },
+    "identification": {
+        "identification": "Identification",
+        "number": "Number ID",
+        "date of issue": "Date of issue",
+        "date of expiry": "Date of expiry",
+        "place of issue": "Place of issue",
+        "identity card": "Identity card",
+        "citizen identity card": "Citizen identity card",
+        "passport": "Passport"
+    },
+    "if have": "If have",
+    "error": {
+        "error": "❌ Error",
+        "save student": "❌ Error while saving student",
+        "unknown": "Unknown error.",
+        "readJSON": "Reading JSON error",
+        "readCSV": "Reading CSV error",
+        "add student": "❌ Error while adding student",
+        "import some student": "⚠️ Some students are missing, please check the list."
+    },
+    "male": "Male",
+    "female": "Female",
+    "school year": "School year",
+    "studying": "Studying",
+    "graduated": "Graduated",
+    "expelled": "Expelled",
+    "suspended": "Suspended",
+    "nationality": "Nationality",
+    "validate": {
+        "validateemail": "Invalid Email",
+        "validatephone": "Invalid Phone number",
+        "validatestatuschange": "Cannot change this status",
+        "validateidentification": "Invalid Identification"
+    },
+    "success": "✅ Success",
+    "import": {
+        "importing": "🛠 Importing data, students",
+        "nostudents": "⚠️ No students to import!",
+        "success": "✅ Import success"
+    },
+    "downloadfilecsvorjson": "Download CSV or JSON file",
+    "regular": "Regular",
+    "distance education": "Distance education",
+    "high quality": "High quality"
+}
