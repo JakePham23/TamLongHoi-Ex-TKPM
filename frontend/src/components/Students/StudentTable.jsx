@@ -1,21 +1,24 @@
 import React from "react";
 import DataTable from "../DataTable";
+import { useTranslation } from "react-i18next"
 
 const StudentTable = ({ students, onView, onDelete }) => {
+  const { t } = useTranslation(['student', 'department']);
+
   const columns = [
-    { label: "MSSV", field: "studentId", sortable: true },
-    { label: "Họ và tên", field: "fullname", sortable: true },
-    { label: "Khoa", field: "department.departmentName", sortable: true },
-    { label: "Khóa", field: "schoolYear", sortable: true }
+    { label: t('id'), field: "studentId", sortable: true },
+    { label: t('full name'), field: "fullname", sortable: true },
+    { label: t('department', { ns: 'department' }), field: "department.departmentName", sortable: true },
+    { label: t('school year'), field: "schoolYear", sortable: true }
   ];
 
   return (
-    <DataTable 
-      columns={columns} 
-      data={students} 
+    <DataTable
+      columns={columns}
+      data={students}
       initialSortField="fullname"
-      onView={onView} 
-      onDelete={onDelete} 
+      onView={onView}
+      onDelete={onDelete}
     />
   );
 };

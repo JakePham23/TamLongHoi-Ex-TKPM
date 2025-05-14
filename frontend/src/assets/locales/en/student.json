@@ -3,6 +3,7 @@
     "id": "ID",
     "students": "students",
     "student information": "Student information",
+    "search student": "Search for students",
     "edit student": "Edit student",
     "add student": "Add student",
     "full name": "Full name",
@@ -33,15 +34,18 @@
     "error": {
         "error": "❌ Error",
         "save student": "❌ Error while saving student",
+        "update student": "❌ Error while updating student",
         "unknown": "Unknown error.",
         "readJSON": "Reading JSON error",
         "readCSV": "Reading CSV error",
         "add student": "❌ Error while adding student",
-        "import some student": "⚠️ Some students are missing, please check the list."
+        "import some student": "⚠️ Some students are missing, please check the list.",
+        "no student export": "No students to export!"
     },
     "male": "Male",
     "female": "Female",
     "school year": "School year",
+    "all school year": "All school year",
     "studying": "Studying",
     "graduated": "Graduated",
     "expelled": "Expelled",
@@ -59,8 +63,12 @@
         "nostudents": "⚠️ No students to import!",
         "success": "✅ Import success"
     },
+    "export list": "Export list",
     "downloadfilecsvorjson": "Download CSV or JSON file",
     "regular": "Regular",
     "distance education": "Distance education",
-    "high quality": "High quality"
+    "high quality": "High quality",
+    "form": {
+        "sure delete": "Are you sure you want to delete?"
+    }
 }

@@ -8,6 +8,7 @@ import useCourse from "../hooks/useCourse";
 import useDepartments from "../hooks/useDepartments";
 import "../styles/pages/CourseScreen.scss";
 import courseService from "../services/course.service";
+import { useTranslation } from "react-i18next";
 
 const CourseScreen = () => {
 
@@ -21,30 +22,32 @@ const CourseScreen = () => {
   const { departments = [], fetchDepartments } = useDepartments();
   const [searchTerm, setSearchTerm] = useState("");
   const [isAdding, setIsAdding] = useState(false);
-  
+
+  const { t } = useTranslation(['course', 'department', 'component']);
+
   useEffect(() => {
     console.log("Fetching data..."); // Debug data fetching
     fetchCourses();
     fetchDepartments();
   }, [fetchCourses, fetchDepartments]);
 
-  const handleSaveCourse = async (newCourse) => { 
+  const handleSaveCourse = async (newCourse) => {
     try {
       await courseService.addCourse(newCourse);
       await fetchCourses();
       setIsAdding(false);
     } catch (error) {
-      console.error("Lỗi khi thêm môn học:", error);
+      console.error(t('error. '), error);
     }
   };
 
   const handleDeleteCourse = async (courseId) => {
-    if (!window.confirm("Bạn có chắc muốn xoá môn học này?")) return;
+    if (!window.confirm(t('error.sure delete course'))) return;
     try {
       await courseService.deleteCourse(courseId);
       await fetchCourses();
     } catch (error) {
-      console.error("Lỗi khi xoá môn học:", error);
+      console.error(t('error.delete course') + ":", error);
     }
   };
 
@@ -54,12 +57,12 @@ const CourseScreen = () => {
       await courseService.updateCourse(courseId, courseData);
       await fetchCourses();
     } catch (error) {
-      console.error("Lỗi khi cập nhật môn học:", error);
+      console.error(t('error.update course') + ":", error);
     }
   };
 
   if (loading) {
-    return <div className="loading">Đang tải...</div>;
+    return <div className="loading">{t('loading', { ns: 'component' })}...</div>;
   }
   if (error) {
     return <div className="error">{error}</div>;
@@ -68,17 +71,17 @@ const CourseScreen = () => {
 
     return (
       <div className="CourseScreen">
-        <h1>Danh sách các môn học</h1>
+        <h1>{t('list of courses')}</h1>
 
         <div className="top-bar">
           <SearchInput
-            placeholder="Tìm kiếm môn học"
+            placeholder={t('search course')}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <Button
             icon={<FaPlus />}
-            label="Thêm môn học"
+            label={t('add course')}
             variant="gray"
             onClick={() => setIsAdding(true)}
           />
@@ -90,7 +93,7 @@ const CourseScreen = () => {
 
             departments={departments}
             onClose={() => setIsAdding(false)}
-            
+
           />
         )}
 
@@ -104,8 +107,8 @@ const CourseScreen = () => {
       </div>
     );
   } catch (error) {
-    console.error("Lỗi trong CourseScreen:", error);
-    return <div className="error">Đã xảy ra lỗi trong quá trình tải dữ liệu.</div>;
+    console.error(t('error.in coursescreen') + ":", error);
+    return <div className="error">{t('error.while loading data')}.</div>;
   }
 };
 

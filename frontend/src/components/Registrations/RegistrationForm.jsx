@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import Button from "../Button";
 import "../../styles/pages/RegistrationScreen.scss";
 
-const RegistrationForm = ({ onSave, registration, courses, departments, teachers, onClose }) => {
+const RegistrationForm = ({ onSave, registration, courses, teachers, onClose }) => {
+  const { t } = useTranslation('registration');
+
   const [formData, setFormData] = useState({
     year: "",
     semester: "",
@@ -50,23 +53,23 @@ const RegistrationForm = ({ onSave, registration, courses, departments, teachers
 
     // Validation
     if (!formData.year.trim()) {
-      alert("Năm không được để trống!");
+      alert(t('year') + " " + "cannot be empty!");
       return;
     }
     if (!formData.semester.trim()) {
-      alert("Học kỳ không được để trống!");
+      alert(t('semester') + " " + "cannot be empty!");
       return;
     }
     if (!formData.courseId) {
-      alert("Vui lòng chọn môn học!");
+      alert("Please select a " + t('course') + "!");
       return;
     }
     if (!formData.teacherId) {
-      alert("Vui lòng chọn giáo viên!");
+      alert("Please select a " + t('teacher') + "!");
       return;
     }
     if (!formData.maxStudent || formData.maxStudent < 1) {
-      alert("Số sinh viên tối đa phải lớn hơn 0!");
+      alert(t('maxStudent') + " must be greater than 0!");
       return;
     }
 
@@ -86,14 +89,14 @@ const RegistrationForm = ({ onSave, registration, courses, departments, teachers
   return (
     <form onSubmit={handleSubmit} className="modal-overlay">
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <h2>{registration ? "Chỉnh sửa đăng ký" : "Thêm đăng ký"}</h2>
+        <h2>{registration ? t('editRegistration') : t('addRegistration')}</h2>
 
         <div className="form-group">
-          <label>Năm</label>
+          <label>{t('year')}</label>
           <input
             type="number"
             name="year"
-            placeholder="VD: 2023"
+            placeholder={t('year') + " (e.g. 2023)"}
             value={formData.year}
             onChange={handleChange}
             required
@@ -101,11 +104,11 @@ const RegistrationForm = ({ onSave, registration, courses, departments, teachers
         </div>
 
         <div className="form-group">
-          <label>Học kỳ</label>
+          <label>{t('semester')}</label>
           <input
             type="number"
             name="semester"
-            placeholder="VD: 1 hoặc 2"
+            placeholder={t('semester') + " (e.g. 1 or 2)"}
             value={formData.semester}
             onChange={handleChange}
             required
@@ -113,14 +116,14 @@ const RegistrationForm = ({ onSave, registration, courses, departments, teachers
         </div>
 
         <div className="form-group">
-          <label>Môn học</label>
+          <label>{t('course')}</label>
           <select
             name="courseId"
             value={formData.courseId}
             onChange={handleChange}
             required
           >
-            <option value="">Chọn môn học</option>
+            <option value="">{t('selectCourse')}</option>
             {courses.map(course => (
               <option key={course._id} value={course._id}>
                 {course.courseName}
@@ -130,14 +133,14 @@ const RegistrationForm = ({ onSave, registration, courses, departments, teachers
         </div>
 
         <div className="form-group">
-          <label>Giáo viên</label>
+          <label>{t('teacher')}</label>
           <select
             name="teacherId"
             value={formData.teacherId}
             onChange={handleChange}
             required
           >
-            <option value="">Chọn giáo viên</option>
+            <option value="">{t('selectTeacher')}</option>
             {teachers.map(teacher => (
               <option key={teacher._id} value={teacher._id}>
                 {teacher.fullname}
@@ -147,11 +150,11 @@ const RegistrationForm = ({ onSave, registration, courses, departments, teachers
         </div>
 
         <div className="form-group">
-          <label>Số sinh viên tối đa</label>
+          <label>{t('maxStudent')}</label>
           <input
             type="number"
             name="maxStudent"
-            placeholder="Nhập số sinh viên tối đa"
+            placeholder={t('maxStudent') + " (greater than 0)"}
             value={formData.maxStudent}
             onChange={handleChange}
             min="1"
@@ -159,36 +162,36 @@ const RegistrationForm = ({ onSave, registration, courses, departments, teachers
         </div>
 
         <div className="form-group">
-          <label>Mô tả</label>
+          <label>{t('description')}</label>
           <input
             type="text"
             name="description"
-            placeholder="Mô tả đăng ký"
+            placeholder={t('description') + " (optional)"}
             value={formData.description}
             onChange={handleChange}
           />
         </div>
 
         <div className="form-group">
-          <label>Lịch học</label>
+          <label>{t('schedule')}</label>
           <input
             type="text"
-            placeholder="Ngày trong tuần"
+            placeholder={t('dayOfWeek')}
             value={formData.schedule.dayOfWeek}
             onChange={(e) => handleScheduleChange('dayOfWeek', e.target.value)}
           />
           <input
             style={{ marginTop: "10px" }}
             type="text"
-            placeholder="Thời gian"
+            placeholder={t('time')}
             value={formData.schedule.time}
             onChange={(e) => handleScheduleChange('time', e.target.value)}
           />
         </div>
 
         <div className="modal-buttons">
-          <Button label="Hủy" variant="gray" onClick={onClose} />
-          <Button label="Lưu" variant="primary" type="submit" />
+          <Button label={t('cancel')} variant="gray" onClick={onClose} />
+          <Button label={t('save')} variant="primary" type="submit" />
         </div>
       </div>
     </form>

@@ -100,7 +100,10 @@ const StudentDetail = ({ departments, student, onSave, onClose, setEditedStudent
             { label: t('gender'), key: "gender" },
             { label: t('phone number'), key: "phone" },
             { label: t('birthdate'), key: "dob" },
-            { label: t('department'), key: "departmentName" },
+            {
+              label: t('department', { ns: 'department' }
+              ), key: "departmentName"
+            },
             { label: t('program'), key: "program" },
             { label: t('status'), key: "studentStatus" },
             { label: t('address'), key: "fullAddress" },
@@ -134,7 +137,7 @@ const StudentDetail = ({ departments, student, onSave, onClose, setEditedStudent
             },
             {
               name: "departmentId",
-              label: t('department'),
+              label: t('department', { ns: 'department' }),
               type: "select",
               options: departments.map((d) => ({
                 value: d._id,

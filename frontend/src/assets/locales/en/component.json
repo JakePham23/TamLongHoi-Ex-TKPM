@@ -7,5 +7,6 @@
     "delete": "Delete",
     "view": "View",
     "operation": "Operation",
-    "no data": "No Data Available"
+    "no data": "No Data Available",
+    "loading": "Loading"
 }

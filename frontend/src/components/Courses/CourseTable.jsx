@@ -3,6 +3,7 @@ import DataTable from "../DataTable";
 import EnityEdit from "../EnityEdit";
 import "../../styles/Modal.scss";
 import removeVietnameseTones from "../../utils/string.util";
+import { useTranslation } from "react-i18next";
 
 const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete, onEdit }) => {
   const [sortOrder, setSortOrder] = useState("asc");
@@ -10,15 +11,17 @@ const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete
   const [editedCourse, setEditedCourse] = useState(null);
   const [errors, setErrors] = useState({});
 
+  const { t } = useTranslation(['course', 'department']);
+
   const columns = [
-    { label: "STT", field: "stt", sortable: false },
-    { label: "Mã môn học", field: "courseId", sortable: true },
-    { label: "Tên môn học", field: "courseName", sortable: true },
-    { label: "Số tín chỉ", field: "credit", sortable: true },
-    { label: "Số tiết lý thuyết", field: "theoreticalSession", sortable: true },
-    { label: "Số tiết thực hành", field: "practicalSession", sortable: true },
-    { label: "Khoa", field: "departmentName", sortable: true },
-    { label: "Môn học tiên quyết", field: "prerequisite", sortable: true },
+    { label: t('no.'), field: "stt", sortable: false },
+    { label: t('course id'), field: "courseId", sortable: true },
+    { label: t('course name'), field: "courseName", sortable: true },
+    { label: t('number of credits'), field: "credit", sortable: true },
+    { label: t('theoretical session'), field: "theoreticalSession", sortable: true },
+    { label: t('practical session'), field: "practicalSession", sortable: true },
+    { label: t('department', { ns: 'department' }), field: "departmentName", sortable: true },
+    { label: t('prerequisuite'), field: "prerequisite", sortable: true },
     // { label: "Mô tả", field: "description", sortable: true }
   ];
 
@@ -29,7 +32,7 @@ const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete
     removeVietnameseTones(c.courseName)?.toLowerCase().includes(cleanSearch) ||
     removeVietnameseTones(c.department?.departmentName)?.toLowerCase().includes(cleanSearch)
   );
-  
+
 
   const sortedCourses = [...filteredCourses].sort((a, b) => {
     const valA = a.courseName?.toLowerCase() || "";
@@ -42,8 +45,8 @@ const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete
     return {
       ...course,
       stt: index + 1,
-      departmentName: dept?.departmentName || "Chưa xác định",
-      prerequisite: course.prerequisite || "Không có",
+      departmentName: dept?.departmentName || t('error.not determined'),
+      prerequisite: course.prerequisite || t('error.not available'),
       // description: course.description || "Chưa có mô tả"
     };
   });
@@ -59,9 +62,9 @@ const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete
 
   const handleSaveEdit = () => {
     const newErrors = {};
-    if (!editedCourse.courseName?.trim()) newErrors.courseName = "Tên môn học không được để trống!";
-    if (!editedCourse.credit || editedCourse.credit < 2) newErrors.credit = "Số tín chỉ phải lớn hơn 1!";
-    if (!editedCourse.departmentId) newErrors.departmentId = "Vui lòng chọn khoa!";
+    if (!editedCourse.courseName?.trim()) newErrors.courseName = t('error.course name blank');
+    if (!editedCourse.credit || editedCourse.credit < 2) newErrors.credit = t('error.credits greater than 1');
+    if (!editedCourse.departmentId) newErrors.departmentId = t('error.please select department');
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -105,16 +108,16 @@ const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete
 
       {isEditing && (
         <EnityEdit
-          title="Chỉnh sửa Môn học"
+          title={t('edit course')}
           fields={[
-            { name: "courseId", label: "Mã môn học", type: "text", disabled: true },
-            { name: "courseName", label: "Tên môn học", type: "text" },
-            { name: "credit", label: "Số tín chỉ", type: "number" },
-            { name: "theoreticalSession", label: "Số tiết lý thuyết", type: "number" },
-            { name: "practicalSession", label: "Số tiết thực hành", type: "number" },
+            { name: "courseId", label: t('course id'), type: "text", disabled: true },
+            { name: "courseName", label: t('course name'), type: "text" },
+            { name: "credit", label: t('number of credits'), type: "number" },
+            { name: "theoreticalSession", label: t('theoretical session'), type: "number" },
+            { name: "practicalSession", label: t('practical session'), type: "number" },
             {
               name: "departmentId",
-              label: "Khoa",
+              label: t('department', { ns: 'department' }),
               type: "select",
               options: departments.map((d) => ({
                 value: d._id,
@@ -123,10 +126,10 @@ const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete
             },
             {
               name: "prerequisite",
-              label: "Môn học tiên quyết",
+              label: t('prerequisuite'),
               type: "select",
               options: [
-                { value: "", label: "Không có" },
+                { value: "", label: t('error.not available') },
                 ...courses.map((c) => ({
                   value: c.courseId,
                   label: c.courseName

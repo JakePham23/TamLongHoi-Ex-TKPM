@@ -9,10 +9,13 @@ import useCourses from "../hooks/useCourse.jsx";
 import useTeachers from "../hooks/useTeachers.jsx";
 import useStudents from "../hooks/useStudents.jsx";
 import useDepartments from "../hooks/useDepartments.jsx";
-import "../styles/pages/RegistrationScreen.scss";
 import registrationService from "../services/registration.service.jsx";
+import { useTranslation } from "react-i18next";
+import "../styles/pages/RegistrationScreen.scss";
 
 const RegistrationScreen = () => {
+  const { t } = useTranslation('registration');
+
   const {
     registrations,
     fetchRegistrations,
@@ -36,24 +39,23 @@ const RegistrationScreen = () => {
     fetchStudents();
   }, [fetchRegistrations, fetchCourses, fetchDepartments, fetchTeachers, fetchStudents]);
 
-
   const handleSaveRegistration = async (newRegistration) => {
     try {
       await registrationService.addRegistration(newRegistration);
       await fetchRegistrations();
       setIsAdding(false);
     } catch (error) {
-      console.error("Lỗi khi thêm đăng ký:", error);
+      console.error("Error adding registration:", error);
     }
   };
 
   const handleDeleteRegistration = async (registrationId) => {
-    if (!window.confirm("Bạn có chắc muốn xoá đăng ký này?")) return;
+    if (!window.confirm("Are you sure you want to delete this registration?")) return;
     try {
       await registrationService.deleteRegistration(registrationId);
       await fetchRegistrations();
     } catch (error) {
-      console.error("Lỗi khi xoá đăng ký:", error);
+      console.error("Error deleting registration:", error);
     }
   };
 
@@ -62,32 +64,32 @@ const RegistrationScreen = () => {
       await registrationService.updateRegistration(registrationId, registrationData);
       await fetchRegistrations();
     } catch (error) {
-      console.error("Lỗi khi cập nhật đăng ký:", error);
+      console.error("Error updating registration:", error);
     }
   };
 
   if (loading) {
-    return <div className="loading">Đang tải...</div>;
+    return <div className="loading">{t('loading')}</div>;
   }
 
   if (error) {
-    return <div className="error">{error}</div>;
+    return <div className="error">{t('error')}</div>;
   }
 
   if (registrations.length === 0) {
     return (
       <div className="RegistrationScreen">
-        <h1>Danh sách các đăng ký môn học</h1>
+        <h1>{t('registrationList')}</h1>
 
         <div className="top-bar">
           <SearchInput
-            placeholder="Tìm kiếm đăng ký"
+            placeholder={t('searchPlaceholder')}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <Button
             icon={<FaPlus />}
-            label="Thêm đăng ký"
+            label={t('addRegistration')}
             variant="gray"
             onClick={() => setIsAdding(true)}
           />
@@ -110,17 +112,17 @@ const RegistrationScreen = () => {
 
   return (
     <div className="RegistrationScreen">
-      <h1>Danh sách các đăng ký môn học</h1>
+      <h1>{t('registrationList')}</h1>
 
       <div className="top-bar">
         <SearchInput
-          placeholder="Tìm kiếm đăng ký"
+          placeholder={t('searchPlaceholder')}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <Button
           icon={<FaPlus />}
-          label="Thêm đăng ký"
+          label={t('addRegistration')}
           variant="gray"
           onClick={() => setIsAdding(true)}
         />

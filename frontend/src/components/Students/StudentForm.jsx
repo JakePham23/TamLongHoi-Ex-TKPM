@@ -26,7 +26,7 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
     nationality: "Việt Nam",
   });
   const [errors, setErrors] = useState({});
-  const { t } = useTranslation(['student', 'department']);
+  const { t } = useTranslation(['student', 'department', 'save']);
 
   // Xử lý khi tải file CSV hoặc JSON
   const handleFileUpload = useCallback((event) => {
@@ -212,15 +212,15 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
           </div>
         )}
 
-        <input type="text" name="fullname" placeholder={t('fullname')} value={newStudent.fullname} onChange={handleChange} />
+        <input type="text" name="fullname" placeholder={t('full name')} value={newStudent.fullname} onChange={handleChange} />
         <input type="text" name="studentId" placeholder={t('id')} value={newStudent.studentId} onChange={handleChange} />
 
         <label>{t('birthdate')}:</label>
         <input type="date" name="dob" value={newStudent.dob} onChange={handleChange} />
 
-        <label>{t('department')}:</label>
+        <label>{t('department', { ns: 'department' })}:</label>
         <select name="department" value={newStudent.department} onChange={handleChange}>
-          <option value="">{t('choose department')}</option>
+          <option value="">{t('choose department', { ns: 'department' })}</option>
           {departments.map((dept) => (
             <option key={dept._id} value={dept._id}>
               {dept.departmentName}
@@ -278,7 +278,7 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
         <input type="text" placeholder={t('address detail.street')} value={newStudent.address.street} onChange={(e) => handleNestedChange("address", "street", e.target.value)} />
         <input type="text" placeholder={t('address detail.district')} value={newStudent.address.district} onChange={(e) => handleNestedChange("address", "district", e.target.value)} />
 
-        <h3>{t('petemporaryrmanent address')}</h3>
+        <h3>{t('temporary address')}</h3>
         <input type="text" placeholder={t('address detail.house number')} value={newStudent.addressTemp.houseNumber} onChange={(e) => handleNestedChange("addressTemp", "houseNumber", e.target.value)} />
         <input type="text" placeholder={t('address detail.street')} value={newStudent.addressTemp.street} onChange={(e) => handleNestedChange("addressTemp", "street", e.target.value)} />
 
@@ -300,7 +300,7 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
         <label>{t('identification.date of expiry')} {t('if have')}:</label>
         <input type="date" value={newStudent.identityDocument.expirationDate} onChange={(e) => handleNestedChange("identityDocument", "expirationDate", e.target.value)} />
         <p>{errors.general && <span className="error">{errors.general}</span>}        </p>
-        <button onClick={handleSubmit}>Lưu</button>
+        <button onClick={handleSubmit}>{t('save', { ns: 'component' })}</button>
       </div>
     </div>
   );

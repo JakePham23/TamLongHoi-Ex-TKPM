@@ -1,0 +1,74 @@
+{
+    "list of students": "Danh sách sinh viên",
+    "id": "ID",
+    "students": "Sinh viên",
+    "student information": "Thông tin sinh viên",
+    "search student": "Tìm kiếm sinh viên",
+    "edit student": "Chỉnh sửa sinh viên",
+    "add student": "Thêm sinh viên",
+    "full name": "Họ tên",
+    "gender": "Giới tính",
+    "phone number": "Số điện thoại",
+    "birthdate": "Ngày sinh",
+    "program": "Chương trình",
+    "status": "Trạng thái",
+    "address": "Địa chỉ",
+    "permanent address": "Địa chỉ thường trú",
+    "temporary address": "Địa chỉ tạm trú",
+    "address detail": {
+        "house number": "Số nhà",
+        "street": "Đường",
+        "district": "Quận"
+    },
+    "identification": {
+        "identification": "Chứng minh thư",
+        "number": "Số ID",
+        "date of issue": "Ngày cấp",
+        "date of expiry": "Ngày hết hạn",
+        "place of issue": "Nơi cấp",
+        "identity card": "Chứng minh nhân dân",
+        "citizen identity card": "Căn cước công dân",
+        "passport": "Hộ chiếu"
+    },
+    "if have": "Nếu có",
+    "error": {
+        "error": "❌ Lỗi",
+        "save student": "❌ Lỗi khi lưu sinh viên",
+        "update student": "❌ Lỗi khi cập nhật sinh viên",
+        "unknown": "Lỗi không xác định.",
+        "readJSON": "Lỗi khi đọc JSON",
+        "readCSV": "Lỗi khi đọc CSV",
+        "add student": "❌ Lỗi khi thêm sinh viên",
+        "import some student": "⚠️ Một số sinh viên bị thiếu, vui lòng kiểm tra danh sách.",
+        "no student export": "Không có sinh viên để xuất!"
+    },
+    "male": "Nam",
+    "female": "Nữ",
+    "school year": "Năm học",
+    "all school year": "Tất cả năm học",
+    "studying": "Đang học",
+    "graduated": "Đã tốt nghiệp",
+    "expelled": "Bị đuổi học",
+    "suspended": "Bị đình chỉ",
+    "nationality": "Quốc tịch",
+    "validate": {
+        "validateemail": "Email không hợp lệ",
+        "validatephone": "Số điện thoại không hợp lệ",
+        "validatestatuschange": "Không thể thay đổi trạng thái này",
+        "validateidentification": "Chứng minh thư không hợp lệ"
+    },
+    "success": "✅ Thành công",
+    "import": {
+        "importing": "🛠 Đang nhập dữ liệu, sinh viên",
+        "nostudents": "⚠️ Không có sinh viên để nhập!",
+        "success": "✅ Nhập thành công"
+    },
+    "export list": "Xuất danh sách",
+    "downloadfilecsvorjson": "Tải xuống file CSV hoặc JSON",
+    "regular": "Chính quy",
+    "distance education": "Đào tạo từ xa",
+    "high quality": "Chất lượng cao",
+    "form": {
+        "sure delete": "Bạn có chắc muốn xóa?"
+    }
+}

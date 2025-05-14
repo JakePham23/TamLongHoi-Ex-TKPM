@@ -1,8 +1,8 @@
 {
     "student management": "Quản lý sinh viên",
-    "dashboard": "Trang chủ",
-    "department": "Department",
-    "student": "Student",
-    "course": "Course",
-    "registration": "Registration"
+    "dashboard": "Bảng điều khiển",
+    "department": "Khoa",
+    "student": "Sinh viên",
+    "course": "Môn học",
+    "registration": "Đăng ký"
 }
