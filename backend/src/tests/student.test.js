@@ -10,12 +10,12 @@ describe('Student API', () => {
       fullname: 'Testing Unit Student',
       dob: new Date('2000-01-01'),
       gender: true,
-      schoolYear: 2021, 
+      schoolYear: 2021,
       program: 'CQ',
       department: null,
       email: 'johndoe@example.com',
       phone: '0987321234',
-      studentStatus: 'active', 
+      studentStatus: 'active',
       address: {
         houseNumber: '36B',
         street: 'Đường 3 Tháng 2',
@@ -48,8 +48,8 @@ describe('Student API', () => {
 
     console.log(response.body);
 
-    expect(response.body.message).toBe('1 students added successfully'); 
-});
+    expect(response.body.message).toBe('1 students added successfully');
+  });
 
 
   // Test lấy danh sách sinh viên
@@ -123,7 +123,7 @@ describe('Student API', () => {
   });
 
   // Test xóa sinh viên không tồn tại
-  it('DELETE /students/:id should return 404 if student not found', async () => {
+  it('DELETE /students/:id should return 400 if student doesnt exist', async () => {
     const studentId = '221299991';
 
     const response = await request(app)

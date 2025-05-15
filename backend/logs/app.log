@@ -10279,3 +10279,256 @@
 {"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:04:27.954Z"}
 {"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:04:36.484Z"}
 {"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:04:42.283Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:09:31.779Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:09:59.003Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:10:02.188Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:10:03.735Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:10:07.662Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:10:09.441Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:10:10.755Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:10:12.214Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:10:14.077Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:10:19.440Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:11:21.861Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:11:32.074Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:11:35.110Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:11:51.738Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:11:57.176Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:12:02.422Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:12:04.977Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:12:06.230Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:12:08.874Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:12:42.925Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:12:52.908Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:13:09.495Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T17:14:47.286Z","url":"/departments/add","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"warn","message":"Add department failed: Missing departmentName","timestamp":"2025-05-15T17:14:47.288Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T17:17:44.616Z","url":"/departments/add","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"New department added: Testing Unit","timestamp":"2025-05-15T17:17:44.650Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:18:03.776Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:18:25.989Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:18:41.486Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:18:44.174Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:18:46.543Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:18:47.552Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T17:19:38.547Z","url":"/departments/add"}
+{"level":"info","message":"New department added: Testing Unit Department","timestamp":"2025-05-15T17:19:38.600Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:20:27.179Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:20:33.833Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:20:36.905Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:20:41.879Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:20:46.507Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:20:48.936Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:20:57.475Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:20:59.568Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:21:06.535Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-15T17:21:13.590Z","url":"/departments","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-15T17:21:13.607Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:21:21.638Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:21:26.962Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-15T17:21:51.810Z","url":"/departments"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-15T17:21:51.897Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:22:00.624Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:22:15.230Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:22:19.067Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:22:20.380Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:22:27.592Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:22:39.974Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:22:57.104Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:23:23.056Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:23:24.798Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:23:37.065Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:23:39.212Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:23:59.639Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:24:02.761Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:24:06.919Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:24:09.620Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:24:14.335Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:25:10.546Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:25:12.717Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:25:26.432Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:25:29.003Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:25:31.188Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:25:33.472Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:25:35.128Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:25:44.823Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:25:51.765Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:25:55.794Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:25:59.041Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:26:07.269Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:26:13.838Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:26:16.107Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:26:19.147Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:26:32.606Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:26:35.236Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:27:22.495Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:27:23.760Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-15T17:27:39.100Z","url":"/departments/delete/6826222ab5e386f14da530cf"}
+{"level":"info","message":"Department deleted: ID 6826222ab5e386f14da530cf","timestamp":"2025-05-15T17:27:39.157Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:28:50.748Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:29:10.875Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:29:13.032Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:29:14.045Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:29:15.295Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:29:17.789Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:29:20.941Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T17:29:37.386Z","url":"/departments/add","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"New department added: Testing Unit Departmentt","timestamp":"2025-05-15T17:29:37.410Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-15T17:29:51.207Z","url":"/departments"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-15T17:29:51.251Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:30:10.772Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-15T17:30:17.252Z","url":"/departments"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-15T17:30:17.280Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:30:48.686Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:30:51.786Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-15T17:30:57.723Z","url":"/departments"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-15T17:30:57.754Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T17:32:58.910Z","url":"/departments/add","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"New department added: Testing Unit Department","timestamp":"2025-05-15T17:32:58.926Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-15T17:33:18.453Z","url":"/departments"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-15T17:33:18.506Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-15T17:33:18.523Z","url":"/departments/delete/6826254a90ca82e58adb1999"}
+{"level":"info","message":"Department deleted: ID 6826254a90ca82e58adb1999","timestamp":"2025-05-15T17:33:18.532Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:33:37.789Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:33:45.641Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:33:48.115Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:33:59.190Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:34:00.354Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:34:26.914Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:34:28.812Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:34:37.098Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:34:41.016Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:34:42.334Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:34:45.756Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:35:22.276Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:35:29.807Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:35:42.419Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:35:46.675Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-15T17:36:00.341Z","url":"/departments"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-15T17:36:00.386Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:36:28.069Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:36:31.245Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:36:39.469Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:36:42.024Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:36:45.550Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:36:46.437Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:36:47.564Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:36:53.295Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:37:30.417Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:37:34.302Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:37:36.570Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:37:43.533Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-15T17:37:50.309Z","url":"/departments/delete/67e2b06bddf1ba5cc9994212232"}
+{"error":"Cast to ObjectId failed for value \"67e2b06bddf1ba5cc9994212232\" (type string) at path \"_id\" for model \"Departments\"","level":"error","message":"Error in deleteDepartment","timestamp":"2025-05-15T17:37:50.320Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:38:04.526Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:38:07.694Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:38:09.521Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:38:11.385Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-15T17:38:19.501Z","url":"/departments/delete/67e2b06bddf1ba5cc99942ab"}
+{"level":"warn","message":"Delete department failed: ID 67e2b06bddf1ba5cc99942ab not found","timestamp":"2025-05-15T17:38:19.548Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:38:28.060Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:38:30.748Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:38:34.701Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:38:47.945Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-15T17:38:55.323Z","url":"/departments/delete/67e2b06bddf1ba5cc99942ab"}
+{"level":"warn","message":"Delete department failed: ID 67e2b06bddf1ba5cc99942ab not found","timestamp":"2025-05-15T17:38:55.352Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:39:05.499Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:39:07.179Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:39:09.008Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:39:14.161Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:39:16.860Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:39:21.604Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:39:22.954Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:39:24.528Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:39:32.428Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:39:35.627Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:39:40.913Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T17:41:26.950Z","url":"/departments/add","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"New department added: Testing Unit Department","timestamp":"2025-05-15T17:41:26.978Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T17:42:05.267Z","url":"/departments/update/68262746a7f73e5fa0021435","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"warn","message":"Update department failed: Invalid department name","timestamp":"2025-05-15T17:42:05.268Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T17:42:46.892Z","url":"/departments/update/68262746a7f73e5fa0021435","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"warn","message":"Update department failed: Invalid department name","timestamp":"2025-05-15T17:42:46.893Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:45:08.065Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:45:29.679Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T17:45:36.380Z","url":"/departments/update/68262746a7f73e5fa0021435","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"warn","message":"Update department failed: Invalid department name","timestamp":"2025-05-15T17:45:36.381Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:46:08.637Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:46:13.115Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T17:46:16.112Z","url":"/departments/update/68262746a7f73e5fa0021435","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"warn","message":"Update department failed: Invalid department name","timestamp":"2025-05-15T17:46:16.113Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T17:46:24.436Z","url":"/departments/update/68262746a7f73e5fa0021435","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"warn","message":"Update department failed: Invalid department name","timestamp":"2025-05-15T17:46:24.437Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:47:42.872Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:47:52.080Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:47:56.497Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:48:45.112Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:50:54.282Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:51:06.009Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:51:30.886Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T17:51:32.794Z","url":"/departments/update/68262746a7f73e5fa0021435","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"warn","message":"Update department failed: Invalid department name","timestamp":"2025-05-15T17:51:32.795Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:52:35.382Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T17:52:39.103Z","url":"/departments/update/68262746a7f73e5fa0021435","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"warn","message":"Update department failed: Invalid department name","timestamp":"2025-05-15T17:52:39.104Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:53:04.053Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T17:53:06.651Z","url":"/departments/update/68262746a7f73e5fa0021435","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"warn","message":"Update department failed: Invalid department name","timestamp":"2025-05-15T17:53:06.652Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:53:48.680Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T17:53:50.646Z","url":"/departments/update/68262746a7f73e5fa0021435","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"warn","message":"Update department failed: Invalid department name","timestamp":"2025-05-15T17:53:50.648Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:53:56.350Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:54:39.784Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:54:44.756Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:55:07.541Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:55:08.477Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:55:35.463Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:55:37.373Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:55:39.423Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:55:47.738Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:55:49.154Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T17:55:55.143Z","url":"/departments/update/68262746a7f73e5fa0021435","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Cannot read properties of undefined (reading 'trim')","level":"error","message":"Error in updateDepartment","timestamp":"2025-05-15T17:55:55.146Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T17:57:22.032Z","url":"/departments/update/68262746a7f73e5fa0021435","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"Department updated: ID 68262746a7f73e5fa0021435, New Name: Testing Unit Department","timestamp":"2025-05-15T17:57:22.076Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T17:57:50.942Z","url":"/departments/update/68262746a7f73e5fa0021435","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"Department updated: ID 68262746a7f73e5fa0021435, New Name: Testing Unit Department - update","timestamp":"2025-05-15T17:57:50.952Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:58:07.183Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:58:20.582Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:58:32.161Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:58:43.139Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:58:47.533Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:58:50.375Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T17:59:01.847Z","url":"/departments/update/68262746a7f73e5fa0021435","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"Department updated: ID 68262746a7f73e5fa0021435, New Name: Testing Unit Department","timestamp":"2025-05-15T17:59:01.873Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:59:34.603Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:59:39.617Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:59:57.389Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:00:04.016Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-15T18:00:12.897Z","url":"/departments"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-15T18:00:12.943Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T18:00:12.955Z","url":"/departments/update/68262746a7f73e5fa0021435"}
+{"error":"Cannot read properties of undefined (reading 'trim')","level":"error","message":"Error in updateDepartment","timestamp":"2025-05-15T18:00:12.957Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:00:46.076Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:00:51.768Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:01:20.813Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:01:29.661Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:01:31.045Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:01:32.753Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:01:37.635Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:01:39.797Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-15T18:01:54.564Z","url":"/departments"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-15T18:01:54.611Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:03:20.999Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:03:25.595Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:03:29.914Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:03:31.035Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:03:32.667Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:03:35.812Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:03:42.455Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:03:45.317Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-15T18:03:53.897Z","url":"/departments"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-15T18:03:53.950Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T18:03:53.977Z","url":"/departments/update/68262746a7f73e5fa0021435"}
+{"level":"info","message":"Department updated: ID 68262746a7f73e5fa0021435, New Name: Testing Unit Department - updated","timestamp":"2025-05-15T18:03:53.995Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T18:04:14.705Z"}
