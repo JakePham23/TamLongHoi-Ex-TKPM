@@ -33,7 +33,7 @@ class StudentService {
     // Helper function để tái sử dụng kiểm tra
     async validateStudent(student, studentId = null) {
         await checkExistedStudent(student, studentId);
-        await checkExistedDepartment(student.department);
+        //await checkExistedDepartment(student.department);
     }
 }
 

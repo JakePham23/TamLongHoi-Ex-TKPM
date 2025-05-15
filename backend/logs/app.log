@@ -10058,3 +10058,224 @@
 {"level":"warn","message":"Delete course failed: Invalid Course ID nonexistent_id","timestamp":"2025-05-10T18:01:29.584Z"}
 {"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:01:57.113Z"}
 {"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:02:42.407Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:09:27.080Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:09:34.817Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:18:02.151Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-10T18:27:52.486Z","url":"/students","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-10T18:27:52.703Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T18:28:07.889Z","url":"/addStudent","userAgent":"PostmanRuntime/7.43.4"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T18:28:07.889Z","url":"/api/v1/addStudent","userAgent":"PostmanRuntime/7.43.4"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T18:28:59.852Z","url":"/add","userAgent":"PostmanRuntime/7.43.4"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T18:28:59.853Z","url":"/api/v1/add","userAgent":"PostmanRuntime/7.43.4"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T18:30:24.363Z","url":"/add","userAgent":"PostmanRuntime/7.43.4"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-10T18:30:24.363Z","url":"/api/v1/add","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:39:07.539Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:39:19.124Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-10T18:40:38.825Z","url":"/students"}
+{"error":"_studentModel.default.find(...).populate is not a function","level":"error","message":"Lỗi trong getAllStudent","timestamp":"2025-05-10T18:40:38.829Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-10T18:40:54.162Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-10T18:41:07.537Z","url":"/students"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Lỗi trong getAllStudent","timestamp":"2025-05-10T18:41:07.541Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T15:56:08.207Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-15T15:56:12.528Z","url":"/students","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-15T15:56:12.598Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-15T15:57:29.489Z","url":"/students"}
+{"error":"Cannot read properties of undefined (reading 'populate')","level":"error","message":"Lỗi trong getAllStudent","timestamp":"2025-05-15T15:57:29.493Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T15:58:04.586Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T15:58:06.632Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:00:09.197Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-15T16:00:25.030Z","url":"/students"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-15T16:00:25.090Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:00:35.808Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-15T16:00:41.468Z","url":"/students"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-15T16:00:41.545Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:01:27.399Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-15T16:01:35.408Z","url":"/students"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-15T16:01:35.461Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:01:51.601Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:01:58.424Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:02:02.167Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:02:03.609Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:02:29.697Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:02:32.279Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:03:46.015Z","url":"/add","userAgent":"PostmanRuntime/7.43.4"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:03:46.016Z","url":"/api/v1/add","userAgent":"PostmanRuntime/7.43.4"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:07:04.185Z","url":"/add","userAgent":"PostmanRuntime/7.43.4"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:07:04.194Z","url":"/api/v1/add","userAgent":"PostmanRuntime/7.43.4"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:09:15.491Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Số điện thoại \"0987654321\" đã tồn tại.","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:09:15.709Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:10:17.859Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Department ID is not valid","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:10:17.871Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:11:12.566Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Department ID is not valid","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:11:12.584Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:11:57.911Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Department ID is not valid","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:11:57.925Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:13:38.083Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Department ID is not valid","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:13:38.093Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:27:35.103Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:27:37.621Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:28:03.364Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:28:06.107Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:28:13.963Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Department ID is not valid","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:28:14.025Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:29:12.377Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:29:15.230Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:29:17.615Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Department ID is not valid","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:29:17.646Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:32:32.421Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:32:38.461Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"mongoose is not defined","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:32:38.483Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:34:43.700Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:34:45.227Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:34:50.497Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:34:53.379Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:35:02.358Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Class constructor ObjectId cannot be invoked without 'new'","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:35:02.391Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:35:59.350Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:36:00.196Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:36:19.604Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Department ID is not valid","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:36:19.654Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:37:24.600Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:37:36.012Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:37:38.452Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:38:02.253Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:38:07.413Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Department ID is not valid","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:38:07.442Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:38:29.731Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:38:31.645Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:38:44.078Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:38:50.402Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:38:55.143Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:38:58.085Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:39:02.204Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:39:03.378Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:39:09.190Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:39:12.971Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Schema.Types.ObjectId.isValid is not a function","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:39:12.985Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:39:30.050Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:39:32.374Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"this.splitPath is not a function","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:39:32.394Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:39:54.368Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:39:59.407Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:40:07.089Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Schema.Types.ObjectId.isValid is not a function","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:40:07.110Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:40:52.840Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:41:00.457Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Schema.Types.ObjectId.isValid is not a function","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:41:00.507Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:41:13.627Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:41:16.170Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:41:21.643Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:41:25.550Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Department ID is not valid","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:41:25.572Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:42:49.641Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:43:00.810Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:43:03.048Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"error":"Students validation failed: department: Cast to ObjectId failed for value \"\" (type string) at path \"department\" because of \"BSONError\"","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:43:03.092Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:44:13.028Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"Thêm 1 sinh viên thành công!","timestamp":"2025-05-15T16:44:13.072Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:46:23.769Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:46:34.110Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:46:47.514Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:46:50.469Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:46:51.842Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:46:53.595Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:46:56.834Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:47:00.842Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:47:03.713Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:47:18.455Z","url":"/students/add"}
+{"error":"Student ID \"22129999\" đã tồn tại. Số điện thoại \"0987321234\" đã tồn tại. Số giấy tờ \"0123456788\" đã tồn tại.","level":"error","message":"Lỗi trong addStudent","timestamp":"2025-05-15T16:47:18.494Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:48:33.367Z","url":"/students/add"}
+{"level":"info","message":"Thêm 1 sinh viên thành công!","timestamp":"2025-05-15T16:48:33.431Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:48:46.610Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:48:48.077Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:48:51.969Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:48:54.351Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:48:56.165Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:48:58.720Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:49:22.582Z","url":"/students/add"}
+{"level":"info","message":"Thêm 1 sinh viên thành công!","timestamp":"2025-05-15T16:49:22.641Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:49:44.867Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:49:48.295Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:49:51.199Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:49:53.633Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:50:11.015Z","url":"/students/add"}
+{"level":"info","message":"Thêm 1 sinh viên thành công!","timestamp":"2025-05-15T16:50:11.081Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:50:18.690Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:50:35.400Z","url":"/students/add"}
+{"level":"info","message":"Thêm 1 sinh viên thành công!","timestamp":"2025-05-15T16:50:35.463Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:50:50.301Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:51:15.395Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:51:17.597Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:51:19.838Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:51:21.460Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T16:51:33.400Z","url":"/students/add"}
+{"level":"info","message":"Thêm 1 sinh viên thành công!","timestamp":"2025-05-15T16:51:33.507Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:51:50.252Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:51:54.768Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:51:56.098Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:52:05.447Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:52:15.549Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:52:18.444Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:52:22.816Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:52:25.999Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:52:48.025Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:53:31.734Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:53:48.690Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:53:53.413Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:53:55.011Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:53:59.606Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:54:01.840Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:54:04.397Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:54:06.682Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:54:10.119Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:54:16.414Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T16:57:48.591Z","url":"/students/update/22129999","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22129999","timestamp":"2025-05-15T16:57:48.656Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:58:53.776Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:59:01.671Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:59:02.735Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:59:15.443Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:59:16.521Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:59:21.606Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:59:22.843Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:59:24.370Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:59:26.228Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T16:59:28.261Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T16:59:40.671Z","url":"/students/update/STU0001"}
+{"error":"Cast to Number failed for value \"STU0001\" (type string) at path \"studentId\" for model \"Students\"","level":"error","message":"Lỗi trong updateStudent","timestamp":"2025-05-15T16:59:40.704Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:00:13.474Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-15T17:00:26.102Z","url":"/students/update/22129999"}
+{"level":"info","message":"Cập nhật thành công: Student ID 22129999","timestamp":"2025-05-15T17:00:26.166Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:00:47.588Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:00:59.660Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:01:06.693Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:01:11.296Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-15T17:01:52.314Z","url":"/students/delete/22129999","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"Xóa sinh viên thành công: Student ID 22129999","timestamp":"2025-05-15T17:01:52.330Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:02:04.351Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-15T17:02:10.621Z","url":"/students/delete/22129999"}
+{"level":"warn","message":"Xóa sinh viên thất bại: Student ID 22129999 không tồn tại","timestamp":"2025-05-15T17:02:10.648Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","timestamp":"2025-05-15T17:02:25.082Z","url":"/students/add","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"info","message":"Thêm 1 sinh viên thành công!","timestamp":"2025-05-15T17:02:25.143Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-15T17:02:33.032Z","url":"/students/delete/22129999"}
+{"level":"info","message":"Xóa sinh viên thành công: Student ID 22129999","timestamp":"2025-05-15T17:02:33.065Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:02:43.248Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:02:50.224Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:02:59.622Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:03:06.223Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:03:07.721Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:03:13.244Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-15T17:03:18.437Z","url":"/students/delete/221299991"}
+{"level":"warn","message":"Xóa sinh viên thất bại: Student ID 221299991 không tồn tại","timestamp":"2025-05-15T17:03:18.505Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-15T17:03:33.477Z","url":"/students/delete/22129999","userAgent":"PostmanRuntime/7.43.4"}
+{"level":"warn","message":"Xóa sinh viên thất bại: Student ID 22129999 không tồn tại","timestamp":"2025-05-15T17:03:33.489Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:03:46.516Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:04:00.086Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"DELETE","timestamp":"2025-05-15T17:04:04.076Z","url":"/students/delete/221299991"}
+{"level":"warn","message":"Xóa sinh viên thất bại: Student ID 221299991 không tồn tại","timestamp":"2025-05-15T17:04:04.124Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:04:11.885Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:04:15.771Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:04:26.800Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:04:27.954Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:04:36.484Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-15T17:04:42.283Z"}
