@@ -8,4 +8,7 @@ router.delete('/:registrationId', RegistrationController.deleteRegistration);
 router.put('/:registrationId', RegistrationController.updateRegistration);
 router.get('/', RegistrationController.getAllRegistrations);
 
+
+
+
 export default router; 
