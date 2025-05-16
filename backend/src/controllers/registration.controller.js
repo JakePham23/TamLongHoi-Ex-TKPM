@@ -84,6 +84,8 @@ class RegistrationController {
             return new InternalServerError(error.message).send(res);
         }
     }
+
+    
 }
 
 export default new RegistrationController();
