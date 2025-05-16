@@ -41,15 +41,20 @@ const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete
   });
 
   const finalData = sortedCourses.map((course, index) => {
-    const dept = departments.find(d => d._id === (course.department?._id || course.department));
+    const deptId = course.department?._id || course.department;
+    const dept = departments.find(d => d._id === deptId);
+
     return {
       ...course,
       stt: index + 1,
-      departmentName: dept?.departmentName || t('error.not determined'),
+      courseName: t(`course_list.${course.courseId}.name`),
+      departmentName: dept
+        ? t(`department_list.${dept._id}.name`, { ns: 'department' })
+        : t('error.not determined'),
       prerequisite: course.prerequisite || t('error.not available'),
-      // description: course.description || "Chưa có mô tả"
     };
   });
+
 
 
   const handleEditClick = (course) => {

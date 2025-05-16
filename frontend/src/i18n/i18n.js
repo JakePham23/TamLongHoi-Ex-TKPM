@@ -43,7 +43,8 @@ i18n.use(initReactI18next).init({
     resources,
     lng: 'en',
     ns: ['dashboard', 'department', 'component', 'student', 'course', 'registration'],
-    fallbackLng: 'vi',
+    fallbackLng: ['vi', 'en'],
+    supportedLngs: ['vi', 'en'],
     interpolation: {
         escapeValue: false
     }

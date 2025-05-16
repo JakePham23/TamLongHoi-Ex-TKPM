@@ -1,24 +1,62 @@
 {
-    "list of faculties": "List of departments",
-    "department": "Department",
-    "all department": "All department",
-    "choose department": "Choose department",
-    "search department": "Search department",
-    "no.": "No.",
-    "add department": "Add department",
-    "edit department": "Edit department",
-    "error": {
-        "add department": "Error while adding department",
-        "delete department": "Error while deleting department",
-        "update department": "Error while updating department",
-        "blank department name": "Department name cannot be left blank!"
+  "list of faculties": "List of departments",
+  "department": "Department",
+  "all department": "All department",
+  "choose department": "Choose department",
+  "search department": "Search department",
+  "no.": "No.",
+  "add department": "Add department",
+  "edit department": "Edit department",
+  "error": {
+    "add department": "Error while adding department",
+    "delete department": "Error while deleting department",
+    "update department": "Error while updating department",
+    "blank department name": "Department name cannot be left blank!"
+  },
+  "form": {
+    "enter department name": "Enter department name",
+    "confirm delete department": "Are you sure you want to delete this department?"
+  },
+  "button": {
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "department_list": {
+    "67d8ea7d7e02c451d88fa5da": {
+      "name": "Law"
     },
-    "form": {
-        "enter department name": "Enter department name",
-        "confirm delete department": "Are you sure you want to delete this department?"
+    "67d8ea987e02c451d88fa5dc": {
+      "name": "Business English"
     },
-    "button": {
-        "cancel": "Cancel",
-        "save": "Save"
+    "67d8eaa27e02c451d88fa5de": {
+      "name": "Russian"
+    },
+    "67d8eaa77e02c451d88fa5e0": {
+      "name": "French"
+    },
+    "67e0e2e95966e68b4e9a4b2c": {
+      "name": "Information Technology"
+    },
+    "67e0e3225966e68b4e9a4b30": {
+      "name": "Biology"
+    },
+    "67e0e35e5966e68b4e9a4b34": {
+      "name": "Chemistry"
+    },
+    "67e268622ac402b833e930ba": {
+      "name": "Chinese"
+    },
+    "67e268892ac402b833e930c6": {
+      "name": "Artificial Intelligence"
+    },
+    "67e2697f2ac402b833e930ca": {
+      "name": "Computer Science"
+    },
+    "67e269b32ac402b833e930ce": {
+      "name": "Psychology"
+    },
+    "67e2b06bddf1ba5cc9994222": {
+      "name": "Information Security"
     }
+  }
 }

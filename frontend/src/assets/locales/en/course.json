@@ -1,40 +1,159 @@
 {
-    "no.": "No.",
-    "course id": "Course ID",
-    "course name": "Course name",
-    "list of courses": "List of courses",
-    "search course": "Search course",
-    "enter course name": "Enter course name",
-    "number of credits": "Number of credits",
-    "enter number of credits": "Enter number of credits",
-    "theoretical session": "Theoretical session",
-    "enter theoretical session": "Enter theoretical session",
-    "practical session": "Practical session",
-    "enter practical session": "Enter practical session",
-    "prerequisuite": "Prerequisuite",
-    "prerequisuite id": "Prerequisuite ID",
-    "description": "Description",
-    "course description": "Course description",
-    "error": {
-        "not determined": "Not determined!",
-        "not available": "Not available",
-        "course id blank": "Course id cannot be left blank!",
-        "course name blank": "Course name cannot be left blank!",
-        "credits greater than 1": "Credits must be greater than 1!",
-        "number of theoretical sessions must be greater than or equal to 0": "Number of theoretical sessions must be greater than or equal to 0!",
-        "number of practical sessions must be greater than or equal to 0": "Number of practical sessions must be greater than or equal to 0!",
-        "please select department": "Please select department!",
-        "sure delete course": "Are you sure you want to delete this course?",
-        "delete course": "Error while deleting course",
-        "update course": "Error while updating course",
-        "in coursescreen": "Error in CourseScreen",
-        "while loading data": "Error while loading data"
+  "no.": "No.",
+  "course id": "Course ID",
+  "course name": "Course name",
+  "list of courses": "List of courses",
+  "search course": "Search course",
+  "enter course name": "Enter course name",
+  "number of credits": "Number of credits",
+  "enter number of credits": "Enter number of credits",
+  "theoretical session": "Theoretical session",
+  "enter theoretical session": "Enter theoretical session",
+  "practical session": "Practical session",
+  "enter practical session": "Enter practical session",
+  "prerequisuite": "Prerequisuite",
+  "prerequisuite id": "Prerequisuite ID",
+  "description": "Description",
+  "course description": "Course description",
+  "error": {
+    "not determined": "Not determined!",
+    "not available": "Not available",
+    "course id blank": "Course id cannot be left blank!",
+    "course name blank": "Course name cannot be left blank!",
+    "credits greater than 1": "Credits must be greater than 1!",
+    "number of theoretical sessions must be greater than or equal to 0": "Number of theoretical sessions must be greater than or equal to 0!",
+    "number of practical sessions must be greater than or equal to 0": "Number of practical sessions must be greater than or equal to 0!",
+    "please select department": "Please select department!",
+    "sure delete course": "Are you sure you want to delete this course?",
+    "delete course": "Error while deleting course",
+    "update course": "Error while updating course",
+    "in coursescreen": "Error in CourseScreen",
+    "while loading data": "Error while loading data",
+    "no description": "No description"
+  },
+  "if have": "If have",
+  "add course": "Add course",
+  "edit course": "Edit course",
+  "delete": "Delete",
+  "view": "View",
+  "operation": "Operation",
+  "no data": "No Data Available",
+  "course_list": {
+    "CSC10001": {
+      "name": "Fundamentals of Programming",
+      "description": "Fundamentals of Programming in C/C++"
     },
-    "if have": "If have",
-    "add course": "Add course",
-    "edit course": "Edit course",
-    "delete": "Delete",
-    "view": "View",
-    "operation": "Operation",
-    "no data": "No Data Available"
+    "CSC10002": {
+      "name": "Programming Techniques",
+      "description": "Building on Fundamentals of Programming, deeper understanding of C/C++"
+    },
+    "CSC10003": {
+      "name": "Object-Oriented Programming Methods",
+      "description": "Organizing code in an object-oriented manner"
+    },
+    "CSC10004": {
+      "name": "Data Structures and Algorithms",
+      "description": "Organizing algorithms in a systematic way"
+    },
+    "CSC10006": {
+      "name": "Database Fundamentals",
+      "description": "Learning how to organize data in a database system."
+    },
+    "CSC10007": {
+      "name": "Operating Systems",
+      "description": "Fundamentals of operating system architecture."
+    },
+    "CSC10008": {
+      "name": "Computer Networks",
+      "description": "Course on computer networking."
+    },
+    "CSC10009": {
+      "name": "Computer Systems",
+      "description": "Fundamentals of computer architecture and hardware."
+    },
+    "CSC13002": {
+      "name": "Introduction to Software Engineering",
+      "description": "Course on software engineering."
+    },
+    "CSC14003": {
+      "name": "Introduction to Artificial Intelligence",
+      "description": "Course on artificial intelligence."
+    },
+    "BIO00001": {
+      "name": "General Biology 1",
+      "description": "Course on general biology."
+    },
+    "BIO00002": {
+      "name": "General Biology 2",
+      "description": "Continuation of General Biology."
+    },
+    "BIO00082": {
+      "name": "Practical General Biology 2",
+      "description": "Practical course related to General Biology 2."
+    },
+    "BIO00081": {
+      "name": "Practical General Biology 1",
+      "description": "Practical course related to General Biology 1."
+    },
+    "PHY00081": {
+      "name": "Practical General Physics 1",
+      "description": "Practical course related to General Physics 1."
+    },
+    "PHY00082": {
+      "name": "Practical General Physics 2",
+      "description": "Practical course related to General Physics 2."
+    },
+    "PHY00002": {
+      "name": "General Physics 2",
+      "description": "Course on general physics 2."
+    },
+    "PHY00001": {
+      "name": "General Physics 1",
+      "description": "Course on general physics 1."
+    },
+    "MTH00003": {
+      "name": "Integral Calculus 1B",
+      "description": "Course on integral calculus."
+    },
+    "MTH00004": {
+      "name": "Integral Calculus 2B",
+      "description": "Continuation of integral calculus."
+    },
+    "MTH00030": {
+      "name": "Linear Algebra",
+      "description": "Course on linear algebra."
+    },
+    "MTH00040": {
+      "name": "Probability and Statistics",
+      "description": "Course on probability and statistics."
+    },
+    "MTH00041": {
+      "name": "Discrete Mathematics",
+      "description": "Course on discrete mathematics."
+    },
+    "MTH00050": {
+      "name": "Combinatorial Mathematics",
+      "description": "Course on combinatorial mathematics."
+    },
+    "MTH00051": {
+      "name": "Applied Mathematics and Statistics",
+      "description": "Course on applied mathematics and statistics."
+    },
+    "MTH00052": {
+      "name": "Calculus Methods",
+      "description": "Course on various calculation methods."
+    },
+    "MTH00053": {
+      "name": "Number Theory",
+      "description": "Course on number theory."
+    },
+    "MTH00054": {
+      "name": "Vector Calculus",
+      "description": "Course on vector calculus."
+    },
+    "dsadsadasdsaddas": {
+      "name": "Test course name translate",
+      "description": "Test description for test course name"
+    }
+  }
 }
