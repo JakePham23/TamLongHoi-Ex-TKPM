@@ -34,6 +34,8 @@ class RegistrationService {
     async getAllRegistrations() {
         return await registrationModel.find().populate('courseId teacherId', 'courseName teacherName');
     }
+
+    
 }
 
 export default new RegistrationService();
