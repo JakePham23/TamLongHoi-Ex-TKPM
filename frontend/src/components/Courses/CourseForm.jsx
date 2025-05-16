@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Button from "../Button";
 import "../../styles/pages/CourseScreen.scss";
+import { useTranslation } from "react-i18next";
 
 const CourseForm = ({ onSave, course, departments, onClose }) => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,8 @@ const CourseForm = ({ onSave, course, departments, onClose }) => {
     description: "",
     prerequisite: ""
   });
+
+  const { t } = useTranslation(['course', 'department', 'component']);
 
   useEffect(() => {
     if (course) {
@@ -53,27 +56,27 @@ const CourseForm = ({ onSave, course, departments, onClose }) => {
 
     // Validation
     if (!formData.courseId.trim()) {
-      alert("Mã môn học không được để trống!");
+      alert(t('course id blank'));
       return;
     }
     if (!formData.courseName.trim()) {
-      alert("Tên môn học không được để trống!");
+      alert(t('course name blank'));
       return;
     }
     if (!formData.credit || formData.credit < 2) {
-      alert("Số tín chỉ phải lớn hơn 1!");
+      alert(t('credits greater than 1'));
       return;
     }
     if (!formData.practicalSession || formData.practicalSession < 0) {
-      alert("Số buổi thực hành phải lớn hơn hoặc bằng 0!");
+      alert(t('number of theoretical sessions must be greater than or equal to 0'));
       return;
     }
     if (!formData.theoreticalSession || formData.theoreticalSession < 0) {
-      alert("Số buổi lý thuyết phải lớn hơn hoặc bằng 0!");
+      alert(t('number of practical sessions must be greater than or equal to 0'));
       return;
     }
     if (!formData.departmentId) {
-      alert("Vui lòng chọn khoa!");
+      alert(t('please select department'));
       return;
     }
 
@@ -96,10 +99,10 @@ const CourseForm = ({ onSave, course, departments, onClose }) => {
   return (
     <form onSubmit={handleSubmit} className="modal-overlay">
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <h2>{course ? "Chỉnh sửa môn học" : "Thêm môn học"}</h2>
+        <h2>{course ? t('edit course') : t('add course')}</h2>
 
         <div className="form-group">
-          <label>Mã môn học</label>
+          <label>{t('course id')}</label>
           <input
             type="text"
             name="courseId"
@@ -110,22 +113,22 @@ const CourseForm = ({ onSave, course, departments, onClose }) => {
         </div>
 
         <div className="form-group">
-          <label>Tên môn học</label>
+          <label>{t('course name')}</label>
           <input
             type="text"
             name="courseName"
-            placeholder="Nhập tên môn học"
+            placeholder={t('enter course name')}
             value={formData.courseName}
             onChange={handleChange}
           />
         </div>
 
         <div className="form-group">
-          <label>Số tín chỉ</label>
+          <label>{t('number of credits')}</label>
           <input
             type="number"
             name="credit"
-            placeholder="Nhập số tín chỉ"
+            placeholder={t('enter number of credits')}
             value={formData.credit}
             onChange={handleChange}
             min="2"
@@ -134,23 +137,23 @@ const CourseForm = ({ onSave, course, departments, onClose }) => {
 
 
         <div className="form-group">
-          <label>Số tiết lí thuyết</label>
+          <label>{t('theoretical session')}</label>
           <input
             type="number"
             name="theoreticalSession"
-            placeholder="Nhập số tiết lý thuyết"
+            placeholder={t('enter theoretical session')}
             value={formData.theoreticalSession}
             onChange={handleChange}
             min="0"
           />
         </div>
-        
+
         <div className="form-group">
-          <label>Số tiết thực hành</label>
+          <label>{t('practical session')}</label>
           <input
             type="number"
             name="practicalSession"
-            placeholder="Nhập số tiết thực hành"
+            placeholder={t('enter practical session')}
             value={formData.practicalSession}
             onChange={handleChange}
             min="0"
@@ -158,13 +161,13 @@ const CourseForm = ({ onSave, course, departments, onClose }) => {
         </div>
 
         <div className="form-group">
-          <label>Khoa</label>
+          <label>{t('department', { ns: 'department' })}</label>
           <select
             name="departmentId"
             value={formData.departmentId}
             onChange={handleChange}
           >
-            <option value="">Chọn khoa</option>
+            <option value="">{t('choose department', { ns: 'department' })}</option>
             {departments.map(department => (
               <option key={department._id} value={department._id}>
                 {department.departmentName}
@@ -174,30 +177,30 @@ const CourseForm = ({ onSave, course, departments, onClose }) => {
         </div>
 
         <div className="form-group">
-          <label>Môn học tiên quyết</label>
+          <label>{t('prerequisuite')}</label>
           <input
             type="text"
             name="prerequisite"
-            placeholder="Mã môn học tiên quyết (nếu có)"
+            placeholder={`${t('prerequisuite id')} ${t('if have')}`}
             value={formData.prerequisite}
             onChange={handleChange}
           />
         </div>
 
         <div className="form-group">
-          <label>Mô tả</label>
+          <label>{t('description')}</label>
           <input
             type="text"
             name="description"
-            placeholder="Mô tả môn học"
+            placeholder={t('course description')}
             value={formData.description}
             onChange={handleChange}
           />
         </div>
 
         <div className="modal-buttons">
-          <Button label="Hủy" variant="gray" onClick={onClose} />
-          <Button label="Lưu" variant="primary" type="submit" />
+          <Button label={t('cancel', { ns: 'component' })} variant="gray" onClick={onClose} />
+          <Button label={t('save', { ns: 'component' })} variant="primary" type="submit" />
         </div>
       </div>
     </form>

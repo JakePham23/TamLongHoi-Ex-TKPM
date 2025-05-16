@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import DataTable from "../DataTable";
 import EnityEdit from "../EnityEdit"; // ✅ Sử dụng EnityEdit
-import "../../styles/Modal.scss"; 
+import "../../styles/Modal.scss";
+import { useTranslation } from "react-i18next"
 
 const DepartmentTable = ({ departments, searchTerm, onDelete, onEdit }) => {
   const [sortOrder, setSortOrder] = useState("asc");
@@ -9,9 +10,11 @@ const DepartmentTable = ({ departments, searchTerm, onDelete, onEdit }) => {
   const [editedDepartment, setEditedDepartment] = useState(null); // ✅ Dữ liệu khoa đang chỉnh sửa
   const [errors, setErrors] = useState({});
 
+  const { t } = useTranslation('department');
+
   const columns = [
-    { label: "STT", field: "stt", sortable: false },
-    { label: "Tên khoa", field: "departmentName", sortable: true }
+    { label: t('no.'), field: "stt", sortable: false },
+    { label: t('department'), field: "departmentName", sortable: true }
   ];
 
   const filteredDepartments = departments.filter((d) =>
@@ -33,11 +36,11 @@ const DepartmentTable = ({ departments, searchTerm, onDelete, onEdit }) => {
     setEditedDepartment({ ...department }); // ✅ Tạo bản sao để tránh bị tham chiếu
     setIsEditing(true);
   };
-  
+
 
   const handleSaveEdit = () => {
     if (!editedDepartment.departmentName.trim()) {
-      setErrors({ departmentName: "Tên khoa không được để trống!" });
+      setErrors({ departmentName: t('error.blank department name') });
       return;
     }
 
@@ -57,22 +60,22 @@ const DepartmentTable = ({ departments, searchTerm, onDelete, onEdit }) => {
 
   return (
     <>
-      <DataTable 
-        columns={columns} 
-        data={finalData} 
+      <DataTable
+        columns={columns}
+        data={finalData}
         initialSortField="departmentName"
         sortOrder={sortOrder}
-        onSortChange={setSortOrder} 
-        onEdit={handleEditClick} 
-        onDelete={onDelete} 
+        onSortChange={setSortOrder}
+        onEdit={handleEditClick}
+        onDelete={onDelete}
       />
 
       {/* Sử dụng EnityEdit thay cho Modal */}
       {isEditing && (
         <EnityEdit
-          title="Chỉnh sửa Khoa"
+          title={t('edit department')}
           fields={[
-            { name: "departmentName", label: "Tên khoa", type: "text" },
+            { name: "departmentName", label: t('department'), type: "text" },
           ]}
           data={editedDepartment}
           errors={errors}

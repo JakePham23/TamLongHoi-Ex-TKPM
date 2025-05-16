@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import DataTable from "../DataTable";
-import EntityEdit from "../EnityEdit"; // Fixed typo from EnityEdit
+import EnityEdit from "../EnityEdit"; // Fixed typo from EnityEdit
 import "../../styles/Modal.scss";
 import StudentRegistrationForm from "./StudentRegistrationForm";
-
+import { useTranslation } from "react-i18next";
 
 const RegistrationTable = ({ students = [], registrations = [], courses = [], searchTerm, teachers = [], onDelete, onEdit, onAdd }) => {
+  const { t } = useTranslation('registration');
+
   const [sortOrder, setSortOrder] = useState("asc");
   const [isEditing, setIsEditing] = useState(false);
   const [editedRegistration, setEditedRegistration] = useState(null);
@@ -14,13 +16,13 @@ const RegistrationTable = ({ students = [], registrations = [], courses = [], se
   const [addedRegistration, setAddedRegistration] = useState(null);
 
   const columns = [
-    { label: "STT", field: "stt", sortable: false },
-    { label: "Năm", field: "year", sortable: true },
-    { label: "Học kỳ", field: "semester", sortable: true },
-    { label: "Môn học", field: "courseName", sortable: true },
-    { label: "Giáo viên", field: "teachers", sortable: true },
-    { label: "Số sinh viên tối đa", field: "maxStudent", sortable: true },
-    { label: "Mô tả", field: "description", sortable: true }
+    { label: t('no.'), field: "stt", sortable: false },
+    { label: t('year'), field: "year", sortable: true },
+    { label: t('semester'), field: "semester", sortable: true },
+    { label: t('course'), field: "courseName", sortable: true },
+    { label: t('teacher'), field: "teachers", sortable: true },
+    { label: t('maxStudent'), field: "maxStudent", sortable: true },
+    { label: t('description'), field: "description", sortable: true }
   ];
 
   const filteredRegistrations = registrations.filter((r) =>
@@ -67,11 +69,11 @@ const RegistrationTable = ({ students = [], registrations = [], courses = [], se
       students
     } = editedRegistration;
 
-    if (!editedRegistration.year) newErrors.year = "Năm không được để trống!";
-    if (!editedRegistration.semester) newErrors.semester = "Học kỳ không được để trống!";
-    if (!editedRegistration.courseId) newErrors.courseId = "Vui lòng chọn môn học!";
-    if (!editedRegistration.teacherId) newErrors.teacherId = "Vui lòng chọn giáo viên!";
-    if (!editedRegistration.maxStudent || editedRegistration.maxStudent < 1) newErrors.maxStudent = "Số sinh viên tối đa phải lớn hơn 0!";
+    if (!editedRegistration.year) newErrors.year = t('year') + " cannot be empty!";
+    if (!editedRegistration.semester) newErrors.semester = t('semester') + " cannot be empty!";
+    if (!editedRegistration.courseId) newErrors.courseId = t('course') + " is required!";
+    if (!editedRegistration.teacherId) newErrors.teacherId = t('teacher') + " is required!";
+    if (!editedRegistration.maxStudent || editedRegistration.maxStudent < 1) newErrors.maxStudent = t('maxStudent') + " must be greater than 0!";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -123,20 +125,18 @@ const RegistrationTable = ({ students = [], registrations = [], courses = [], se
       Id: initialData._id,
       registrationStudent: selectedStudentIds.map(id => ({
         studentId: id,
-        score: null, // hoặc 0, hoặc undefined nếu bạn chưa có điểm
+        score: null,
         status: "registered",
       })),
     };
 
     onEdit(registrationData.Id, registrationData);
 
-
     // Reset trạng thái
     setIsAdding(false);
     setAddedRegistration(null);
     setErrors({});
   };
-
 
   return (
     <>
@@ -153,13 +153,13 @@ const RegistrationTable = ({ students = [], registrations = [], courses = [], se
 
       {isEditing && (
         <EntityEdit
-          title="Chỉnh sửa Đăng ký"
+          title={t('editRegistration')}
           fields={[
-            { name: "year", label: "Năm", type: "number" },
-            { name: "semester", label: "Học kỳ", type: "number" },
+            { name: "year", label: t('year'), type: "number" },
+            { name: "semester", label: t('semester'), type: "number" },
             {
               name: "courseId",
-              label: "Môn học",
+              label: t('course'),
               type: "select",
               options: courses.map((c) => ({
                 value: c._id,
@@ -167,16 +167,16 @@ const RegistrationTable = ({ students = [], registrations = [], courses = [], se
               }))
             },
             {
-              name: "teacherId", // Updated field name
-              label: "Giáo viên",
-              type: "select", // Change to select for teacher
+              name: "teacherId",
+              label: t('teacher'),
+              type: "select",
               options: teachers.map((t) => ({
                 value: t._id,
-                label: t.fullname // Ensure this matches the teacher name field
+                label: t.fullname
               }))
             },
-            { name: "maxStudent", label: "Số sinh viên tối đa", type: "number" },
-            { name: "description", label: "Mô tả", type: "text" }
+            { name: "maxStudent", label: t('maxStudent'), type: "number" },
+            { name: "description", label: t('description'), type: "text" }
           ]}
           data={editedRegistration}
           errors={errors}
@@ -205,7 +205,6 @@ const RegistrationTable = ({ students = [], registrations = [], courses = [], se
           onConfirm={handleConfirmRegistration}
         />
       )}
-
     </>
   );
 };

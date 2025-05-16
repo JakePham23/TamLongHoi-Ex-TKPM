@@ -2,6 +2,7 @@ import React, { useState, useRef, useCallback } from "react";
 import Button from "./Button";
 import { FaEye, FaEdit, FaTrash, FaSort, FaSortUp, FaSortDown, FaPlus } from "react-icons/fa";
 import "../styles/Table.scss";
+import { useTranslation } from "react-i18next";
 
 const DataTable = ({
   columns,
@@ -16,6 +17,8 @@ const DataTable = ({
   const [sortOrder, setSortOrder] = useState("asc");
   const [visibleCount, setVisibleCount] = useState(10);
   const observer = useRef(null);
+
+  const { t } = useTranslation('component');
 
   const loadMore = () => setVisibleCount((prev) => prev + 10);
 
@@ -71,13 +74,13 @@ const DataTable = ({
               {label} {sortable && getSortIcon(field)}
             </th>
           ))}
-          <th>Thao tác</th>
+          <th>{t('operation')}</th>
         </tr>
       </thead>
       <tbody>
         {sortedData.length === 0 ? (
           <tr>
-            <td colSpan={columns.length + 1} style={{ textAlign: "center" }}>Không có dữ liệu</td>
+            <td colSpan={columns.length + 1} style={{ textAlign: "center" }}>{t('no data')}</td>
           </tr>
         ) : (
           sortedData.slice(0, visibleCount).map((row, index) => (

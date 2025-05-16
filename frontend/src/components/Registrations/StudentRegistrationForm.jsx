@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import "../../styles/pages/RegistrationScreen.scss";
+
 const StudentRegistrationForm = ({ initialData, course, teacher, students, onClose, onConfirm }) => {
+  const { t } = useTranslation('registration');
   const [selectedStudents, setSelectedStudents] = useState([]);
+
   const handleSelect = (studentId, isChecked) => {
     setSelectedStudents((prevSelected) =>
       isChecked
@@ -19,13 +23,13 @@ const StudentRegistrationForm = ({ initialData, course, teacher, students, onClo
       <div className="student-registration-form" onClick={(e) => e.stopPropagation()}>
         {course && (
           <div className="course-info">
-            <h2>Thông tin Khóa Học</h2>
-            <p><strong>Tên môn học:</strong> {course.courseName}</p>
-            <p><strong>Giáo viên:</strong> {teacher.fullname}</p>
+            <h2>{t('courseInfo')}</h2>
+            <p><strong>{t('courseName')}:</strong> {course.courseName}</p>
+            <p><strong>{t('teacher')}:</strong> {teacher.fullname}</p>
           </div>
         )}
 
-        <h2>Chọn Sinh Viên Để Đăng Ký</h2>
+        <h2>{t('selectStudents')}</h2>
 
         <ul>
           {students.map((student) => {
@@ -49,7 +53,7 @@ const StudentRegistrationForm = ({ initialData, course, teacher, students, onClo
                   {student.name} ({student.email})
                   {status && (
                     <span style={{ marginLeft: 8, color: "green" }}>
-                      — Đã đăng ký ({status})
+                      — {t('registered')} ({status})
                     </span>
                   )}
                 </label>
@@ -58,10 +62,9 @@ const StudentRegistrationForm = ({ initialData, course, teacher, students, onClo
           })}
         </ul>
 
-
         <div className="buttons">
-          <button onClick={() => onConfirm(initialData, selectedStudents)}>Xác nhận Đăng ký</button>
-          <button onClick={onClose}>Đóng</button>
+          <button onClick={() => onConfirm(initialData, selectedStudents)}>{t('confirmRegistration')}</button>
+          <button onClick={onClose}>{t('close')}</button>
         </div>
       </div>
     </div>
