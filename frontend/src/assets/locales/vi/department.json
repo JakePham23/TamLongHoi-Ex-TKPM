@@ -1,24 +1,62 @@
 {
-    "list of faculties": "Danh sách các khoa",
-    "department": "Khoa",
-    "all department": "Tất cả các khoa",
-    "choose department": "Chọn khoa",
-    "search department": "Tìm kiếm khoa",
-    "no.": "STT",
-    "add department": "Thêm khoa",
-    "edit department": "Chỉnh sửa khoa",
-    "error": {
-        "add department": "Lỗi khi thêm khoa",
-        "delete department": "Lỗi khi xóa khoa",
-        "update department": "Lỗi khi cập nhật khoa",
-        "blank department name": "Tên khoa không được để trống!"
+  "list of faculties": "Danh sách các khoa",
+  "department": "Khoa",
+  "all department": "Tất cả các khoa",
+  "choose department": "Chọn khoa",
+  "search department": "Tìm kiếm khoa",
+  "no.": "STT",
+  "add department": "Thêm khoa",
+  "edit department": "Chỉnh sửa khoa",
+  "error": {
+    "add department": "Lỗi khi thêm khoa",
+    "delete department": "Lỗi khi xóa khoa",
+    "update department": "Lỗi khi cập nhật khoa",
+    "blank department name": "Tên khoa không được để trống!"
+  },
+  "form": {
+    "enter department name": "Nhập tên khoa",
+    "confirm delete department": "Bạn có chắc muốn xóa khoa này?"
+  },
+  "button": {
+    "cancel": "Hủy",
+    "save": "Lưu"
+  },
+  "department_list": {
+    "67d8ea7d7e02c451d88fa5da": {
+      "name": "Luật"
     },
-    "form": {
-        "enter department name": "Nhập tên khoa",
-        "confirm delete department": "Bạn có chắc muốn xóa khoa này?"
+    "67d8ea987e02c451d88fa5dc": {
+      "name": "Tiếng Anh thương mại"
     },
-    "button": {
-        "cancel": "Hủy",
-        "save": "Lưu"
+    "67d8eaa27e02c451d88fa5de": {
+      "name": "Tiếng Nga"
+    },
+    "67d8eaa77e02c451d88fa5e0": {
+      "name": "Tiếng Pháp"
+    },
+    "67e0e2e95966e68b4e9a4b2c": {
+      "name": "Công nghệ thông tin"
+    },
+    "67e0e3225966e68b4e9a4b30": {
+      "name": "Sinh học"
+    },
+    "67e0e35e5966e68b4e9a4b34": {
+      "name": "Hoá học"
+    },
+    "67e268622ac402b833e930ba": {
+      "name": "Tiếng Trung"
+    },
+    "67e268892ac402b833e930c6": {
+      "name": "Trí tuệ nhân tạo"
+    },
+    "67e2697f2ac402b833e930ca": {
+      "name": "Khoa học máy tính"
+    },
+    "67e269b32ac402b833e930ce": {
+      "name": "Tâm lí học"
+    },
+    "67e2b06bddf1ba5cc9994222": {
+      "name": "An toàn thông tin"
     }
+  }
 }

@@ -6,7 +6,7 @@ import StudentRegistrationForm from "./StudentRegistrationForm";
 import { useTranslation } from "react-i18next";
 
 const RegistrationTable = ({ students = [], registrations = [], courses = [], searchTerm, teachers = [], onDelete, onEdit, onAdd }) => {
-  const { t } = useTranslation('registration');
+  const { t } = useTranslation(['registration', 'course']);
 
   const [sortOrder, setSortOrder] = useState("asc");
   const [isEditing, setIsEditing] = useState(false);
@@ -36,16 +36,24 @@ const RegistrationTable = ({ students = [], registrations = [], courses = [], se
   });
 
   const finalData = sortedRegistrations.map((registration, index) => {
-    const course = courses.find(c => c._id === registration.courseId._id);
-    const teacher = teachers.find(t => t._id === registration.teacherId._id);
+    const course = courses.find(c => c._id === registration.courseId?._id || c.courseId === registration.courseId?.courseId);
+    const teacher = teachers.find(t => t._id === registration.teacherId?._id);
+
+    const courseKey = course?.courseId;
+
     return {
       ...registration,
       stt: index + 1,
-      courseName: course?.courseName || "Chưa xác định",
-      teachers: teacher?.fullname || "Không xác định",
-      description: registration.description || "Chưa có mô tả"
+      courseName: courseKey
+        ? t(`course_list.${courseKey}.name`, { ns: 'course' })
+        : t('error.not determined', { ns: 'course' }),
+      teachers: teacher?.fullname || t('error.not determined', { ns: 'course' }),
+      description: courseKey
+        ? t(`course_list.${courseKey}.description`, { ns: 'course' })
+        : t('error.no description', { ns: 'course' }),
     };
   });
+
 
   const handleEditClick = (registration) => {
     setEditedRegistration({

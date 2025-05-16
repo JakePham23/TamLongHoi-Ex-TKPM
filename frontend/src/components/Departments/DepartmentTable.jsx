@@ -30,6 +30,7 @@ const DepartmentTable = ({ departments, searchTerm, onDelete, onEdit }) => {
   const finalData = sortedDepartments.map((dept, index) => ({
     ...dept,
     stt: index + 1, // Thêm số thứ tự
+    departmentName: t(`department_list.${dept._id}.name`),
   }));
 
   const handleEditClick = (department) => {

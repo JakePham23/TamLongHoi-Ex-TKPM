@@ -1,40 +1,155 @@
 {
-    "no.": "STT",
-    "course id": "ID môn học",
-    "course name": "Tên môn học",
-    "list of courses": "Danh sách môn học",
-    "search course": "Tìm kiếm môn học",
-    "enter course name": "Nhập tên môn học",
-    "number of credits": "Số tín chỉ",
-    "enter number of credits": "Nhập số tín chỉ",
-    "theoretical session": "Buổi lý thuyết",
-    "enter theoretical session": "Nhập buổi lý thuyết",
-    "practical session": "Buổi thực hành",
-    "enter practical session": "Nhập buổi thực hành",
-    "prerequisuite": "Điều kiện tiên quyết",
-    "prerequisuite id": "ID điều kiện tiên quyết",
-    "description": "Mô tả",
-    "course description": "Mô tả môn học",
-    "error": {
-        "not determined": "Chưa xác định!",
-        "not available": "Không có sẵn",
-        "course id blank": "ID môn học không được để trống!",
-        "course name blank": "Tên môn học không được để trống!",
-        "credits greater than 1": "Số tín chỉ phải lớn hơn 1!",
-        "number of theoretical sessions must be greater than or equal to 0": "Số buổi lý thuyết phải lớn hơn hoặc bằng 0!",
-        "number of practical sessions must be greater than or equal to 0": "Số buổi thực hành phải lớn hơn hoặc bằng 0!",
-        "please select department": "Vui lòng chọn khoa!",
-        "sure delete course": "Bạn có chắc muốn xóa môn học này?",
-        "delete course": "Lỗi khi xóa môn học",
-        "update course": "Lỗi khi cập nhật môn học",
-        "in coursescreen": "Lỗi trong CourseScreen",
-        "while loading data": "Lỗi khi tải dữ liệu"
+  "no.": "STT",
+  "course id": "ID môn học",
+  "course name": "Tên môn học",
+  "list of courses": "Danh sách môn học",
+  "search course": "Tìm kiếm môn học",
+  "enter course name": "Nhập tên môn học",
+  "number of credits": "Số tín chỉ",
+  "enter number of credits": "Nhập số tín chỉ",
+  "theoretical session": "Buổi lý thuyết",
+  "enter theoretical session": "Nhập buổi lý thuyết",
+  "practical session": "Buổi thực hành",
+  "enter practical session": "Nhập buổi thực hành",
+  "prerequisuite": "Điều kiện tiên quyết",
+  "prerequisuite id": "ID điều kiện tiên quyết",
+  "description": "Mô tả",
+  "course description": "Mô tả môn học",
+  "error": {
+    "not determined": "Chưa xác định!",
+    "not available": "Không có sẵn",
+    "course id blank": "ID môn học không được để trống!",
+    "course name blank": "Tên môn học không được để trống!",
+    "credits greater than 1": "Số tín chỉ phải lớn hơn 1!",
+    "number of theoretical sessions must be greater than or equal to 0": "Số buổi lý thuyết phải lớn hơn hoặc bằng 0!",
+    "number of practical sessions must be greater than or equal to 0": "Số buổi thực hành phải lớn hơn hoặc bằng 0!",
+    "please select department": "Vui lòng chọn khoa!",
+    "sure delete course": "Bạn có chắc muốn xóa môn học này?",
+    "delete course": "Lỗi khi xóa môn học",
+    "update course": "Lỗi khi cập nhật môn học",
+    "in coursescreen": "Lỗi trong CourseScreen",
+    "while loading data": "Lỗi khi tải dữ liệu",
+    "no description": "Không có mô tả"
+  },
+  "if have": "Nếu có",
+  "add course": "Thêm môn học",
+  "edit course": "Chỉnh sửa môn học",
+  "delete": "Xóa",
+  "view": "Xem",
+  "operation": "Hoạt động",
+  "no data": "Không có dữ liệu",
+  "course_list": {
+    "CSC10001": {
+      "name": "Nhập môn lập trình",
+      "description": "Nhập môn cơ bản lập trình về C/C++"
     },
-    "if have": "Nếu có",
-    "add course": "Thêm môn học",
-    "edit course": "Chỉnh sửa môn học",
-    "delete": "Xóa",
-    "view": "Xem",
-    "operation": "Hoạt động",
-    "no data": "Không có dữ liệu"
+    "CSC10002": {
+      "name": "Kỹ thuật lập trình",
+      "description": "Tiếp nối môn học Nhập môn lập trình, hiểu sâu hơn về C/C++"
+    },
+    "CSC10003": {
+      "name": "Phương pháp lập trình hướng đối tượng",
+      "description": "Tổ chức code theo hướng đối tượng"
+    },
+    "CSC10004": {
+      "name": "Cấu trúc dữ liệu và giải thuật",
+      "description": "Tổ chức thuật toán theo logic bài bản"
+    },
+    "CSC10006": {
+      "name": "Cơ sở dữ liệu",
+      "description": "Học cách tổ chức dữ liệu trong hệ thống database một cách bài bản."
+    },
+    "CSC10007": {
+      "name": "Hệ điều hành",
+      "description": "Nhập môn cơ bản kiến trúc hệ điều hành."
+    },
+    "CSC10008": {
+      "name": "Mạng máy tính",
+      "description": "Khóa học về mạng máy tính."
+    },
+    "CSC10009": {
+      "name": "Hệ thống máy tính",
+      "description": "Nhập môn cơ bản về kiến trúc máy tính, phần cứng."
+    },
+    "CSC13002": {
+      "name": "Nhập môn công nghệ phần mềm",
+      "description": "Khóa học về công nghệ phần mềm."
+    },
+    "CSC14003": {
+      "name": "Cơ sở trí tuệ nhân tạo",
+      "description": "Khóa học về trí tuệ nhân tạo."
+    },
+    "BIO00001": {
+      "name": "Sinh đại cương 1",
+      "description": "Khóa học về sinh học đại cương."
+    },
+    "BIO00002": {
+      "name": "Sinh đại cương 2",
+      "description": "Khóa học tiếp theo về sinh học đại cương."
+    },
+    "BIO00082": {
+      "name": "Thực hành Sinh đại cương 2",
+      "description": "Thực hành liên quan đến sinh học đại cương 2."
+    },
+    "BIO00081": {
+      "name": "Thực hành Sinh đại cương 1",
+      "description": "Thực hành liên quan đến sinh học đại cương 1."
+    },
+    "PHY00081": {
+      "name": "Thực hành Vật lý đại cương 1",
+      "description": "Thực hành liên quan đến vật lý đại cương 1."
+    },
+    "PHY00082": {
+      "name": "Thực hành Vật lý đại cương 2",
+      "description": "Thực hành liên quan đến vật lý đại cương 2."
+    },
+    "PHY00002": {
+      "name": "Vật lý đại cương 2",
+      "description": "Khóa học về vật lý đại cương 2."
+    },
+    "PHY00001": {
+      "name": "Vật lý đại cương 1",
+      "description": "Khóa học về vật lý đại cương 1."
+    },
+    "MTH00003": {
+      "name": "Vi tích phân 1B",
+      "description": "Khóa học về vi tích phân."
+    },
+    "MTH00004": {
+      "name": "Vi tích phân 2B",
+      "description": "Khóa học tiếp theo về vi tích phân."
+    },
+    "MTH00030": {
+      "name": "Đại số tuyến tính",
+      "description": "Khóa học về đại số tuyến tính."
+    },
+    "MTH00040": {
+      "name": "Xác xuất thống kê",
+      "description": "Khóa học về xác suất thống kê."
+    },
+    "MTH00041": {
+      "name": "Toán rời rạc",
+      "description": "Khóa học về toán rời rạc."
+    },
+    "MTH00050": {
+      "name": "Toán học tổ hợp",
+      "description": "Khóa học về toán học tổ hợp."
+    },
+    "MTH00051": {
+      "name": "Toán ứng dụng và thống kê",
+      "description": "Khóa học về ứng dụng toán học và thống kê."
+    },
+    "MTH00052": {
+      "name": "Phương pháp tính",
+      "description": "Khóa học về các phương pháp tính toán."
+    },
+    "MTH00053": {
+      "name": "Lý thuyết số",
+      "description": "Khóa học về lý thuyết số."
+    },
+    "MTH00054": {
+      "name": "Phép tính vị từ",
+      "description": "Khóa học về phép tính vị từ."
+    }
+  }
 }
