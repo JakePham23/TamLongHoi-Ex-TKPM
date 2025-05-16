@@ -57,7 +57,14 @@ class CourseController {
     async deleteCourse(req, res, next) {
         try {
             const { courseId } = req.params;
-            
+            // Kiểm tra tính hợp lệ của courseId
+            if (!courseId || courseId.length !== 24 || !/^[a-fA-F0-9]{24}$/.test(courseId)) {
+                logger.warn(`Delete course failed: Invalid Course ID ${courseId}`);
+                return res.status(404).json({
+                status: "fail",
+                message: "Course not found",
+            });
+            }
             const deletedCourse = await courseModel.findByIdAndDelete( courseId );
             
             if (!deletedCourse) {
@@ -127,6 +134,13 @@ class CourseController {
     async getAllCourses(req, res, next) {
         try {
             const courses = await courseModel.find().populate('department', 'departmentName');
+            if (!courses || courses.length === 0) {
+                logger.warn("No courses found");
+                return res.status(404).json({
+                    status: "fail",
+                    message: "No courses found",
+                });
+            }
             logger.info(`Retrieved ${courses.length} courses successfully`);
             return new OkResponse({
                 message: "Courses retrieved successfully",

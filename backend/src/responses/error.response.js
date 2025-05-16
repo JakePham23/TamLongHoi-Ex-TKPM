@@ -1,4 +1,3 @@
-
 import httpCodes from "../constants/httpCode.constants.js";
 
 const { StatusCodes, ReasonPhrases } = httpCodes;
@@ -7,6 +6,14 @@ class ErrorResponse extends Error {
   constructor(message, statusCode) {
     super(message);
     this.statusCode = statusCode;
+  }
+
+  // Phương thức để gửi lỗi về phía client
+  send(res) {
+    res.status(this.statusCode).json({
+      status: 'error',
+      message: this.message
+    });
   }
 }
 

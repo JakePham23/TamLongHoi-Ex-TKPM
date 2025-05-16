@@ -65,9 +65,9 @@ class DepartmentController {
             const { departmentId } = req.params;
             const { departmentName } = req.body;
 
-            if (!departmentName || typeof departmentName !== "string") {
+            if (!departmentName.trim() || typeof departmentName !== "string") {
                 logger.warn("Update department failed: Invalid department name");
-                return new BadRequest({message: "Invalid department name"}).send(res);
+                return new BadRequest("Invalid department name").send(res);
             }
 
             const updatedDepartment = await departmentModel.findByIdAndUpdate(
@@ -78,11 +78,11 @@ class DepartmentController {
 
             if (!updatedDepartment) {
                 logger.warn(`Update department failed: ID ${departmentId} not found`);
-                return new NotFoundRequest({message: "Department not found"}).send(res);
+                return new NotFoundRequest("Department not found").send(res);
             }
 
             logger.info(`Department updated: ID ${departmentId}, New Name: ${departmentName}`);
-            return new UpdateResponse({message: "Department updated successfully", metadat: updatedDepartment}).send(res);
+            return new UpdateResponse("Department updated successfully").send(res);
         } catch (error) {
             logger.error("Error in updateDepartment", { error: error.message });
             return new InternalServerError(error.message).send(res);

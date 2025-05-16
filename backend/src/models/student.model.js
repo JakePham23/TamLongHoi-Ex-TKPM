@@ -33,7 +33,8 @@ const studentSchema = new Schema(
     department: {
       type: Schema.Types.ObjectId,
       ref: 'Departments',
-      required: true,
+      required: false,
+      default: null,
     },
     email: {
       type: String,
