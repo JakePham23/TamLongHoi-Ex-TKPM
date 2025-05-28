@@ -22,7 +22,7 @@ describe('Department API', () => {
             .get('/api/v1/departments')
             .expect(200);
 
-        expect(response.body.message).toBe('Departments retrieved successfully');
+        expect(response.body.message).toBe('departments retrieved successfully');
     });
 
     // Test update Khoa

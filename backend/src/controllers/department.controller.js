@@ -44,7 +44,7 @@ class DepartmentController {
         try {
             const departments = await departmentModel.find();
             logger.info("Fetched all departments");
-            return new OkResponse({ message: "Departments retrieved successfully", metadata: departments }).send(res);
+            return new OkResponse({ message: "departments retrieved successfully", metadata: departments }).send(res);
         } catch (error) {
             logger.error("Error in getAllDepartments", { error: error.message });
             return new InternalServerError(error.message).send(res);

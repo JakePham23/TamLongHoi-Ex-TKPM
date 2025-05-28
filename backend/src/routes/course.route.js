@@ -4,7 +4,7 @@ import CourseController from '../controllers/course.controller.js';
 /**
  * @swagger
  * tags:
- *   name: Courses
+ *   name: courses
  *   description: Course management API
  */
 const router = express.Router();
@@ -13,7 +13,7 @@ const router = express.Router();
  * /api/v1/courses/add:
  *   post:
  *     summary: Add a new course
- *     tags: [Courses]
+ *     tags: [courses]
  *     requestBody:
  *       required: true
  *       content:
@@ -53,7 +53,7 @@ router.post('/add', CourseController.addCourse);
  * /api/v1/courses/{courseId}:
  *   delete:
  *     summary: Delete a course
- *     tags: [Courses]
+ *     tags: [courses]
  *     parameters:
  *       - in: path
  *         name: courseId
@@ -76,7 +76,7 @@ router.delete('/delete/:courseId', CourseController.deleteCourse);
  * /api/v1/courses/{courseId}:
  *   put:
  *     summary: Update a course
- *     tags: [Courses]
+ *     tags: [courses]
  *     parameters:
  *       - in: path
  *         name: courseId
@@ -120,10 +120,10 @@ router.put('/update/:courseId', CourseController.updateCourse);
  * /api/v1/courses:
  *   get:
  *     summary: Get all courses
- *     tags: [Courses]
+ *     tags: [courses]
  *     responses:
  *       200:
- *         description: Courses retrieved successfully
+ *         description: courses retrieved successfully
  *         content:
  *           application/json:
  *             schema:

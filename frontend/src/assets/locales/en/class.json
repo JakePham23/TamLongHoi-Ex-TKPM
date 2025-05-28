@@ -1,5 +1,12 @@
 {
-  "class": {
+    "basicInformation": "Basic information", 
+    "academicInformation":"Academic information",
+    "scheduleInformation":"Schedule information",
+    "classCode": "Class code",
+    "searchClass": "Search class",
+    "selectTeacher": "Select teacher",
+    "selectCourse": "Select course",
+    "academicYear": "Academic year",
     "classManagement": "Class Management",
     "loading": "Loading...",
     "error": "Error loading data",
@@ -14,8 +21,7 @@
     "exportRosters": "Export Rosters",
     "editClass": "Edit Class",
     "addNewClass": "Add New Class",
-    "course": "Course",
-    "teacher": "Teacher",
+    "teacherName": "Teacher name",
     "department": "Department",
     "maxStudents": "Max Students",
     "dayOfWeek": "Day of Week",
@@ -61,6 +67,7 @@
     "generatedOn": "Generated on",
     "close": "Close",
     "exportPdf": "Export PDF",
-    "generateTranscript": "Generate Transcript"
-  }
+    "generateTranscript": "Generate Transcript",
+    "class": "Class",
+    "exportList": "Export"
 }

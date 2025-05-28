@@ -5,8 +5,9 @@ import StudentScreen from './StudentScreen.jsx';
 import DepartmentScreen from './DepartmentScreen.jsx';
 import CourseScreen from './CourseScreen.jsx';
 import RegistrationScreen from './RegistrationScreen.jsx';
-import Tabbar from '../components/Tabbar/Tabbar.jsx';
+import Tabbar from '../components/tabbar/Tabbar.jsx';
 import '../i18n/i18n.js'
+import ClassScreen from './ClassScreen.jsx';
 
 // layout
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
                 {view === "department" && <DepartmentScreen />}
                 {view === "course" && <CourseScreen />}
                 {view === "registration" && <RegistrationScreen />}
+                {view === "class" && <ClassScreen/>}
             </div>
         </div>
     );

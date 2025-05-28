@@ -4,5 +4,6 @@
     "department": "Department",
     "student": "Student",
     "course": "Course",
-    "registration": "Registration"
+    "registration": "Registration",
+    "class": "Class"
 }

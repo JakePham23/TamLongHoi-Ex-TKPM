@@ -26,7 +26,7 @@ const registrationSchema = new mongoose.Schema({
     registrationStudent: [{
         studentId: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Students',
+            ref: 'students',
         },
         score: {
             type: Number,

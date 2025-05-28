@@ -6,7 +6,7 @@ const router = express.Router();
 /**
  * @swagger
  * tags:
- *   name: Students
+ *   name: students
  *   description: Sinh viên management API
  */
 
@@ -15,7 +15,7 @@ const router = express.Router();
  * /api/v1/students:
  *   get:
  *     summary: Lấy danh sách tất cả sinh viên
- *     tags: [Students]
+ *     tags: [students]
  *     responses:
  *       200:
  *         description: Trả về danh sách sinh viên
@@ -27,7 +27,7 @@ router.get('', studentController.getAllStudent);
  * /api/v1/students/{studentId}:
  *   get:
  *     summary: Lấy thông tin chi tiết của sinh viên theo ID
- *     tags: [Students]
+ *     tags: [students]
  *     parameters:
  *       - in: path
  *         name: studentId
@@ -48,7 +48,7 @@ router.get('/:studentId', studentController.getStudent);
  * /api/v1/students/add:
  *   post:
  *     summary: Thêm sinh viên mới
- *     tags: [Students]
+ *     tags: [students]
  *     requestBody:
  *       required: true
  *       content:
@@ -84,7 +84,7 @@ router.post('/add', studentController.addStudent);
  * /api/v1/students/update/{studentId}:
  *   put:
  *     summary: Cập nhật thông tin sinh viên
- *     tags: [Students]
+ *     tags: [students]
  *     parameters:
  *       - in: path
  *         name: studentId
@@ -120,7 +120,7 @@ router.put('/update/:studentId', studentController.updateStudent);
  * /api/v1/students//delete/{studentId}:
  *   delete:
  *     summary: Xóa sinh viên theo ID
- *     tags: [Students]
+ *     tags: [students]
  *     parameters:
  *       - in: path
  *         name: studentId

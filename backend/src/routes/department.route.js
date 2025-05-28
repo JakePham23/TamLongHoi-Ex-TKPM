@@ -4,7 +4,7 @@ import departmentController from "../controllers/department.controller.js";
 /**
  * @swagger
  * tags:
- *   name: Departments
+ *   name: departments
  *   description: Department management API
  */
 const router = express.Router();
@@ -14,7 +14,7 @@ const router = express.Router();
  *  /api/v1/departments:
  *   get:
  *     summary: Lấy danh sách các khoa
- *     tags: [Departments]
+ *     tags: [departments]
  *     responses:
  *       200:
  *         description: Trả về danh sách khoa
@@ -26,7 +26,7 @@ router.get("/", departmentController.getAllDepartments);
  *  /api/v1/departments/add:
  *   post:
  *     summary: Thêm khoa mới
- *     tags: [Departments]
+ *     tags: [departments]
  *     requestBody:
  *       required: true
  *       content:
@@ -47,7 +47,7 @@ router.post("/add", departmentController.addDepartment);
  *  /api/v1/departments/update/{departmentId}:
  *   put:
  *     summary: Cập nhật thông tin khoa
- *     tags: [Departments]
+ *     tags: [departments]
  *     parameters:
  *       - name: departmentId
  *         in: path
@@ -79,7 +79,7 @@ router.put("/update/:departmentId", departmentController.updateDepartment);
  *  /api/v1/departments/{departmentId}:
  *   delete:
  *     summary: Xóa khoa
- *     tags: [Departments]
+ *     tags: [departments]
  *     parameters:
  *       - name: departmentId
  *         in: path

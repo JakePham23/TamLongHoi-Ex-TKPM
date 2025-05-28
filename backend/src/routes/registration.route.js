@@ -4,7 +4,7 @@ import RegistrationController from '../controllers/registration.controller.js';
 /**
  * @swagger
  * tags:
- *   name: Registrations
+ *   name: registrations
  *   description: API quản lý đăng ký khóa học
  */
 
@@ -15,7 +15,7 @@ const router = express.Router();
  * /api/v1/registrations/add:
  *   post:
  *     summary: Thêm một đăng ký khóa học mới
- *     tags: [Registrations]
+ *     tags: [registrations]
  *     requestBody:
  *       required: true
  *       content:
@@ -51,7 +51,7 @@ router.post('/add', RegistrationController.addRegistration);
  * /api/v1/registrations/{registrationId}:
  *   delete:
  *     summary: Xóa một đăng ký khóa học
- *     tags: [Registrations]
+ *     tags: [registrations]
  *     parameters:
  *       - in: path
  *         name: registrationId
@@ -74,7 +74,7 @@ router.delete('/:registrationId', RegistrationController.deleteRegistration);
  * /api/v1/registrations/{registrationId}:
  *   put:
  *     summary: Cập nhật thông tin đăng ký khóa học
- *     tags: [Registrations]
+ *     tags: [registrations]
  *     parameters:
  *       - in: path
  *         name: registrationId
@@ -112,7 +112,7 @@ router.put('/:registrationId', RegistrationController.updateRegistration);
  * /api/v1/registrations:
  *   get:
  *     summary: Lấy danh sách tất cả các đăng ký khóa học
- *     tags: [Registrations]
+ *     tags: [registrations]
  *     responses:
  *       200:
  *         description: Danh sách đăng ký

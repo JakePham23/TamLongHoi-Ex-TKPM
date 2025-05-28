@@ -1,26 +1,29 @@
 import React, { useState, useMemo } from "react";
 import { FaPlus, FaFileExport } from "react-icons/fa";
 import useClasses from "../hooks/useClasses";
-import ClassTable from "../components/Classes/ClassTable";
-import ClassDetail from "../components/Classes/ClassDetail";
-import ClassForm from "../components/Classes/ClassForm";
-import SearchInput from "../components/SearchInput";
-import Button from "../components/Button";
-import "../styles/pages/ClassScreen.scss";
+import ClassTable from "../components/domain/classes/ClassTable";
+import ClassDetail from "../components/domain/classes/ClassDetail";
+import ClassForm from "../components/domain/classes/ClassForm";
+import SearchInput from "../components/common/SearchInput.jsx";
+import Button from "../components/common/Button.jsx";
+// import "../styles/pages/ClassScreen.scss";
 import removeVietnameseTones from "../utils/string.util";
 import classService from "../services/class.service";
-import useCourses from "../hooks/useCourses";
+import useCourses from "../hooks/useCourse";
 import useTeachers from "../hooks/useTeachers";
 import { exportCSV, exportJSON } from "../utils/export.util";
 import { useTranslation } from "react-i18next";
-import Select from "../components/Select";
+import Select from "../components/common/Select.jsx";
+
+
+
 
 const ClassScreen = () => {
   // Hooks
   const { classes, setClasses, fetchClasses } = useClasses();
   const { courses = [] } = useCourses();
   const { teachers = [] } = useTeachers();
-  
+
   const { t } = useTranslation(['class', 'course', 'teacher']);
 
   // State
@@ -133,12 +136,13 @@ const ClassScreen = () => {
         <Select
           value={selectedCourse}
           onChange={(e) => setSelectedCourse(e.target.value)}
-          placeholder={t('allCourses')}
+          placeholder={t('selectCourse')}
           options={[
-            { value: "", label: t('allCourses') },
             ...courses.map(course => ({
               value: course._id,
               label: course.courseName
+              // label: t(`course_list.${course.courseId}.name`)
+
             }))
           ]}
         />
@@ -146,9 +150,8 @@ const ClassScreen = () => {
         <Select
           value={selectedTeacher}
           onChange={(e) => setSelectedTeacher(e.target.value)}
-          placeholder={t('allTeachers')}
+          placeholder={t('selectTeacher')}
           options={[
-            { value: "", label: t('allTeachers') },
             ...teachers.map(teacher => ({
               value: teacher._id,
               label: teacher.name
@@ -159,9 +162,8 @@ const ClassScreen = () => {
         <Select
           value={selectedSemester}
           onChange={(e) => setSelectedSemester(e.target.value)}
-          placeholder={t('allSemesters')}
+          placeholder={t('selectSemester')}
           options={[
-            { value: "", label: t('allSemesters') },
             ...semesters
           ]}
         />
@@ -169,9 +171,8 @@ const ClassScreen = () => {
         <Select
           value={selectedYear}
           onChange={(e) => setSelectedYear(e.target.value)}
-          placeholder={t('allYears')}
+          placeholder={t('selectAcademicYear')}
           options={[
-            { value: "", label: t('allYears') },
             ...academicYears
           ]}
         />
@@ -212,7 +213,7 @@ const ClassScreen = () => {
         <ClassForm 
           courses={courses}
           teachers={teachers}
-          onSubmit={handleAddClass}
+          onSave={handleAddClass}
           onClose={() => setIsAdding(false)}
         />
       )}

@@ -1,9 +1,11 @@
-const API_BASE_URL = 'http://localhost:3000/api/v1';
+import { API_URL } from "../utils/constants";
+
+const API_BASE_URL = `${API_URL}/teachers`;
 
 class TeacherService {
     async getTeachers() {
         try {
-            const response = await fetch(`${API_BASE_URL}/teachers`);
+            const response = await fetch(`${API_BASE_URL}`);
             const data = await response.json();
             if (!response.ok) throw new Error(data.message || "Lỗi khi lấy danh sách giáo viên");
             return data.metadata;

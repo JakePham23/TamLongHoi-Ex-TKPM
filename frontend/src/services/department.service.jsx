@@ -1,4 +1,5 @@
-const API_BASE_URL = 'http://localhost:3000/api/v1/departments'
+import { API_URL } from "../utils/constants";
+const API_BASE_URL = `${API_URL}/departments`;
 
 class Department{
     async getDepartments(){
@@ -21,9 +22,9 @@ class Department{
                 },
                 body: JSON.stringify(departmentData),
             });
-            
+
             if (!response.ok) throw new Error("Lỗi khi thêm khoa");
-    
+
             return await response.json();
         } catch (error) {
             console.error(error);
@@ -36,18 +37,18 @@ class Department{
             const response = await fetch(`${API_BASE_URL}/update/${departmentId}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(updatedData), 
+                body: JSON.stringify(updatedData),
             });
-    
+
             if (!response.ok) throw new Error("Lỗi khi cập nhật khoa");
-    
-            return 
+
+            return
         } catch (error) {
             console.error(error);
             throw error;
         }
     }
-    
+
 
     async deleteDepartment(departmentId) {
         try {

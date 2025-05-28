@@ -23,7 +23,7 @@ const teacherSchema = new Schema(
     },
     department: {
       type: Schema.Types.ObjectId,
-      ref: 'Departments',
+      ref: 'departments',
       required: true,
     },
     email: {

@@ -4,5 +4,6 @@
     "department": "Khoa",
     "student": "Sinh viên",
     "course": "Môn học",
-    "registration": "Đăng ký"
+    "registration": "Đăng ký",
+    "class": "Lớp học"
 }

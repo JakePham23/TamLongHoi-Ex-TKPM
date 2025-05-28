@@ -1,5 +1,15 @@
 {
-  "class": {
+    "basicInformation": "Thông tin cơ bản", 
+    "academicInformation":"Thông tin lớp học",
+    "scheduleInformation":"Thông tin lịch học",
+    "exportList": "Xuất file",
+    "class": "Lớp học",    
+    "Operation": "Hoạt động",
+    "academicYear": "Năm học",
+    "classCode": "Mã lớp học",
+    "searchClass": "Tìm kiếm lớp học",
+    "selectTeacher": "Chọn giáo viên",
+    "selectCourse": "Chọn lớp học",
     "classManagement": "Quản lý lớp học",
     "loading": "Đang tải...",
     "error": "Lỗi khi tải dữ liệu",
@@ -8,14 +18,13 @@
     "semester1": "Học kỳ 1",
     "semester2": "Học kỳ 2",
     "summerSemester": "Học kỳ hè",
-    "showClasses": "Hiển thị lớp học",
+    "showClasses": "Hiển thị lớp     học",
     "searchPlaceholder": "Tìm kiếm lớp học...",
     "addClass": "Thêm lớp học",
     "exportRosters": "Xuất danh sách lớp",
     "editClass": "Chỉnh sửa lớp",
     "addNewClass": "Thêm lớp mới",
-    "course": "Môn học",
-    "teacher": "Giảng viên",
+    "teacher name": "Giảng viên",
     "department": "Khoa",
     "maxStudents": "Số SV tối đa",
     "dayOfWeek": "Thứ",
@@ -62,5 +71,4 @@
     "close": "Đóng",
     "exportPdf": "Xuất PDF",
     "generateTranscript": "Tạo bảng điểm"
-  }
 }

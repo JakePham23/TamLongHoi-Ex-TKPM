@@ -1,33 +1,46 @@
-import api from './api';
+import axios from "axios";
+import { API_URL } from "../utils/constants";
 
-const getAllClasses = async () => {
-  const response = await api.get('/classes');
-  return response.data;
-};
+const API_BASE_URL = `${API_URL}/classRegistration`;
 
-const getClassById = async (id) => {
-  const response = await api.get(`/classes/${id}`);
-  return response.data;
-};
+class ClassService {
+  /**
+   * Đăng ký khóa học cho sinh viên
+   */
+  registerStudent = async (registrationId, studentId) => {
+    const res = await axios.post(`${API_BASE_URL}/register`, {
+      registrationId,
+      studentId,
+    });
+    return res.data;
+  };
 
-const addClass = async (classData) => {
-  const response = await api.post('/classes', classData);
-  return response.data;
-};
+  /**
+   * Hủy đăng ký khóa học của sinh viên
+   */
+  unRegisterStudent = async (registrationId, studentId) => {
+    const res = await axios.post(`${API_BASE_URL}/unregister`, {
+      registrationId,
+      studentId,
+    });
+    return res.data;
+  };
 
-const updateClass = async (id, classData) => {
-  const response = await api.put(`/classes/${id}`, classData);
-  return response.data;
-};
+  /**
+   * Lấy danh sách lớp học với điểm số
+   */
+  getClassRoster = async (registrationId) => {
+    const res = await axios.get(`${API_BASE_URL}/class/${registrationId}`);
+    return res.data;
+  };
 
-const deleteClass = async (id) => {
-  await api.delete(`/classes/${id}`);
-};
+  /**
+   * Tạo bảng điểm chính thức cho sinh viên
+   */
+  generateTranscript = async (studentId) => {
+    const res = await axios.get(`${API_BASE_URL}/transcript/${studentId}`);
+    return res.data;
+  };
+}
 
-export default {
-  getAllClasses,
-  getClassById,
-  addClass,
-  updateClass,
-  deleteClass
-};
+export default new ClassService();

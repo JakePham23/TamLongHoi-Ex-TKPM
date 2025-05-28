@@ -34,7 +34,7 @@ describe('Course API', () => {
       .expect(200);
     
     expect(response.body.status).toBe('OK');
-    expect(response.body.message).toBe('Courses retrieved successfully');
+    expect(response.body.message).toBe('courses retrieved successfully');
   });
 
   // Test cập nhật môn học

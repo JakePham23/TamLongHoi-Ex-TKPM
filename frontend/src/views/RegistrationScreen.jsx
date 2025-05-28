@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { FaPlus } from "react-icons/fa";
-import SearchInput from "../components/SearchInput.jsx";
-import Button from "../components/Button.jsx";
-import RegistrationForm from "../components/Registrations/RegistrationForm.jsx";
-import RegistrationTable from "../components/Registrations/RegistrationTable.jsx";
+import SearchInput from "../components/common/SearchInput.jsx";
+import Button from "../components/common/Button.jsx";
+import RegistrationForm from "../components/domain/registrations/RegistrationForm.jsx";
+import RegistrationTable from "../components/domain/registrations/RegistrationTable.jsx";
 import useRegistration from "../hooks/useRegistration.jsx";
 import useCourses from "../hooks/useCourse.jsx";
 import useTeachers from "../hooks/useTeachers.jsx";
@@ -12,7 +12,7 @@ import useDepartments from "../hooks/useDepartments.jsx";
 import registrationService from "../services/registration.service.jsx";
 import { useTranslation } from "react-i18next";
 import "../styles/pages/RegistrationScreen.scss";
-import Select from "../components/Select.jsx";
+import Select from "../components/common/Select.jsx";
 
 const RegistrationScreen = () => {
   const { t } = useTranslation('registration');

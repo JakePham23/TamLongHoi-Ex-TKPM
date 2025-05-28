@@ -1,9 +1,10 @@
-const API_BASE_URL = 'http://localhost:3000/api/v1';
+import { API_URL } from "../utils/constants";
+const API_BASE_URL = `${API_URL}/registrations`;
 
 class RegistrationService {
     async getAllRegistrations() {
         try {
-            const response = await fetch(`${API_BASE_URL}/registrations`);
+            const response = await fetch(`${API_BASE_URL}`);
             if (!response.ok) {
                 throw new Error('Lỗi khi lấy danh sách đăng ký');
             }
@@ -17,7 +18,7 @@ class RegistrationService {
 
     async addRegistration(registrationData) {
         try {
-            const response = await fetch(`${API_BASE_URL}/registrations/add`, {
+            const response = await fetch(`${API_BASE_URL}/add`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -36,7 +37,7 @@ class RegistrationService {
 
     async updateRegistration(registrationId, registrationData) {
         try {
-            const response = await fetch(`${API_BASE_URL}/registrations/${registrationId}`, {
+            const response = await fetch(`${API_BASE_URL}/${registrationId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,7 +63,7 @@ class RegistrationService {
     async deleteRegistration(registrationId) {
         try {
             console.log("🗑️ Deleting registration with ID:", registrationId); // 👈 HIỂN THỊ RA CONSOLE
-            const response = await fetch(`${API_BASE_URL}/registrations/${registrationId}`, {
+            const response = await fetch(`${API_BASE_URL}/${registrationId}`, {
                 method: 'DELETE'
             });
             if (!response.ok) {

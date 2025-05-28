@@ -171,7 +171,7 @@ class CourseController {
             }
             logger.info(`Retrieved ${courses.length} courses successfully`);
             return new OkResponse({
-                message: "Courses retrieved successfully",
+                message: "courses retrieved successfully",
                 metadata: courses
             }).send(res);
         } catch (error) {

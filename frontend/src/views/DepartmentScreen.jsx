@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
-import SearchInput from "../components/SearchInput.jsx";
-import Button from "../components/Button.jsx";
-import DepartmentForm from "../components/Departments/DepartmentForm.jsx";
-import DepartmentTable from "../components/Departments/DepartmentTable.jsx";
+import SearchInput from "../components/common/SearchInput.jsx";
+import Button from "../components/common/Button.jsx";
+import DepartmentForm from "../components/domain/departments/DepartmentForm.jsx";
+import DepartmentTable from "../components/domain/departments/DepartmentTable.jsx";
 import useDepartments from "../hooks/useDepartments";
 import "../styles/pages/DepartmentScreen.scss";
 import departmentService from "../services/department.service";

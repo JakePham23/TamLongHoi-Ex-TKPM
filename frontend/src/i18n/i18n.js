@@ -7,6 +7,7 @@ import component_EN from '../assets/locales/en/component.json'
 import student_EN from '../assets/locales/en/student.json'
 import course_EN from '../assets/locales/en/course.json'
 import registration_EN from '../assets/locales/en/registration.json'
+import class_EN from '../assets/locales/en/class.json';
 
 import dashboard_VI from '../assets/locales/vi/dashboard.json'
 import department_VI from '../assets/locales/vi/department.json'
@@ -14,6 +15,8 @@ import component_VI from '../assets/locales/vi/component.json'
 import student_VI from '../assets/locales/vi/student.json'
 import course_VI from '../assets/locales/vi/course.json'
 import registration_VI from '../assets/locales/vi/registration.json'
+import class_VI  from '../assets/locales/vi/class.json';
+
 
 export const locales = {
     "en": "English",
@@ -27,7 +30,8 @@ const resources = {
         component: component_EN,
         student: student_EN,
         course: course_EN,
-        registration: registration_EN
+        registration: registration_EN,
+        class: class_EN
     },
     vi: {
         dashboard: dashboard_VI,
@@ -35,14 +39,15 @@ const resources = {
         component: component_VI,
         student: student_VI,
         course: course_VI,
-        registration: registration_VI
+        registration: registration_VI,
+        class: class_VI
     },
 }
 
 i18n.use(initReactI18next).init({
     resources,
     lng: 'en',
-    ns: ['dashboard', 'department', 'component', 'student', 'course', 'registration'],
+    ns: ['dashboard', 'department', 'component', 'student', 'course', 'registration', 'class'],
     fallbackLng: ['vi', 'en'],
     supportedLngs: ['vi', 'en'],
     interpolation: {

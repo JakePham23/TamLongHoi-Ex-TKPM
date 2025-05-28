@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { FaPlus } from "react-icons/fa";
-import SearchInput from "../components/SearchInput.jsx";
-import Button from "../components/Button.jsx";
-import CourseForm from "../components/Courses/CourseForm.jsx";
-import CourseTable from "../components/Courses/CourseTable.jsx";
+import SearchInput from "../components/common/SearchInput.jsx";
+import Button from "../components/common/Button.jsx";
+import CourseForm from "../components/domain/courses/CourseForm.jsx";
+import CourseTable from "../components/domain/courses/CourseTable.jsx";
 import useCourse from "../hooks/useCourse";
 import useDepartments from "../hooks/useDepartments";
 import "../styles/pages/CourseScreen.scss";

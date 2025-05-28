@@ -1,4 +1,6 @@
-const API_BASE_URL ='http://localhost:3000/api/v1/students'
+import { API_URL } from "../utils/constants";
+
+const API_BASE_URL =`${API_URL}/students`
 // const API_BASE_URL =import.meta.env.VITE_API_BASE_URL
 class StudentService {
     async getStudents() {

@@ -10,3 +10,5 @@ export const STATUS_RULES = {
   graduated: [],
   dropout: [],
 };
+
+export const API_URL = 'http://localhost:3000/api/v1'

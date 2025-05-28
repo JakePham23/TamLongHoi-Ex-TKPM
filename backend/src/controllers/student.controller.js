@@ -92,7 +92,7 @@ class StudentController {
             const students = await studentModel.find().populate('department', 'departmentName');
             logger.info(`Lấy danh sách sinh viên thành công (${students.length} sinh viên)`);
             return (new OkResponse({
-                message: 'Students retrieved successfully',
+                message: 'students retrieved successfully',
                 metadata: students
             })).send(res)
 

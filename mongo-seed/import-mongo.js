@@ -1,11 +1,11 @@
 db = db.getSiblingDB("StudentManagementSystem");
 
-// Import Students
+// Import students
 db.Students.deleteMany({});  // Xóa dữ liệu cũ nếu có
-db.Students.insertMany(JSON.parse(cat("/docker-entrypoint-initdb.d/StudentManagementSystem.Students.json")));
+db.Students.insertMany(JSON.parse(cat("/docker-entrypoint-initdb.d/StudentManagementSystem.students.json")));
 
-// Import Departments
+// Import departments
 db.Departments.deleteMany({});
-db.Departments.insertMany(JSON.parse(cat("/docker-entrypoint-initdb.d/StudentManagementSystem.Departments.json")));
+db.Departments.insertMany(JSON.parse(cat("/docker-entrypoint-initdb.d/StudentManagementSystem.departments.json")));
 
 print("✅ Data imported successfully!");

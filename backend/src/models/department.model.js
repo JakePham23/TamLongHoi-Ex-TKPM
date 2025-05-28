@@ -1,6 +1,6 @@
 import {Schema, model} from 'mongoose'
 
-const COLLECTION_NAME = 'Departments'
+const COLLECTION_NAME = 'departments'
 
 const departmentSchema = new Schema({
     departmentName: {

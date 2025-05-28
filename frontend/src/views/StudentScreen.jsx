@@ -1,11 +1,11 @@
 import React, { useState, useMemo } from "react";
 import { FaPlus } from "react-icons/fa";
 import useStudents from "../hooks/useStudents";
-import StudentTable from "../components/Students/StudentTable";
-import StudentDetail from "../components/Students/StudentDetail";
-import StudentForm from "../components/Students/StudentForm";
-import SearchInput from "../components/SearchInput";
-import Button from "../components/Button";
+import StudentTable from "../components/domain/students/StudentTable";
+import StudentDetail from "../components/domain/students/StudentDetail";
+import StudentForm from "../components/domain/students/StudentForm";
+import SearchInput from "../components/common/SearchInput.jsx";
+import Button from "../components/common/Button.jsx";
 import "../styles/pages/StudentScreen.scss";
 import removeVietnameseTones from "../utils/string.util";
 import studentService from "../services/student.service";

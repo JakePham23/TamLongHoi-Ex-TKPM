@@ -27,7 +27,7 @@ const courseSchema = new mongoose.Schema({
   },
   department: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Departments',
+    ref: 'departments',
     required: true,
   },
   description: {
@@ -47,7 +47,7 @@ const courseSchema = new mongoose.Schema({
   
 },
   {
-    collection: 'Courses',
+    collection: 'courses',
     timestamps: true
   });
 

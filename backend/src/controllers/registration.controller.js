@@ -76,7 +76,7 @@ class RegistrationController {
         try {
             const registrations = await RegistrationService.getAllRegistrations();
             return new OkResponse({
-                message: "Registrations retrieved successfully",
+                message: "registrations retrieved successfully",
                 metadata: registrations
             }).send(res);
         } catch (error) {
