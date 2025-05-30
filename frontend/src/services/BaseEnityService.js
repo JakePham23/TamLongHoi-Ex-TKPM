@@ -1,5 +1,5 @@
 // src/services/BaseService.js
-import { API_URL } from "../utils/constants";
+import { API_URL } from "../utils/constants.js";
 
 class BaseService {
     constructor(endpoint) {

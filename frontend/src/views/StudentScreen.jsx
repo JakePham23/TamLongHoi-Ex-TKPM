@@ -1,16 +1,16 @@
 import React, { useState, useMemo } from "react";
 import { FaPlus } from "react-icons/fa";
-import useStudents from "../hooks/useStudents";
+import useStudents from "../hooks/useStudents.js";
 import StudentTable from "../components/domain/students/StudentTable";
 import StudentDetail from "../components/domain/students/StudentDetail";
 import StudentForm from "../components/domain/students/StudentForm";
 import SearchInput from "../components/common/SearchInput.jsx";
 import Button from "../components/common/Button.jsx";
 import "../styles/pages/StudentScreen.scss";
-import removeVietnameseTones from "../utils/string.util";
-import studentService from "../services/student.service";
-import useDepartments from "../hooks/useDepartments";
-import { exportCSV, exportJSON } from "../utils/export.util"; // Import export functions
+import removeVietnameseTones from "../utils/string.util.js";
+import studentService from "../services/student.service.js";
+import useDepartments from "../hooks/useDepartments.js";
+import { exportCSV, exportJSON } from "../utils/export.util.js"; // Import export functions
 import { useTranslation } from "react-i18next"
 
 const StudentScreen = () => {
@@ -57,11 +57,6 @@ const StudentScreen = () => {
   const handleSave = async (updatedStudent) => {
     try {
       await studentService.updateStudent(updatedStudent.studentId, updatedStudent);
-
-      // // Cập nhật danh sách sinh viên ngay lập tức
-      // setStudents((prev) =>
-      //   prev.map((s) => (s.studentId === updatedStudent.studentId ? updatedStudent : s))
-      // );
 
       // setSelectedStudent(updatedStudent); // Cập nhật lại selectedStudent để phản ánh ngay lập tức
       await fetchStudents(); // Lấy lại danh sách sinh viên từ server

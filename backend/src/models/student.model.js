@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 
-const COLLECTION_NAME = 'students';
+const COLLECTION_NAME = 'Students';
 
 const studentSchema = new Schema(
   {
@@ -32,7 +32,7 @@ const studentSchema = new Schema(
     },
     department: {
       type: Schema.Types.ObjectId,
-      ref: 'departments',
+      ref: 'Departments',
       required: false,
       default: null,
     },

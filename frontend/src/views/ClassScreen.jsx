@@ -1,17 +1,17 @@
 import React, { useState, useMemo } from "react";
 import { FaPlus, FaFileExport } from "react-icons/fa";
-import useClasses from "../hooks/useClasses";
+import useClasses from "../hooks/useClasses.js";
 import ClassTable from "../components/domain/classes/ClassTable";
 import ClassDetail from "../components/domain/classes/ClassDetail";
 import ClassForm from "../components/domain/classes/ClassForm";
 import SearchInput from "../components/common/SearchInput.jsx";
 import Button from "../components/common/Button.jsx";
 // import "../styles/pages/ClassScreen.scss";
-import removeVietnameseTones from "../utils/string.util";
-import classService from "../services/class.service";
-import useCourses from "../hooks/useCourse";
-import useTeachers from "../hooks/useTeachers";
-import { exportCSV, exportJSON } from "../utils/export.util";
+import removeVietnameseTones from "../utils/string.util.js";
+import classService from "../services/class.service.js";
+import useCourses from "../hooks/useCourse.js";
+import useTeachers from "../hooks/useTeachers.js";
+import { exportCSV, exportJSON } from "../utils/export.util.js";
 import { useTranslation } from "react-i18next";
 import Select from "../components/common/Select.jsx";
 

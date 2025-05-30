@@ -2,11 +2,14 @@ import "../../../styles/StudentDetail.scss";
 import React, { useState } from "react";
 import EntityView from "../../forms/EnityView.jsx";
 import EnityEdit from "../../forms/EnityEdit.jsx";
-import { exportCSV, exportJSON } from "../../../utils/export.util.jsx";
-import { validateEmail, validatePhone, validateStatusChange, validateIdentityDocument } from "../../../utils/businessRule.util.jsx";
-import { ALLOWED_EMAIL_DOMAIN, PHONE_REGEX, STATUS_RULES } from "../../../utils/constants.jsx";
-import { formatStudentData } from "../../../utils/format.util.jsx";
+import { exportCSV, exportJSON } from "../../../utils/export.util.js";
+import { ALLOWED_EMAIL_DOMAIN, PHONE_REGEX, STATUS_RULES } from "../../../utils/constants.js";
+import { formatStudentData } from "../../../utils/format.util.js";
 import { useTranslation } from "react-i18next"
+import {EmailValidationStrategy} from "../../../utils/strategies/EmailValidationStrategy.js";
+import {PhoneValidationStrategy} from "../../../utils/strategies/PhoneRegexValidationStrategy.js";
+import {StatusChangeValidationStrategy} from "../../../utils/strategies/StatusChangeValidationStrategy.js";
+import {IdentityDocumentValidationStrategy} from "../../../utils/strategies/IdentityDocumentValidationStrategy.js";
 
 const StudentDetail = ({ departments, student, onSave, onClose, setEditedStudent, editedStudent }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -19,10 +22,10 @@ const StudentDetail = ({ departments, student, onSave, onClose, setEditedStudent
 
   const validate = () => {
     let newErrors = {};
-    if (validateEmail(editedStudent.email, ALLOWED_EMAIL_DOMAIN)) newErrors.email = t('validate.validateemail');
-    if (validatePhone(editedStudent.phone, PHONE_REGEX)) newErrors.phone = t('validate.validatephone');
-    if (validateStatusChange(student.studentStatus, editedStudent.studentStatus, STATUS_RULES)) newErrors.studentStatus = t('validate.validatestatuschange');
-    if (validateIdentityDocument(editedStudent.identityDocument?.idNumber)) newErrors.idNumber = t('validate.validateidentification');
+    if (EmailValidationStrategy(editedStudent.email, ALLOWED_EMAIL_DOMAIN)) newErrors.email = t('validate.validateemail');
+    if (PhoneValidationStrategy(editedStudent.phone, PHONE_REGEX)) newErrors.phone = t('validate.validatephone');
+    if (StatusChangeValidationStrategy(student.studentStatus, editedStudent.studentStatus, STATUS_RULES)) newErrors.studentStatus = t('validate.validatestatuschange');
+    if (IdentityDocumentValidationStrategy(editedStudent.identityDocument?.idNumber)) newErrors.idNumber = t('validate.validateidentification');
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;

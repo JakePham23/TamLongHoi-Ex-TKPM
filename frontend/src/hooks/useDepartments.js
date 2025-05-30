@@ -1,4 +1,4 @@
-import departmentService from "../services/department.service";
+import departmentService from "../services/department.service.js";
 import { useEffect, useState, useCallback } from "react";
 
 const useDepartments = () => {

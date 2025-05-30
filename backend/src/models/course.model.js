@@ -27,7 +27,7 @@ const courseSchema = new mongoose.Schema({
   },
   department: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'departments',
+    ref: 'Departments',
     required: true,
   },
   description: {
@@ -38,7 +38,7 @@ const courseSchema = new mongoose.Schema({
     validate: {
       validator: async function (value) {
         if (!value || value.trim() === "" || value === "Không có") return true;
-        const course = await mongoose.model("Course").findOne({ courseId: value });
+        const course = await mongoose.model("Courses").findOne({ courseId: value });
         return !!course;
       },
       message: props => `Prerequisite course with ID "${props.value}" does not exist.`
@@ -47,9 +47,9 @@ const courseSchema = new mongoose.Schema({
   
 },
   {
-    collection: 'courses',
+    collection: 'Courses',
     timestamps: true
   });
 
-const Course = mongoose.model('Course', courseSchema);
+const Course = mongoose.model('Courses', courseSchema);
 export default Course;

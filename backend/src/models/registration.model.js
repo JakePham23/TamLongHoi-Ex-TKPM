@@ -11,7 +11,7 @@ const registrationSchema = new mongoose.Schema({
     },
     courseId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Course',
+        ref: 'Courses',
         required: true,
     },
     teacherId: {
@@ -26,7 +26,7 @@ const registrationSchema = new mongoose.Schema({
     registrationStudent: [{
         studentId: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'students',
+            ref: 'Students',
         },
         score: {
             type: Number,

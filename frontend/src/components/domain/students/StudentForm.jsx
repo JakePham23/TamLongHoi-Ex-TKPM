@@ -3,8 +3,11 @@ import "../../../styles/StudentForm.scss";
 import Papa from "papaparse"; // Dùng để parse CSV
 import { useTranslation } from "react-i18next"
 
-import { validateEmail, validatePhone, validateStatusChange } from "../../../utils/businessRule.util.jsx"; // Import từ utils.js
-import { ALLOWED_EMAIL_DOMAIN, PHONE_REGEX, STATUS_RULES } from "../../../utils/constants.jsx"; // Import từ constants.js
+// Import từ utils.js
+import {ALLOWED_EMAIL_DOMAIN, PHONE_REGEX, STATUS_RULES } from "../../../utils/constants.js";
+import {EmailValidationStrategy} from "../../../utils/strategies/EmailValidationStrategy.js";
+import {PhoneValidationStrategy} from "../../../utils/strategies/PhoneRegexValidationStrategy.js";
+import {StatusChangeValidationStrategy} from "../../../utils/strategies/StatusChangeValidationStrategy.js"; // Import từ constants.js
 
 
 const StudentForm = ({ departments, onSubmit, onClose }) => {
@@ -169,19 +172,19 @@ const StudentForm = ({ departments, onSubmit, onClose }) => {
     let newErrors = {};
 
     // Kiểm tra email
-    const emailError = validateEmail(newStudent.email, ALLOWED_EMAIL_DOMAIN);
+    const emailError = EmailValidationStrategy(newStudent.email, ALLOWED_EMAIL_DOMAIN);
     if (emailError) {
       newErrors.email = emailError;
     }
 
     // Kiểm tra số điện thoại
-    const phoneError = validatePhone(newStudent.phone, PHONE_REGEX);
+    const phoneError = PhoneValidationStrategy(newStudent.phone, PHONE_REGEX);
     if (phoneError) {
       newErrors.phone = phoneError;
     }
 
     // Kiểm tra tình trạng
-    const statusError = validateStatusChange(newStudent.studentStatus, newStudent.studentStatus, STATUS_RULES);
+    const statusError = StatusChangeValidationStrategy(newStudent.studentStatus, newStudent.studentStatus, STATUS_RULES);
     if (statusError) {
       newErrors.studentStatus = statusError;
     }

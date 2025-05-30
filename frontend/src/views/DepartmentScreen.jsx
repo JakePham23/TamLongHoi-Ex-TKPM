@@ -4,9 +4,9 @@ import SearchInput from "../components/common/SearchInput.jsx";
 import Button from "../components/common/Button.jsx";
 import DepartmentForm from "../components/domain/departments/DepartmentForm.jsx";
 import DepartmentTable from "../components/domain/departments/DepartmentTable.jsx";
-import useDepartments from "../hooks/useDepartments";
+import useDepartments from "../hooks/useDepartments.js";
 import "../styles/pages/DepartmentScreen.scss";
-import departmentService from "../services/department.service";
+import departmentService from "../services/department.service.js";
 import { useTranslation } from "react-i18next"
 
 const DepartmentScreen = () => {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_URL } from "../utils/constants";
+import { API_URL } from "../utils/constants.js";
 
 const API_BASE_URL = `${API_URL}/classRegistration`;
 

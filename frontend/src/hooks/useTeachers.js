@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import teacherService from "../services/teacher.service"; // Đảm bảo rằng đường dẫn đúng
+import teacherService from "../services/teacher.service.js"; // Đảm bảo rằng đường dẫn đúng
 
 const useTeachers = () => {
   const [teachers, setTeachers] = useState([]);

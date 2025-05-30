@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DataTable from "../../common/DataTable.jsx";
 import EnityEdit from "../../forms/EnityEdit.jsx";
 import "../../../styles/Modal.scss";
-import removeVietnameseTones from "../../../utils/string.util.jsx";
+import removeVietnameseTones from "../../../utils/string.util.js";
 import { useTranslation } from "react-i18next";
 
 const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete, onEdit }) => {

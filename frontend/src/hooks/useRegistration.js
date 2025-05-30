@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import registrationService from "../services/registration.service"; // Dịch vụ đăng ký
+import registrationService from "../services/registration.service.js"; // Dịch vụ đăng ký
 
 const useRegistration = () => {
   const [registrations, setRegistrations] = useState([]);

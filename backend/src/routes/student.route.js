@@ -20,7 +20,7 @@ const router = express.Router();
  *       200:
  *         description: Trả về danh sách sinh viên
  */
-router.get('', studentController.getAllStudent);
+router.get('/', studentController.getAllStudent);
 
 /**
  * @swagger

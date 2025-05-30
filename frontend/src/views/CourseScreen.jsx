@@ -4,10 +4,10 @@ import SearchInput from "../components/common/SearchInput.jsx";
 import Button from "../components/common/Button.jsx";
 import CourseForm from "../components/domain/courses/CourseForm.jsx";
 import CourseTable from "../components/domain/courses/CourseTable.jsx";
-import useCourse from "../hooks/useCourse";
-import useDepartments from "../hooks/useDepartments";
+import useCourse from "../hooks/useCourse.js";
+import useDepartments from "../hooks/useDepartments.js";
 import "../styles/pages/CourseScreen.scss";
-import courseService from "../services/course.service";
+import courseService from "../services/course.service.js";
 import { useTranslation } from "react-i18next";
 
 const CourseScreen = () => {
