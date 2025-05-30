@@ -1,5 +1,5 @@
 import express from 'express';
-import classRegistration from '../controllers/classRegistration.controller.js';
+import ClassRegistrationController from '../controllers/classRegistration.controller.js';
 
 
 /**
@@ -46,7 +46,7 @@ const router = express.Router();
  *       500:
  *         description: Lỗi server
  */
-router.post('/register', classRegistration.registerStudent);
+router.post('/register', ClassRegistrationController.registerStudent);
 
 /**
  * @swagger
@@ -84,7 +84,7 @@ router.post('/register', classRegistration.registerStudent);
  *       500:
  *         description: Lỗi server
  */
-router.post('/unregister', classRegistration.unregisterStudent);
+router.post('/unregister', ClassRegistrationController.unregisterStudent);
 
 /**
  * @swagger
@@ -111,7 +111,7 @@ router.post('/unregister', classRegistration.unregisterStudent);
  *       500:
  *         description: Lỗi server
  */
-router.get('/class/:registrationId', classRegistration.getClassRoster);
+router.get('/class/:registrationId', ClassRegistrationController.getClassRoster);
 
 /**
  * @swagger
@@ -138,7 +138,7 @@ router.get('/class/:registrationId', classRegistration.getClassRoster);
  *       500:
  *         description: Lỗi server
  */
-router.get('/transcript/:studentId', classRegistration.generateTranscript);
+router.get('/transcript/:studentId', ClassRegistrationController.generateTranscript);
 
 /**
  * @swagger
