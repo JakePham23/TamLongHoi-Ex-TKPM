@@ -2,7 +2,7 @@
 
 import { ValidatorComposite } from '../strategies/ValidatorComposite';
 import { EmailValidationStrategy } from '../strategies/EmailValidationStrategy';
-import { PhoneValidationStrategy } from '../strategies/PhoneValidationStrategy';
+import { PhoneValidationStrategy } from '../strategies/PhoneRegexValidationStrategy';
 import { StatusChangeValidationStrategy } from '../strategies/StatusChangeValidationStrategy';
 import { RequiredFieldValidationStrategy } from '../strategies/RequiredFieldValidationStrategy';
 import { IdentityDocumentValidationStrategy } from '../strategies/IdentityDocumentValidationStrategy';

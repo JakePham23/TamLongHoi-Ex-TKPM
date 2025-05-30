@@ -1,53 +1,85 @@
 import React, { useState } from "react";
 import DataTable from "../../common/DataTable.jsx";
-import EnityEdit from "../../forms/EnityEdit.jsx"; // ✅ Sử dụng EnityEdit
-import "../../../styles/Modal.scss";
-import { useTranslation } from "react-i18next"
+import EnityEdit from "../../forms/EnityEdit.jsx";
+import { useTranslation } from "react-i18next";
 
-const DepartmentTable = ({ departments, searchTerm, onDelete, onEdit }) => {
+const DepartmentTable = ({ departments, teachers, searchTerm, onDelete, onEdit }) => {
+  const [sortField, setSortField] = useState("departmentName");
   const [sortOrder, setSortOrder] = useState("asc");
-  const [isEditing, setIsEditing] = useState(false); // ✅ Quản lý trạng thái chỉnh sửa
-  const [editedDepartment, setEditedDepartment] = useState(null); // ✅ Dữ liệu khoa đang chỉnh sửa
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedDepartment, setEditedDepartment] = useState(null);
   const [errors, setErrors] = useState({});
+  const [filterTeacher] = useState(""); // 👈 filter by head
 
-  const { t } = useTranslation('department');
+  const { t } = useTranslation("department");
 
   const columns = [
-    { label: t('no.'), field: "stt", sortable: false },
-    { label: t('department'), field: "departmentName", sortable: true }
+    { label: t("no."), field: "stt", sortable: false },
+    { label: t("department"), field: "departmentName", sortable: true },
+    { label: t("Establishment"), field: "dateOfEstablishment", sortable: true },
+    { label: t("head of department"), field: "headOfDepartmentName", sortable: true },
   ];
 
-  const filteredDepartments = departments.filter((d) =>
-    d.departmentName.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // 🔍 Filtering logic
+  const filteredDepartments = departments
+    .filter((d) =>
+      d.departmentName.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .filter((d) => {
+      if (!filterTeacher) return true;
+      return d.headOfDepartment === filterTeacher;
+    });
 
+  // 🔃 Sorting logic
   const sortedDepartments = [...filteredDepartments].sort((a, b) => {
+    const aVal = a[sortField] || "";
+    const bVal = b[sortField] || "";
+
+    if (sortField === "dateOfEstablishment") {
+      return sortOrder === "asc"
+        ? new Date(aVal) - new Date(bVal)
+        : new Date(bVal) - new Date(aVal);
+    }
+
     return sortOrder === "asc"
-      ? a.departmentName.localeCompare(b.departmentName)
-      : b.departmentName.localeCompare(a.departmentName);
+      ? aVal.toString().localeCompare(bVal.toString())
+      : bVal.toString().localeCompare(aVal.toString());
   });
 
+  // 🧾 Final data with additional display fields
   const finalData = sortedDepartments.map((dept, index) => ({
     ...dept,
-    stt: index + 1, // Thêm số thứ tự
+    stt: index + 1,
     departmentName: t(`department_list.${dept._id}.name`),
+    headOfDepartmentName:
+      teachers.find((t) => t._id === dept.headOfDepartment)?.fullName || "",
+    dateOfEstablishment: dept.dateOfEstablishment
+      ? new Date(dept.dateOfEstablishment).toLocaleDateString()
+      : "",
   }));
 
   const handleEditClick = (department) => {
-    setEditedDepartment({ ...department }); // ✅ Tạo bản sao để tránh bị tham chiếu
+    setEditedDepartment({
+      ...department,
+      dateOfEstablishment: department.dateOfEstablishment?.split("T")[0] || "",
+    });
     setIsEditing(true);
   };
 
-
   const handleSaveEdit = () => {
     if (!editedDepartment.departmentName.trim()) {
-      setErrors({ departmentName: t('error.blank department name') });
+      setErrors({ departmentName: t("error.blank department name") });
       return;
     }
 
-    onEdit(editedDepartment._id, { departmentName: editedDepartment.departmentName });
-    setIsEditing(false); // Đóng modal sau khi lưu
-    setEditedDepartment(null); // Reset dữ liệu
+    onEdit(editedDepartment._id, {
+      departmentName: editedDepartment.departmentName,
+      dateOfEstablishment: editedDepartment.dateOfEstablishment,
+      headOfDepartment: editedDepartment.headOfDepartment,
+    });
+
+    setIsEditing(false);
+    setEditedDepartment(null);
     setErrors({});
   };
 
@@ -59,24 +91,43 @@ const DepartmentTable = ({ departments, searchTerm, onDelete, onEdit }) => {
     }));
   };
 
+  const handleSortChange = (field) => {
+    if (sortField === field) {
+      setSortOrder((prev) => (prev === "asc" ? "desc" : "asc"));
+    } else {
+      setSortField(field);
+      setSortOrder("asc");
+    }
+  };
+
   return (
     <>
       <DataTable
         columns={columns}
         data={finalData}
         initialSortField="departmentName"
+        sortField={sortField}
         sortOrder={sortOrder}
-        onSortChange={setSortOrder}
+        onSortChange={handleSortChange}
         onEdit={handleEditClick}
         onDelete={onDelete}
       />
 
-      {/* Sử dụng EnityEdit thay cho Modal */}
       {isEditing && (
         <EnityEdit
-          title={t('edit department')}
+          title={t("edit department")}
           fields={[
-            { name: "departmentName", label: t('department'), type: "text" },
+            { name: "departmentName", label: t("department"), type: "text" },
+            { name: "dateOfEstablishment", label: t("establishment date"), type: "date" },
+            {
+              name: "headOfDepartment",
+              label: t("head of department"),
+              type: "select",
+              options: teachers.map((t) => ({
+                label: t.fullName,
+                value: t._id,
+              })),
+            },
           ]}
           data={editedDepartment}
           errors={errors}

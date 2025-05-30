@@ -2,7 +2,6 @@ import "../../../styles/StudentDetail.scss";
 import React, { useState } from "react";
 import EntityView from "../../forms/EnityView.jsx";
 import EnityEdit from "../../forms/EnityEdit.jsx";
-import { exportCSV, exportJSON } from "../../../utils/export.util.js";
 import { ALLOWED_EMAIL_DOMAIN, PHONE_REGEX, STATUS_RULES } from "../../../utils/constants.js";
 import { formatStudentData } from "../../../utils/format.util.js";
 import { useTranslation } from "react-i18next"
@@ -10,6 +9,7 @@ import {EmailValidationStrategy} from "../../../utils/strategies/EmailValidation
 import {PhoneValidationStrategy} from "../../../utils/strategies/PhoneRegexValidationStrategy.js";
 import {StatusChangeValidationStrategy} from "../../../utils/strategies/StatusChangeValidationStrategy.js";
 import {IdentityDocumentValidationStrategy} from "../../../utils/strategies/IdentityDocumentValidationStrategy.js";
+import { ExportFactory } from '../../../utils/export/ExportFactory.js';
 
 const StudentDetail = ({ departments, student, onSave, onClose, setEditedStudent, editedStudent }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -116,10 +116,12 @@ const StudentDetail = ({ departments, student, onSave, onClose, setEditedStudent
           onEdit={handleEdit}
           exportType={exportType}
           setExportType={setExportType}
-          onExport={() => {
+          onExport={async() => {
             exportType === "csv"
-              ? exportCSV(student, `student_${student.studentId}`)
-              : exportJSON(student, `student_${student.studentId}`);
+              ? "csv" : "json"
+            const exporter = ExportFactory.createStudentExporter(exportType);
+            await exporter.export(student, "students_list");
+
           }}
         />
       ) : (

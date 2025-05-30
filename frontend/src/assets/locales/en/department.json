@@ -22,6 +22,12 @@
     "save": "Save"
   },
   "department_list": {
+    "6801d8709f94379692f92075": {
+      "name": "Physic"
+    },
+    "6801d8a49f94379692f9207c": {
+      "name": "Mathematic"
+    },
     "67d8ea7d7e02c451d88fa5da": {
       "name": "Law"
     },

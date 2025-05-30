@@ -10,9 +10,10 @@ import "../styles/pages/StudentScreen.scss";
 import removeVietnameseTones from "../utils/string.util.js";
 import studentService from "../services/student.service.js";
 import useDepartments from "../hooks/useDepartments.js";
-import { exportCSV, exportJSON } from "../utils/export.util.js"; // Import export functions
 import { useTranslation } from "react-i18next"
-
+import { ExportFactory } from '../utils/export/ExportFactory.js';
+import { ValidationFactory } from '../utils/factories/ValidationFactory.js';
+import { STATUS_RULES, ALLOWED_EMAIL_DOMAIN, PHONE_REGEX } from "../utils/constants.js";
 const StudentScreen = () => {
   //hooks
   const { students, setStudents, fetchStudents } = useStudents();
@@ -28,7 +29,15 @@ const StudentScreen = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedStudent, setEditedStudent] = useState(null);
   const [exportType, setExportType] = useState("csv");
-
+    const studentValidator = useMemo(() => {
+    return ValidationFactory.createStudentValidator(
+      'active', // Default current status
+      STATUS_RULES,
+      ALLOWED_EMAIL_DOMAIN,
+      PHONE_REGEX
+    );
+  }, []);
+  
   // 📌 Lọc sinh viên dựa trên điều kiện tìm kiếm
   const filteredStudents = useMemo(() => {
     return students.filter((s) => {
@@ -42,44 +51,65 @@ const StudentScreen = () => {
     });
   }, [searchTerm, selectedDepartment, selectedCourse, students]);
 
-  const handleDelete = async (studentId) => {
-    if (!window.confirm(t('form.sure delete'))) return;
-    await studentService.deleteStudent(studentId);
-    setStudents((prev) => prev.filter((s) => s.studentId !== studentId));
-  };
+    const handleDelete = async (studentId) => {
+      if (!window.confirm(t('form.sure delete'))) return;
+      await studentService.deleteStudent(studentId);
+      setStudents((prev) => prev.filter((s) => s.studentId !== studentId));
+    };
 
-  const handleAddStudent = async (student) => {
-    const newStudentData = await studentService.addStudent(student);
-    setStudents([...students, newStudentData]);
-    setIsAdding(false);
-  };
+    const handleAddStudent = async (student) => {
+    const validationErrors = studentValidator.validate(student);
+    
+    if (validationErrors) {
+      alert(t('error.validation_failed') + ': ' + Object.values(validationErrors).join(', '));
+      return;
+    }
 
+    try {
+      const newStudentData = await studentService.addStudent(student);
+      setStudents([...students, newStudentData]);
+      setIsAdding(false);
+    } catch (error) {
+      console.error(t('error.add student') + ":", error);
+      alert(t('error.add student') + ': ' + error.message);
+    }
+  };
   const handleSave = async (updatedStudent) => {
+    const validationErrors = studentValidator.validate({
+      ...updatedStudent,
+      currentStatus: selectedStudent?.studentStatus // Pass current status for status validation
+    });
+
+    if (validationErrors) {
+      alert(t('error.validation_failed') + ': ' + Object.values(validationErrors).join(', '));
+      return;
+    }
+
     try {
       await studentService.updateStudent(updatedStudent.studentId, updatedStudent);
-
-      // setSelectedStudent(updatedStudent); // Cập nhật lại selectedStudent để phản ánh ngay lập tức
-      await fetchStudents(); // Lấy lại danh sách sinh viên từ server
-      setStudents((prev) => prev.map((s) => (s.studentId === updatedStudent.studentId ? updatedStudent : s)));
-      setSelectedStudent(updatedStudent); // Cập nhật lại selectedStudent để phản ánh ngay lập tức
-      setEditedStudent(null); // Đặt lại editedStudent
+      await fetchStudents();
+      setStudents(prev => prev.map(s => s.studentId === updatedStudent.studentId ? updatedStudent : s));
+      setSelectedStudent(updatedStudent);
+      setEditedStudent(null);
       setIsEditing(false);
     } catch (error) {
       console.error(t('error.update student') + ":", error);
+      alert(t('error.update student') + ': ' + error.message);
     }
   };
 
-
-  const exportAllStudents = () => {
+  const exportAllStudents = async () => {
     if (filteredStudents.length === 0) {
       alert(t('no student export'));
       return;
     }
 
-    if (exportType === "csv") {
-      exportCSV(filteredStudents, "students_list");
-    } else {
-      exportJSON(filteredStudents, "students_list");
+    try {
+      const exporter = ExportFactory.createStudentExporter(exportType);
+      await exporter.export(filteredStudents, "students_list");
+    } catch (error) {
+      console.error(t('error.export failed') + ":", error);
+      alert(t('error.export failed'));
     }
   };
 

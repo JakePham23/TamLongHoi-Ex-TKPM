@@ -76,7 +76,7 @@ router.put("/update/:departmentId", departmentController.updateDepartment);
 
 /**
  * @swagger
- *  /api/v1/departments/{departmentId}:
+ *  /api/v1/departments/update/{departmentId}:
  *   delete:
  *     summary: Xóa khoa
  *     tags: [departments]

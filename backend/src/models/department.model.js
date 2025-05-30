@@ -6,6 +6,13 @@ const departmentSchema = new Schema({
     departmentName: {
         type: String,
         unique: true
+    },
+    dateOfEstablishment:{
+        type: Date,
+    },
+    headOfDepartment:{
+        type: Schema.Types.ObjectId,
+        ref: 'Teachers',
     }
 }, {
     timestamps: true,

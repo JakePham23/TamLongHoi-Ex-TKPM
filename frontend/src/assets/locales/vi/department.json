@@ -22,6 +22,12 @@
     "save": "Lưu"
   },
   "department_list": {
+    "6801d8a49f94379692f9207c": {
+      "name": "Toán Tin"
+    },
+    "6801d8709f94379692f92075": {
+      "name": "Vật Lý"
+    },
     "67d8ea7d7e02c451d88fa5da": {
       "name": "Luật"
     },
@@ -56,7 +62,7 @@
       "name": "Tâm lí học"
     },
     "67e2b06bddf1ba5cc9994222": {
-      "name": "An toàn thông tin"
+      "name": "Bảo mật thông tin"
     }
   }
 }

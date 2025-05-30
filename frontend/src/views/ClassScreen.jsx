@@ -11,7 +11,6 @@ import removeVietnameseTones from "../utils/string.util.js";
 import classService from "../services/class.service.js";
 import useCourses from "../hooks/useCourse.js";
 import useTeachers from "../hooks/useTeachers.js";
-import { exportCSV, exportJSON } from "../utils/export.util.js";
 import { useTranslation } from "react-i18next";
 import Select from "../components/common/Select.jsx";
 
@@ -109,18 +108,18 @@ const ClassScreen = () => {
     setIsEditing(true);
   };
 
-  const exportAllClasses = () => {
-    if (filteredClasses.length === 0) {
-      alert(t('noClassExport'));
-      return;
-    }
+  // const exportAllClasses = () => {
+  //   if (filteredClasses.length === 0) {
+  //     alert(t('noClassExport'));
+  //     return;
+  //   }
 
-    if (exportType === "csv") {
-      exportCSV(filteredClasses, "classes_list");
-    } else {
-      exportJSON(filteredClasses, "classes_list");
-    }
-  };
+  //   if (exportType === "csv") {
+  //     exportCSV(filteredClasses, "classes_list");
+  //   } else {
+  //     exportJSON(filteredClasses, "classes_list");
+  //   }
+  // };
 
   return (
     <div className="ClassScreen">
@@ -229,7 +228,7 @@ const ClassScreen = () => {
         />
         <Button 
           label={t('exportList')} 
-          onClick={exportAllClasses} 
+          // onClick={exportAllClasses} 
           icon={<FaFileExport />}
         />
       </div>

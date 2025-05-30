@@ -13317,3 +13317,455 @@
 {"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T05:46:29.887Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
 {"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T05:46:29.891Z"}
 {"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T05:46:29.893Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T05:49:55.192Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:30.738Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:28:30.750Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:30.755Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:28:30.757Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:31.259Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:31.263Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T06:28:31.299Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:28:31.300Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:31.305Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:31.307Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:28:31.319Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T06:28:31.321Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:31.725Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:31.728Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:28:31.730Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:31.733Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T06:28:31.735Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:28:31.736Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:31.738Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:31.739Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:28:31.747Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T06:28:31.748Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:31.749Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:31.753Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:28:31.755Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T06:28:31.759Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:31.764Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T06:28:31.773Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.222Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.238Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.239Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.240Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.241Z","url":"/registrations/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T06:28:32.258Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T06:28:32.260Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.261Z","url":"/registrations/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.262Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.264Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T06:28:32.265Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:28:32.266Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.270Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.271Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T06:28:32.271Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T06:28:32.272Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:28:32.273Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.274Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.277Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.277Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T06:28:32.279Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:28:32.280Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T06:28:32.281Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T06:28:32.282Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.283Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.284Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T06:28:32.287Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.287Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.288Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:28:32.291Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T06:28:32.293Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T06:28:32.297Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.299Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T06:28:32.304Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.722Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.726Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T06:28:32.731Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T06:28:32.732Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.734Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:32.735Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T06:28:32.736Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T06:28:32.739Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:44.744Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:44.746Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:28:44.749Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T06:28:44.753Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:44.754Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:28:44.754Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:28:44.756Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T06:28:44.760Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:34:53.179Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:34:53.182Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:34:53.187Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T06:34:53.190Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:34:53.192Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:34:53.193Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:34:53.194Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T06:34:53.200Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:35:14.912Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:35:14.913Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:35:14.916Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T06:35:14.917Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:35:15.618Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:35:15.620Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:35:15.622Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T06:35:15.630Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:44:37.080Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:44:37.085Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:44:37.093Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T06:44:37.095Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:44:37.096Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:44:37.098Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:44:37.099Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:44:37.103Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T06:44:37.104Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:44:37.105Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:44:37.106Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:44:37.108Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T06:44:37.113Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:44:37.115Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:44:37.116Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T06:44:37.128Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:44:37.596Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:44:37.598Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:44:37.600Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:44:37.604Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T06:44:37.605Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T06:44:37.606Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T06:44:37.607Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T06:44:37.613Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T07:13:45.288Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T07:13:45.304Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T07:13:45.306Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T07:13:45.313Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T07:21:35.968Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T07:21:48.686Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T07:21:54.791Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T07:21:55.486Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T07:21:55.929Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T07:21:58.270Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T07:21:59.329Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T07:21:59.663Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T07:22:21.549Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T07:22:42.857Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T07:22:43.521Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T07:22:49.249Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T07:22:53.324Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T07:27:49.352Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T07:41:39.291Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:28.516Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:28.522Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:01:28.524Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:01:28.532Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:28.537Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:28.539Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:01:28.541Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:01:28.543Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:29.393Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:29.394Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:01:29.397Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:29.405Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T08:01:29.407Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:01:29.409Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:29.412Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T08:01:29.420Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:29.991Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:29.995Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:01:30.029Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.034Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T08:01:30.037Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.041Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:01:30.043Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.047Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T08:01:30.049Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:01:30.053Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.054Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.055Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:01:30.061Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T08:01:30.063Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.065Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T08:01:30.073Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.552Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.556Z","url":"/registrations/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.557Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.561Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T08:01:30.561Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:01:30.562Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.563Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.568Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.569Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T08:01:30.570Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:01:30.572Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:01:30.576Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.577Z","url":"/registrations/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.578Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.578Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.579Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T08:01:30.580Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:01:30.585Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:01:30.586Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.587Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T08:01:30.588Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.589Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.590Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:01:30.590Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.592Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T08:01:30.594Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:01:30.594Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.595Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.597Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T08:01:30.600Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:01:30.602Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:30.605Z","url":"/students/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T08:01:30.606Z"}
+{"level":"info","message":"Lấy danh sách sinh viên thành công (12 sinh viên)","timestamp":"2025-05-30T08:01:30.610Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:57.281Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:57.283Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:01:57.288Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T08:01:57.290Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:57.292Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:01:57.294Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:01:57.295Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T08:01:57.299Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:02:05.232Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:02:05.233Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:02:05.237Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T08:02:05.238Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:02:05.239Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:02:05.241Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:02:05.242Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:02:05.243Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:02:05.248Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T08:02:05.249Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:02:05.251Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:02:05.253Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:02:05.254Z"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T08:02:05.260Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:02:05.262Z","url":"/courses/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Retrieved 28 courses successfully","timestamp":"2025-05-30T08:02:05.265Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:02:05.754Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:02:05.756Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:02:05.757Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:02:05.758Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:02:05.758Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:02:05.759Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:02:05.762Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:02:05.763Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:04:41.677Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:04:41.679Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:04:41.681Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:04:41.682Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:04:41.683Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:04:41.686Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:04:41.689Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:04:41.691Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-30T08:05:53.445Z","url":"/departments/update/67e268892ac402b833e930c6","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Department updated: ID 67e268892ac402b833e930c6","timestamp":"2025-05-30T08:05:53.658Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:05:53.663Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:05:53.665Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:05:56.539Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:05:56.540Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:05:56.541Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:05:56.542Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:05:56.542Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:05:56.544Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:05:56.547Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:05:56.549Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:55.619Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:55.621Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:06:55.626Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:06:55.627Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:55.710Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:55.711Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:06:55.713Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:06:55.714Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:56.207Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:56.208Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:06:56.209Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:06:56.209Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:56.346Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:56.347Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:06:56.349Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:06:56.349Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:56.463Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:56.464Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:06:56.464Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:06:56.465Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:56.575Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:56.576Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:06:56.578Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:06:56.579Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:56.770Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:56.771Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:06:56.772Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:06:56.773Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:56.873Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:56.874Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:06:56.875Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:06:56.876Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:56.996Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:56.997Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:06:56.998Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:06:56.999Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:57.093Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:57.094Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:06:57.095Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:06:57.096Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:57.291Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:57.292Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:06:57.294Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:06:57.295Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:57.724Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:57.725Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:06:57.726Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:06:57.727Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:57.829Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:57.831Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:06:57.832Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:06:57.837Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:57.913Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:06:57.914Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:06:57.915Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:06:57.917Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:07:00.199Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:07:00.201Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:07:00.202Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:07:00.203Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-30T08:07:37.232Z","url":"/departments/update/67e268892ac402b833e930c6","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Department updated: ID 67e268892ac402b833e930c6","timestamp":"2025-05-30T08:07:37.390Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:07:37.398Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:07:37.399Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:07:48.838Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:07:48.844Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:07:48.846Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:07:48.847Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:07:48.849Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:07:48.851Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:07:48.853Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:07:48.854Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:08:00.552Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:08:01.059Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:08:02.193Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:08:02.899Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:08:03.638Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:08:04.461Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:08:07.651Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:08:11.488Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:08:13.526Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:08:14.849Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:08:15.312Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:08:18.062Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:08:21.099Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:08:23.325Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-30T08:08:30.013Z","url":"/departments/update/67e268892ac402b833e930c6","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Department updated: ID 67e268892ac402b833e930c6","timestamp":"2025-05-30T08:08:30.189Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:08:30.194Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:08:30.202Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:09:15.510Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-05-30T08:09:16.109Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:02.463Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:02.474Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:02.492Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:02.503Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:02.505Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:02.509Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:02.512Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:02.515Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:02.647Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:02.648Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:02.650Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:02.656Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:02.746Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:02.747Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:02.749Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:02.753Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:02.834Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:02.836Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:02.838Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:02.839Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:02.935Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:02.936Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:02.938Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:02.939Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:03.246Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:03.248Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:03.250Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:03.251Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:03.346Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:03.363Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:03.364Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:03.365Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:03.644Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:03.645Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:03.646Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:03.647Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:03.813Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:03.814Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:03.816Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:03.817Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:03.913Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:03.914Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:03.915Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:03.917Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:04.554Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:04.555Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:04.556Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:04.557Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:04.918Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:04.920Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:04.921Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:04.927Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:05.227Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:05.228Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:05.229Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:05.230Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:05.703Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:05.704Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:05.705Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:05.706Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:06.461Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:06.462Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:06.465Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:06.466Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:10.454Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:10.455Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:10.457Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:10.457Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-30T08:11:15.896Z","url":"/departments/update/67e268892ac402b833e930c6","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Department updated: ID 67e268892ac402b833e930c6","timestamp":"2025-05-30T08:11:16.118Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:16.121Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:16.123Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:39.089Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:39.090Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:39.091Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:11:39.092Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-30T08:11:48.287Z","url":"/departments/update/67e268892ac402b833e930c6","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Department updated: ID 67e268892ac402b833e930c6","timestamp":"2025-05-30T08:11:48.440Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:11:48.475Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:11:48.477Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:12:10.113Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:12:10.115Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:12:10.119Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:12:10.120Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:12:10.203Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:12:10.204Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:12:10.205Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:12:10.206Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-30T08:15:14.770Z","url":"/departments/update/67e2b06bddf1ba5cc9994222","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Department updated: ID 67e2b06bddf1ba5cc9994222","timestamp":"2025-05-30T08:15:14.939Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:15:14.948Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:15:14.951Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:15:15.042Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:15:15.048Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:15:15.049Z"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:15:15.054Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"PUT","timestamp":"2025-05-30T08:19:02.451Z","url":"/departments/update/67e268892ac402b833e930c6","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:19:02.528Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:19:02.529Z","url":"/teachers/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:19:02.531Z"}
+{"level":"info","message":"Lấy danh sách giáo viên thành công (0 giáo viên)","timestamp":"2025-05-30T08:19:02.533Z"}
+{"level":"info","message":"Department updated: ID 67e268892ac402b833e930c6","timestamp":"2025-05-30T08:19:02.710Z"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","timestamp":"2025-05-30T08:19:02.712Z","url":"/departments/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"}
+{"level":"info","message":"Fetched all departments","timestamp":"2025-05-30T08:19:02.715Z"}

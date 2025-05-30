@@ -8,11 +8,12 @@ import useDepartments from "../hooks/useDepartments.js";
 import "../styles/pages/DepartmentScreen.scss";
 import departmentService from "../services/department.service.js";
 import { useTranslation } from "react-i18next"
-
+import useTeachers from "../hooks/useTeachers.js";
 const DepartmentScreen = () => {
   const { departments, fetchDepartments } = useDepartments();
   const [searchTerm, setSearchTerm] = useState("");
   const [isAdding, setIsAdding] = useState(false);
+  const {teachers} = useTeachers();
   // const [selectedDepartment, setSelectedDepartment] = useState(null); // Manage selected department state
 
   const { t } = useTranslation('department');
@@ -37,9 +38,10 @@ const DepartmentScreen = () => {
     }
   };
 
-  const handleEditDepartment = async (departmentId, departmentName) => {
+  const handleEditDepartment = async (departmentId, departmentData) => {
     try {
-      await departmentService.updateDepartment(departmentId, departmentName);
+      console.log(departmentData);
+      await departmentService.updateDepartment(departmentId, departmentData);
       fetchDepartments();
     } catch (error) {
       console.error(t('error.update department'), error);
@@ -65,6 +67,7 @@ const DepartmentScreen = () => {
       {/* Display selected department details */}
       <DepartmentTable
         departments={departments}
+        teachers={teachers}
         searchTerm={searchTerm}
         onDelete={handleDeleteDepartment}
         onEdit={handleEditDepartment}
