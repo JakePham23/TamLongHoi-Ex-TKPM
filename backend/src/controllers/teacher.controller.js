@@ -8,8 +8,7 @@ class TeacherController {
   async getAllTeachers(req, res, next) {
     try {
       const teachers = await teacherModel
-        .find()
-        .populate('department', 'departmentName');
+        .find();
 
       logger.info(`Lấy danh sách giáo viên thành công (${teachers.length} giáo viên)`);
       return ResponseFactory.create(ResponseTypes.SUCCESS, {
@@ -25,33 +24,33 @@ class TeacherController {
     }
   }
 
-  async createTeacher(req, res, next) {
-    try {
-      const { teacherId, name, department } = req.body;
+  // async createTeacher(req, res, next) {
+  //   try {
+  //     const { teacherId,, department } = req.body;
 
-      const exists = await teacherModel.findOne({ teacherId });
-      if (exists) {
-        logger.warn(`Tạo thất bại: Giáo viên với mã ${teacherId} đã tồn tại`);
-        return ResponseFactory.create(ResponseTypes.CONFLICT, {
-          message: 'Giáo viên đã tồn tại'
-        }).send(res);
-      }
+  //     const exists = await teacherModel.findOne({ teacherId });
+  //     if (exists) {
+  //       logger.warn(`Tạo thất bại: Giáo viên với mã ${teacherId} đã tồn tại`);
+  //       return ResponseFactory.create(ResponseTypes.CONFLICT, {
+  //         message: 'Giáo viên đã tồn tại'
+  //       }).send(res);
+  //     }
 
-      const teacher = await teacherModel.create({ teacherId, name, department });
+  //     const teacher = await teacherModel.create({ teacherId, name, department });
 
-      logger.info(`Tạo giáo viên thành công: ${teacherId}`);
-      return ResponseFactory.create(ResponseTypes.CREATED, {
-        message: 'Tạo giáo viên thành công',
-        metadata: teacher
-      }).send(res);
-    } catch (error) {
-      logger.error('Lỗi trong createTeacher', { error: error.message });
-      return ResponseFactory.create(ResponseTypes.INTERNAL_ERROR, {
-        message: 'Đã xảy ra lỗi khi tạo giáo viên',
-        metadata: { error: error.message }
-      }).send(res);
-    }
-  }
+  //     logger.info(`Tạo giáo viên thành công: ${teacherId}`);
+  //     return ResponseFactory.create(ResponseTypes.CREATED, {
+  //       message: 'Tạo giáo viên thành công',
+  //       metadata: teacher
+  //     }).send(res);
+  //   } catch (error) {
+  //     logger.error('Lỗi trong createTeacher', { error: error.message });
+  //     return ResponseFactory.create(ResponseTypes.INTERNAL_ERROR, {
+  //       message: 'Đã xảy ra lỗi khi tạo giáo viên',
+  //       metadata: { error: error.message }
+  //     }).send(res);
+  //   }
+  // }
 
   async updateTeacher(req, res, next) {
     try {

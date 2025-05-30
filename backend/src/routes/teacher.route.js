@@ -3,6 +3,6 @@ import teacherController from '../controllers/teacher.controller.js';
 
 const router = express.Router();
 
-router.get('/teachers', teacherController.getAllTeachers);
+router.get('/', teacherController.getAllTeachers);
 
 export default router;

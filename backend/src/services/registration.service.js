@@ -3,12 +3,10 @@ import { logger } from "../utils/winston.js";
 
 class RegistrationService {
     async addRegistration(data) {
-        const existingRegistration = await registrationModel.findOne({
-            courseId: data.courseId,
-            year: data.year,
-            semester: data.semester,
-        });
-        if (existingRegistration) throw new Error("Registration already exists");
+        // const existingRegistration = await registrationModel.findOne({
+        //     courseId: data.courseId,
+        // });
+        // if (existingRegistration) throw new Error("Registration already exists");
 
         const newRegistration = new registrationModel(data);
         await newRegistration.save();

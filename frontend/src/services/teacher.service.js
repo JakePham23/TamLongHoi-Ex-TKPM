@@ -8,7 +8,8 @@ class TeacherService extends BaseService {
 
     async getTeachers() {
         const response = await this.getAll();
-        return response?.metadata || [];
+        console.log(response.metadata);
+        return response?.metadata;
     }
 }
 

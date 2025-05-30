@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const registrationSchema = new mongoose.Schema({
     year: {
-        type: Number,
+        type: String,
         required: true,
     },
     semester: {

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Button from "../../common/Button.jsx";
-import "../../../styles/pages/RegistrationScreen.scss";
-
+import '../../../styles/RegistrationForm.scss'
 // Hàm chuyển đổi tiết học sang giờ
 const convertLessonToTime = (lessonRange) => {
   const [start, end] = lessonRange.split("->").map(s => parseFloat(s.trim()));
@@ -35,12 +34,12 @@ const convertLessonToTime = (lessonRange) => {
   return { startTime, endTime };
 };
 
-const RegistrationForm = ({ onSave, registration, courses, teachers, onClose }) => {
+const RegistrationForm = ({ onSave, registration, courses, teachers, onClose, academicYear, semester  }) => {
   const { t } = useTranslation('registration');
 
   const [formData, setFormData] = useState({
-    year: "",
-    semester: "",
+    year: academicYear || "",
+    semester: semester || "",
     courseId: "",
     teacherId: "",
     maxStudent: "",
@@ -185,24 +184,33 @@ const RegistrationForm = ({ onSave, registration, courses, teachers, onClose }) 
     { value: "5->9", label: "5 -> 9 (11:40 - 16:00)" },
     { value: "5->10", label: "5 -> 10 (11:40 - 16:50)" },
   ];
-
+  const generateAcademicYears = () => {
+    const currentYear = new Date().getFullYear();
+    const years = [];
+    for (let i = -2; i <= 2; i++) {
+      const year = currentYear + i;
+      years.push(`${year}-${year + 1}`);
+    }
+    return years;
+  };
   return (
     <form onSubmit={handleSubmit} className="modal-overlay">
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <h2>{registration ? t('editRegistration') : t('addRegistration')}</h2>
 
         <div className="form-row">
-          <div className="form-group">
-            <label>{t('year')}</label>
-            <input
-              type="number"
-              name="year"
-              placeholder={t('year') + " (e.g. 2023)"}
-              value={formData.year}
-              onChange={handleChange}
-              required
-            />
-          </div>
+               <div className="form-group">
+                <label>{t('academicYear')} *</label>
+                <select
+                  name="academicYear"
+                  value={formData.academicYear}
+                  onChange={handleChange}
+                >
+                  {generateAcademicYears().map(year => (
+                    <option key={year} value={year}>{year}</option>
+                  ))}
+                </select>
+              </div>
 
           <div className="form-group">
             <label>{t('semester')}</label>

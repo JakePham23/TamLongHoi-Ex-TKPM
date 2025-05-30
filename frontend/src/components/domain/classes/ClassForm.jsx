@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import "../../../styles/ClassForm.scss";
 import { useTranslation } from "react-i18next";
 
-const ClassForm = ({ courses, teachers, onSubmit, onClose, existingClass = null }) => {
+const ClassForm = ({ courses, teachers, onSubmit, onClose, existingClass = null, academicYear, semester }) => {
   const { t } = useTranslation(['class', 'course', 'teacher', 'component']);
   
   const [formData, setFormData] = useState({
     classCode: existingClass?.classCode || "",
     courseId: existingClass?.course?._id || "",
     teacherId: existingClass?.teacher?._id || "",
-    semester: existingClass?.semester || "1",
-    academicYear: existingClass?.academicYear || `${new Date().getFullYear()}-${new Date().getFullYear() + 1}`,
+    semester: semester || "1",
+    academicYear: academicYear || `${new Date().getFullYear()}-${new Date().getFullYear() + 1}`,
     schedule: {
       dayOfWeek: existingClass?.schedule?.dayOfWeek || "Monday",
       time: existingClass?.schedule?.time || "08:00-10:00"
@@ -102,7 +102,7 @@ const ClassForm = ({ courses, teachers, onSubmit, onClose, existingClass = null 
       newErrors.room = t('error.roomRequired');
     }
 
-    if (!formData.maxStudents || formData.maxStudents < 1 || formData.maxStudents > 100) {
+    if (!formData.maxStudents || formData.maxStudents < 1 || formData.maxStudents > 120) {
       newErrors.maxStudents = t('error.invalidMaxStudents');
     }
 
@@ -125,7 +125,7 @@ const ClassForm = ({ courses, teachers, onSubmit, onClose, existingClass = null 
         ...existingClass,
         ...formData,
         course: { _id: formData.courseId },
-        teacher: { _id: formData.teacherId }
+        teacher: { teacherId: formData.teacherId }
       });
       onClose();
     } catch (error) {
@@ -168,15 +168,15 @@ const ClassForm = ({ courses, teachers, onSubmit, onClose, existingClass = null 
             <div className="form-row">
               <div className="form-group">
                 <label>{t('classCode')} *</label>
-                <input
+                {/* <input
                   type="text"
                   name="classCode"
                   value={formData.classCode}
                   onChange={handleChange}
                   placeholder={t('enterClassCode')}
                   className={errors.classCode ? 'error' : ''}
-                />
-                {errors.classCode && <div className="error-message">{errors.classCode}</div>}
+                  disabled={isSubmitting}
+                /> */}
               </div>
 
               <div className="form-group">
@@ -187,7 +187,7 @@ const ClassForm = ({ courses, teachers, onSubmit, onClose, existingClass = null 
                   value={formData.maxStudents}
                   onChange={handleChange}
                   min="1"
-                  max="100"
+                  max="120"
                   className={errors.maxStudents ? 'error' : ''}
                 />
                 {errors.maxStudents && <div className="error-message">{errors.maxStudents}</div>}
@@ -223,8 +223,8 @@ const ClassForm = ({ courses, teachers, onSubmit, onClose, existingClass = null 
                 >
                   <option value="">{t('selectTeacher')}</option>
                   {teachers.map(teacher => (
-                    <option key={teacher._id} value={teacher._id}>
-                      {teacher.name} - {teacher.email}
+                    <option key={teacher.teacherId} value={teacher.teacherId}>
+                      {teacher.fullname}
                     </option>
                   ))}
                 </select>

@@ -170,7 +170,7 @@ const RegistrationScreen = () => {
             />
             <Button
               icon={<FaPlus />}
-              label={t('addRegistration')}
+              label={t('Add Class')}
               variant="gray"
               onClick={() => setIsAdding(true)}
               disabled={!selectedAcademicYear || !selectedSemester}
@@ -189,8 +189,6 @@ const RegistrationScreen = () => {
               semester={selectedSemester}
             />
           )}
-
-
             <RegistrationTable
               registrations={registrations}
               courses={courses}
