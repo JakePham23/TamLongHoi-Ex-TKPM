@@ -48,7 +48,7 @@ router.post('/add', RegistrationController.addRegistration);
 
 /**
  * @swagger
- * /api/v1/registrations/{registrationId}:
+ * /api/v1/registrations/delete/{registrationId}:
  *   delete:
  *     summary: Xóa một đăng ký khóa học
  *     tags: [registrations]
@@ -67,11 +67,11 @@ router.post('/add', RegistrationController.addRegistration);
  *       500:
  *         description: Lỗi server
  */
-router.delete('/:registrationId', RegistrationController.deleteRegistration);
+router.delete('/delete/:registrationId', RegistrationController.deleteRegistration);
 
 /**
  * @swagger
- * /api/v1/registrations/{registrationId}:
+ * /api/v1/registrations/update/{registrationId}:
  *   put:
  *     summary: Cập nhật thông tin đăng ký khóa học
  *     tags: [registrations]
@@ -105,7 +105,7 @@ router.delete('/:registrationId', RegistrationController.deleteRegistration);
  *       500:
  *         description: Lỗi server
  */
-router.put('/:registrationId', RegistrationController.updateRegistration);
+router.put('/update/:registrationId', RegistrationController.updateRegistration);
 
 /**
  * @swagger
@@ -126,5 +126,6 @@ router.put('/:registrationId', RegistrationController.updateRegistration);
  *         description: Lỗi server
  */
 router.get('/', RegistrationController.getAllRegistrations);
+router.get('/getData', RegistrationController.getRegistrations);
 
 export default router;

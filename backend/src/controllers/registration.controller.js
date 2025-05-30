@@ -100,6 +100,25 @@ class RegistrationController {
                 .send(res);
         }
     }
+    async getRegistrations(req, res, next){
+        try{
+            const {year, semester} = req.body;
+            const registrations = await RegistrationService.getRegistrations(year, semester);
+            return ResponseFactory
+                .create(ResponseTypes.SUCCESS, {
+                    message: "Get registrations successfully",
+                    metadata: registrations
+                })
+                .send(res);
+
+        }catch(err){
+            logger.error("Error in getRegistrations", { error: error.message });
+            return ResponseFactory
+                .create(ResponseTypes.INTERNAL_ERROR, error.message)
+                .send(res);
+        }
+    }
+
 }
 
 export default new RegistrationController();

@@ -4,7 +4,6 @@ import SearchInput from "../components/common/SearchInput.jsx";
 import Button from "../components/common/Button.jsx";
 import RegistrationForm from "../components/domain/registrations/RegistrationForm.jsx";
 import RegistrationTable from "../components/domain/registrations/RegistrationTable.jsx";
-import useRegistration from "../hooks/useRegistration.js";
 import useCourses from "../hooks/useCourse.js";
 import useTeachers from "../hooks/useTeachers.js";
 import useStudents from "../hooks/useStudents.js";
@@ -15,71 +14,114 @@ import "../styles/pages/RegistrationScreen.scss";
 import Select from "../components/common/Select.jsx";
 
 const RegistrationScreen = () => {
-  const { t } = useTranslation('registration');
-
-  const {
-    registrations,
-    fetchRegistrations,
-    loading,
-    error
-  } = useRegistration();
+  const { t } = useTranslation("registration");
 
   const { courses = [], fetchCourses } = useCourses();
   const { teachers = [], fetchTeachers } = useTeachers();
   const { students = [], fetchStudents } = useStudents();
   const { departments = [], fetchDepartments } = useDepartments();
+
+  const [allRegistrations, setAllRegistrations] = useState([]); // all data from API
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [isAdding, setIsAdding] = useState(false);
-  
-  // State for academic year and semester selection
   const [selectedAcademicYear, setSelectedAcademicYear] = useState("");
   const [selectedSemester, setSelectedSemester] = useState("");
   const [showData, setShowData] = useState(false);
 
-  // Generate academic years (example: last 5 years and next 5 years)
-    const currentYear = new Date().getFullYear();
-    const startYear = 2020;
-
-    const academicYears = [];
-
-    for (let year = startYear; year <= currentYear + 1; year++) {
-      academicYears.push({
-        value: `${year}-${year + 1}`,
-        label: `${year}-${year + 1}`
-      });
-    }
-
+  // Generate academic years
+  const currentYear = new Date().getFullYear();
+  const academicYears = Array.from({ length: 5 }, (_, i) => {
+    const year = currentYear - 2 + i;
+    return {
+      value: `${year}-${year + 1}`,
+      label: `${year}-${year + 1}`,
+    };
+  });
 
   const semesters = [
-    { value: "1", label: t('semester1') },
-    { value: "2", label: t('semester2') },
-    { value: "3", label: t('summerSemester') }
+    { value: 1, label: t("semester1") },
+    { value: 2, label: t("semester2") },
+    { value: 3, label: t("summerSemester") },
   ];
 
+  // Fetch all data for dropdowns on mount
   useEffect(() => {
-    console.log("Fetching data...");
     fetchCourses();
     fetchDepartments();
     fetchTeachers();
     fetchStudents();
   }, [fetchCourses, fetchDepartments, fetchTeachers, fetchStudents]);
 
-  useEffect(() => {
-    if (selectedAcademicYear && selectedSemester) {
-      fetchRegistrations(selectedAcademicYear, selectedSemester);
+  // Fetch all registrations once or after add/edit/delete
+  const fetchAllRegistrations = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const data = await registrationService.getAllRegistrations(); // API lấy toàn bộ data
+      setAllRegistrations(data);
+    } catch (err) {
+      setError(err.message || "Error fetching registrations");
+    } finally {
+      setLoading(false);
     }
-  }, [selectedAcademicYear, selectedSemester, fetchRegistrations]);
+  };
+
+  useEffect(() => {
+    fetchAllRegistrations();
+  }, []);
+
+  // Filter registrations by selected year & semester
+    const filteredByTerm = allRegistrations.filter(r => {
+
+      if (selectedAcademicYear) {
+        // chỉ chọn năm
+        return r.year == selectedAcademicYear;
+      }
+      if (selectedSemester) {
+        // chỉ chọn kỳ
+        return r.semester == selectedSemester;
+      }
+      if (selectedAcademicYear && selectedSemester) {
+        // cả 2 có chọn thì lọc theo AND
+        return r.year == selectedAcademicYear && r.semester == selectedSemester;
+      }
+      // chưa chọn gì
+      return true;
+    });
+
+
+  // Show data only if year & semester selected and data exist
+  useEffect(() => {
+    if (selectedAcademicYear || selectedSemester) {
+      setShowData(true);
+    } else {
+      setShowData(false);
+    }
+  }, [selectedAcademicYear, selectedSemester]);
+
+  // Further filter by search term
+  const filteredRegistrations = filteredByTerm.filter((reg) => {
+    if (!searchTerm) return true;
+    const search = searchTerm.toLowerCase();
+    return (
+      (reg.className && reg.className.toLowerCase().includes(search)) ||
+      (reg.courseName && reg.courseName.toLowerCase().includes(search)) ||
+      (reg.teacherName && reg.teacherName.toLowerCase().includes(search))
+    );
+  });
 
   const handleSaveRegistration = async (newRegistration) => {
     try {
-      // Add academic year and semester to the new registration
       const registrationWithTerm = {
         ...newRegistration,
         academicYear: selectedAcademicYear,
-        semester: selectedSemester
+        semester: selectedSemester,
       };
       await registrationService.addRegistration(registrationWithTerm);
-      await fetchRegistrations(selectedAcademicYear, selectedSemester);
+      await fetchAllRegistrations();
       setIsAdding(false);
     } catch (error) {
       console.error("Error adding registration:", error);
@@ -87,10 +129,10 @@ const RegistrationScreen = () => {
   };
 
   const handleDeleteRegistration = async (registrationId) => {
-    if (!window.confirm("Are you sure you want to delete this registration?")) return;
+    if (!window.confirm(t("confirmDelete"))) return;
     try {
       await registrationService.deleteRegistration(registrationId);
-      await fetchRegistrations(selectedAcademicYear, selectedSemester);
+      await fetchAllRegistrations();
     } catch (error) {
       console.error("Error deleting registration:", error);
     }
@@ -98,64 +140,47 @@ const RegistrationScreen = () => {
 
   const handleEditRegistration = async (registrationId, registrationData) => {
     try {
-      // Ensure academic year and semester are preserved
       const updatedRegistration = {
         ...registrationData,
         academicYear: selectedAcademicYear,
-        semester: selectedSemester
+        semester: selectedSemester,
       };
-      await registrationService.updateRegistration(registrationId, updatedRegistration);
-      await fetchRegistrations(selectedAcademicYear, selectedSemester);
+      await registrationService.updateRegistration(
+        registrationId,
+        updatedRegistration
+      );
+      await fetchAllRegistrations();
     } catch (error) {
       console.error("Error updating registration:", error);
     }
   };
 
-  const handleShowData = () => {
-    if (selectedAcademicYear && selectedSemester) {
-      setShowData(true);
-    }
-  };
-
   if (loading) {
-    return <div className="loading">{t('loading')}</div>;
+    return <div className="loading">{t("loading")}</div>;
   }
 
   if (error) {
-    return <div className="error">{t('error')}</div>;
+    return <div className="error">{t("error")}</div>;
   }
 
   return (
     <div className="RegistrationScreen">
-      <h1>{t('registrationList')}</h1>
+      <h1>{t("registrationList")}</h1>
 
       <div className="selection-container">
         <div className="selection-row">
           <Select
             options={academicYears}
             value={selectedAcademicYear}
-            onChange={(e) => {
-              setSelectedAcademicYear(e.target.value);
-              setShowData(false);
-            }}
-            placeholder={t('selectAcademicYear')}
+            onChange={(e) => setSelectedAcademicYear(e.target.value)}
+            placeholder={t("selectAcademicYear")}
           />
-          
+
           <Select
             options={semesters}
             value={selectedSemester}
-            onChange={(e) => {
-              setSelectedSemester(e.target.value);
-              setShowData(false);
-            }}
-            placeholder={t('selectSemester')}
-          />
-          
-          <Button
-            label={t('showData')}
-            variant="primary"
-            onClick={handleShowData}
-            disabled={!selectedAcademicYear || !selectedSemester}
+            onChange={(e) => setSelectedSemester(e.target.value)}
+            placeholder={t("selectSemester")}
           />
         </div>
       </div>
@@ -164,13 +189,13 @@ const RegistrationScreen = () => {
         <>
           <div className="top-bar">
             <SearchInput
-              placeholder={t('searchPlaceholder')}
+              placeholder={t("searchPlaceholder")}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             <Button
               icon={<FaPlus />}
-              label={t('Add Class')}
+              label={t("addClass")}
               variant="gray"
               onClick={() => setIsAdding(true)}
               disabled={!selectedAcademicYear || !selectedSemester}
@@ -180,7 +205,6 @@ const RegistrationScreen = () => {
           {isAdding && (
             <RegistrationForm
               onSave={handleSaveRegistration}
-              onEdit={handleEditRegistration}
               courses={courses}
               teachers={teachers}
               departments={departments}
@@ -189,16 +213,17 @@ const RegistrationScreen = () => {
               semester={selectedSemester}
             />
           )}
-            <RegistrationTable
-              registrations={registrations}
-              courses={courses}
-              teachers={teachers}
-              students={students}
-              departments={departments}
-              searchTerm={searchTerm}
-              onDelete={handleDeleteRegistration}
-              onEdit={handleEditRegistration}
-            />
+
+          <RegistrationTable
+            registrations={filteredRegistrations}
+            courses={courses}
+            teachers={teachers}
+            students={students}
+            departments={departments}
+            searchTerm={searchTerm}
+            onDelete={handleDeleteRegistration}
+            onEdit={handleEditRegistration}
+          />
         </>
       )}
     </div>

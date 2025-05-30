@@ -32,6 +32,16 @@ class RegistrationService {
     async getAllRegistrations() {
         return await registrationModel.find().populate('courseId teacherId', 'courseName teacherName');
     }
+    async getRegistrations(year, semester) {
+    try {
+        const registrations = await registrationModel.find({ year: year, semester: semester });
+        return registrations;
+    } catch (error) {
+        console.error('find registration error:', error);
+        throw error;
+    }
+    }
+
 
     
 }

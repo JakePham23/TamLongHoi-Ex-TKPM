@@ -47,7 +47,9 @@ class BaseService {
     async getById(id) {
         return this._request('GET', `/${id}`);
     }
-
+    async get({data}){
+        return this._request('GET', '/getData', data)
+    }
     async create(data) {
         console.log("📥 Adding data:", data);
         return this._request('POST', '/add', data);

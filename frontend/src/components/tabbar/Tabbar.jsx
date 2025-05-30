@@ -44,7 +44,7 @@ const Tabbar = ({ setView }) => {
         <TabButton icon={<FaUserGraduate />} label={t('student')} isActive={activeTab == "student"} onClick={() => handleTabClick("student")} />
         <TabButton icon={<FaBook />} label={t('course')} isActive={activeTab == "course"} onClick={() => handleTabClick("course")} />
         <TabButton icon={<MdAppRegistration />} label={t('registration')} isActive={activeTab == "registration"} onClick={() => handleTabClick("registration")} />
-        <TabButton icon={<FaChalkboardTeacher />} label={t('class')} isActive={activeTab == "class"} onClick={() => handleTabClick("class")} />
+        {/* <TabButton icon={<FaChalkboardTeacher />} label={t('class')} isActive={activeTab == "class"} onClick={() => handleTabClick("class")} /> */}
 
         {/* Languague select */}
         <TabButton icon={<FaGlobe />} label={currentLanguage} onClick={() => handleLanClick()} />

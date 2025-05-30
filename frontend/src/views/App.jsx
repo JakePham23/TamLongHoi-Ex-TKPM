@@ -22,7 +22,6 @@ const App = () => {
                 {view === "department" && <DepartmentScreen />}
                 {view === "course" && <CourseScreen />}
                 {view === "registration" && <RegistrationScreen />}
-                {view === "class" && <ClassScreen/>}
             </div>
         </div>
     );

@@ -22,6 +22,10 @@ class RegistrationService extends BaseService {
     async deleteRegistration(registrationId) {
         return this.delete(registrationId);
     }
+
+    async getRegistrations(year, semester) {
+        return this.get({year, semester});
+    }
 }
 
 export default new RegistrationService();
