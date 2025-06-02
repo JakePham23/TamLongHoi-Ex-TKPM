@@ -1,38 +1,280 @@
-@import './abstracts/variables';
+// src/styles/Tabbar.scss
 
-// screen tabbar
+$tabbar-expanded-width: 250px;
+$tabbar-collapsed-width: 65px; // Icon size + padding
+$header-height: 60px; // Example height for header
+$footer-height: 60px; // Example height for footer
+
+$primary-bg-color: #2d323e; // Darker sidebar background
+$secondary-bg-color: #252932; // Slightly different for header/footer or active items
+$text-color: #d0d2d6;
+$icon-color: #a0a4ac;
+$active-text-color: #ffffff;
+$active-indicator-color: #4a90e2; // A blue accent for active tab
+$hover-bg-color: #383e4a;
+
+$transition-duration: 0.25s;
+
 .Tabbar {
-    width: $Tabbar_Width;
-    height: $Tabbar_Height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: $primary-bg-color;
+  color: $text-color;
+  display: flex;
+  flex-direction: column;
+  transition: width $transition-duration ease-in-out;
+  z-index: 1000; // Ensure it's on top
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+
+  &.expanded {
+    width: $tabbar-expanded-width;
+  }
+
+  &.collapsed {
+    width: $tabbar-collapsed-width;
+
+    .Tabbar-header {
+      padding: 0; // Remove padding to center elements better
+      justify-content: center; // Center the toggle button if logo text is gone
+
+      .Logo {
+        padding-left: ($tabbar-collapsed-width - 36px) / 2; // Center logo img
+        img {
+          margin-right: 0;
+        }
+      }
+      .logo-text {
+        display: none;
+      }
+      .collapse-toggle-button {
+        // Position it differently if needed, e.g., absolute, or just let it center
+      }
+    }
+     .language-selector-container {
+      // No specific changes needed here if TabButton handles its collapsed state well
+    }
+  }
+
+  .Tabbar-header {
+    height: $header-height;
     display: flex;
-    flex-direction: column;
-    background-color: $Tabbar_Color;
-    margin: 0;
-}
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px; // Horizontal padding
+    background-color: $secondary-bg-color; // Optional distinct background
+    flex-shrink: 0; // Prevent header from shrinking
 
+    .Logo {
+      display: flex;
+      align-items: center;
+      overflow: hidden; // Important for smooth text hiding
 
-// logo
-.Logo {
+      img {
+        height: 36px; // Adjust logo size
+        width: auto;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+
+      .logo-text {
+        font-size: 1.1rem;
+        font-weight: 600;
+        white-space: nowrap;
+        margin: 0;
+        color: $active-text-color;
+      }
+    }
+
+    .collapse-toggle-button {
+      background: transparent;
+      border: none;
+      color: $icon-color;
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%; // Make it round
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        color: $active-text-color;
+        background-color: $hover-bg-color;
+      }
+    }
+  }
+
+  .ListContent {
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden; // Prevent horizontal scrollbar during transition
+    padding: 10px 0;
+
+    // Hide scrollbar visually but keep functionality
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparentize($primary-bg-color, 0.5);
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $hover-bg-color;
+      border-radius: 3px;
+    }
+  }
+
+  .Tabbar-footer {
+    height: $footer-height;
     display: flex;
-    flex-direction: row;
+    flex-direction: column; // Stack items if there were more than one
+    justify-content: center; // Center items vertically
+    // padding: 0 10px; // Apply padding to TabButton itself for better control
+    background-color: $secondary-bg-color; // Optional
+    flex-shrink: 0; // Prevent footer from shrinking
+    position: relative; // For popover absolute positioning
+
+    .language-selector-container {
+      position: relative; // Anchor for the popover
+    }
+
+    .language-popover {
+      position: absolute;
+      bottom: calc(100% + 5px); // 5px above the language button
+      left: 10px; // Align with TabButton's typical padding
+      width: calc(#{$tabbar-expanded-width} - 20px); // Take most of the tabbar width
+      z-index: 1010; // Above other tabbar content
+      background-color: #fff; // Popover usually has a light background
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      // Popover component should handle its internal padding and item styling
+
+      &.popover-for-collapsed-tabbar {
+        left: $tabbar-collapsed-width + 5px; // Position to the right of the collapsed bar
+        bottom: auto; // Reset bottom
+        top: 50%; // Vertically align with the middle of the language button
+        transform: translateY(-50%);
+        width: auto; // Let popover content dictate its width
+        min-width: 180px; // Example minimum width
+      }
+    }
+  }
 }
 
-.Logo img {
-    width: $Logo_Size;
-    height: $Logo_Size;
-    padding: 10px;
+// --- Styles for TabButton.jsx ---
+// It's better if these are in TabButton.scss and imported by TabButton.jsx
+// For context, assuming TabButton.jsx structure:
+// <button className={`TabButton ${isActive ? 'active' : ''} ${isCollapsed ? 'collapsed' : ''}`}>
+//   <span className="tab-icon">{icon}</span>
+//   {!isCollapsed && <span className="tab-label">{label}</span>}
+// </button>
+
+.TabButton { // This class should be on the button element produced by TabButton.jsx
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 20px; // Default padding for expanded state
+  text-align: left;
+  background-color: transparent;
+  color: $text-color;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color $transition-duration ease, color $transition-duration ease, padding $transition-duration ease;
+  overflow: hidden; // Important for label hiding
+  position: relative; // For active indicator
+
+  .tab-icon {
+    font-size: 1.3rem; // Icon size
+    min-width: 25px; // Width of the icon area
+    margin-right: 15px; // Space between icon and label
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $icon-color;
+    transition: margin-right $transition-duration ease, color $transition-duration ease;
+  }
+
+  .tab-label {
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity ($transition-duration / 2) ease-in-out ($transition-duration / 3);
+  }
+
+  &:hover {
+    background-color: $hover-bg-color;
+    color: $active-text-color;
+    .tab-icon {
+      color: $active-text-color;
+    }
+  }
+
+  &.active {
+    background-color: $secondary-bg-color; // Or $active-bg-color
+    color: $active-text-color;
+    font-weight: 500;
+
+    .tab-icon {
+      color: $active-text-color; // Or $active-indicator-color
+    }
+
+    // Active indicator line on the left
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 15%; // Adjust vertical position
+      bottom: 15%; // Adjust vertical position
+      width: 4px;
+      background-color: $active-indicator-color;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+  }
+
+  // Styles when this TabButton is inside a collapsed Tabbar
+  .Tabbar.collapsed & {
+    justify-content: center;
+    padding: 12px 0; // Vertical padding only, centered
+
+    .tab-icon {
+      margin-right: 0;
+    }
+    .tab-label {
+      display: none; // Hide label completely
+    }
+    &.active::before { // Adjust active indicator for collapsed state
+        top: 50%;
+        bottom: auto;
+        height: 60%;
+        transform: translateY(-50%);
+    }
+  }
 }
 
-.Logo h2 {
-    padding-top: 1rem;
-}
+// Styles for items within Popover.jsx (should be in Popover.scss or common)
+.popover-item { // Example if Popover renders items with this class
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    text-align: left;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f0f0f0;
 
-// content
-.ListContent {
-    text-decoration: none;
-    list-style: none;
-}
+    &:last-child {
+        border-bottom: none;
+    }
 
-.ListContent li {
-    padding: 0.5rem;
+    &:hover {
+        background-color: #f7f7f7;
+    }
+    &.active-lang { // For highlighting current language in popover
+        font-weight: 600;
+        color: $active-indicator-color; // Use an accent color
+    }
 }

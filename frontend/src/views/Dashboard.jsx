@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import '../styles/pages/Dashboard.scss'
 const Dashboard = () => {
     const { t } = useTranslation('dashboard');
     return (

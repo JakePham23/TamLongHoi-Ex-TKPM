@@ -98,7 +98,7 @@ const RegistrationInfoTable = ({
 
     try {
       // Use the specific factory method for class grades
-      const exporter = ExportFactory.createClassGradeExporter(exportType, sortedData);
+      const exporter = ExportFactory.createClassGradeExporter(exportType); // Called without data
 
       // Generate a dynamic filename
       const courseName = registrationDetails.courseId?.courseName || "class";
