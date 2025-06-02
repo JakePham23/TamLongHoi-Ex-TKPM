@@ -28,9 +28,20 @@ const registrationSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Students',
         },
-        score: {
-            type: Number,
-        },
+        score: [{
+            processPoint: {
+                type: Number
+            },
+            midterm:{
+                type:Number
+            },
+            finalTerm:{
+                type:Number
+            },
+            finalScore:{
+                type:Number
+            }
+        }],
         status: {
             type: String,
             enum: ['registered', 'completed', 'dropped'],

@@ -1,4 +1,16 @@
 {
+
+    "processPoint": "Process point",
+    "midtermPoint": "Midterm point",
+    "finalTermPoint": "Finalterm point",
+    "finalScore": "Final score",
+    "status": "Status",
+    "studentListFor":"Student list for",
+    "semester1": "Semster 1",
+    "semester2": "Semester 2",
+    "summerSemester":"Summmer semester",
+    "selectSemester": "Select semester",
+    "selectAcademicYear":"Select Academic Year",
     "no.": "No.",
     "year": "Year",
     "semester": "Semester",

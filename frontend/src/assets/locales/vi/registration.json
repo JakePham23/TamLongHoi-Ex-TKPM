@@ -1,4 +1,11 @@
 {
+
+    "processPoint": "Điểm quá trình",
+    "midtermPoint": "Điểm giữa kì",
+    "finalTermPoint": "Điểm cuối kì",
+    "finalScore": "Tổng kết",
+    "status": "Tình trạng",
+    "studentListFor":"Danh sách sinh viên lớp",
     "no.": "STT",
     "year": "Năm",
     "semester": "Học kỳ",

@@ -83,3 +83,41 @@ input {
 button {
   font-size: 16px;
 }
+
+////
+// In Modal.scss
+
+// ... (your existing .modal-overlay, .modal-content, etc. styles remain unchanged for other modals) ...
+
+// Styles specifically for the RegistrationInfoTable Modal
+.registration-info-table-modal-overlay {
+  @extend .modal-overlay; // Inherits all properties from .modal-overlay
+  // You can add or override properties if needed, e.g.:
+  // z-index: 1001; // If it needs to be above other standard modals
+}
+
+.registration-info-table-modal-content {
+  @extend .modal-content; // Inherits common properties like padding, border-radius, shadow, flex behavior
+
+  // Override or add specific properties, especially width:
+  width: 80%;             // Make it much wider, e.g., 80% of the viewport width
+  max-width: 1200px;      // Set a maximum width
+  min-height: 400px;      // Ensure a minimum height
+  // Adjust padding or other properties if necessary for a larger content area
+  // padding: 25px;
+
+  // If the content inside RegistrationInfoTable itself scrolls, that's fine.
+  // If the modal content itself needs to scroll because RegistrationInfoTable is very tall:
+  // max-height: 90vh;
+  // overflow-y: auto;
+}
+
+.registration-info-table-modal-close {
+  @extend .modal-close; // Inherits properties from .modal-close
+
+  // You can adjust its position or appearance if needed for the larger modal
+  // For example, if .modal-content was changed to position: relative:
+  // position: absolute;
+  // top: 15px;
+  // right: 15px;
+}
