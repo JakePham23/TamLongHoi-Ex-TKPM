@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import DataTable from "../../common/DataTable.jsx";
 import EnityEdit from "../../forms/EnityEdit.jsx";
 import "../../../styles/Modal.scss"; // General modal styles
@@ -12,35 +12,30 @@ const RegistrationTable = ({
   students = [],
   registrations = [],
   courses = [],
-  searchTerm,
+  searchTerm, // searchTerm is received but local filtering is also done. Consider simplifying.
   teachers = [],
   onDelete,
   onEdit,
-  onAdd, // This onAdd from parent is for creating NEW registrations, not enrolling.
-           // The onAdd in DataTable is for the row action.
+  // onAdd prop from parent (RegistrationScreen) is not directly used here for a specific action.
+  // The onAdd for DataTable rows is handleEnrollStudentsClick.
+  onUnregisterStudent // Prop received from RegistrationScreen
 }) => {
   const { t } = useTranslation(['registration', 'course', 'common']);
 
   const [sortOrder, setSortOrder] = useState("asc");
-
-  // Edit Modal State
   const [isEditing, setIsEditing] = useState(false);
   const [editedRegistration, setEditedRegistration] = useState(null);
-  const [errors, setErrors] = useState({}); // For edit form
-
-  // Enroll Students Modal State (StudentRegistrationForm)
-  const [isEnrolling, setIsEnrolling] = useState(false); // Renamed from isAdding for clarity
-  const [enrollingRegistration, setEnrollingRegistration] = useState(null); // Renamed from addedRegistration
-
-  // View Details Modal State (RegistrationInfoTable)
+  const [errors, setErrors] = useState({});
+  const [isEnrolling, setIsEnrolling] = useState(false);
+  const [enrollingRegistration, setEnrollingRegistration] = useState(null);
   const [isViewing, setIsViewing] = useState(false);
   const [viewingRegistration, setViewingRegistration] = useState(null);
 
   const viewModalRef = useRef();
-  const enrollModalRef = useRef(); // Ref for the enroll students modal
-  const editModalRef = useRef(); // Ref for the edit modal
+  const enrollModalRef = useRef();
+  const editModalRef = useRef();
 
-  // Click outside and Esc for View Modal (RegistrationInfoTable)
+  // --- Start of useEffect hooks for modal closing ---
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (isViewing && viewModalRef.current && !viewModalRef.current.contains(event.target)) {
@@ -52,7 +47,6 @@ const RegistrationTable = ({
         handleCloseView();
       }
     };
-
     if (isViewing) {
       document.addEventListener("mousedown", handleClickOutside);
       document.addEventListener("keydown", handleEscapeKey);
@@ -63,12 +57,10 @@ const RegistrationTable = ({
     };
   }, [isViewing]);
 
-  // Click outside and Esc for Enroll Students Modal (StudentRegistrationForm)
   const closeEnrollModal = () => {
     setIsEnrolling(false);
     setEnrollingRegistration(null);
   };
-
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (isEnrolling && enrollModalRef.current && !enrollModalRef.current.contains(event.target)) {
@@ -80,7 +72,6 @@ const RegistrationTable = ({
         closeEnrollModal();
       }
     };
-
     if (isEnrolling) {
       document.addEventListener("mousedown", handleClickOutside);
       document.addEventListener("keydown", handleEscapeKey);
@@ -91,9 +82,7 @@ const RegistrationTable = ({
     };
   }, [isEnrolling]);
 
-
-  // Click outside and Esc for Edit Modal (EntityEdit)
-   const closeEditModal = () => {
+  const closeEditModal = () => {
     setIsEditing(false);
     setEditedRegistration(null);
     setErrors({});
@@ -118,10 +107,9 @@ const RegistrationTable = ({
       document.removeEventListener("keydown", handleEscapeKey);
     };
   }, [isEditing]);
-
+  // --- End of useEffect hooks for modal closing ---
 
   const columns = [
-    // ... (columns remain the same)
     { label: t('no.'), field: "stt", sortable: false },
     { label: t('year'), field: "year", sortable: true },
     { label: t('semester'), field: "semester", sortable: true },
@@ -131,109 +119,128 @@ const RegistrationTable = ({
     { label: t('description'), field: "description", sortable: true },
   ];
 
-  const filteredRegistrations = registrations.filter((r) =>
-    r.courseId?.courseName?.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  const sortedRegistrations = [...filteredRegistrations].sort((a, b) => {
-    // ... (sorting logic remains the same)
-    const valA = a.courseName?.toLowerCase() || "";
-    const valB = b.courseName?.toLowerCase() || "";
-    return sortOrder === "asc" ? valA.localeCompare(valB) : valB.localeCompare(valA);
-  });
-
-  const finalData = sortedRegistrations.map((registration, index) => {
-    // ... (finalData mapping remains the same)
-    const course = courses.find(
-      (c) =>
-        c._id === registration.courseId?._id ||
-        c.courseId === registration.courseId?.courseId
+  // Local filtering based on searchTerm prop from RegistrationScreen.
+  // If RegistrationScreen already fully filters, this might be redundant.
+  // However, if searchTerm from RegistrationScreen is for a different purpose, this is fine.
+  const locallyFilteredRegistrations = useMemo(() => {
+    if (!searchTerm) return registrations;
+    return registrations.filter((r) =>
+      // Ensure courseId and courseName exist for robust filtering
+      r.courseId?.courseName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (r.year && String(r.year).toLowerCase().includes(searchTerm.toLowerCase())) || // If year is a string "YYYY-YYYY"
+      (r.semester && String(r.semester) === searchTerm) // If semester is a number
+      // Add other fields to search if necessary
     );
-    const teacher = teachers.find((t) => t._id === registration.teacherId?._id);
-    const courseNameFromRegistration = registration.courseId?.courseName;
-    const courseKey = course?.courseId;
+  }, [registrations, searchTerm]);
 
-    return {
-      ...registration,
-      stt: index + 1,
-      courseName: courseKey
-        ? t(`course_list.${courseKey}.name`, { ns: 'course', defaultValue: courseNameFromRegistration || t('error.not determined', { ns: 'course' }) })
-        : courseNameFromRegistration || t('error.not determined', { ns: 'course' }),
-      teachers: teacher?.fullname || t('error.not determined', { ns: 'course' }),
-      description: courseKey
-        ? t(`course_list.${courseKey}.description`, { ns: 'course', defaultValue: t('error.no description', { ns: 'course' }) })
-        : t('error.no description', { ns: 'course' }),
-    };
-  });
+
+  const sortedRegistrations = useMemo(() => {
+    return [...locallyFilteredRegistrations].sort((a, b) => {
+        const valA = a.courseName?.toLowerCase() || ""; // Mapped field
+        const valB = b.courseName?.toLowerCase() || ""; // Mapped field
+        return sortOrder === "asc" ? valA.localeCompare(valB) : valB.localeCompare(valA);
+    });
+  }, [locallyFilteredRegistrations, sortOrder]);
+
+
+  const finalData = useMemo(() => {
+    return sortedRegistrations.map((registration, index) => {
+        const course = courses.find(
+        (c) =>
+            c._id === registration.courseId?._id ||
+            c.courseId === registration.courseId?.courseId // Handle different possible structures for courseId
+        );
+        const teacher = teachers.find((t) => t._id === registration.teacherId?._id);
+        const courseNameFromRegistration = registration.courseId?.courseName; // If populated
+        const courseKey = course?.courseId; // Actual course code for translation
+
+        return {
+        ...registration, // Spread original registration data
+        stt: index + 1,
+        // Use the already mapped courseName if available from sortedRegistrations,
+        // otherwise, perform the mapping.
+        // This assumes courseName might not be pre-mapped on `registration` objects.
+        courseName: courseKey
+            ? t(`course_list.${courseKey}.name`, { ns: 'course', defaultValue: courseNameFromRegistration || t('error.not determined', { ns: 'course' }) })
+            : courseNameFromRegistration || t('error.not determined', { ns: 'course' }),
+        teachers: teacher?.fullname || t('error.not determined', { ns: 'course' }),
+        description: courseKey
+            ? t(`course_list.${courseKey}.description`, { ns: 'course', defaultValue: t('error.no description', { ns: 'course' }) })
+            : t('error.no description', { ns: 'course' }),
+        };
+    });
+  }, [sortedRegistrations, courses, teachers, t]);
+
 
   const handleEditClick = (registration) => {
-    // ... (edit click logic remains the same)
     setEditedRegistration({
-      ...registration,
-      courseId: registration.courseId?._id || registration.courseId,
-      teacherId: registration.teacherId?._id || registration.teacherId,
+      ...registration, // original registration data from finalData
+      courseId: registration.courseId?._id || registration.courseId, // ensure we have the ID
+      teacherId: registration.teacherId?._id || registration.teacherId, // ensure we have the ID
     });
     setIsEditing(true);
   };
 
   const handleSaveEdit = () => {
-    // ... (save edit logic remains the same)
     const newErrors = {};
     if (!editedRegistration) return;
     const { _id, year, semester, courseId, teacherId, maxStudent, description, registrationStudent } = editedRegistration;
+
     if (!year) newErrors.year = t('year', { ns: 'registration'}) + " " + t('error.cannotBeEmpty', { ns: 'common' });
-    // Add other validation checks
+    if (!semester) newErrors.semester = t('semester', { ns: 'registration'}) + " " + t('error.cannotBeEmpty', { ns: 'common' });
+    if (!courseId) newErrors.courseId = t('course', { ns: 'registration'}) + " " + t('error.isRequired', { ns: 'common' });
+    if (!teacherId) newErrors.teacherId = t('teacher', { ns: 'registration'}) + " " + t('error.isRequired', { ns: 'common' });
+    if (maxStudent === undefined || maxStudent === null || maxStudent < 1) newErrors.maxStudent = t('maxStudent', { ns: 'registration'}) + " " + t('error.mustBeGreaterThanZero', { ns: 'common' });
+
+
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
     }
+    // Pass only the necessary fields for update. _id is the identifier.
+    // The `onEdit` prop (from RegistrationScreen) will receive the ID and the data payload.
     const updatedData = { year, semester, courseId, teacherId, maxStudent, description, registrationStudent };
-    onEdit(_id, updatedData); // onEdit is from props, for updating the registration
+    onEdit(_id, updatedData);
     closeEditModal();
   };
 
   const handleChange = (e) => {
-    // ... (handleChange for edit form remains the same)
     const { name, value } = e.target;
     setEditedRegistration((prev) => ({
       ...prev,
-      [name]: name === "maxStudent" ? parseInt(value) || 0 : value,
+      [name]: name === "maxStudent" ? (parseInt(value) || 0) : value,
     }));
   };
 
-  // This function is triggered by the "+ Add" button in DataTable row (for enrolling students)
   const handleEnrollStudentsClick = (registration) => {
-    setEnrollingRegistration({ // Use the renamed state
-      ...registration,
+    setEnrollingRegistration({
+      ...registration, // original registration data from finalData
       courseId: registration.courseId?._id || registration.courseId,
       teacherId: registration.teacherId?._id || registration.teacherId,
     });
-    setIsEnrolling(true); // Use the renamed state
+    setIsEnrolling(true);
   };
 
-  // This confirms the student enrollment for a specific registration
-  const handleConfirmEnrollment = (initialData, selectedStudentIds) => { // Renamed from handleConfirmRegistration
+  const handleConfirmEnrollment = (initialData, selectedStudentIds) => {
     const registrationData = {
-      ...initialData, // This is enrollingRegistration
-      _id: initialData._id,
+      ...initialData, // This is enrollingRegistration, which includes _id
       registrationStudent: selectedStudentIds.map((id) => ({
         studentId: id,
-        score: [], // Initialize score as an empty array
+        score: [],
         status: "registered",
       })),
     };
-    onEdit(registrationData._id, registrationData); // Call the main onEdit to update this registration
+    // Call onEdit from RegistrationScreen to update the registration with new students
+    onEdit(initialData._id, registrationData);
     closeEnrollModal();
   };
 
   const handleViewClick = (registrationData) => {
-    // ... (view click logic remains the same)
     setViewingRegistration(registrationData);
     setIsViewing(true);
   };
 
   const handleCloseView = () => {
-    // ... (close view logic remains the same)
     setIsViewing(false);
     setViewingRegistration(null);
   };
@@ -242,21 +249,20 @@ const RegistrationTable = ({
     <>
       <DataTable
         columns={columns}
-        data={finalData}
-        initialSortField="courseName"
+        data={finalData} // Use the fully processed and sorted data
+        initialSortField="courseName" // Default sort
         sortOrder={sortOrder}
-        onSortChange={setSortOrder}
+        onSortChange={setSortOrder} // Allows DataTable to signal sort order change
         onEdit={handleEditClick}
-        onDelete={onDelete} // onDelete is from props
-        onAdd={handleEnrollStudentsClick} // DataTable's row "Add" button now triggers enroll students
+        onDelete={onDelete}
+        onAdd={handleEnrollStudentsClick} // Row action to enroll students
         onView={handleViewClick}
       />
 
       {/* Edit Registration Modal */}
       {isEditing && editedRegistration && (
-        <div className="modal-overlay"> {/* Standard overlay */}
-          <div ref={editModalRef} className="modal-content"> {/* Standard content for smaller forms */}
-             {/* EntityEdit likely has its own close button through its props/structure */}
+        <div className="modal-overlay">
+          <div ref={editModalRef} className="modal-content">
             <EnityEdit
               title={t('editRegistration', { ns: 'registration' })}
               fields={[
@@ -287,7 +293,7 @@ const RegistrationTable = ({
               errors={errors}
               onChange={handleChange}
               onSave={handleSaveEdit}
-              onClose={closeEditModal} // Use the dedicated close handler
+              onClose={closeEditModal}
             />
           </div>
         </div>
@@ -295,20 +301,16 @@ const RegistrationTable = ({
 
       {/* Enroll Students Modal (StudentRegistrationForm) */}
       {isEnrolling && enrollingRegistration && (
-        <div className="student-registration-form-modal-overlay"> {/* Specific overlay class */}
-          <div ref={enrollModalRef} className="student-registration-form-modal-content"> {/* Specific content class */}
-            {/*
-              StudentRegistrationForm is expected to render its own title ("Course Information"),
-              details, student list, and footer buttons ("Confirm Registration", "Close")
-              as per your screenshot.
-            */}
+        <div className="student-registration-form-modal-overlay">
+          <div ref={enrollModalRef} className="student-registration-form-modal-content">
             <StudentRegistrationForm
               initialData={enrollingRegistration}
               course={courses.find(c => c._id === (enrollingRegistration.courseId?._id || enrollingRegistration.courseId))}
               teacher={teachers.find(t => t._id === (enrollingRegistration.teacherId?._id || enrollingRegistration.teacherId))}
-              students={students} // Full list of students to select from
-              onClose={closeEnrollModal} // StudentRegistrationForm's "Close" button will trigger this
-              onConfirm={handleConfirmEnrollment} // StudentRegistrationForm's "Confirm" button
+              students={students}
+              onClose={closeEnrollModal}
+              onConfirm={handleConfirmEnrollment}
+              // onUnregisterStudent={onUnregisterStudent} // Pass if StudentRegistrationForm handles unregistering
             />
           </div>
         </div>
@@ -316,12 +318,12 @@ const RegistrationTable = ({
 
       {/* View RegistrationInfoTable Modal */}
       {isViewing && viewingRegistration && (
-        // ... (View modal remains the same with registration-info-table-modal-overlay/content)
         <div className="registration-info-table-modal-overlay">
           <div ref={viewModalRef} className="registration-info-table-modal-content">
             <RegistrationInfoTable
               registrationDetails={viewingRegistration}
               allStudents={students}
+              onUnregisterStudent={onUnregisterStudent} // Pass the prop here
             />
           </div>
         </div>

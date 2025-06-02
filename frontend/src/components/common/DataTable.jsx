@@ -11,7 +11,8 @@ const DataTable = ({
   onView,
   onDelete,
   onAdd,
-  initialSortField
+  initialSortField,
+  onUnregisterStudent
 }) => {
   const [sortField, setSortField] = useState(initialSortField || null);
   const [sortOrder, setSortOrder] = useState("asc");
@@ -94,6 +95,14 @@ const DataTable = ({
                 {onEdit && <Button icon={<FaEdit />} label= {t('edit')} variant="gray" onClick={() => onEdit(row)} />}
                 {onDelete && <Button icon={<FaTrash />} label= {t('delete')} variant="danger" onClick={() => onDelete(row._id || row.studentId)} />}
                 {onAdd && <Button icon={<FaPlus />} label= {t('add')} variant="success" onClick={() => onAdd(row)} />}
+                {onUnregisterStudent && (
+                  <Button
+                    icon={<FaTrash />} // Changed icon to FaTrash for unregister/remove
+                    label={t('unregister')}
+                    variant="warning" // Changed variant to warning or danger
+                    onClick={() => onUnregisterStudent(row)} // 'row' here is the student data from the table
+                  />
+                )}
               </div>
               </td>
             </tr>

@@ -7,7 +7,6 @@ import CourseScreen from './CourseScreen.jsx';
 import RegistrationScreen from './RegistrationScreen.jsx';
 import Tabbar from '../components/tabbar/Tabbar.jsx';
 import '../i18n/i18n.js'
-import ClassScreen from './ClassScreen.jsx';
 
 // layout
 const App = () => {

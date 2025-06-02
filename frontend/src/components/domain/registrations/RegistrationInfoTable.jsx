@@ -1,22 +1,21 @@
 import React, { useState, useMemo } from "react";
-import DataTable from "../../common/DataTable.jsx"; // Assuming path is correct
-// import EnityEdit from "../../forms/EnityEdit.jsx"; // If you need to edit scores later
-import "../../../styles/Modal.scss"; // Assuming path is correct
+import DataTable from "../../common/DataTable.jsx";
+import Button from "../../common/Button.jsx"; // Make sure Button is imported if not already
+import "../../../styles/Modal.scss";
 import { useTranslation } from "react-i18next";
+import { ExportFactory } from '../../../utils/export/ExportFactory'; // Corrected path assuming utils is sibling to components/hooks
 
 const RegistrationInfoTable = ({
-  registrationDetails, // Expects a single registration object
-  allStudents = [],       // Expects an array of all student objects for lookup
-  // onEditScore, // Placeholder if you want to add score editing
-  // onUpdateStatus, // Placeholder if you want to update student status in registration
+  registrationDetails,
+  allStudents = [],
+  onUnregisterStudent,
 }) => {
-  const { t } = useTranslation(['registration', 'student']); // Added 'student' namespace
+  const { t } = useTranslation(['registration', 'student', 'common']); // Added 'common' for general terms
 
-  // Sort state
-  const [sortField, setSortField] = useState("fullname"); // Default sort field
-  const [sortOrder, setSortOrder] = useState("asc"); // Default sort order
+  const [sortField, setSortField] = useState("fullname");
+  const [sortOrder, setSortOrder] = useState("asc");
+  const [exportType, setExportType] = useState("csv"); // Default export type
 
-  // Columns for the DataTable
   const columns = [
     { label: t('no.', { ns: 'registration' }), field: "stt", sortable: false },
     { label: t('studentId', { ns: 'student' }), field: "studentDisplayId", sortable: true },
@@ -29,21 +28,20 @@ const RegistrationInfoTable = ({
   ];
 
   const processedData = useMemo(() => {
+    // ... (your existing processedData logic remains the same)
     if (!registrationDetails || !registrationDetails.registrationStudent) {
       return [];
     }
-
     return registrationDetails.registrationStudent.map((regStudent, index) => {
       const studentInfo = allStudents.find(
         (s) => s._id === (regStudent.studentId?._id || regStudent.studentId)
       );
-      // Assuming the first score object in the array is the one to display
       const scoreData = regStudent.score && regStudent.score.length > 0 ? regStudent.score[0] : {};
-      const notApplicable = t('notApplicableShort', { ns: 'registration' }); // e.g., "N/A"
+      const notApplicable = t('notApplicableShort', { ns: 'registration' });
 
       return {
-        _id: regStudent._id, // Internal ID of the registrationStudent entry
-        studentDbId: studentInfo?._id, // Student's database _id
+        _id: regStudent._id,
+        studentDbId: studentInfo?._id,
         stt: index + 1,
         studentDisplayId: studentInfo?.studentId || t('unknown', { ns: 'student' }),
         fullname: studentInfo?.fullname || t('unknown', { ns: 'student' }),
@@ -51,9 +49,8 @@ const RegistrationInfoTable = ({
         midterm: scoreData?.midterm ?? notApplicable,
         finalTerm: scoreData?.finalTerm ?? notApplicable,
         finalScore: scoreData?.finalScore ?? notApplicable,
-        status: regStudent.status, // raw status
+        status: regStudent.status,
         statusText: regStudent.status ? t(regStudent.status, { ns: 'registration', defaultValue: regStudent.status }) : t('unknown', { ns: 'registration' }),
-        // You might want to pass original data for editing purposes
         originalStudentData: studentInfo,
         originalScoreData: scoreData,
       };
@@ -61,36 +58,30 @@ const RegistrationInfoTable = ({
   }, [registrationDetails, allStudents, t]);
 
   const sortedData = useMemo(() => {
+    // ... (your existing sortedData logic remains the same)
     if (!sortField) return processedData;
-
     return [...processedData].sort((a, b) => {
       const valA = a[sortField];
       const valB = b[sortField];
       const notApplicable = t('notApplicableShort', { ns: 'registration' });
-
-      // Handle "N/A" or undefined values to sort them consistently (e.g., at the end)
       if (valA === notApplicable || valA === undefined || valA === null) return 1;
       if (valB === notApplicable || valB === undefined || valB === null) return -1;
-      
-      // Determine column type for proper sorting
       const columnType = columns.find(col => col.field === sortField)?.type;
-
       let comparison = 0;
       if (columnType === 'number') {
         comparison = parseFloat(valA) - parseFloat(valB);
       } else if (typeof valA === 'string' && typeof valB === 'string') {
         comparison = valA.localeCompare(valB);
       } else {
-        // Fallback for other types or mixed types
         if (valA < valB) comparison = -1;
         if (valA > valB) comparison = 1;
       }
-
       return sortOrder === "asc" ? comparison : comparison * -1;
     });
   }, [processedData, sortField, sortOrder, t, columns]);
 
   const handleSortChange = (field) => {
+    // ... (your existing handleSortChange logic remains the same)
     if (field === sortField) {
       setSortOrder(sortOrder === "asc" ? "desc" : "asc");
     } else {
@@ -99,21 +90,42 @@ const RegistrationInfoTable = ({
     }
   };
 
-  // Example handler if you add score editing
-  // const handleEditScoreClick = (studentRegData) => {
-  //   console.log("Edit scores for:", studentRegData);
-  //   // setCurrentlyEditingStudent(studentRegData);
-  //   // setIsScoreEditModalOpen(true);
-  //   if(onEditScore) onEditScore(studentRegData);
-  // };
+  const exportClassPoint = async () => {
+    if (sortedData.length === 0) { // Use sortedData (or processedData) for the check
+      alert(t('common:warning.noDataToExport')); // Using a more generic translation key
+      return;
+    }
+
+    try {
+      // Use the specific factory method for class grades
+      const exporter = ExportFactory.createClassGradeExporter(exportType, sortedData);
+
+      // Generate a dynamic filename
+      const courseName = registrationDetails.courseId?.courseName || "class";
+      const year = registrationDetails.year || "";
+      const semester = registrationDetails.semester || "";
+      const fileName = `${courseName.replace(/\s+/g, '_')}_${year}_sem${semester}_grades`;
+
+      await exporter.export(fileName); // Pass the desired filename (without extension)
+    } catch (error) {
+      console.error(t('common:error.exportFailed') + ":", error);
+      alert(t('common:error.exportFailed') + (error.message ? `: ${error.message}` : ''));
+    }
+  };
 
   if (!registrationDetails) {
     return <p>{t('noRegistrationDetails', { ns: 'registration' })}</p>;
   }
 
+  const handleUnregisterStudentFromTable = (studentRow) => {
+    // ... (your existing handleUnregisterStudentFromTable logic)
+    if (onUnregisterStudent && registrationDetails) {
+      onUnregisterStudent(registrationDetails._id, studentRow.studentDbId, registrationDetails);
+    }
+  };
+
   return (
     <div className="registration-info-table-container">
-      {/* Optional: Display some header info about the registration itself */}
       <h3>
         {t('studentListFor', { ns: 'registration' })}: {registrationDetails.courseId?.courseName} ({registrationDetails.year} - {t('semester', { ns: 'registration' })} {registrationDetails.semester})
       </h3>
@@ -121,27 +133,22 @@ const RegistrationInfoTable = ({
       <DataTable
         columns={columns}
         data={sortedData}
-        // Assuming DataTable uses 'key' for current sort field and 'order' for direction
-        // And onSortChange is called with the field key when a header is clicked.
-        // Adapt these props based on your actual DataTable implementation.
-        // If your DataTable's onSortChange works like the example (only sets order),
-        // you might need a different approach or enhance DataTable.
-        // For this example, I'm assuming onSortChange provides the field.
-        initialSortField={sortField} // Or how DataTable consumes this
-        sortOrder={sortOrder}         // Or how DataTable consumes this
-        onSortChange={handleSortChange} // Expects to be called with field key
-        // To match the example where onSortChange just sets order, and field is implicit:
-        // onSortChange={setSortOrder} // And ensure DataTable knows current sortField
+        initialSortField={sortField}
+        sortOrder={sortOrder}
+        onSortChange={handleSortChange}
+        // Pass the onUnregisterStudent handler if DataTable is responsible for rendering the unregister button
+        // Ensure your DataTable component is set up to call this with the correct 'studentRow' data
+        onUnregisterStudent={onUnregisterStudent ? handleUnregisterStudentFromTable : undefined}
       />
 
-      {/* Modal for editing scores would go here if implemented */}
-      {/* {isScoreEditModalOpen && (
-        <ScoreEditModal
-          studentData={currentlyEditingStudent}
-          onSave={handleSaveScores}
-          onClose={() => setIsScoreEditModalOpen(false)}
-        />
-      )} */}
+      <div className="export-controls-container"> {/* Changed class for clarity */}
+        <select value={exportType} onChange={(e) => setExportType(e.target.value)} className="export-select">
+          <option value="csv">CSV</option>
+          <option value="json">JSON</option>
+          {/* Add other types like 'xlsx' if your factory and strategies support them */}
+        </select>
+        <Button label={t('exportGradeList', {ns: 'registration'})} onClick={exportClassPoint} variant="outline" />
+      </div>
     </div>
   );
 };
