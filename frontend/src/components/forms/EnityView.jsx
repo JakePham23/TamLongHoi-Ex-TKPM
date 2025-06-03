@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/EnityViewModal.scss";
 import { useTranslation } from 'react-i18next'
 
-const EntityView = ({ title, entityData, fields, onClose, onEdit, exportType, setExportType, onExport }) => {
+const EntityView = ({ title, entityData, fields, onClose, onEdit, exportType, setExportType, onExport, onViewDetail }) => {
   const { t } = useTranslation('component');
 
   if (!entityData) return null;
@@ -22,6 +22,8 @@ const EntityView = ({ title, entityData, fields, onClose, onEdit, exportType, se
         {/* Button group */}
         <div className="button-group">
           <button className="edit-button" onClick={onEdit}>{t('edit')}</button>
+          <button className="viewDetail-button" onClick={onViewDetail}>{t('viewDetail')}</button>
+
           <div className="exportBox">
             <select className="export-select" value={exportType} onChange={(e) => setExportType(e.target.value)}>
               <option value="csv">CSV</option>

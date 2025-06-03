@@ -1,6 +1,15 @@
-import React, { useState, useMemo } from "react";
+/* eslint-disable no-unused-vars */
+
+// src/screens/StudentScreen.jsx
+import React, { useState, useMemo, useEffect, useCallback } from "react";
 import { FaPlus } from "react-icons/fa";
 import useStudents from "../hooks/useStudents.js";
+import useDepartments from "../hooks/useDepartments.js";
+import useCourses from "../hooks/useCourse.js";
+import useTeachers from "../hooks/useTeachers.js";
+import useRegistration from "../hooks/useRegistration.js";
+import studentService from "../services/student.service.js";
+import registrationService from "../services/registration.service.js";
 import StudentTable from "../components/domain/students/StudentTable";
 import StudentDetail from "../components/domain/students/StudentDetail";
 import StudentForm from "../components/domain/students/StudentForm";
@@ -8,148 +17,247 @@ import SearchInput from "../components/common/SearchInput.jsx";
 import Button from "../components/common/Button.jsx";
 import "../styles/pages/StudentScreen.scss";
 import removeVietnameseTones from "../utils/string.util.js";
-import studentService from "../services/student.service.js";
-import useDepartments from "../hooks/useDepartments.js";
-import { useTranslation } from "react-i18next"
+import { useTranslation } from "react-i18next";
 import { ExportFactory } from '../utils/export/ExportFactory.js';
 import { ValidationFactory } from '../utils/factories/ValidationFactory.js';
 import { STATUS_RULES, ALLOWED_EMAIL_DOMAIN, PHONE_REGEX } from "../utils/constants.js";
-const StudentScreen = () => {
-  //hooks
-  const { students, setStudents, fetchStudents } = useStudents();
-  const { departments = [] } = useDepartments(); // Giữ mặc định là mảng rỗng khi không có dữ liệu
 
-  const { t } = useTranslation(['student', 'department']);
+const StudentScreen = () => {
+  const { students, setStudents, fetchStudents: fetchAllStudents } = useStudents();
+  const { departments = [] } = useDepartments();
+  const { courses = [], fetchCourses: fetchAllCourses } = useCourses();
+  const { teachers = [], fetchTeachers: fetchAllTeachers } = useTeachers();
+  const {
+    registrations,
+    fetchRegistrations: fetchAllRegistrations, // Using alias for consistency if preferred
+    loading: registrationsLoading,
+    error: registrationsError
+  } = useRegistration();
+
+  const { t } = useTranslation(['student', 'department', 'registration', 'course', 'common']);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDepartment, setSelectedDepartment] = useState("");
-  const [selectedCourse, setSelectedCourse] = useState("");
+  const [selectedCourse, setSelectedCourse] = useState(""); // This is schoolYear filter
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [isAdding, setIsAdding] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editedStudent, setEditedStudent] = useState(null);
   const [exportType, setExportType] = useState("csv");
-    const studentValidator = useMemo(() => {
-    return ValidationFactory.createStudentValidator(
-      'active', // Default current status
-      STATUS_RULES,
-      ALLOWED_EMAIL_DOMAIN,
-      PHONE_REGEX
-    );
+  const [isViewingRegisteredCourses, setIsViewingRegisteredCourses] = useState(false);
+
+  const studentValidator = useMemo(() => {
+    return ValidationFactory.createStudentValidator('active', STATUS_RULES, ALLOWED_EMAIL_DOMAIN, PHONE_REGEX);
   }, []);
-  
-  // 📌 Lọc sinh viên dựa trên điều kiện tìm kiếm
+
+  useEffect(() => {
+    fetchAllCourses();
+    fetchAllTeachers();
+    // fetchAllRegistrations() is called by useRegistration hook's useEffect
+  }, [fetchAllCourses, fetchAllTeachers]);
+
   const filteredStudents = useMemo(() => {
     return students.filter((s) => {
-      const matchesDepartment = selectedDepartment ? s.department._id === selectedDepartment : true;
+      const studentDepartmentId = s.department?._id || s.department;
+      const matchesDepartment = selectedDepartment ? studentDepartmentId === selectedDepartment : true;
       const matchesCourse = selectedCourse ? String(s.schoolYear) === String(selectedCourse) : true;
-      const matchesSearchTerm = searchTerm
-        ? removeVietnameseTones(s.fullname).includes(removeVietnameseTones(searchTerm))
-        : true;
-
+      const normalizedSearchTerm = removeVietnameseTones(searchTerm);
+      const normalizedFullname = removeVietnameseTones(s.fullname);
+      const matchesSearchTerm = searchTerm ? normalizedFullname.includes(normalizedSearchTerm) : true;
       return matchesDepartment && matchesCourse && matchesSearchTerm;
     });
   }, [searchTerm, selectedDepartment, selectedCourse, students]);
 
-    const handleDelete = async (studentId) => {
-      if (!window.confirm(t('form.sure delete'))) return;
-      await studentService.deleteStudent(studentId);
-      setStudents((prev) => prev.filter((s) => s.studentId !== studentId));
-    };
+  const handleDelete = async (studentRowId) => { // studentRowId is student.studentId from table
+    if (!window.confirm(t('common:form.sureDelete'))) return;
+    try {
+      await studentService.deleteStudent(studentRowId);
+      await fetchAllStudents(); // Refresh student list
+      if (selectedStudent?.studentId === studentRowId) {
+        setSelectedStudent(null);
+      }
+    } catch (error) {
+      console.error(t('student:error.deleteStudent') + ":", error);
+      alert(t('student:error.deleteStudent') + ': ' + (error.message || t('common:error.unknown')));
+    }
+  };
 
-    const handleAddStudent = async (student) => {
-    const validationErrors = studentValidator.validate(student);
-    
+  const handleAddStudent = async (studentData) => {
+    const validationErrors = studentValidator.validate(studentData);
     if (validationErrors) {
-      alert(t('error.validation_failed') + ': ' + Object.values(validationErrors).join(', '));
+      alert(t('common:error.validationFailed') + ': ' + Object.values(validationErrors).join('\n'));
       return;
     }
-
     try {
-      const newStudentData = await studentService.addStudent(student);
-      setStudents([...students, newStudentData]);
+      await studentService.addStudent(studentData);
+      await fetchAllStudents();
       setIsAdding(false);
     } catch (error) {
-      console.error(t('error.add student') + ":", error);
-      alert(t('error.add student') + ': ' + error.message);
+      console.error(t('student:error.addStudent') + ":", error);
+      alert(t('student:error.addStudent') + ': ' + (error.message || t('common:error.unknown')));
     }
   };
-  const handleSave = async (updatedStudent) => {
+
+  const handleSaveStudentDetails = async (updatedStudentData) => {
     const validationErrors = studentValidator.validate({
-      ...updatedStudent,
-      currentStatus: selectedStudent?.studentStatus // Pass current status for status validation
+      ...updatedStudentData,
+      currentStatus: selectedStudent?.studentStatus
     });
-
     if (validationErrors) {
-      alert(t('error.validation_failed') + ': ' + Object.values(validationErrors).join(', '));
+      alert(t('common:error.validationFailed') + ': ' + Object.values(validationErrors).join('\n'));
       return;
     }
-
     try {
-      await studentService.updateStudent(updatedStudent.studentId, updatedStudent);
-      await fetchStudents();
-      setStudents(prev => prev.map(s => s.studentId === updatedStudent.studentId ? updatedStudent : s));
-      setSelectedStudent(updatedStudent);
-      setEditedStudent(null);
+      await studentService.updateStudent(updatedStudentData.studentId, updatedStudentData);
+      await fetchAllStudents();
+      setSelectedStudent(prev => prev && prev.studentId === updatedStudentData.studentId ? { ...prev, ...updatedStudentData } : prev);
       setIsEditing(false);
+      setEditedStudent(null);
     } catch (error) {
-      console.error(t('error.update student') + ":", error);
-      alert(t('error.update student') + ': ' + error.message);
+      console.error(t('student:error.updateStudent') + ":", error);
+      alert(t('student:error.updateStudent') + ': ' + (error.message || t('common:error.unknown')));
     }
   };
 
-  const exportAllStudents = async () => {
+  const exportAllStudentsData = async () => {
     if (filteredStudents.length === 0) {
-      alert(t('no student export'));
+      alert(t('student:noStudentExport'));
       return;
     }
-
     try {
       const exporter = ExportFactory.createStudentExporter(exportType);
       await exporter.export(filteredStudents, "students_list");
     } catch (error) {
-      console.error(t('error.export failed') + ":", error);
-      alert(t('error.export failed'));
+      console.error(t('common:error.exportFailed') + ":", error);
+      alert(t('common:error.exportFailed') + (error.message ? `: ${error.message}` : ''));
     }
   };
+
+  // This function will be passed as onViewDetail to StudentDetail
+  const handleViewRegisteredCourses = (studentToView) => {
+    // selectedStudent is already set by StudentTable's onView.
+    // This function just changes the state to show the courses view.
+    if (studentToView && selectedStudent && studentToView._id === selectedStudent._id) {
+        setIsViewingRegisteredCourses(true);
+    } else {
+        // This case should ideally not happen if StudentDetail only calls this for the student it's displaying.
+        // But as a safeguard:
+        setSelectedStudent(studentToView); // Ensure selectedStudent is set
+        setIsViewingRegisteredCourses(true);
+    }
+  };
+
+  const handleCloseRegisteredCoursesView = () => {
+    setIsViewingRegisteredCourses(false);
+    // Keep selectedStudent active so StudentDetail can re-render if desired,
+    // or set selectedStudent to null if StudentDetail should also close.
+    // For now, just closes the course view, user can close StudentDetail separately.
+  };
+
+  const handleUnregisterStudentFromCourse = async (registrationId, studentDbId) => {
+    if (!window.confirm(t('registration:confirmUnregisterStudent'))) return;
+    try {
+      const registrationToUpdate = registrations.find(reg => reg._id === registrationId);
+      if (!registrationToUpdate) {
+        alert(t('common:error.notFound', { item: t('registration:registration') }));
+        return;
+      }
+      const updatedRegStudents = registrationToUpdate.registrationStudent.filter(
+        rs => (rs.studentId?._id || rs.studentId) !== studentDbId
+      );
+      const payload = { registrationStudent: updatedRegStudents };
+      await registrationService.updateRegistration(registrationId, payload);
+      await fetchAllRegistrations(); // Refresh registration list
+      alert(t('registration:studentUnregisteredSuccessfully'));
+    } catch (error) {
+      console.error(t('registration:error.failedToUnregisterStudent') + ":", error);
+      alert(t('registration:error.failedToUnregisterStudent') + ': ' + (error.message || t('common:error.unknown')));
+    }
+  };
+  
+  const handleCloseAllDetailViews = () => {
+    setSelectedStudent(null);
+    setIsEditing(false);
+    setEditedStudent(null);
+    setIsViewingRegisteredCourses(false);
+  };
+
+  // Dynamic year generation for filter
+  const schoolYearOptions = useMemo(() => {
+    const currentYr = new Date().getFullYear();
+    const years = [];
+    for (let i = 0; i < 5; i++) {
+      years.push(currentYr - i);
+    }
+    return years.map(year => ({ value: year, label: `${t('schoolYear')} ${year}` }));
+  }, [t]);
+
 
   return (
     <div className="StudentScreen">
       <h1>{t('list of students')}</h1>
       <div className="top-bar">
         <SearchInput
-          placeholder={t('search student')}
+          placeholder={t('searchStudentPlaceholder')}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-
         <select value={selectedDepartment} onChange={(e) => setSelectedDepartment(e.target.value)} className="filterButton">
-          <option value="">{t('all department', { ns: 'department' })}</option>
+          <option value="">{t('allDepartment', { ns: 'department' })}</option>
           {departments.map((dept) => (
             <option key={dept._id} value={dept._id}>{dept.departmentName}</option>
           ))}
         </select>
-
         <select value={selectedCourse} onChange={(e) => setSelectedCourse(e.target.value)} className="filterButton">
-          <option value="">{t('all school year')}</option>
-          {[2019, 2020, 2021, 2022, 2023, 2024].map((year) => (
-            <option key={year} value={year}>{t('school year')} {year}</option>
+          <option value="">{t('allSchoolYear')}</option>
+          {schoolYearOptions.map((yearOpt) => (
+            <option key={yearOpt.value} value={yearOpt.value}>{yearOpt.label}</option>
           ))}
         </select>
-
-        <Button icon={<FaPlus />} label={t('add student')} variant="gray" onClick={() => setIsAdding(true)} />
+        <Button icon={<FaPlus />} label={t('addStudentButton')} variant="primary" onClick={() => setIsAdding(true)} />
       </div>
 
-      <StudentTable students={filteredStudents} onView={setSelectedStudent} onDelete={handleDelete} />
-      {selectedStudent && <StudentDetail departments={departments} student={selectedStudent} isEditing={isEditing} editedStudent={editedStudent} setEditedStudent={setEditedStudent} onSave={handleSave} onEdit={() => setIsEditing(true)} onClose={() => setSelectedStudent(null)} />}
-      {isAdding && <StudentForm departments={departments} onSubmit={handleAddStudent} onClose={() => setIsAdding(false)} />}
+      <StudentTable
+        students={filteredStudents}
+        onView={setSelectedStudent}
+        onDelete={handleDelete}
+      />
+
+      {isAdding && (
+        <StudentForm
+          departments={departments}
+          onSubmit={handleAddStudent}
+          onClose={() => setIsAdding(false)}
+        />
+      )}
+
+      {/* Show StudentDetail if a student is selected AND we are NOT viewing their registered courses */}
+      {selectedStudent && !isViewingRegisteredCourses && (
+        <StudentDetail
+          departments={departments}
+          student={selectedStudent}
+          isEditing={isEditing}
+          editedStudent={editedStudent}
+          setEditedStudent={setEditedStudent}
+          onSave={handleSaveStudentDetails}
+          onEdit={() => setIsEditing(true)}
+          onClose={handleCloseAllDetailViews} // Closes StudentDetail and any sub-views
+          onViewDetail={handleViewRegisteredCourses} // Pass the handler here
+
+          allRegistrations={registrations}
+          allCourses={courses}
+          allTeachers={teachers}
+          onUnregister={handleUnregisterStudentFromCourse}
+          onCloseRegister={handleCloseRegisteredCoursesView} // This closes only the course view
+        />
+      )}
 
       <div className="export-container">
-        <select onChange={(e) => setExportType(e.target.value)} className="export-select">
+        <select value={exportType} onChange={(e) => setExportType(e.target.value)} className="export-select">
           <option value="csv">CSV</option>
           <option value="json">JSON</option>
         </select>
-        <Button label={t('export list')} onClick={exportAllStudents} />
+        <Button label={t('export list')} onClick={exportAllStudentsData} />
       </div>
     </div>
   );

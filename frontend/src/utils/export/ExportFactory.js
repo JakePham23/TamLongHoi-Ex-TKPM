@@ -14,6 +14,12 @@ import {
   mapClassGradeToJsonObject
 } from './classGradeExportConfig';
 
+import {
+  studentGradeSheetCsvHeaders,
+  mapStudentGradeToCsvRow,
+  mapStudentGradeToJsonObject
+} from './studentGradeSheetExportConfig'; // New import
+
 export class ExportFactory {
   static createStudentExporter(type) {
     switch (type.toLowerCase()) {
@@ -33,22 +39,18 @@ export class ExportFactory {
     }
   }
 
-  // Factory method for Department Exporter (example placeholder)
-  static createDepartmentExporter(type) {
-    // Example:
-    // const { departmentCsvHeaders, mapDepartmentToCsvRow, mapDepartmentToJsonObject } = require('./DepartmentExportConfig');
-    // switch (type.toLowerCase()) {
-    //   case 'csv':
-    //     return new CsvExportStrategy(departmentCsvHeaders, mapDepartmentToCsvRow);
-    //   case 'json':
-    //     return new JsonExportStrategy(mapDepartmentToJsonObject); // Or new JsonExportStrategy();
-    //   default:
-    //     console.error(`Unsupported export type for departments: ${type}`);
-    //     throw new Error(`Unsupported export type: ${type}`);
-    // }
-    console.warn("createDepartmentExporter is not fully implemented.");
-    throw new Error(`Department export for type ${type} is not supported yet.`);
-  }
+  
+    static createStudentGradeSheetExporter(type) {
+      switch (type.toLowerCase()) {
+        case 'csv':
+          return new CsvExportStrategy(studentGradeSheetCsvHeaders, mapStudentGradeToCsvRow);
+        case 'json':
+          return new JsonExportStrategy(mapStudentGradeToJsonObject);
+        default:
+          console.error(`Unsupported export type for student grade sheet: ${type}`);
+          throw new Error(`Unsupported export type for student grade sheet: ${type}`);
+      }
+    }
 
   // Factory method for Class Grade Exporter
   static createClassGradeExporter(type) { // Removed 'classGradeData' from parameters
