@@ -38,5 +38,6 @@
     "loading": "Loading...",
     "error": "An error occurred",
     "noRegistrations": "No registrations found",
-    "registrationList": "List of Course Registrations"
+    "registrationList": "List of Course Registrations",
+    "selectTermToViewData": "Select a term and school year to view data"
 }

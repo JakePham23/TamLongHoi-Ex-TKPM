@@ -1,6 +1,5 @@
 const request = require('supertest');
 import app from '../app.js';
-import studentModel from '../models/student.model.js';
 
 describe('Student API', () => {
   // Test thêm sinh viên

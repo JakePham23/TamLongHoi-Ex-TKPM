@@ -189,7 +189,7 @@ const StudentScreen = () => {
     for (let i = 0; i < 5; i++) {
       years.push(currentYr - i);
     }
-    return years.map(year => ({ value: year, label: `${t('schoolYear')} ${year}` }));
+    return years.map(year => ({ value: year, label: `${year}` }));
   }, [t]);
 
 
@@ -203,13 +203,13 @@ const StudentScreen = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <select value={selectedDepartment} onChange={(e) => setSelectedDepartment(e.target.value)} className="filterButton">
-          <option value="">{t('allDepartment', { ns: 'department' })}</option>
+          <option value="">{t('all department', { ns: 'department' })}</option>
           {departments.map((dept) => (
             <option key={dept._id} value={dept._id}>{dept.departmentName}</option>
           ))}
         </select>
         <select value={selectedCourse} onChange={(e) => setSelectedCourse(e.target.value)} className="filterButton">
-          <option value="">{t('allSchoolYear')}</option>
+          <option value="">{t('all school year')}</option>
           {schoolYearOptions.map((yearOpt) => (
             <option key={yearOpt.value} value={yearOpt.value}>{yearOpt.label}</option>
           ))}

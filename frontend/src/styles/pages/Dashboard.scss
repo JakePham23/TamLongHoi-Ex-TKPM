@@ -1,8 +1,10 @@
 @import '../abstracts/variables';
 
 .Dashboard{
-    padding: 2rem;
-    display: flex;
-    flex-direction: row;
+  padding: 24px;
+  min-height: 100vh;
 
+  h1 {
+    margin-bottom: 20px;
+  }
 }

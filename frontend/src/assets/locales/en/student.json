@@ -72,5 +72,7 @@
     "high quality": "High quality",
     "form": {
         "sure delete": "Are you sure you want to delete?"
-    }
+    },
+    "searchStudentPlaceholder": "Search for students by name or ID",
+    "addStudentButton": "Add Student"
 }

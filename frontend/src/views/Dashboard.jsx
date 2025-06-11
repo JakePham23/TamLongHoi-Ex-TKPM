@@ -3,7 +3,9 @@ import '../styles/pages/Dashboard.scss'
 const Dashboard = () => {
     const { t } = useTranslation('dashboard');
     return (
-        <h1> {t('dashboard')}</h1>
+        <div className="Dashboard">
+            <h1> {t('dashboard')}</h1>
+        </div>
     )
 }
 

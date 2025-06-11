@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 const DepartmentTable = ({ departments, teachers, searchTerm, onDelete, onEdit }) => {
   const [sortField, setSortField] = useState("departmentName");
-  const [sortOrder, setSortOrder] = useState("asc");
+  const [sortOrder, setSortOrder] = useState("asc");  
   const [isEditing, setIsEditing] = useState(false);
   const [editedDepartment, setEditedDepartment] = useState(null);
   const [errors, setErrors] = useState({});

@@ -72,5 +72,7 @@
     "high quality": "Chất lượng cao",
     "form": {
         "sure delete": "Bạn có chắc muốn xóa?"
-    }
+    },
+    "searchStudentPlaceholder": "Tìm kiếm sinh viên theo tên hoặc ID",
+    "addStudentButton": "Thêm Sinh viên"
 }

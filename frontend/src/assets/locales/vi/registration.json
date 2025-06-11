@@ -54,5 +54,6 @@
     "mustBeGreaterThanZero": "phải lớn hơn 0",
     "pleaseSelect": "Vui lòng chọn",
     "classSchedule": "Lịch học cụ thể",
-    "classTime": "Giờ học"
+    "classTime": "Giờ học",
+    "selectTermToViewData": "Chọn học kỳ và năm học để xem dữ liệu"
 }
