@@ -57,13 +57,19 @@ const StudentScreen = () => {
   }, [fetchAllCourses, fetchAllTeachers]);
 
   const filteredStudents = useMemo(() => {
-    return students.filter((s) => {
+    return students.filter((s) => { 
       const studentDepartmentId = s.department?._id || s.department;
       const matchesDepartment = selectedDepartment ? studentDepartmentId === selectedDepartment : true;
       const matchesCourse = selectedCourse ? String(s.schoolYear) === String(selectedCourse) : true;
       const normalizedSearchTerm = removeVietnameseTones(searchTerm);
       const normalizedFullname = removeVietnameseTones(s.fullname);
-      const matchesSearchTerm = searchTerm ? normalizedFullname.includes(normalizedSearchTerm) : true;
+      const normalizedStudentId = removeVietnameseTones(String(s.studentId));
+      const matchesSearchTerm = searchTerm
+      ? (
+          normalizedFullname.includes(normalizedSearchTerm) ||
+          normalizedStudentId.includes(normalizedSearchTerm)
+        )
+      : true;
       return matchesDepartment && matchesCourse && matchesSearchTerm;
     });
   }, [searchTerm, selectedDepartment, selectedCourse, students]);
