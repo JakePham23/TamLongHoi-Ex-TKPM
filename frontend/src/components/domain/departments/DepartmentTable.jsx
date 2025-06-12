@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import DataTable from "../../common/DataTable.jsx";
 import EnityEdit from "../../forms/EnityEdit.jsx";
 import { useTranslation } from "react-i18next";
+import removeVietnameseTones from "../../../utils/string.util.js";
 
 const DepartmentTable = ({ departments, teachers, searchTerm, onDelete, onEdit }) => {
   const [sortField, setSortField] = useState("departmentName");
@@ -15,20 +16,35 @@ const DepartmentTable = ({ departments, teachers, searchTerm, onDelete, onEdit }
 
   const columns = [
     { label: t("no."), field: "stt", sortable: false },
-    { label: t("department"), field: "departmentName", sortable: true },
+    { label: t("department"), field: "departmentNameTranslated", sortable: true },
     { label: t("Establishment"), field: "dateOfEstablishment", sortable: true },
     { label: t("head of department"), field: "headOfDepartmentName", sortable: true },
   ];
+  
+  const translatedDepartments = useMemo(() => {
+    return departments.map((d, index) => ({
+        ...d,
+        stt: index + 1,
+        departmentNameTranslated: t(`department_list.${d._id}.name`, d.departmentName),
+    }));
+  }, [departments, t]);
 
-  // 🔍 Filtering logic
-  const filteredDepartments = departments
-    .filter((d) =>
-      d.departmentName.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-    .filter((d) => {
-      if (!filterTeacher) return true;
-      return d.headOfDepartment === filterTeacher;
-    });
+  const normalizedSearchTerm = useMemo(() => {
+    return removeVietnameseTones(searchTerm.toLowerCase().trim());
+  }, [searchTerm]);
+
+  const filteredDepartments = useMemo(() => {
+    return translatedDepartments
+      .filter((d) => {
+        const deptName = removeVietnameseTones((d.departmentNameTranslated || "").toLowerCase());
+        return deptName.includes(normalizedSearchTerm);
+      })
+      .filter((d) => {
+        if (!filterTeacher) return true;
+        return d.headOfDepartment === filterTeacher;
+      });
+  }, [translatedDepartments, normalizedSearchTerm, filterTeacher]);
+
 
   // 🔃 Sorting logic
   const sortedDepartments = [...filteredDepartments].sort((a, b) => {

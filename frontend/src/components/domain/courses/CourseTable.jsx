@@ -4,7 +4,8 @@ import EnityEdit from "../../forms/EnityEdit.jsx";
 import "../../../styles/Modal.scss";
 import removeVietnameseTones from "../../../utils/string.util.js";
 import { useTranslation } from "react-i18next";
-import { filterCourses, sortCourses, mapCoursesToTableData } from "./courseTableUtils.js";
+import { sortCourses, mapCoursesToTableData } from "./courseTableUtils.js";
+
 
 
 const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete, onEdit }) => {
@@ -44,8 +45,6 @@ const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete
       );
     });
   }, [courses, departments, t, searchTerm]);
-
-
 
   const sortedCourses = sortCourses(filteredCourses, sortOrder);
   const finalData = mapCoursesToTableData(sortedCourses, departments, t);
@@ -92,9 +91,6 @@ const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete
       [name]: name === "credit" ? parseInt(value) || 0 : value
     }));
   };
-  console.log("searchTerm:", searchTerm);
-  console.log("Filtered:", filteredCourses.map(c => c.courseName));
-  console.log("Final data:", finalData.map(c => c.courseNameTranslated));
 
   return (
     <>

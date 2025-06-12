@@ -1,32 +1,4 @@
-// Utils for CourseTable: filter, sort, and map data
-import removeVietnameseTones from "../../../utils/string.util.js";
-
-export function filterCourses(courses, searchTerm) {
-  const cleanSearch = removeVietnameseTones((searchTerm || "").toLowerCase().trim());
-  console.log("Clean search term:", cleanSearch);
-
-  return courses.filter((c) => {
-    const rawCourseId = c.courseId || "";
-    const rawCourseName = c.courseName || "";
-    const rawDepartment = c.department?.departmentName || "";
-
-    const courseNameSearchable = removeVietnameseTones(rawCourseName.toLowerCase());
-    const courseIdSearchable = removeVietnameseTones(rawCourseId.toLowerCase());
-    const departmentSearchable = removeVietnameseTones(rawDepartment.toLowerCase());
-
-    const matched = courseNameSearchable.includes(cleanSearch) ||
-      courseIdSearchable.includes(cleanSearch) ||
-      departmentSearchable.includes(cleanSearch);
-
-    if (cleanSearch && matched) {
-      console.log("✅ MATCH:", rawCourseName, "→", courseNameSearchable);
-    }
-
-    return matched;
-  });
-}
-
-
+// Utils for CourseTable:  sort and map data
 
 export function sortCourses(courses, sortOrder) {
   return [...courses].sort((a, b) => {
