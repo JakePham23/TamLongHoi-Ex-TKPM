@@ -26,7 +26,7 @@ $transition-duration: 0.25s;
   flex-direction: column;
   transition: width $transition-duration ease-in-out;
   z-index: 1000; // Ensure it's on top
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 0 10px rgba(255, 0, 0, 0.1);
 
   &.expanded {
     width: $tabbar-expanded-width;
@@ -79,7 +79,7 @@ $transition-duration: 0.25s;
       }
 
       .logo-text {
-        font-size: 1.1rem;
+        font-size: 0.78rem;
         font-weight: 600;
         white-space: nowrap;
         margin: 0;
@@ -128,35 +128,44 @@ $transition-duration: 0.25s;
   .Tabbar-footer {
     height: $footer-height;
     display: flex;
-    flex-direction: column; // Stack items if there were more than one
-    justify-content: center; // Center items vertically
-    // padding: 0 10px; // Apply padding to TabButton itself for better control
-    background-color: $secondary-bg-color; // Optional
-    flex-shrink: 0; // Prevent footer from shrinking
-    position: relative; // For popover absolute positioning
-
+    flex-direction: column;
+    justify-content: center;
+    background-color: $secondary-bg-color;
+    flex-shrink: 0;
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    
     .language-selector-container {
-      position: relative; // Anchor for the popover
+      position: relative; 
     }
-
+    
     .language-popover {
       position: absolute;
-      bottom: calc(100% + 5px); // 5px above the language button
-      left: 10px; // Align with TabButton's typical padding
-      width: calc(#{$tabbar-expanded-width} - 20px); // Take most of the tabbar width
-      z-index: 1010; // Above other tabbar content
-      background-color: #fff; // Popover usually has a light background
+      z-index: 1010;
+      background-color: #fff;
       border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      // Popover component should handle its internal padding and item styling
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
 
       &.popover-for-collapsed-tabbar {
-        left: $tabbar-collapsed-width + 5px; // Position to the right of the collapsed bar
-        bottom: auto; // Reset bottom
-        top: 50%; // Vertically align with the middle of the language button
+        left: calc(#{$tabbar-collapsed-width} + 8px); // Dời popover ra ngoài phải
+        top: 50%;
         transform: translateY(-50%);
-        width: auto; // Let popover content dictate its width
-        min-width: 180px; // Example minimum width
+        min-width: 180px;
+        max-width: 240px;
+        white-space: nowrap;
+      }
+
+      &:not(.popover-for-collapsed-tabbar) {
+        left: 0;
+        bottom: calc(100% + 6px);
+        width: calc(#{$tabbar-expanded-width} - 20px);
+        margin: 0 10px;
+        justify-content: space-between;
       }
     }
   }
