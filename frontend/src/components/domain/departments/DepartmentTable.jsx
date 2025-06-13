@@ -17,7 +17,7 @@ const DepartmentTable = ({ departments, teachers, searchTerm, onDelete, onEdit }
   const columns = [
     { label: t("no."), field: "stt", sortable: false },
     { label: t("department"), field: "departmentNameTranslated", sortable: true },
-    { label: t("Establishment"), field: "dateOfEstablishment", sortable: true },
+    { label: t("establishmentDate"), field: "dateOfEstablishment", sortable: true },
     { label: t("head of department"), field: "headOfDepartmentName", sortable: true },
   ];
   
@@ -68,7 +68,7 @@ const DepartmentTable = ({ departments, teachers, searchTerm, onDelete, onEdit }
     stt: index + 1,
     departmentName: t(`department_list.${dept._id}.name`),
     headOfDepartmentName:
-      teachers.find((t) => t._id === dept.headOfDepartment)?.fullName || "",
+    dept.headOfDepartment?.fullname || t("error.not determined", { ns: "department" }),
     dateOfEstablishment: dept.dateOfEstablishment
       ? new Date(dept.dateOfEstablishment).toLocaleDateString()
       : "",
@@ -128,13 +128,17 @@ const DepartmentTable = ({ departments, teachers, searchTerm, onDelete, onEdit }
         onEdit={handleEditClick}
         onDelete={onDelete}
       />
-
+      
       {isEditing && (
         <EnityEdit
           title={t("edit department")}
           fields={[
             { name: "departmentName", label: t("department"), type: "text" },
-            { name: "dateOfEstablishment", label: t("establishment date"), type: "date" },
+            { 
+              name: "dateOfEstablishment",
+              label: t("establishmentDate"), 
+              type: "date" 
+            },
             {
               name: "headOfDepartment",
               label: t("head of department"),
