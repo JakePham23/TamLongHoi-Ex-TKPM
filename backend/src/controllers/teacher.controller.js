@@ -24,59 +24,90 @@ class TeacherController {
     }
   }
 
-  // async createTeacher(req, res, next) {
-  //   try {
-  //     const { teacherId,, department } = req.body;
+  async getTeacher(req, res, next) {
+    try {
+      const { teacherId } = req.params;
+      const teacher = await teacherModel.findById(teacherId);
+      if (!teacher) {
+        logger.warn(`Không tìm thấy giáo viên với id ${teacherId}`);
+        return ResponseFactory.create(ResponseTypes.NOT_FOUND, {
+          message: 'Không tìm thấy giáo viên',
+          metadata: { id: teacherId }
+        }).send(res);
+      }
+      logger.info(`Lấy thông tin giáo viên thành công: ${teacherId}`);
+      return ResponseFactory.create(ResponseTypes.SUCCESS, {
+        message: 'Lấy thông tin giáo viên thành công',
+        metadata: teacher
+      }).send(res);
+    } catch (error) {
+      logger.error('Lỗi trong getTeacher', { error: error.message });
+      return ResponseFactory.create(ResponseTypes.INTERNAL_ERROR, {
+        message: 'Đã xảy ra lỗi khi lấy thông tin giáo viên',
+        metadata: { error: error.message }
+      }).send(res);
+    }
+  }
 
-  //     const exists = await teacherModel.findOne({ teacherId });
-  //     if (exists) {
-  //       logger.warn(`Tạo thất bại: Giáo viên với mã ${teacherId} đã tồn tại`);
-  //       return ResponseFactory.create(ResponseTypes.CONFLICT, {
-  //         message: 'Giáo viên đã tồn tại'
-  //       }).send(res);
-  //     }
+  async addTeacher(req, res, next) {
+    try {
+      let teachers = req.body;
 
-  //     const teacher = await teacherModel.create({ teacherId, name, department });
+      // Nếu chỉ gửi 1 object giáo viên thì tự chuyển thành mảng
+      if (!Array.isArray(teachers)) {
+        teachers = [teachers];
+      }
 
-  //     logger.info(`Tạo giáo viên thành công: ${teacherId}`);
-  //     return ResponseFactory.create(ResponseTypes.CREATED, {
-  //       message: 'Tạo giáo viên thành công',
-  //       metadata: teacher
-  //     }).send(res);
-  //   } catch (error) {
-  //     logger.error('Lỗi trong createTeacher', { error: error.message });
-  //     return ResponseFactory.create(ResponseTypes.INTERNAL_ERROR, {
-  //       message: 'Đã xảy ra lỗi khi tạo giáo viên',
-  //       metadata: { error: error.message }
-  //     }).send(res);
-  //   }
-  // }
+      const addedTeachers = [];
+
+      for (const teacher of teachers) {
+        const newTeacher = new teacherModel(teacher);
+        const savedTeacher = await newTeacher.save();
+        addedTeachers.push(savedTeacher);
+      }
+
+      logger.info(`Thêm ${addedTeachers.length} giáo viên thành công!`);
+      return ResponseFactory
+        .create(ResponseTypes.CREATED, {
+          message: `${addedTeachers.length} teacher(s) added successfully`,
+          metadata: addedTeachers
+        })
+        .send(res);
+
+    } catch (error) {
+      logger.error("Lỗi trong addTeacher", { error });
+      next(error); // để middleware lỗi xử lý
+    }
+  }
 
   async updateTeacher(req, res, next) {
     try {
-      const { id } = req.params;
+      const { teacherId } = req.params;
       const updates = req.body;
 
-      const teacher = await teacherModel.findByIdAndUpdate(id, updates, {
-        new: true
-      });
+      const teacher = await teacherModel.findByIdAndUpdate(
+        teacherId,
+        updates,
+        { new: true }
+      );
 
       if (!teacher) {
-        logger.warn(`Cập nhật thất bại: Không tìm thấy giáo viên với id ${id}`);
+        logger.warn(`Cập nhật thất bại: Không tìm thấy giáo viên với _id ${teacherId}`);
         return ResponseFactory.create(ResponseTypes.NOT_FOUND, {
           message: 'Không tìm thấy giáo viên'
         }).send(res);
       }
 
-      logger.info(`Cập nhật giáo viên thành công: ${id}`);
+      logger.info(`Cập nhật giáo viên thành công: ${teacherId}`);
       return ResponseFactory.create(ResponseTypes.UPDATED, {
         message: 'Cập nhật giáo viên thành công',
         metadata: teacher
       }).send(res);
+
     } catch (error) {
-      logger.error('Lỗi trong updateTeacher', { error: error.message });
+      logger.error('Lỗi trong updateTeacher', { error });
       return ResponseFactory.create(ResponseTypes.INTERNAL_ERROR, {
-        message: 'Đã xảy ra lỗi khi cập nhật giáo viên',
+        message: error.message || 'Đã xảy ra lỗi khi cập nhật giáo viên',
         metadata: { error: error.message }
       }).send(res);
     }
@@ -84,17 +115,17 @@ class TeacherController {
 
   async deleteTeacher(req, res, next) {
     try {
-      const { id } = req.params;
-      const deleted = await teacherModel.findByIdAndDelete(id);
+      const { teacherId } = req.params;
+      const deleted = await teacherModel.findByIdAndDelete(teacherId);
 
       if (!deleted) {
-        logger.warn(`Xóa thất bại: Không tìm thấy giáo viên với id ${id}`);
+        logger.warn(`Xóa thất bại: Không tìm thấy giáo viên với id ${teacherId}`);
         return ResponseFactory.create(ResponseTypes.NOT_FOUND, {
           message: 'Không tìm thấy giáo viên'
         }).send(res);
       }
 
-      logger.info(`Xóa giáo viên thành công: ${id}`);
+      logger.info(`Xóa giáo viên thành công: ${teacherId}`);
       return ResponseFactory.create(ResponseTypes.DELETED, {
         message: 'Xóa giáo viên thành công',
         metadata: deleted

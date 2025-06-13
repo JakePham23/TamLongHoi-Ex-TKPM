@@ -3,6 +3,12 @@
     "$oid": "67d8ea7d7e02c451d88fa5da"
   },
   "departmentName": "Luật",
+  "dateOfEstablishment": {
+    "$date": "2000-03-18T03:37:33.595Z"
+  },
+  "headOfDepartment": {
+    "$oid": "6801ba866287ccbef214bac1"
+  },
   "createdAt": {
     "$date": "2025-03-18T03:37:33.595Z"
   },
@@ -16,6 +22,12 @@
     "$oid": "67d8ea987e02c451d88fa5dc"
   },
   "departmentName": "Tiếng Anh thương mại",
+  "dateOfEstablishment": {
+    "$date": "2010-03-18T03:37:33.595Z"
+  },
+  "headOfDepartment": {
+    "$oid": "6801ba866287ccbef214bac1"
+  },
   "createdAt": {
     "$date": "2025-03-18T03:38:00.814Z"
   },
@@ -29,6 +41,12 @@
     "$oid": "67d8eaa27e02c451d88fa5de"
   },
   "departmentName": "Tiếng Nga",
+  "dateOfEstablishment": {
+    "$date": "2018-03-18T03:37:33.595Z"
+  },
+  "headOfDepartment": {
+    "$oid": "6801ba866287ccbef214bac1"
+  },
   "createdAt": {
     "$date": "2025-03-18T03:38:10.483Z"
   },
@@ -42,6 +60,12 @@
     "$oid": "67d8eaa77e02c451d88fa5e0"
   },
   "departmentName": "Tiếng Pháp",
+  "dateOfEstablishment": {
+    "$date": "2021-03-18T03:37:33.595Z"
+  },
+  "headOfDepartment": {
+    "$oid": "6801ba866287ccbef214bac1"
+  },
   "createdAt": {
     "$date": "2025-03-18T03:38:15.672Z"
   },
@@ -55,6 +79,12 @@
     "$oid": "67e0e2e95966e68b4e9a4b2c"
   },
   "departmentName": "Công nghệ thông tin",
+  "dateOfEstablishment": {
+    "$date": "2000-03-18T03:37:33.595Z"
+  },
+  "headOfDepartment": {
+    "$oid": "6801ba866287ccbef214bac1"
+  },
   "createdAt": {
     "$date": "2025-03-24T04:43:21.089Z"
   },
@@ -68,6 +98,12 @@
     "$oid": "67e0e3225966e68b4e9a4b30"
   },
   "departmentName": "Sinh học",
+  "dateOfEstablishment": {
+    "$date": "2002-03-18T03:37:33.595Z"
+  },
+  "headOfDepartment": {
+    "$oid": "6801ba866287ccbef214bac1"
+  },
   "createdAt": {
     "$date": "2025-03-24T04:44:18.942Z"
   },
@@ -81,6 +117,12 @@
     "$oid": "67e0e35e5966e68b4e9a4b34"
   },
   "departmentName": "Hoá học",
+  "dateOfEstablishment": {
+    "$date": "2003-03-18T03:37:33.595Z"
+  },
+  "headOfDepartment": {
+    "$oid": "6801ba866287ccbef214bac1"
+  },
   "createdAt": {
     "$date": "2025-03-24T04:45:18.142Z"
   },
@@ -94,6 +136,12 @@
     "$oid": "67e268622ac402b833e930ba"
   },
   "departmentName": "Tiếng Trung",
+  "dateOfEstablishment": {
+    "$date": "2005-03-18T03:37:33.595Z"
+  },
+  "headOfDepartment": {
+    "$oid": "6801ba866287ccbef214bac1"
+  },
   "createdAt": {
     "$date": "2025-03-25T08:25:06.879Z"
   },
@@ -107,6 +155,12 @@
     "$oid": "67e268892ac402b833e930c6"
   },
   "departmentName": "Trí tuệ nhân tạo",
+  "dateOfEstablishment": {
+    "$date": "2018-03-18T03:37:33.595Z"
+  },
+  "headOfDepartment": {
+    "$oid": "6801ba866287ccbef214bac1"
+  },
   "createdAt": {
     "$date": "2025-03-25T08:25:45.310Z"
   },
@@ -120,6 +174,12 @@
     "$oid": "67e2697f2ac402b833e930ca"
   },
   "departmentName": "Khoa học máy tính",
+  "dateOfEstablishment": {
+    "$date": "2015-03-18T03:37:33.595Z"
+  },
+  "headOfDepartment": {
+    "$oid": "6801ba866287ccbef214bac1"
+  },
   "createdAt": {
     "$date": "2025-03-25T08:29:51.180Z"
   },
@@ -133,6 +193,12 @@
     "$oid": "67e269b32ac402b833e930ce"
   },
   "departmentName": "Tâm lí học",
+  "dateOfEstablishment": {
+    "$date": "2012-03-18T03:37:33.595Z"
+  },
+  "headOfDepartment": {
+    "$oid": "6801ba866287ccbef214bac1"
+  },
   "createdAt": {
     "$date": "2025-03-25T08:30:43.397Z"
   },
@@ -146,6 +212,12 @@
     "$oid": "67e2b06bddf1ba5cc9994222"
   },
   "departmentName": "An toàn thông tin",
+  "dateOfEstablishment": {
+    "$date": "2017-03-18T03:37:33.595Z"
+  },
+  "headOfDepartment": {
+    "$oid": "6801ba866287ccbef214bac1"
+  },
   "createdAt": {
     "$date": "2025-03-25T13:32:27.420Z"
   },
