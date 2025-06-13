@@ -21,5 +21,13 @@
     .btn-icon {
       font-size: 16px;
     }
+
+    &.danger {
+      background-color: #e17b7b;
+      color: white;
+      &:hover {
+        background-color: #e60000;
+      }
+    }
   }
   

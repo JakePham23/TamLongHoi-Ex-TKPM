@@ -16,7 +16,7 @@ import "../styles/pages/RegistrationScreen.scss";
 import Select from "../components/common/Select.jsx";
 
 const RegistrationScreen = () => {
-  const { t } = useTranslation(["registration", "common"]); // Added common for general error messages
+  const { t } = useTranslation(["registration", "common", "class"]); // Added common for general error messages
 
   const { courses = [], fetchCourses } = useCourses();
   const { teachers = [], fetchTeachers } = useTeachers();
@@ -242,7 +242,7 @@ const RegistrationScreen = () => {
             />
             <Button
               icon={<FaPlus />}
-              label={t("addClass")} // This button is for adding a new Registration (Class)
+              label={t("addClass", { ns: 'class' })} // This button is for adding a new Registration (Class)
               variant="primary" // Changed variant for better visibility
               onClick={() => setIsAdding(true)}
               disabled={!selectedAcademicYear || !selectedSemester} // Should already be handled by showData

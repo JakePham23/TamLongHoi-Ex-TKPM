@@ -75,7 +75,7 @@ const StudentScreen = () => {
   }, [searchTerm, selectedDepartment, selectedCourse, students]);
 
   const handleDelete = async (studentRowId) => { // studentRowId is student.studentId from table
-    if (!window.confirm(t('common:form.sureDelete'))) return;
+    if (!window.confirm(t('sureDelete'))) return;
     try {
       await studentService.deleteStudent(studentRowId);
       await fetchAllStudents(); // Refresh student list

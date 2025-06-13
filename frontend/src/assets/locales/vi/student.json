@@ -74,5 +74,6 @@
         "sure delete": "Bạn có chắc muốn xóa?"
     },
     "searchStudentPlaceholder": "Tìm kiếm sinh viên theo tên hoặc ID",
-    "addStudentButton": "Thêm Sinh viên"
+    "addStudentButton": "Thêm Sinh viên",
+    "sureDelete": "Bạn có chắc muốn xóa sinh viên này?"
 }

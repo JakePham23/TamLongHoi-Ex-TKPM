@@ -51,7 +51,7 @@ const DepartmentForm = ({ onSave, onClose, department, teachers = [] }) => {
         />
 
         <select value={head} onChange={(e) => setHead(e.target.value)}>
-          <option value="">{t('form.select head')}</option>
+          <option value="">{t('select head')}</option>
           {teachers.map((teacher) => (
             <option key={teacher._id} value={teacher._id}>
               {teacher.fullName}
