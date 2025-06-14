@@ -107,7 +107,7 @@ const Tabbar = ({ setView }) => {
           {languagePopoverOpen && (
             <div ref={popoverRef} className={`language-popover ${isCollapsed ? 'popover-for-collapsed-tabbar' : ''}`}>
               <Popover
-                variants={locales}
+                variants={locales} 
                 onClick={changeLanguage}
                 currentLang={i18n.language}
               />

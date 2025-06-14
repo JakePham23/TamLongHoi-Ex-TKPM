@@ -15,7 +15,8 @@
   },
   "form": {
     "enter department name": "Enter department name",
-    "confirm delete department": "Are you sure you want to delete this department?"
+    "confirm delete department": "Are you sure you want to delete this department?",
+    "established date": "Established date"
   },
   "button": {
     "cancel": "Cancel",
@@ -62,7 +63,7 @@
       "name": "Psychology"
     },
     "67e2b06bddf1ba5cc9994222": {
-      "name": "Information Security"
+      "name": "Bảo mật thông tin"
     }
   },
   "establishmentDate": "Establishment date",

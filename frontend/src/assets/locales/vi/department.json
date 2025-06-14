@@ -15,7 +15,8 @@
   },
   "form": {
     "enter department name": "Nhập tên khoa",
-    "confirm delete department": "Bạn có chắc muốn xóa khoa này?"
+    "confirm delete department": "Bạn có chắc muốn xóa khoa này?",
+    "established date": "Ngày thành lập"
   },
   "button": {
     "cancel": "Hủy",
@@ -62,7 +63,7 @@
       "name": "Tâm lí học"
     },
     "67e2b06bddf1ba5cc9994222": {
-      "name": "Bảo mật thông tin"
+      "name": "Bảo mật thang tin"
     }
   },
   "establishmentDate": "Ngày thành lập",

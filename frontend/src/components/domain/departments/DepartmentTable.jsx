@@ -144,7 +144,7 @@ const DepartmentTable = ({ departments, teachers, searchTerm, onDelete, onEdit }
               label: t("head of department"),
               type: "select",
               options: teachers.map((t) => ({
-                label: t.fullName,
+                label: t.fullname,
                 value: t._id,
               })),
             },

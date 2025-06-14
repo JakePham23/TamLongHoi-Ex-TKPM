@@ -135,29 +135,26 @@ $transition-duration: 0.25s;
     position: relative;
     overflow: visible;
     width: 100%;
-    
+
     .language-selector-container {
-      position: relative; 
+      position: relative;
     }
-    
+
     .language-popover {
       position: absolute;
       z-index: 1010;
       background-color: #fff;
       border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       padding: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
 
       &.popover-for-collapsed-tabbar {
-        left: calc(#{$tabbar-collapsed-width} + 8px); // Dời popover ra ngoài phải
+        left: calc(#{$tabbar-collapsed-width} + 12px); // Tăng khoảng cách bên phải
         top: 50%;
         transform: translateY(-50%);
-        min-width: 180px;
-        max-width: 240px;
-        white-space: nowrap;
+        width: 220px;
+        white-space: normal;
+        padding: 10px 12px;
       }
 
       &:not(.popover-for-collapsed-tabbar) {
@@ -165,10 +162,32 @@ $transition-duration: 0.25s;
         bottom: calc(100% + 6px);
         width: calc(#{$tabbar-expanded-width} - 20px);
         margin: 0 10px;
+      }
+
+      .Lan {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
         justify-content: space-between;
+      }
+
+      // Style cho từng nút ngôn ngữ
+      .Lan button {
+        width: 46%;
+        padding: 8px 12px;
+        border: none;
+        border: 1px solid #ccc;
+        background: transparent;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 4px;
+        &:hover {
+          background-color: $active-indicator-color;
+        }
       }
     }
   }
+
 }
 
 // --- Styles for TabButton.jsx ---
@@ -247,13 +266,13 @@ $transition-duration: 0.25s;
     justify-content: center;
     padding: 12px 0; // Vertical padding only, centered
 
-    .tab-icon {
+    .tab-icon { 
       margin-right: 0;
     }
     .tab-label {
-      display: none; // Hide label completely
+      display: none; // ẩn nhãn khi Tabbar bị thu gọn
     }
-    &.active::before { // Adjust active indicator for collapsed state
+    &.active::before { // điều chỉnh lại vị trí của indicator khi Tabbar bị thu gọn
         top: 50%;
         bottom: auto;
         height: 60%;
