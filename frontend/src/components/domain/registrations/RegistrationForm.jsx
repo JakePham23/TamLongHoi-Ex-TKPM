@@ -257,7 +257,7 @@ const RegistrationForm = ({ onSave, registration, courses, teachers, onClose, ac
               <option value="">{t('selectTeacher', {ns: 'class'})}</option>
               {teachers.map(teacher => (
                 <option key={teacher._id} value={teacher._id}>
-                  {teacher.fullname}
+                  {teacher.fullname} 
                 </option>
               ))}
             </select>
