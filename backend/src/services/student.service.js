@@ -1,12 +1,13 @@
 import studentModel from '../models/student.model.js';
 import { checkExistedDepartment } from '../utils/checkDepartment.js';
-import { checkExistedStudent } from '../utils/checkStudent.js';
+import { StudentValidatorContext } from '../utils/studentValidator.js';
 import { BadRequest } from '../responses/error.response.js';
 
 class StudentService {
 
     async addStudent(student) {
-        await this.validateStudent(student);
+        const validator = new StudentValidatorContext();
+        await validator.validateAll(student)
 
         const newStudent = new studentModel(student);
         await newStudent.save();
@@ -15,7 +16,8 @@ class StudentService {
     }
 
     async updateStudent(studentId, updateData) {
-        await this.validateStudent(updateData, studentId);
+        const validator = new StudentValidatorContext();
+        await validator.validateAll(student)
 
         const updatedStudent = await studentModel.findOneAndUpdate(
             { studentId },
@@ -28,12 +30,6 @@ class StudentService {
         }
 
         return updatedStudent;
-    }
-
-    // Helper function để tái sử dụng kiểm tra
-    async validateStudent(student, studentId = null) {
-        await checkExistedStudent(student, studentId);
-        //await checkExistedDepartment(student.department);
     }
 }
 
