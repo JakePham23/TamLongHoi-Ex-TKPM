@@ -1,7 +1,5 @@
 const request = require('supertest');
 import app from '../app.js';
-import courseModel from '../models/course.model.js'; 
-import departmentModel from '../models/department.model.js'; 
 
 describe('Course API', () => {
   // Test thêm môn học

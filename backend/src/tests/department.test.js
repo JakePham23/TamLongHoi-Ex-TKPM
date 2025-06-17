@@ -1,6 +1,6 @@
 import request from 'supertest';
 import app from '../app.js';
-import departmentModel from '../models/department.model.js';
+
 
 describe('Department API', () => {
     // Test thêm Khoa

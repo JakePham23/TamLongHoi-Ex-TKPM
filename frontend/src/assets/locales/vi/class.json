@@ -34,6 +34,7 @@
     "thursday": "Thứ Năm",
     "friday": "Thứ Sáu",
     "saturday": "Thứ Bảy",
+    "sunday": "Chủ Nhật",
     "time": "Thời gian",
     "room": "Phòng học",
     "cancel": "Hủy",
@@ -70,5 +71,6 @@
     "generatedOn": "Được tạo vào",
     "close": "Đóng",
     "exportPdf": "Xuất PDF",
-    "generateTranscript": "Tạo bảng điểm"
+    "generateTranscript": "Tạo bảng điểm",
+    "greater than 0": " (Phải lớn hơn 0)"
 }

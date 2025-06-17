@@ -57,19 +57,25 @@ const StudentScreen = () => {
   }, [fetchAllCourses, fetchAllTeachers]);
 
   const filteredStudents = useMemo(() => {
-    return students.filter((s) => {
+    return students.filter((s) => { 
       const studentDepartmentId = s.department?._id || s.department;
       const matchesDepartment = selectedDepartment ? studentDepartmentId === selectedDepartment : true;
       const matchesCourse = selectedCourse ? String(s.schoolYear) === String(selectedCourse) : true;
       const normalizedSearchTerm = removeVietnameseTones(searchTerm);
       const normalizedFullname = removeVietnameseTones(s.fullname);
-      const matchesSearchTerm = searchTerm ? normalizedFullname.includes(normalizedSearchTerm) : true;
+      const normalizedStudentId = removeVietnameseTones(String(s.studentId));
+      const matchesSearchTerm = searchTerm
+      ? (
+          normalizedFullname.includes(normalizedSearchTerm) ||
+          normalizedStudentId.includes(normalizedSearchTerm)
+        )
+      : true;
       return matchesDepartment && matchesCourse && matchesSearchTerm;
     });
   }, [searchTerm, selectedDepartment, selectedCourse, students]);
 
   const handleDelete = async (studentRowId) => { // studentRowId is student.studentId from table
-    if (!window.confirm(t('common:form.sureDelete'))) return;
+    if (!window.confirm(t('sureDelete'))) return;
     try {
       await studentService.deleteStudent(studentRowId);
       await fetchAllStudents(); // Refresh student list
@@ -189,7 +195,7 @@ const StudentScreen = () => {
     for (let i = 0; i < 5; i++) {
       years.push(currentYr - i);
     }
-    return years.map(year => ({ value: year, label: `${t('schoolYear')} ${year}` }));
+    return years.map(year => ({ value: year, label: `${year}` }));
   }, [t]);
 
 
@@ -203,13 +209,13 @@ const StudentScreen = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <select value={selectedDepartment} onChange={(e) => setSelectedDepartment(e.target.value)} className="filterButton">
-          <option value="">{t('allDepartment', { ns: 'department' })}</option>
+          <option value="">{t('all department', { ns: 'department' })}</option>
           {departments.map((dept) => (
             <option key={dept._id} value={dept._id}>{dept.departmentName}</option>
           ))}
         </select>
         <select value={selectedCourse} onChange={(e) => setSelectedCourse(e.target.value)} className="filterButton">
-          <option value="">{t('allSchoolYear')}</option>
+          <option value="">{t('all school year')}</option>
           {schoolYearOptions.map((yearOpt) => (
             <option key={yearOpt.value} value={yearOpt.value}>{yearOpt.label}</option>
           ))}

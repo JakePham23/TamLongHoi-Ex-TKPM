@@ -35,7 +35,7 @@ const convertLessonToTime = (lessonRange) => {
 };
 
 const RegistrationForm = ({ onSave, registration, courses, teachers, onClose, academicYear, semester  }) => {
-  const { t } = useTranslation('registration');
+  const { t } = useTranslation('registration','class');
 
   const [formData, setFormData] = useState({
     year: academicYear || "",
@@ -163,13 +163,13 @@ const RegistrationForm = ({ onSave, registration, courses, teachers, onClose, ac
 
   // Danh sách ngày trong tuần
   const daysOfWeek = [
-    { value: "MON", label: t('monday') },
-    { value: "TUE", label: t('tuesday') },
-    { value: "WED", label: t('wednesday') },
-    { value: "THU", label: t('thursday') },
-    { value: "FRI", label: t('friday') },
-    { value: "SAT", label: t('saturday') },
-    { value: "SUN", label: t('sunday') }
+    { value: "MON", label: t('monday', {ns: 'class'}) },
+    { value: "TUE", label: t('tuesday', {ns: 'class'}) },
+    { value: "WED", label: t('wednesday', {ns: 'class'}) },
+    { value: "THU", label: t('thursday', {ns: 'class'}) },
+    { value: "FRI", label: t('friday', {ns: 'class'})},
+    { value: "SAT", label: t('saturday', {ns: 'class'}) },
+    { value: "SUN", label: t('sunday', {ns: 'class'}) }
   ];
 
   // Các khoảng tiết học phổ biến
@@ -237,7 +237,7 @@ const RegistrationForm = ({ onSave, registration, courses, teachers, onClose, ac
               onChange={handleChange}
               required
             >
-              <option value="">{t('selectCourse')}</option>
+              <option value="">{t('selectCourse', {ns: 'class'})}</option>
               {courses.map(course => (
                 <option key={course._id} value={course._id}>
                   {course.courseName}
@@ -254,10 +254,10 @@ const RegistrationForm = ({ onSave, registration, courses, teachers, onClose, ac
               onChange={handleChange}
               required
             >
-              <option value="">{t('selectTeacher')}</option>
+              <option value="">{t('selectTeacher', {ns: 'class'})}</option>
               {teachers.map(teacher => (
                 <option key={teacher._id} value={teacher._id}>
-                  {teacher.fullname}
+                  {teacher.fullname} 
                 </option>
               ))}
             </select>
@@ -269,7 +269,7 @@ const RegistrationForm = ({ onSave, registration, courses, teachers, onClose, ac
           <input
             type="number"
             name="maxStudent"
-            placeholder={t('maxStudent') + " (greater than 0)"}
+            placeholder={t('maxStudent') + t('greater than 0', { ns: 'class' })}
             value={formData.maxStudent}
             onChange={handleChange}
             min="1"
@@ -278,7 +278,7 @@ const RegistrationForm = ({ onSave, registration, courses, teachers, onClose, ac
         </div>
 
         <div className="schedule-section">
-          <h3>{t('classSchedule')}</h3>
+          <h3>{t('classSchedule', { ns: 'registration' } )}</h3>
           
           <div className="form-row">
             <div className="form-group">

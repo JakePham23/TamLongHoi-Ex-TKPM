@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import DataTable from "../../common/DataTable.jsx";
 import EnityEdit from "../../forms/EnityEdit.jsx";
 import "../../../styles/Modal.scss";
 import removeVietnameseTones from "../../../utils/string.util.js";
 import { useTranslation } from "react-i18next";
+import { sortCourses, mapCoursesToTableData } from "./courseTableUtils.js";
+
+
 
 const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete, onEdit }) => {
   const [sortOrder, setSortOrder] = useState("asc");
@@ -14,9 +17,9 @@ const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete
   const { t } = useTranslation(['course', 'department']);
 
   const columns = [
-    { label: t('no.'), field: "stt", sortable: false },
+    //{ label: t('no.'), field: "stt", sortable: false },
     { label: t('course id'), field: "courseId", sortable: true },
-    { label: t('course name'), field: "courseName", sortable: true },
+    { label: t('course name'), field: "courseNameTranslated", sortable: true },
     { label: t('number of credits'), field: "credit", sortable: true },
     { label: t('theoretical session'), field: "theoreticalSession", sortable: true },
     { label: t('practical session'), field: "practicalSession", sortable: true },
@@ -25,36 +28,26 @@ const CourseTable = ({ courses = [], departments = [], searchTerm = "", onDelete
     // { label: "Mô tả", field: "description", sortable: true }
   ];
 
-  const cleanSearch = removeVietnameseTones(searchTerm.toLowerCase());
+  const filteredCourses = useMemo(() => {
+    const normalizedSearch = removeVietnameseTones(searchTerm.toLowerCase());
 
-  const filteredCourses = courses.filter((c) =>
-    removeVietnameseTones(c.courseId)?.toLowerCase().includes(cleanSearch) ||
-    removeVietnameseTones(c.courseName)?.toLowerCase().includes(cleanSearch) ||
-    removeVietnameseTones(c.department?.departmentName)?.toLowerCase().includes(cleanSearch)
-  );
+    const mapped = mapCoursesToTableData(courses, departments, t); // Dịch trước rồi lọc
 
+    return mapped.filter((c) => {
+      const courseName = removeVietnameseTones((c.courseNameTranslated || "").toLowerCase());
+      const courseId = removeVietnameseTones((c.courseId || "").toLowerCase());
+      const deptName = removeVietnameseTones((c.departmentName || "").toLowerCase());
 
-  const sortedCourses = [...filteredCourses].sort((a, b) => {
-    const valA = a.courseName?.toLowerCase() || "";
-    const valB = b.courseName?.toLowerCase() || "";
-    return sortOrder === "asc" ? valA.localeCompare(valB) : valB.localeCompare(valA);
-  });
+      return (
+        courseName.includes(normalizedSearch) ||
+        courseId.includes(normalizedSearch) ||
+        deptName.includes(normalizedSearch)
+      );
+    });
+  }, [courses, departments, t, searchTerm]);
 
-  const finalData = sortedCourses.map((course, index) => {
-    const deptId = course.department?._id || course.department;
-    const dept = departments.find(d => d._id === deptId);
-
-    return {
-      ...course,
-      stt: index + 1,
-      courseName: t(`course_list.${course.courseId}.name`),
-      departmentName: dept
-        ? t(`department_list.${dept._id}.name`, { ns: 'department' })
-        : t('error.not determined'),
-      prerequisite: course.prerequisite || t('error.not available'),
-    };
-  });
-
+  const sortedCourses = sortCourses(filteredCourses, sortOrder);
+  const finalData = mapCoursesToTableData(sortedCourses, departments, t);
 
 
   const handleEditClick = (course) => {
