@@ -40,77 +40,99 @@
    <h1 id="GetStarted">Get Started⚙️</h1>
    
    >Follow these steps to get the Student Management System project up and running on your device:
-   1. Clone the repository:
-
+   **1. Clone the repository:**
       `Full source`
       
            git clone https://github.com/JakePham23/TamLongHoi-Ex-TKPM.git
       
-   2. Run the project with docker 
-
-      `Terminal` (macos)
+   **2. Run the project with docker**
+      
+   `Terminal` (macos)
          
-            docker compose up -d --build
-
-       `Terminal` (Windows)
-
-            docker-compose up -d --build
-
-   3. Run the project with terminal or cmd 
-
-      `Start backend`
-
-            cd backend
-            npm i
-            npm start
-
-      `Start frontend`
+         docker compose up -d --build
+       
       
-            cd ..
-            cd frontend
-            npm i
-            npm run build
+   `Terminal` (Windows)
 
-      <h1 id="Features">Features🤖</h1>
+         docker-compose up -d --build
 
-   4. Student view:
+   `Access`
 
-      ![image](./images/student/student_table.png)
+         http://localhost:8080/
 
-      ![image](./images/student/student_information.png)
+   **3. Run the project with terminal or cmd**
       
-      ![image](./images/student/student_view_detail.png)
+   `Start backend`
+
+         cd backend
+         npm i
+         npm start
+
+   `Start frontend`
       
-      ![image](./images/student/student_create.png)
+         cd ..
+         cd frontend
+         npm i
+         npm run build
 
-   5. Department view:
-   
-      ![image](./images/department/department_create.png)
-      
-      ![image](./images/department/department_table.png)
+   `Access`
 
-      ![image](./images/department/department_update.png)
+         http://localhost:5173/
+   **4. Run the project with detailed API documentation**
 
-   6. Course view:
+   `Terminal`
 
-      ![image](./images/course/course_table.png)
+         cd backend
+         npm i
+         npm run api
 
-      ![image](./images/course/course_update.png)
-      
-      ![image](./images/course/course_create.png)
+   `Access API documentation`
 
-   7. Registration view
+          http://localhost:4000/api-docs
 
-      ![image](./images/registration/registration_table.png)
+# Features 🤖
 
-      ![image](./images/registration/registration_update.png)
-      
-      ![image](./images/registration/registration_view_detail.png)
-      
-      ![image](./images/registration/registration_create.png)
+   **1. Giao diện Sinh viên (Student view):**
 
-      ![image](./images/registration/registration_register.png)
+- Giao diện bảng danh sách sinh viên
+  ![Giao diện bảng sinh viên](./images/student/student_table.png)
+- Thông tin chi tiết sinh viên
+  ![Thông tin chi tiết sinh viên](./images/student/student_information.png)
+- Xem chi tiết một sinh viên
+  ![Xem chi tiết một sinh viên](./images/student/student_view_detail.png)
+- Tạo mới sinh viên
+  ![Tạo mới sinh viên](./images/student/student_create.png)
 
+**2. Giao diện Khoa (Department view):**
+
+- Tạo mới khoa
+  ![Tạo mới khoa](./images/department/department_create.png)
+- Giao diện bảng danh sách khoa
+  ![Giao diện bảng danh sách khoa](./images/department/department_table.png)
+- Cập nhật thông tin khoa
+  ![Cập nhật thông tin khoa](./images/department/department_update.png)
+
+**3. Giao diện Môn học (Course view):**
+
+- Giao diện bảng danh sách môn học
+  ![Giao diện bảng danh sách môn học](./images/course/course_table.png)
+- Cập nhật thông tin môn học
+  ![Cập nhật thông tin môn học](./images/course/course_update.png)
+- Tạo mới môn học
+  ![Tạo mới môn học](./images/course/course_create.png)
+
+**4. Giao diện Đăng ký môn học (Registration view):**
+
+- Giao diện bảng danh sách đăng ký
+  ![Giao diện bảng danh sách đăng ký](./images/registration/registration_table.png)
+- Cập nhật đăng ký
+  ![Cập nhật đăng ký](./images/registration/registration_update.png)
+- Xem chi tiết đăng ký
+  ![Xem chi tiết đăng ký](./images/registration/registration_view_detail.png)
+- Tạo mới lượt đăng ký
+  ![Tạo mới lượt đăng ký](./images/registration/registration_create.png)
+- Sinh viên đăng ký môn học
+  ![Sinh viên đăng ký môn học](./images/registration/registration_register.png)
 
    <p align="center">
    <br></br>
