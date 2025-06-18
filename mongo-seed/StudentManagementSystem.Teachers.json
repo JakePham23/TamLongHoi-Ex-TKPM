@@ -1,5 +1,19 @@
 [{
   "_id": {
+    "$oid": "683989e189834816661d1ce6"
+  },
+  "teacherId": "TC0001",
+  "fullname": "Jake",
+  "createdAt": {
+    "$date": "2025-05-30T10:35:13.360Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-30T10:35:13.360Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
     "$oid": "6801ba866287ccbef214bac1"
   },
   "teacherId": 1,

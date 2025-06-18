@@ -13,7 +13,6 @@ import { PhoneValidationStrategy } from "../../../utils/strategies/PhoneRegexVal
 import { StatusChangeValidationStrategy } from "../../../utils/strategies/StatusChangeValidationStrategy.js";
 import { IdentityDocumentValidationStrategy } from "../../../utils/strategies/IdentityDocumentValidationStrategy.js";
 import { ExportFactory } from '../../../utils/export/ExportFactory.js';
-import "../../../styles/StudentDetail.scss"; // Đảm bảo file CSS tồn tại và đúng đường dẫn
 
 const StudentDetail = ({
   student,

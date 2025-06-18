@@ -113,7 +113,7 @@
   "schoolYear": 2022,
   "program": "DTTX",
   "department": {
-    "$oid": "67d8ea987e02c451d88fa5dc"
+    "$oid": "67e0e2e95966e68b4e9a4b2c"
   },
   "email": "jakejake2@student.hcmus.edu.vn",
   "phone": "0392881355",
@@ -150,7 +150,7 @@
     "$date": "2025-03-24T01:54:36.124Z"
   },
   "updatedAt": {
-    "$date": "2025-03-26T14:36:11.047Z"
+    "$date": "2025-04-18T04:27:49.505Z"
   },
   "__v": 0
 },
@@ -221,7 +221,7 @@
   "schoolYear": 2019,
   "program": "CQ",
   "department": {
-    "$oid": "67d8eaa77e02c451d88fa5e0"
+    "$oid": "67e0e2e95966e68b4e9a4b2c"
   },
   "email": "a@student.hcmus.edu.vn",
   "phone": "0987654321",
@@ -259,7 +259,7 @@
     "$date": "2025-03-25T03:27:25.278Z"
   },
   "updatedAt": {
-    "$date": "2025-03-26T13:10:03.326Z"
+    "$date": "2025-04-18T04:28:35.036Z"
   }
 },
 {
@@ -329,7 +329,7 @@
   "schoolYear": 2020,
   "program": "CQ",
   "department": {
-    "$oid": "67d8eaa27e02c451d88fa5de"
+    "$oid": "67e0e3225966e68b4e9a4b30"
   },
   "email": "abcd@student.hcmus.edu.vn",
   "phone": "0987654310",
@@ -367,7 +367,7 @@
     "$date": "2025-03-25T03:37:04.684Z"
   },
   "updatedAt": {
-    "$date": "2025-03-26T14:14:08.876Z"
+    "$date": "2025-04-18T04:28:48.431Z"
   }
 },
 {

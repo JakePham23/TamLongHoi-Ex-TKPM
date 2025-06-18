@@ -1,0 +1,87 @@
+// src/styles/RegistrationInfoTable.scss
+
+$text-primary-dark: #212529;
+$text-secondary-dark: #6c757d;
+$border-color-light: #dee2e6;
+$accent-color: #007bff;
+$scrollbar-thumb-color: #c1c1c1;
+$scrollbar-thumb-hover-color: #a8a8a8;
+
+.registration-info-table-container {
+  width: 100%;
+
+  .info-header {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $border-color-light;
+
+    h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: $text-primary-dark;
+    }
+    .info-sub-header {
+      font-size: 1.1rem;
+      color: $text-secondary-dark;
+    }
+  }
+
+  // --- SỬA Ở ĐÂY ---
+  .data-table-wrapper {
+    border: 1px solid $border-color-light;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+    // THÊM DÒNG NÀY: Bật thanh cuộn ngang khi nội dung tràn ra
+    overflow-x: auto;
+    
+    // Tùy chỉnh thanh cuộn ngang cho đẹp hơn (tùy chọn)
+    &::-webkit-scrollbar {
+      height: 8px; // Chiều cao của thanh cuộn ngang
+    }
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $scrollbar-thumb-color;
+      border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: $scrollbar-thumb-hover-color;
+    }
+  }
+
+  // THÊM: Đảm bảo các ô trong bảng không tự động xuống dòng chữ
+  // Điều này ép bảng giữ đúng chiều rộng của nó
+  table th, table td {
+    white-space: nowrap;
+  }
+  // --- Khu vực điều khiển Export ---
+  .export-controls-container {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .export-select {
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 8px 12px;
+      border: 1px solid $border-color-light;
+      border-radius: 6px;
+      background-color: #fff;
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s;
+
+      &:hover {
+        border-color: darken($border-color-light, 10%);
+      }
+      &:focus {
+        outline: none;
+        border-color: $accent-color;
+        box-shadow: 0 0 0 3px rgba($accent-color, 0.2);
+      }
+    }
+  }
+}

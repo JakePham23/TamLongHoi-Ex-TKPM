@@ -1,31 +1,88 @@
-@import './abstracts/variables';
+// --- Styles for TabButton.jsx ---
 
-.tab-button {
-    display: flex;
+.TabButton {
+  display: flex;
+  align-items: center; // Quan trọng: Căn giữa các item theo chiều dọc
+  width: 100%;
+  padding: 12px 20px;
+  text-align: left;
+  background-color: transparent;
+  color: $text-color;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color $transition-duration ease, color $transition-duration ease, padding $transition-duration ease;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none; // Tắt gạch chân cho Link
+  gap: 15px; // Dùng gap để tạo khoảng cách, thay thế cho margin-right
+
+  // Đổi tên class trong JSX của bạn thành "tab-icon"
+  .tab-icon {
+    font-size: 1.3rem;
+    min-width: 25px;
+    display: flex; // Đảm bảo icon được căn giữa trong chính nó
     align-items: center;
-    gap: 8px;
-    width: 80%;
-    padding: 12px;
-    background-color: transparent; // Màu xám đậm
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: left;
-    transition: background 0.3s, color 0.3s;
-  
-    &:hover {
-      background-color: #40444b; // Màu xám sáng hơn khi hover
-    }
-  
-    &.active {
-      background-color: #a0c4ff; // Màu xanh nhạt khi active
-      color: black;
-    }
-  
-    span {
-      flex-grow: 1;
+    justify-content: center;
+    color: $icon-color;
+    transition: color $transition-duration ease;
+    // Xóa margin-right vì đã dùng gap
+  }
+
+  // Đổi tên class trong JSX của bạn thành "tab-label"
+  .tab-label {
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity ($transition-duration / 2) ease-in-out ($transition-duration / 3);
+    display: flex; // Thêm dòng này
+    align-items: center; // Thêm dòng này để căn giữa text
+  }
+
+  &:hover {
+    background-color: $hover-bg-color;
+    color: $active-text-color;
+    .tab-icon {
+      color: $active-text-color;
     }
   }
-  
+
+  &.active {
+    background-color: $secondary-bg-color;
+    color: $active-text-color;
+    font-weight: 500;
+
+    .tab-icon {
+      color: $active-text-color;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 15%;
+      bottom: 15%;
+      width: 4px;
+      background-color: $active-indicator-color;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+  }
+
+  // Styles khi Tabbar bị thu gọn
+  .Tabbar.collapsed & {
+    justify-content: center;
+    padding: 12px 0;
+    gap: 0; // Bỏ gap khi thu gọn
+
+    .tab-label {
+      display: none;
+    }
+    
+    &.active::before {
+      top: 50%;
+      bottom: auto;
+      height: 60%;
+      transform: translateY(-50%);
+    }
+  }
+}

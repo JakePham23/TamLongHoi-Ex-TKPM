@@ -1,20 +1,19 @@
-// src/styles/Tabbar.scss
-
 $tabbar-expanded-width: 250px;
-$tabbar-collapsed-width: 65px; // Icon size + padding
-$header-height: 60px; // Example height for header
-$footer-height: 60px; // Example height for footer
+$tabbar-collapsed-width: 65px;
+$header-height: 60px;
+$footer-height: 60px;
 
-$primary-bg-color: #2d323e; // Darker sidebar background
-$secondary-bg-color: #252932; // Slightly different for header/footer or active items
+$primary-bg-color: #2d323e;
+$secondary-bg-color: #252932;
 $text-color: #d0d2d6;
 $icon-color: #a0a4ac;
 $active-text-color: #ffffff;
-$active-indicator-color: #4a90e2; // A blue accent for active tab
+$active-indicator-color: #4a90e2;
 $hover-bg-color: #383e4a;
 
 $transition-duration: 0.25s;
 
+// MAIN TABBAR CONTAINER
 .Tabbar {
   position: fixed;
   top: 0;
@@ -25,8 +24,8 @@ $transition-duration: 0.25s;
   display: flex;
   flex-direction: column;
   transition: width $transition-duration ease-in-out;
-  z-index: 1000; // Ensure it's on top
-  box-shadow: 2px 0 10px rgba(255, 0, 0, 0.1);
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 
   &.expanded {
     width: $tabbar-expanded-width;
@@ -34,175 +33,89 @@ $transition-duration: 0.25s;
 
   &.collapsed {
     width: $tabbar-collapsed-width;
-
     .Tabbar-header {
-      padding: 0; // Remove padding to center elements better
-      justify-content: center; // Center the toggle button if logo text is gone
-
+      padding: 0;
+      justify-content: center;
       .Logo {
-        padding-left: ($tabbar-collapsed-width - 36px) / 2; // Center logo img
-        img {
-          margin-right: 0;
-        }
+        padding-left: 0; // No longer need special padding
       }
       .logo-text {
         display: none;
       }
-      .collapse-toggle-button {
-        // Position it differently if needed, e.g., absolute, or just let it center
-      }
-    }
-     .language-selector-container {
-      // No specific changes needed here if TabButton handles its collapsed state well
     }
   }
-
-  .Tabbar-header {
-    height: $header-height;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 15px; // Horizontal padding
-    background-color: $secondary-bg-color; // Optional distinct background
-    flex-shrink: 0; // Prevent header from shrinking
-
-    .Logo {
-      display: flex;
-      align-items: center;
-      overflow: hidden; // Important for smooth text hiding
-
-      img {
-        height: 36px; // Adjust logo size
-        width: auto;
-        margin-right: 12px;
-        flex-shrink: 0;
-      }
-
-      .logo-text {
-        font-size: 0.78rem;
-        font-weight: 600;
-        white-space: nowrap;
-        margin: 0;
-        color: $active-text-color;
-      }
-    }
-
-    .collapse-toggle-button {
-      background: transparent;
-      border: none;
-      color: $icon-color;
-      font-size: 1.4rem;
-      cursor: pointer;
-      padding: 8px;
-      border-radius: 50%; // Make it round
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      &:hover {
-        color: $active-text-color;
-        background-color: $hover-bg-color;
-      }
-    }
-  }
-
-  .ListContent {
-    flex-grow: 1;
-    overflow-y: auto;
-    overflow-x: hidden; // Prevent horizontal scrollbar during transition
-    padding: 10px 0;
-
-    // Hide scrollbar visually but keep functionality
-    &::-webkit-scrollbar {
-      width: 6px;
-    }
-    &::-webkit-scrollbar-track {
-      background: transparentize($primary-bg-color, 0.5);
-    }
-    &::-webkit-scrollbar-thumb {
-      background: $hover-bg-color;
-      border-radius: 3px;
-    }
-  }
-
-  .Tabbar-footer {
-    height: $footer-height;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: $secondary-bg-color;
-    flex-shrink: 0;
-    position: relative;
-    overflow: visible;
-    width: 100%;
-
-    .language-selector-container {
-      position: relative;
-    }
-
-    .language-popover {
-      position: absolute;
-      z-index: 1010;
-      background-color: #fff;
-      border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      padding: 8px;
-
-      &.popover-for-collapsed-tabbar {
-        left: calc(#{$tabbar-collapsed-width} + 12px); // Tăng khoảng cách bên phải
-        top: 50%;
-        transform: translateY(-50%);
-        width: 220px;
-        white-space: normal;
-        padding: 10px 12px;
-      }
-
-      &:not(.popover-for-collapsed-tabbar) {
-        left: 0;
-        bottom: calc(100% + 6px);
-        width: calc(#{$tabbar-expanded-width} - 20px);
-        margin: 0 10px;
-      }
-
-      .Lan {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        justify-content: space-between;
-      }
-
-      // Style cho từng nút ngôn ngữ
-      .Lan button {
-        width: 46%;
-        padding: 8px 12px;
-        border: none;
-        border: 1px solid #ccc;
-        background: transparent;
-        cursor: pointer;
-        text-align: center;
-        border-radius: 4px;
-        &:hover {
-          background-color: $active-indicator-color;
-        }
-      }
-    }
-  }
-
 }
 
-// --- Styles for TabButton.jsx ---
-// It's better if these are in TabButton.scss and imported by TabButton.jsx
-// For context, assuming TabButton.jsx structure:
-// <button className={`TabButton ${isActive ? 'active' : ''} ${isCollapsed ? 'collapsed' : ''}`}>
-//   <span className="tab-icon">{icon}</span>
-//   {!isCollapsed && <span className="tab-label">{label}</span>}
-// </button>
+// HEADER SECTION (LOGO AND TITLE)
+.Tabbar-header {
+  height: $header-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  background-color: $secondary-bg-color;
+  flex-shrink: 0;
 
-.TabButton { // This class should be on the button element produced by TabButton.jsx
+  .Logo {
+    display: flex;
+    align-items: center; // This vertically centers items in the logo container
+    overflow: hidden;
+    gap: 12px; // Use gap for spacing
+
+    img {
+      height: 36px;
+      width: 36px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+      color: $active-text-color;
+      
+      /* SỬA 1: Căn chỉnh logo và chữ trong header */
+      margin: 0; // Resets default H2 margin, allowing align-items to work perfectly.
+    }
+  }
+
+  .collapse-toggle-button {
+    background: transparent;
+    border: none;
+    color: $icon-color;
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: $active-text-color;
+      background-color: $hover-bg-color;
+    }
+  }
+}
+
+// NAVIGATION LIST
+.ListContent {
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px 0;
+  &::-webkit-scrollbar { width: 6px; }
+  &::-webkit-scrollbar-track { background: transparentize($primary-bg-color, 0.5); }
+  &::-webkit-scrollbar-thumb { background: $hover-bg-color; border-radius: 3px; }
+}
+
+
+/* SỬA 2: Sửa toàn bộ khối .TabButton để căn chỉnh icon và chữ */
+.TabButton {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 12px 20px; // Default padding for expanded state
+  padding: 12px 20px;
   text-align: left;
   background-color: transparent;
   color: $text-color;
@@ -210,24 +123,26 @@ $transition-duration: 0.25s;
   cursor: pointer;
   font-size: 0.95rem;
   transition: background-color $transition-duration ease, color $transition-duration ease, padding $transition-duration ease;
-  overflow: hidden; // Important for label hiding
-  position: relative; // For active indicator
+  overflow: hidden;
+  position: relative;
+  text-decoration: none; // Remove underline from links
+  gap: 15px; // Use gap for consistent spacing
 
   .tab-icon {
-    font-size: 1.3rem; // Icon size
-    min-width: 25px; // Width of the icon area
-    margin-right: 15px; // Space between icon and label
-    display: inline-flex;
+    font-size: 1.3rem;
+    min-width: 25px;
+    display: flex;
     align-items: center;
     justify-content: center;
     color: $icon-color;
-    transition: margin-right $transition-duration ease, color $transition-duration ease;
+    transition: color $transition-duration ease;
   }
 
   .tab-label {
     white-space: nowrap;
     opacity: 1;
     transition: opacity ($transition-duration / 2) ease-in-out ($transition-duration / 3);
+    // The parent's align-items is enough now that text/icon are consistent
   }
 
   &:hover {
@@ -239,21 +154,18 @@ $transition-duration: 0.25s;
   }
 
   &.active {
-    background-color: $secondary-bg-color; // Or $active-bg-color
+    background-color: $secondary-bg-color;
     color: $active-text-color;
     font-weight: 500;
-
     .tab-icon {
-      color: $active-text-color; // Or $active-indicator-color
+      color: $active-text-color;
     }
-
-    // Active indicator line on the left
     &::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 15%; // Adjust vertical position
-      bottom: 15%; // Adjust vertical position
+      top: 15%;
+      bottom: 15%;
       width: 4px;
       background-color: $active-indicator-color;
       border-top-right-radius: 2px;
@@ -261,48 +173,99 @@ $transition-duration: 0.25s;
     }
   }
 
-  // Styles when this TabButton is inside a collapsed Tabbar
+  // Collapsed state styling
   .Tabbar.collapsed & {
     justify-content: center;
-    padding: 12px 0; // Vertical padding only, centered
+    padding: 12px 0;
+    gap: 0;
 
-    .tab-icon { 
-      margin-right: 0;
-    }
     .tab-label {
-      display: none; // ẩn nhãn khi Tabbar bị thu gọn
+      display: none;
     }
-    &.active::before { // điều chỉnh lại vị trí của indicator khi Tabbar bị thu gọn
-        top: 50%;
-        bottom: auto;
-        height: 60%;
-        transform: translateY(-50%);
+    &.active::before {
+      top: 50%;
+      bottom: auto;
+      height: 60%;
+      transform: translateY(-50%);
+    }
+  }
+}
+// HEADER SECTION (LOGO AND TITLE)
+.Tabbar-header {
+  height: $header-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  background-color: $secondary-bg-color;
+  flex-shrink: 0;
+
+  .Logo {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    gap: 12px;
+
+    /* === SỬA LẠI STYLE CHO LOGO === */
+    img {
+      height: 38px; // Có thể tăng nhẹ kích thước
+      width: 38px;
+      flex-shrink: 0;
+      
+      // -- THÊM CÁC DÒNG SAU --
+      background-color: #ffffff; // Tạo nền trắng cho logo
+      border-radius: 50%;      // Bo tròn nền thành hình tròn
+      padding: 4px;              // Tạo khoảng đệm giữa logo và viền nền
+      box-sizing: border-box;  // Đảm bảo padding không làm tăng kích thước tổng
+      border: 1px solid #4a505c; // Thêm viền mỏng để có chiều sâu
+    }
+
+    .logo-text {
+      font-size: 0.85rem; // Tăng nhẹ size chữ cho cân đối
+      font-weight: 600;
+      white-space: nowrap;
+      color: $active-text-color;
+      margin: 0; 
+    }
+  }
+
+  .collapse-toggle-button {
+    // ... style giữ nguyên
+  }
+}
+
+// FOOTER SECTION
+.Tabbar-footer {
+  // ... Các style cho footer và popover ngôn ngữ của bạn giữ nguyên ...
+  height: $footer-height;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $secondary-bg-color;
+  flex-shrink: 0;
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  .language-selector-container { position: relative; }
+  .language-popover {
+    position: absolute;
+    z-index: 1010;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 8px;
+    &.popover-for-collapsed-tabbar {
+      left: calc(#{$tabbar-collapsed-width} + 12px);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 220px;
+    }
+    &:not(.popover-for-collapsed-tabbar) {
+      left: 0;
+      bottom: calc(100% + 6px);
+      width: calc(#{$tabbar-expanded-width} - 20px);
+      margin: 0 10px;
     }
   }
 }
 
-// Styles for items within Popover.jsx (should be in Popover.scss or common)
-.popover-item { // Example if Popover renders items with this class
-    display: block;
-    width: 100%;
-    padding: 10px 15px;
-    text-align: left;
-    background-color: #fff;
-    color: #333;
-    border: none;
-    cursor: pointer;
-    font-size: 0.9rem;
-    border-bottom: 1px solid #f0f0f0;
-
-    &:last-child {
-        border-bottom: none;
-    }
-
-    &:hover {
-        background-color: #f7f7f7;
-    }
-    &.active-lang { // For highlighting current language in popover
-        font-weight: 600;
-        color: $active-indicator-color; // Use an accent color
-    }
-}

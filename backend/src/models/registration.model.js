@@ -51,9 +51,12 @@ const registrationSchema = new mongoose.Schema({
         dayOfWeek: {
             type: String,
         },
-        time: {
-            type: String,
+        lessonBegin: {
+            type: Number,
         },
+        lessonEnd: {
+            type: Number,
+        }
     },
     roomId: {
         type: Number,

@@ -1,43 +1,47 @@
 import React, { useState, useMemo } from "react";
 import DataTable from "../../common/DataTable.jsx";
-import Button from "../../common/Button.jsx"; // Make sure Button is imported if not already
-import "../../../styles/Modal.scss";
+import Button from "../../common/Button.jsx";
 import { useTranslation } from "react-i18next";
-import { ExportFactory } from '../../../utils/export/ExportFactory'; // Corrected path assuming utils is sibling to components/hooks
+import { ExportFactory } from '../../../utils/export/ExportFactory';
+
+// Import file SCSS dành riêng cho component này
+import "../../../styles/RegistrationInfoTable.scss";
 
 const RegistrationInfoTable = ({
   registrationDetails,
   allStudents = [],
   onUnregisterStudent,
+    onClose
 }) => {
-  const { t } = useTranslation(['registration', 'student', 'common']); // Added 'common' for general terms
+  const { t } = useTranslation(['registration', 'student', 'common']);
 
   const [sortField, setSortField] = useState("fullname");
   const [sortOrder, setSortOrder] = useState("asc");
-  const [exportType, setExportType] = useState("csv"); // Default export type
+  const [exportType, setExportType] = useState("csv");
 
-  const columns = [
-    { label: t('no.', { ns: 'registration' }), field: "stt", sortable: false },
+  // Định nghĩa các cột cho bảng
+  const columns = useMemo(() => [
+    { label: t('no.'), field: "stt", sortable: false },
     { label: t('studentId', { ns: 'student' }), field: "studentDisplayId", sortable: true },
     { label: t('fullname', { ns: 'student' }), field: "fullname", sortable: true },
-    { label: t('processPoint', { ns: 'registration' }), field: "processPoint", sortable: true, type: 'number' },
-    { label: t('midtermPoint', { ns: 'registration' }), field: "midterm", sortable: true, type: 'number' },
-    { label: t('finalTermPoint', { ns: 'registration' }), field: "finalTerm", sortable: true, type: 'number' },
-    { label: t('finalScore', { ns: 'registration' }), field: "finalScore", sortable: true, type: 'number' },
-    { label: t('status', { ns: 'registration' }), field: "statusText", sortable: true },
-  ];
+    { label: t('processPoint'), field: "processPoint", sortable: true, type: 'number' },
+    { label: t('midtermPoint'), field: "midterm", sortable: true, type: 'number' },
+    { label: t('finalTermPoint'), field: "finalTerm", sortable: true, type: 'number' },
+    { label: t('finalScore'), field: "finalScore", sortable: true, type: 'number' },
+    { label: t('status'), field: "statusText", sortable: true },
+  ], [t]);
 
+  // Xử lý và kết hợp dữ liệu từ registration và student
   const processedData = useMemo(() => {
-    // ... (your existing processedData logic remains the same)
-    if (!registrationDetails || !registrationDetails.registrationStudent) {
+    if (!registrationDetails?.registrationStudent) {
       return [];
     }
     return registrationDetails.registrationStudent.map((regStudent, index) => {
       const studentInfo = allStudents.find(
         (s) => s._id === (regStudent.studentId?._id || regStudent.studentId)
       );
-      const scoreData = regStudent.score && regStudent.score.length > 0 ? regStudent.score[0] : {};
-      const notApplicable = t('notApplicableShort', { ns: 'registration' });
+      const scoreData = regStudent.score?.[0] || {};
+      const notApplicable = t('notApplicableShort', { ns: 'common' });
 
       return {
         _id: regStudent._id,
@@ -45,43 +49,41 @@ const RegistrationInfoTable = ({
         stt: index + 1,
         studentDisplayId: studentInfo?.studentId || t('unknown', { ns: 'student' }),
         fullname: studentInfo?.fullname || t('unknown', { ns: 'student' }),
-        processPoint: scoreData?.processPoint ?? notApplicable,
-        midterm: scoreData?.midterm ?? notApplicable,
-        finalTerm: scoreData?.finalTerm ?? notApplicable,
-        finalScore: scoreData?.finalScore ?? notApplicable,
+        processPoint: scoreData.processPoint ?? notApplicable,
+        midterm: scoreData.midterm ?? notApplicable,
+        finalTerm: scoreData.finalTerm ?? notApplicable,
+        finalScore: scoreData.finalScore ?? notApplicable,
         status: regStudent.status,
-        statusText: regStudent.status ? t(regStudent.status, { ns: 'registration', defaultValue: regStudent.status }) : t('unknown', { ns: 'registration' }),
+        statusText: t(regStudent.status, { ns: 'registration', defaultValue: regStudent.status }),
         originalStudentData: studentInfo,
         originalScoreData: scoreData,
       };
     });
   }, [registrationDetails, allStudents, t]);
 
+  // Logic sắp xếp dữ liệu
   const sortedData = useMemo(() => {
-    // ... (your existing sortedData logic remains the same)
     if (!sortField) return processedData;
     return [...processedData].sort((a, b) => {
       const valA = a[sortField];
       const valB = b[sortField];
-      const notApplicable = t('notApplicableShort', { ns: 'registration' });
+      const notApplicable = t('notApplicableShort', { ns: 'common' });
+
       if (valA === notApplicable || valA === undefined || valA === null) return 1;
       if (valB === notApplicable || valB === undefined || valB === null) return -1;
-      const columnType = columns.find(col => col.field === sortField)?.type;
+
+      const columnInfo = columns.find(col => col.field === sortField);
       let comparison = 0;
-      if (columnType === 'number') {
+      if (columnInfo?.type === 'number') {
         comparison = parseFloat(valA) - parseFloat(valB);
-      } else if (typeof valA === 'string' && typeof valB === 'string') {
-        comparison = valA.localeCompare(valB);
       } else {
-        if (valA < valB) comparison = -1;
-        if (valA > valB) comparison = 1;
+        comparison = String(valA).localeCompare(String(valB));
       }
-      return sortOrder === "asc" ? comparison : comparison * -1;
+      return sortOrder === "asc" ? comparison : -comparison;
     });
   }, [processedData, sortField, sortOrder, t, columns]);
 
   const handleSortChange = (field) => {
-    // ... (your existing handleSortChange logic remains the same)
     if (field === sortField) {
       setSortOrder(sortOrder === "asc" ? "desc" : "asc");
     } else {
@@ -91,25 +93,26 @@ const RegistrationInfoTable = ({
   };
 
   const exportClassPoint = async () => {
-    if (sortedData.length === 0) { // Use sortedData (or processedData) for the check
-      alert(t('common:warning.noDataToExport')); // Using a more generic translation key
+    if (sortedData.length === 0) {
+      alert(t('common:warning.noDataToExport'));
       return;
     }
-
     try {
-      // Use the specific factory method for class grades
-      const exporter = ExportFactory.createClassGradeExporter(exportType); // Called without data
-
-      // Generate a dynamic filename
+      const exporter = ExportFactory.createClassGradeExporter(exportType);
       const courseName = registrationDetails.courseId?.courseName || "class";
       const year = registrationDetails.year || "";
       const semester = registrationDetails.semester || "";
       const fileName = `${courseName.replace(/\s+/g, '_')}_${year}_sem${semester}_grades`;
-
-      await exporter.export(fileName); // Pass the desired filename (without extension)
+      await exporter.export(sortedData, fileName); // Pass data and filename
     } catch (error) {
       console.error(t('common:error.exportFailed') + ":", error);
       alert(t('common:error.exportFailed') + (error.message ? `: ${error.message}` : ''));
+    }
+  };
+
+  const handleUnregisterStudentFromTable = (studentRow) => {
+    if (onUnregisterStudent && registrationDetails && window.confirm(t('common:confirm.areYouSureUnregister'))) {
+      onUnregisterStudent(registrationDetails._id, studentRow.studentDbId);
     }
   };
 
@@ -117,37 +120,36 @@ const RegistrationInfoTable = ({
     return <p>{t('noRegistrationDetails', { ns: 'registration' })}</p>;
   }
 
-  const handleUnregisterStudentFromTable = (studentRow) => {
-    // ... (your existing handleUnregisterStudentFromTable logic)
-    if (onUnregisterStudent && registrationDetails) {
-      onUnregisterStudent(registrationDetails._id, studentRow.studentDbId, registrationDetails);
-    }
-  };
-
   return (
-    <div className="registration-info-table-container">
-      <h3>
-        {t('studentListFor', { ns: 'registration' })}: {registrationDetails.courseId?.courseName} ({registrationDetails.year} - {t('semester', { ns: 'registration' })} {registrationDetails.semester})
-      </h3>
+    <div className="registration-info-table-container" onClick={onClose}>
+      {/* Cấu trúc header được cải tiến để khớp với SCSS */}
+      <div className="info-header">
+        <h3>
+          {t('studentListFor')}: {registrationDetails.courseId?.courseName}
+        </h3>
+        <div className="info-sub-header">
+          {registrationDetails.year} - {t('semester')} {registrationDetails.semester}
+        </div>
+      </div>
       
-      <DataTable
-        columns={columns}
-        data={sortedData}
-        initialSortField={sortField}
-        sortOrder={sortOrder}
-        onSortChange={handleSortChange}
-        // Pass the onUnregisterStudent handler if DataTable is responsible for rendering the unregister button
-        // Ensure your DataTable component is set up to call this with the correct 'studentRow' data
-        onUnregisterStudent={onUnregisterStudent ? handleUnregisterStudentFromTable : undefined}
-      />
+      {/* Bọc DataTable trong một div để style (bo góc, đổ bóng, cuộn ngang) */}
+      <div className="data-table-wrapper">
+        <DataTable
+          columns={columns}
+          data={sortedData}
+          sortField={sortField}
+          sortOrder={sortOrder}
+          onSortChange={handleSortChange}
+          onUnregisterStudent={onUnregisterStudent ? handleUnregisterStudentFromTable : undefined}
+        />
+      </div>
 
-      <div className="export-controls-container"> {/* Changed class for clarity */}
+      <div className="export-controls-container">
         <select value={exportType} onChange={(e) => setExportType(e.target.value)} className="export-select">
           <option value="csv">CSV</option>
           <option value="json">JSON</option>
-          {/* Add other types like 'xlsx' if your factory and strategies support them */}
         </select>
-        <Button label={t('exportGradeList', {ns: 'registration'})} onClick={exportClassPoint} variant="outline" />
+        <Button label={t('exportGradeList')} onClick={exportClassPoint} variant="outline" />
       </div>
     </div>
   );

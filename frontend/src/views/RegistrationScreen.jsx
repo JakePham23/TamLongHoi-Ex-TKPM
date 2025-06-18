@@ -232,7 +232,7 @@ const RegistrationScreen = () => {
         </div>
       </div>
 
-      {showData && (
+      {/* {showData && ( */}
         <>
           <div className="top-bar">
             <SearchInput
@@ -275,10 +275,10 @@ const RegistrationScreen = () => {
             onUnregisterStudent={handleUnregisterStudent} // Pass the handler down
           />
         </>
-      )}
-      {!showData && !loading && (
+      {/* )} */}
+      {/* {!showData && !loading && (
         <div className="placeholder-message">{t("selectTermToViewData")}</div>
-      )}
+      )} */}
     </div>
   );
 };

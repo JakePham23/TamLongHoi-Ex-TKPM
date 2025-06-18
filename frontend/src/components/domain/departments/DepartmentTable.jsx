@@ -17,7 +17,7 @@ const DepartmentTable = ({ departments, teachers, searchTerm, onDelete, onEdit }
   const columns = [
     { label: t("no."), field: "stt", sortable: false },
     { label: t("department"), field: "departmentNameTranslated", sortable: true },
-    { label: t("establishmentDate"), field: "dateOfEstablishment", sortable: true },
+    { label: t("establishmentDate"), field: "displayDateOfEstablishment", sortable: true },
     { label: t("head of department"), field: "headOfDepartmentName", sortable: true },
   ];
   
@@ -64,12 +64,14 @@ const DepartmentTable = ({ departments, teachers, searchTerm, onDelete, onEdit }
 
   // 🧾 Final data with additional display fields
   const finalData = sortedDepartments.map((dept, index) => ({
-    ...dept,
+    ...dept, //
     stt: index + 1,
     departmentName: t(`department_list.${dept._id}.name`),
     headOfDepartmentName:
     dept.headOfDepartment?.fullname || t("error.not determined", { ns: "department" }),
-    dateOfEstablishment: dept.dateOfEstablishment
+    
+    // SỬA: Tạo một trường mới cho việc hiển thị
+    displayDateOfEstablishment: dept.dateOfEstablishment
       ? new Date(dept.dateOfEstablishment).toLocaleDateString()
       : "",
   }));

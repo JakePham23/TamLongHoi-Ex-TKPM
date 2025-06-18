@@ -8,14 +8,27 @@ class RegistrationController {
     async addRegistration(req, res, next) {
         try {
             const { year, semester, courseId, teacherId, maxStudent, schedule, roomId } = req.body;
+
+            // --- VALIDATION ĐƯỢC CẢI TIẾN ---
             if (!year || !semester || !courseId || !teacherId || !maxStudent) {
                 logger.warn("Add registration failed: Missing required fields");
                 return ResponseFactory
                     .create(ResponseTypes.BAD_REQUEST, {
-                        message: "Year, semester, course ID, teacher ID, and max student are required"
+                        message: "Year, semester, course ID, teacher ID, and max student are required."
                     })
                     .send(res);
             }
+
+            // Kiểm tra các trường con trong schedule nếu schedule tồn tại
+            if (schedule && (!schedule.dayOfWeek || !schedule.lessonBegin || !schedule.lessonEnd)) {
+                logger.warn("Add registration failed: Missing schedule fields");
+                return ResponseFactory
+                    .create(ResponseTypes.BAD_REQUEST, {
+                        message: "Schedule must include dayOfWeek, lessonBegin, and lessonEnd."
+                    })
+                    .send(res);
+            }
+            // --- KẾT THÚC VALIDATION ---
 
             const newRegistration = await RegistrationService.addRegistration({
                 year,
@@ -42,6 +55,37 @@ class RegistrationController {
         }
     }
 
+    async updateRegistration(req, res, next) {
+        try {
+            const { registrationId } = req.params;
+            const updateData = req.body;
+
+            // Service layer sẽ chịu trách nhiệm validate dữ liệu update
+            const updatedRegistration = await RegistrationService.updateRegistration(registrationId, updateData);
+
+            if (!updatedRegistration) {
+                return ResponseFactory
+                    .create(ResponseTypes.NOT_FOUND, {
+                        message: "Registration not found or could not be updated."
+                    })
+                    .send(res);
+            }
+
+            return ResponseFactory
+                .create(ResponseTypes.SUCCESS, { // Dùng SUCCESS hoặc UPDATED đều được
+                    message: "Registration updated successfully",
+                    metadata: updatedRegistration
+                })
+                .send(res);
+
+        } catch (error) {
+            logger.error("Error in updateRegistration", { error: error.message });
+            return ResponseFactory
+                .create(ResponseTypes.INTERNAL_ERROR, error.message)
+                .send(res);
+        }
+    }
+
     async deleteRegistration(req, res, next) {
         try {
             const { registrationId } = req.params;
@@ -60,27 +104,6 @@ class RegistrationController {
         }
     }
 
-    async updateRegistration(req, res, next) {
-        try {
-            const { registrationId } = req.params;
-            const updateData = req.body;
-
-            const updatedRegistration = await RegistrationService.updateRegistration(registrationId, updateData);
-
-            return ResponseFactory
-                .create(ResponseTypes.UPDATED, {
-                    message: "Registration updated successfully",
-                    metadata: updatedRegistration
-                })
-                .send(res);
-
-        } catch (error) {
-            logger.error("Error in updateRegistration", { error: error.message });
-            return ResponseFactory
-                .create(ResponseTypes.INTERNAL_ERROR, error.message)
-                .send(res);
-        }
-    }
 
     async getAllRegistrations(req, res, next) {
         try {

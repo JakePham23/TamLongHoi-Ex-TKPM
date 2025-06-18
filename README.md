@@ -50,9 +50,13 @@
 
       `Terminal` (macos)
          
-            chmod +x mongo-seed/import.sh                       
-            docker compose up -d
-   3. Run code 
+            docker compose up -d --build
+
+       `Terminal` (Windows)
+
+            docker-compose up -d --build
+
+   3. Run the project with terminal or cmd 
 
       `Start backend`
 
@@ -67,42 +71,78 @@
             npm i
             npm run build
 
+      <h1 id="Features">Features🤖</h1>
+
    4. Student view:
-   
-       ![image](https://github.com/JakePham23/TamLongHoi-Ex-TKPM/blob/web/ex01/fontend/src/assets/images/local/StudentView.png)
+
+      ![image](./images/student/student_table.png)
+
+      ![image](./images/student/student_information.png)
+      
+      ![image](./images/student/student_view_detail.png)
+      
+      ![image](./images/student/student_create.png)
 
    5. Department view:
    
-       ![image](https://github.com/JakePham23/TamLongHoi-Ex-TKPM/blob/web/ex01/fontend/src/assets/images/local/DepartmetView.png)
+      ![image](./images/department/department_create.png)
+      
+      ![image](./images/department/department_table.png)
 
-   <h1 id="Features">Features🤖</h1>
-   
-   **`STUDENT MANAGEMENT`**
-   >Easily manage student information, including personal details, contact information, change infomation and export file.
+      ![image](./images/department/department_update.png)
+
+   6. Course view:
+
+      ![image](./images/course/course_table.png)
+
+      ![image](./images/course/course_update.png)
+      
+      ![image](./images/course/course_create.png)
+
+   7. Registration view
+
+      ![image](./images/registration/registration_table.png)
+
+      ![image](./images/registration/registration_update.png)
+      
+      ![image](./images/registration/registration_view_detail.png)
+      
+      ![image](./images/registration/registration_create.png)
+
+      ![image](./images/registration/registration_register.png)
+
+
    <p align="center">
-      <img src="https://github.com/JakePham23/TamLongHoi-Ex-TKPM/blob/web/ex01/fontend/src/assets/images/local/StudentFeatures1.png" width="500">
-      <img src="https://github.com/JakePham23/TamLongHoi-Ex-TKPM/blob/web/ex01/fontend/src/assets/images/local/StudentFeatures2.png" width="500">      
-      <img src="https://github.com/JakePham23/TamLongHoi-Ex-TKPM/blob/web/ex01/fontend/src/assets/images/local/StudentFeatures3.png" width="500">
-   </p>
-   
    <br></br>
-   
-   **`DEPARTMENT MANAGEMENT`**
-   >Easily manage department information,
-   <p align="center">
-      <img src="https://github.com/JakePham23/TamLongHoi-Ex-TKPM/blob/web/ex01/fontend/src/assets/images/local/DepartmentFeatures1.png" width="500">
-      <img src="https://github.com/JakePham23/TamLongHoi-Ex-TKPM/blob/web/ex01/fontend/src/assets/images/local/DepartmentFeatures2.png" width="500">
-   </p>
 
-
-   <p align="center">
-   <br></br>
-  
    <h1 id="Contributors">Contributors🤝</h1>
-   
-   <!-- <a href="https://github.com/EdogawaCoTrung/StudentManagement-frontend-Reactjs-TailwindCSS/graphs/contributors">
-      <img src="https://contrib.rocks/image?repo=EdogawaCoTrung/StudentManagement-frontend-Reactjs-TailwindCSS" />
-  </a> -->
+<div style="display: flex; flex-direction: row; justify-content: space-between; gap: 20px; padding: 20px;">
+  <a href="https://github.com/nasm1023" target="_blank" title="nasm1023">
+    <img 
+      src="https://avatars.githubusercontent.com/u/127742124?v=4" 
+      alt="nasm1023"
+      style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" 
+    />
+  </a>
+
+  <a href="https://github.com/phu-nguyen-dinh" target="_blank" title="phu-nguyen-dinh">
+    <img 
+      src="https://avatars.githubusercontent.com/u/174979815?v=4" 
+      alt="phu-nguyen-dinh"
+      style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" 
+    />
+  </a>
+
+  <a href="https://github.com/JakePham23" target="_blank" title="JakePham23">
+    <img 
+      src="https://avatars.githubusercontent.com/u/139458255?s=400&u=9d70803854e2cf01c3441cd30eeb92d0c6545578&v=4" 
+      alt="JakePham23"
+      style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" 
+    />
+  </a>
+</div>
+
+
    
    ## 1. License
    This project is licensed under the MIT License.

@@ -1,0 +1,123 @@
+// src/styles/StudentRegisteredCoursesView.scss
+
+// --- Biến màu và kích thước cho giao diện sáng ---
+$modal-overlay-bg: rgba(33, 37, 41, 0.6); // Lớp phủ nền
+$modal-content-bg-light: #ffffff;
+$text-primary-light: #212529;
+$text-secondary-light: #6c757d;
+$border-color-light: #dee2e6;
+$accent-color: #007bff;
+$hover-bg-light: #f8f9fa;
+$scrollbar-thumb-color: #c1c1c1;
+$scrollbar-thumb-hover-color: #a8a8a8;
+
+// --- Lớp phủ toàn màn hình ---
+.student-courses-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $modal-overlay-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050; // Đảm bảo nó nổi trên các modal khác
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+// --- Khung nội dung Modal ---
+.student-courses-modal-content {
+  background-color: $modal-content-bg-light;
+  color: $text-primary-light;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  
+  // === SỬA Ở ĐÂY: TĂNG KÍCH THƯỚC MODAL CHO TO RA ===
+  width: 90%;
+  max-width: 1200px; // Tăng chiều rộng tối đa
+  height: 85vh;     // Sử dụng chiều cao tương đối để cân đối
+  
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  // --- Header của Modal ---
+  .modal-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid $border-color-light;
+    flex-shrink: 0; // Không cho co lại
+
+    h2 {
+      margin: 0;
+      font-size: 1.5rem; // Cỡ chữ tiêu đề
+      font-weight: 600;
+    }
+
+    .modal-close { // Style cho nút đóng 'x'
+      background: none;
+      border: none;
+      font-size: 2rem;
+      line-height: 1;
+      color: $text-secondary-light;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      &:hover {
+        color: $text-primary-light;
+      }
+    }
+  }
+
+  // --- Body của Modal (chứa bảng) ---
+  .modal-body {
+    padding: 25px;
+    overflow: hidden; // Body không cuộn, chỉ bảng cuộn
+    flex-grow: 1;
+    display: flex; // Cần thiết để .data-table-container co giãn
+  }
+
+  // --- Wrapper cho DataTable để xử lý cuộn ngang ---
+  .data-table-container {
+    border: 1px solid $border-color-light;
+    border-radius: 8px;
+    overflow-x: auto; // Bật thanh cuộn ngang khi cần thiết
+    flex-grow: 1; // Cho phép container này co giãn theo modal-body
+
+    // Tùy chỉnh thanh cuộn
+    &::-webkit-scrollbar { height: 8px; width: 8px; }
+    &::-webkit-scrollbar-track { background: #f1f1f1; }
+    &::-webkit-scrollbar-thumb { background: $scrollbar-thumb-color; border-radius: 4px; }
+    &::-webkit-scrollbar-thumb:hover { background: $scrollbar-thumb-hover-color; }
+  }
+
+  // --- Style cho bảng ---
+  table th, table td {
+    white-space: nowrap; // Đảm bảo các ô trong bảng không bị xuống dòng
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+  
+  // --- Footer của Modal ---
+  .modal-footer {
+    padding: 20px 25px;
+    border-top: 1px solid $border-color-light;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $hover-bg-light;
+    flex-shrink: 0;
+
+    .export-controls {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    select, .Button {
+      font-size: 1rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+  }
+}

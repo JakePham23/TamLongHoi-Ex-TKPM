@@ -1,0 +1,166 @@
+// --- Biến màu ---
+$modal-content-bg: #282c34;
+$modal-header-bg: #1e2127;
+$text-primary: #e6e6e6;
+$text-secondary: #a0a4ac;
+$accent-color: #4a90e2;
+$border-color: #3a3f4b;
+$success-color: #28a745;
+$hover-bg-color: #333842;
+
+// --- Lớp phủ nền ---
+.student-registration-form-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1050;
+  background-color: rgba(40, 44, 52, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// --- Khung Modal chính (chỉ định nghĩa 1 lần) ---
+.student-registration-form-modal-content {
+  background-color: $modal-content-bg;
+  color: $text-primary;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 650px;
+  height: 85vh; // Sử dụng height thay cho max-height để layout ổn định hơn
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid $border-color;
+
+  // --- Header của Modal ---
+  .modal-header {
+    background-color: $modal-header-bg;
+    padding: 15px 25px;
+    border-bottom: 1px solid $border-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0; // Không cho co lại
+
+    h1 { margin: 0; font-size: 1.5rem; font-weight: 600; }
+    .close-icon { background: none; border: none; color: $text-secondary; font-size: 1.8rem; cursor: pointer; line-height: 1; padding: 5px; transition: color 0.2s ease; &:hover { color: $text-primary; } }
+  }
+
+  // --- Body của Modal (chứa toàn bộ nội dung chính) ---
+  .modal-body {
+    padding: 25px;
+    overflow: hidden; // Không cho body tự cuộn
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; // Body sẽ chiếm hết không gian còn lại
+  }
+  
+  // --- Thông tin khóa học ---
+  .course-info {
+    margin-bottom: 25px;
+    flex-shrink: 0; // Không cho co lại
+    p { margin: 8px 0; font-size: 1rem; color: $text-secondary; strong { color: $text-primary; min-width: 120px; display: inline-block; } }
+  }
+  
+  // --- Thanh tìm kiếm ---
+  .search-container {
+    margin-bottom: 20px;
+    position: relative;
+    flex-shrink: 0; // Không cho co lại
+    
+    .search-icon { position: absolute; top: 50%; left: 15px; transform: translateY(-50%); color: $text-secondary; }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 15px 12px 45px;
+      background-color: $modal-header-bg;
+      border: 1px solid $border-color;
+      border-radius: 8px;
+      color: $text-primary;
+      font-size: 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      &::placeholder { color: $text-secondary; }
+      &:focus { outline: none; border-color: $accent-color; box-shadow: 0 0 0 3px rgba($accent-color, 0.2); }
+    }
+  }
+
+  // --- Danh sách sinh viên (phần quan trọng nhất) ---
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    
+    // --- LOGIC GIỮ KÍCH THƯỚC VÀ CUỘN ---
+    overflow-y: auto;  // Bật thanh cuộn khi cần
+    flex-grow: 1;      // UL sẽ chiếm hết không gian còn lại trong modal-body
+    min-height: 100px; // Đặt một chiều cao tối thiểu để không bị quá trống
+    
+    // Tùy chỉnh thanh cuộn
+    &::-webkit-scrollbar { width: 8px; }
+    &::-webkit-scrollbar-track { background: transparent; }
+    &::-webkit-scrollbar-thumb { background: $border-color; border-radius: 4px; }
+    &::-webkit-scrollbar-thumb:hover { background: lighten($border-color, 10%); }
+  }
+
+  // --- Item trong danh sách ---
+  li {
+    display: flex; // Sử dụng flex để căn chỉnh tốt hơn
+    padding: 12px 15px;
+    border-bottom: 1px solid $border-color;
+    transition: background-color 0.2s ease;
+    &:last-child { border-bottom: none; }
+    &:hover { background-color: $hover-bg-color; }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+      width: 100%;
+
+      input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; accent-color: $accent-color; cursor: pointer; &:disabled { cursor: not-allowed; accent-color: $text-secondary; } }
+      
+      .student-info { display: flex; align-items: baseline; gap: 8px; }
+      .student-fullname { font-weight: 500; }
+      .student-id { color: $text-secondary; font-size: 0.9em; }
+      
+      .student-status { margin-left: auto; font-style: italic; font-size: 0.9em; color: $success-color; font-weight: 500; padding: 4px 8px; background-color: rgba($success-color, 0.1); border-radius: 4px; flex-shrink: 0; }
+      &[data-disabled="true"] { cursor: not-allowed; color: $text-secondary; }
+    }
+  }
+
+  // --- Thông báo khi không có kết quả ---
+  .no-results-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: $text-secondary;
+    font-style: italic;
+    height: 100%;
+  }
+
+  // --- Footer của Modal ---
+  .modal-footer {
+    padding: 20px 25px;
+    background-color: $modal-header-bg;
+    border-top: 1px solid $border-color;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    flex-shrink: 0; // Không cho co lại
+
+    button { padding: 12px 28px; border-radius: 8px; border: none; cursor: pointer; font-size: 1rem; font-weight: 600; transition: all 0.2s ease;
+      &.confirm-button { background-color: $accent-color; color: white; &:hover { background-color: darken($accent-color, 10%); box-shadow: 0 4px 15px rgba($accent-color, 0.3); } }
+      &.close-button { background-color: #495057; color: $text-primary; &:hover { background-color: #5a6268; } }
+      &:active { transform: scale(0.98); }
+    }
+  }
+}
