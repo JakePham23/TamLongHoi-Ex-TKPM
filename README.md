@@ -60,8 +60,16 @@
 
          http://localhost:8080/
 
-   **3. Run the project with terminal or cmd**
-      
+  ### 3. Run the project with terminal or cmd
+
+  `Start Database`
+
+  - Đảm bảo đã cài đặt MongoDB như yêu cầu ở trên.
+  - Thiết lập port MongoDB là `21070` và tên database là `StudentManagementSystem`.
+  - Đường dẫn kết nối MongoDB:  
+    `mongodb://mongodb:27017/StudentManagementSystem`
+  - Import các file `.json` trong thư mục `mongo-seed` vào database
+
    `Start backend`
 
          cd backend
